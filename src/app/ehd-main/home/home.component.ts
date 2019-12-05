@@ -13,7 +13,7 @@ export class EhdHomeComponent implements OnInit {
   article$: Array<Record>;
   name: Array<any>;
   backgroundStyle = {
-    'background-image': "url('sassets/img/NwkDawn.jpg')"
+    'background-image': "url('src/assets/img/NwkDawn.jpg')"
   };
 
   constructor(
