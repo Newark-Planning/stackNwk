@@ -1,4 +1,5 @@
 import './polyfills';
+import { defineCustomElements } from '@carto/airship-components/dist/loader';
 
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -14,3 +15,5 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
 
   // Otherwise, log the boot error
 }).catch(err => console.error(err));
+
+defineCustomElements(w);

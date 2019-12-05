@@ -63,7 +63,8 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-
+import "@webcomponents/custom-elements/custom-elements.min.js";
+import "@clr/icons/clr-icons.min.js";
 /**
  * Date, currency, decimal and percent pipes.
  * Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10
