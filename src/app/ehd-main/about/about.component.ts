@@ -14,7 +14,7 @@ export class EhdAboutComponent implements OnInit {
   article$: Array<Record>;
   name: Array<any>;
   backgroundStyle = {
-    'background-image': "url('../../../../assets/img/NewarkCitySKy.jpg')"
+    'background-image': "url('../../../assets/img/NewarkCitySKy.jpg')"
   };
   constructor(
     public airData: AirService
