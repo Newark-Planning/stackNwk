@@ -1,0 +1,34 @@
+@import '../../../app.component.scss';
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    .card-header {
+        border: 0;
+        background: transparent;
+        color: white;
+        -webkit-text-fill-color: white;
+        font-weight: 900;
+        margin: auto 0;
+        width: max-content;
+        border-radius: .25rem;
+        padding: .5rem 2rem;
+        text-shadow: .1rem .1rem .1rem black;
+        img {
+            margin-right: 1rem;
+        }
+    }
+    .card-block {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+}

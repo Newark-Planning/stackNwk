@@ -1,0 +1,19 @@
+<div class="clr-row">
+    <div class="clr-col-12">
+        <div class="card" [(ngStyle)]="backgroundSetting">
+            <div class='card-header clr-row clr-align-content-start'>
+                <img [src]='logoSrc' height='100px'>
+                <ng-content select='[splash-page]'></ng-content>
+            </div>
+            <div class="card-block clr-col-12">
+                <div class="card-title clr-justify-content-center">
+                    <ng-content select='[splash-title]'></ng-content>
+                    <ng-content select='[splash-subtitle]'></ng-content>
+                </div>
+                <div class="card-text clr-justify-content-center">
+                    <ng-content select='[splash-buttons]'></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

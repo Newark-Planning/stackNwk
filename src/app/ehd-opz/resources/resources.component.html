@@ -1,0 +1,41 @@
+<app-splash [backgroundSetting]='backgroundStyle' logoSrc='../../../assets/img/NwkLogo-ext.svg'>
+    <h1 splash-page>Office of Planning & Zoning</h1>
+    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>{{ splash.fields['Content'] }}</h2>
+    <div splash-buttons class="splash-buttons clr-row clr-justify-content-center">
+        <button class="btn btn-primary btn-lg btn-block">
+          <clr-icon shape='calendar' size='24'></clr-icon>
+          Applications
+        </button>
+        <button class="btn btn-primary btn-lg btn-block">
+          <clr-icon shape='file' size='24'></clr-icon>
+          Master Plans
+        </button>
+        <button class="btn btn-primary btn-lg btn-block">
+          <clr-icon shape='map' size='24'></clr-icon>
+          Redevelopment Plans
+        </button>
+        <button class="btn btn-primary btn-lg btn-block">
+          <clr-icon shape='pop-out' size='24'></clr-icon>
+          FAQs
+        </button>
+    </div>
+</app-splash>
+<section class='secondary-content'>
+    <h3 class='clr-justify-content-center'>Our Staff</h3>
+    <ul id="demoTabs" class="nav" role="tablist">
+        <li *ngFor="let subComponent of subComponents" role="presentation" class="nav-item">
+            <button class="btn btn-link nav-link" [routerLink]="subComponent.path" routerLinkActive="active" [attr.aria-selected]="router.url.endsWith(subComponent.path)" type="button" aria-controls="tabs-content">
+                {{subComponent.label}}
+          </button>
+        </li>
+    </ul>
+    <div id="tabs-content" class="clr-row clr-justify-content-center">
+        <div class="clr-col-lg-8 clr-col-md-10 clr-col-12">
+            <div class="card ">
+                <div class="card-block as-app-body">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

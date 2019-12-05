@@ -1,0 +1,53 @@
+@import '../../app.component.scss';
+@import '@carto/airship-style/dist/airship.css';
+.splash-buttons {
+    margin: auto;
+    display: flex;
+    .btn {
+        display: flex;
+        box-shadow: .1rem .1rem .25rem black;
+        border-color: transparent;
+        font-size: 1rem;
+        width: 33vw;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.secondary-content {
+    height: auto;
+    width: 100%;
+    margin-bottom: 2rem
+}
+
+#tabs-content {
+    min-height: 50vh;
+}
+
+as-responsive-content,
+#map {
+    height: 80vh;
+    z-index: 0;
+}
+
+.as-app,
+as-responsive-content,
+.as-main,
+.as-map-area {
+    height: 80vh;
+}
+
+.as-panel {
+    flex-direction: column;
+    padding: 16px;
+    background: white;
+}
+
+.as-btn {
+    margin-top: 16px;
+}
+
+as-legend {
+    --as-legend--padding: 0;
+    width: 100%;
+}

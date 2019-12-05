@@ -1,0 +1,46 @@
+<clr-main-container>
+    <clr-header class='header header-1'>
+        <div class="branding">
+            <span class='h1 clr-row clr-align-content-center'>NWK</span>
+            <hr class='nav-divider'>
+            <span class='h1 clr-row clr-align-content-center'>City of Newark</span>
+        </div>
+        <div class="header-actions">
+            <clr-dropdown>
+                <button class="nav-icon" clrDropdownTrigger>
+                    <clr-icon shape="organization" class="has-badge is-solid"></clr-icon>
+                    <clr-icon shape="caret down"></clr-icon>
+                </button>
+                <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
+                    <a [routerLinkActive]="['active']" routerLink="/ehd" clrDropdownItem>
+                        <clr-icon shape="bank"></clr-icon>
+                        EHD Main
+                    </a>
+                    <div class='dropdown-divider'></div>
+                    <h4 class="dropdown-header">Divisions</h4>
+                    <a href="#" clrDropdownItem>
+                        <clr-icon shape="child-arrow"></clr-icon>
+                        Housing
+                    </a>
+                    <a href="#" clrDropdownItem>
+                        <clr-icon shape="child-arrow"></clr-icon>
+                        Opportunity Zones
+                    </a>
+                    <a [routerLinkActive]="['active']" routerLink="/opz" clrDropdownItem>
+                        <clr-icon shape="child-arrow"></clr-icon>
+                        Planning & Zoning
+                    </a>
+                    <a href="#" clrDropdownItem>
+                        <clr-icon shape="child-arrow"></clr-icon>
+                        Property Management
+                    </a>
+                    <a href="#" clrDropdownItem>
+                        <clr-icon shape="child-arrow"></clr-icon>
+                        Rent Control
+                    </a>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+    </clr-header>
+    <router-outlet></router-outlet>
+</clr-main-container>

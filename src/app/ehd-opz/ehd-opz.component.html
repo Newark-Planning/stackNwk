@@ -1,0 +1,17 @@
+<clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [clr-nav-level]="1" [(ngModel)]="sideMenuItems" ngDefaultControl>
+    <a clrVerticalNavLink *ngFor="let sideMenuItem of sideMenuItems" [routerLinkActive]="['active']" [routerLink]="[sideMenuItem.path]">
+        <clr-icon clrVerticalNavIcon [attr.shape]="sideMenuItem.icon">
+        </clr-icon>
+        <span class="nav-text clr-row clr-justify-content-center">{{ sideMenuItem.title }}</span>
+    </a>
+</clr-vertical-nav>
+<div class='content-area'>
+    <nav class="subnav">
+        <ul class="nav">
+            <li class="nav-item">
+                <span>Department of Economic & Housing Development</span>
+            </li>
+        </ul>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
