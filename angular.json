@@ -28,6 +28,7 @@
             ],
             "styles": [
               "src/loading.scss",
+              "node_modules/@clr/icons/clr-icons.min.css",
               "src/styles.scss"            
               ],
             "scripts": [
