@@ -2,8 +2,8 @@
 // This software is released under MIT license.
 // The full license information can be found in LICENSE in the root directory of this project.
 @import "@clr/ui/src/utils/theme.dark.clarity"; // Dark theme variables
+@import "@clr/icons/clr-icons.min.css";
 // Clarity Component SCSS
-@import "@clr/ui/src/utils/components.clarity";
 // - Global
 // - Alerts
 // - Badge
@@ -775,3 +775,4 @@ $clr-wizard-title-text: hsl(210, 16%, 93%);
 $clr-wizard-main-textColor: hsl(203, 16%, 72%);
 $clr-wizard-stepnav-error-color: hsl(3, 90%, 62%);
 // END: Wizard
+@import "@clr/ui/src/utils/components.clarity";
