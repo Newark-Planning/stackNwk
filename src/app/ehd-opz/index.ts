@@ -37,7 +37,10 @@ export const planningAboutComponents = [
 
 export const planningMapComponents = [
   MapPipelineComponent,
-  mapPieces
+  mapPieces.BasemapComponent,
+  mapPieces.LayerComponent,
+  mapPieces.WidgetComponent,
+  mapPieces.MapComponent
 ];
 
 export const planningResComponents = [
