@@ -1,4 +1,4 @@
-import './polyfills';
+// tslint:disable-next-line: no-import-side-effect
 import { defineCustomElements } from '@carto/airship-components/dist/loader';
 
 import { enableProdMode } from '@angular/core';
@@ -10,15 +10,17 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
+defineCustomElements(window)
+.catch(err => { console.error(err); });
 
-platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
+platformBrowserDynamic()
+.bootstrapModule(AppModule)
+.then(ref => {
+  const ngRef = 'ngRef';
   // Ensure Angular destroys itself on hot reloads.
-  if (window['ngRef']) {
-    window['ngRef'].destroy();
+  if (window[ngRef]) {
+    window[ngRef].destroy();
   }
-  window['ngRef'] = ref;
-
-  // Otherwise, log the boot error
-}).catch(err => console.error(err));
-
-defineCustomElements(window);
+  window[ngRef] = ref;
+})
+.catch(err => { console.error(err); });

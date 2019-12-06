@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ClarityModule } from '@clr/angular';
 
 import { SharedModule } from '../shared/shared.module';
-import { EHD_ROUTING } from './ehd-main-routing.module';
-import { EhdMainComponent } from './ehd-main.component';
 
 import * as components from './index';
+
+import { EHD_ROUTES } from './ehd-main-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,10 @@ import * as components from './index';
   ],
   imports: [
     CommonModule,
+    RouterModule.forChild(EHD_ROUTES),
     SharedModule,
-    ClarityModule,
-    EHD_ROUTING
-  ]
+    ClarityModule
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class EhdMainModule { }
-

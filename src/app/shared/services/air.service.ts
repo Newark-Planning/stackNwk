@@ -13,24 +13,22 @@ export class AirService {
   header = { authorization: `${this.API_STRING + environment.config.AIRTABLE_API_KEY}` };
   params: { 'view': 'Grid view' };
   records: Observable<Record>;
-
-  getRecords(API_BASE_NAME: string, API_FILTER: string): Observable<any> {
-    const BASE_NAME = encodeURI(API_BASE_NAME);
-    const FILTER = encodeURI(API_FILTER);
-
-    return this.http.get<Record>(
-      `${this.API_BASE_URL}/v0/${this.API_APP_ID}/${BASE_NAME}?${FILTER}?`,
-      {
-        headers: this.header,
-        params: this.params
-      }
-    )
-  }
   constructor(
     public http: HttpClient) {
     // tslint:disable-next-line: no-console
     console.log(this.records);
+  }
+  getRecords(API_BASE_NAME: string, API_FILTER: string): Observable<any> {
+    const BASE_NAME = API_BASE_NAME;
+    const FILTER = API_FILTER;
 
+    return this.http.get<Record>(
+      `${this.API_BASE_URL}/v0/${this.API_APP_ID}/${BASE_NAME}?${FILTER}`,
+      {
+        headers: this.header,
+        params: this.params
+      }
+    );
   }
 
 }

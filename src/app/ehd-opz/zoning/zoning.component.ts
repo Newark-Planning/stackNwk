@@ -13,6 +13,10 @@ import { AirService } from '../../shared/services/air.service';
 })
 export class OpzZoningComponent implements OnInit {
   splashTitle$: Record;
+  article$: Array<Record>;
+  backgroundStyle = {
+    'background-image': "url('../../../assets/img/NewarkCitySKy.jpg')"
+  };
 
   constructor(public airData: AirService) { }
 

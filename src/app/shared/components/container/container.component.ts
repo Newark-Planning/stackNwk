@@ -4,7 +4,7 @@ import { MyRoute } from '../../models';
 
 @Component({
   selector: 'app-content-container',
-  styleUrls: ['../../../../styles.scss'],
+  styleUrls: ['../../../../theme.scss'],
   templateUrl: './container.component.html'
 })
 

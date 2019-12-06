@@ -1,22 +1,29 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { ClarityModule } from '@clr/angular';
 
-import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
 import { APP_ROUTES } from './app-routing';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
+import { AppComponent } from './app.component';
 import { EhdMainComponent } from './ehd-main/ehd-main.component';
 import { EhdOpzComponent } from './ehd-opz/ehd-opz.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [AppComponent, EhdMainComponent, EhdOpzComponent],
   imports: [
+    BrowserModule.withServerTransition({ appId: 'nwk-ehd' }),
+    BrowserAnimationsModule,
+    FormsModule,
+    CommonModule,
     HttpClientModule,
-    BrowserModule,
     CoreModule,
     ClarityModule,
     SharedModule,
@@ -24,9 +31,7 @@ import { RouterModule } from '@angular/router';
       APP_ROUTES,
       { scrollPositionRestoration: 'enabled' }
     )
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
-

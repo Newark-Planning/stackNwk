@@ -14,6 +14,8 @@ import { ZonersComponent } from './about/zoners/zoners.component';
 // Our City page components imports
 import { MapPipelineComponent } from './ourcity/map-pipeline/map-pipeline.component';
 
+import * as mapPieces from './ourcity/map-pipeline';
+
 // Resources page component imports
 import { ApplicationsDataComponent } from './resources/sub-pages/applications/applications.component';
 
@@ -34,7 +36,8 @@ export const planningAboutComponents = [
 ];
 
 export const planningMapComponents = [
-  MapPipelineComponent
+  MapPipelineComponent,
+  mapPieces
 ];
 
 export const planningResComponents = [

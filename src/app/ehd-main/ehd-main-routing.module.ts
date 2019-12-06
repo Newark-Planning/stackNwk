@@ -1,11 +1,10 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { MyRoute } from '../shared/models';
 import * as components from './index';
 
-export const EHD_ROUTES: Routes = [
+export const EHD_ROUTES: Array<MyRoute> = [
   {
     path: '',
+    pathMatch: 'full',
     redirectTo: 'home'
   },
   {
@@ -25,5 +24,3 @@ export const EHD_ROUTES: Routes = [
     path: 'about'
   }
 ];
-
-export const EHD_ROUTING: ModuleWithProviders<RouterModule> = RouterModule.forChild(EHD_ROUTES);

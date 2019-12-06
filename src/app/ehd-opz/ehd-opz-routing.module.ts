@@ -5,6 +5,7 @@ import * as components from './index';
 export const PLANNING_ROUTES: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     redirectTo: 'home'
   },
   {

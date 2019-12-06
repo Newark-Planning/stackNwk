@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { PLANNING_ROUTES } from './ehd-opz-routing.module';
+
 import { MyRoute } from '../shared/models';
 
 @Component({

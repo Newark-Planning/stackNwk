@@ -22,7 +22,6 @@ export class EhdHomeComponent implements OnInit {
 
   ngOnInit(): void {
     const records = 'records';
-    // tslint:disable-next-line: no-floating-promises
     this.airData.getRecords('PageComps', "filterByFormula=%7BName%7D%3D'Homepage+Splash+Title'")
       .subscribe(
         data => {

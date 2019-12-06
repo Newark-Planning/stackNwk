@@ -3,7 +3,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
 
 import { SharedModule } from '../shared/shared.module';
-import { EhdOpzComponent } from './ehd-opz.component';
 import { PLANNING_ROUTING } from './ehd-opz-routing.module';
 
 import * as components from './index';
@@ -13,12 +12,12 @@ import * as components from './index';
     components.planningComponents,
     components.planningAboutComponents,
     components.planningMapComponents,
-    components.planningResComponents,
+    components.planningResComponents
   ],
   imports: [
     CommonModule,
-    SharedModule,
     ClarityModule,
+    SharedModule,
     PLANNING_ROUTING
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
