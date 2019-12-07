@@ -7,6 +7,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
 })
 
 export class SplashComponent {
+  @Input() parentFragment: string;
   @Input() backgroundSetting: TemplateRef<any>;
   @Input() logoSrc: TemplateRef<any>;
 }

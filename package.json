@@ -5,6 +5,7 @@
     "dependencies": {
         "@angular/animations": "^9.0.0-rc.5",
         "@angular/cdk": "^8.2.3",
+        "@angular/cli": "^9.0.0-rc.5",
         "@angular/common": "^9.0.0-rc.5",
         "@angular/compiler": "^9.0.0-rc.5",
         "@angular/core": "^9.0.0-rc.5",
@@ -16,11 +17,11 @@
         "@carto/airship-components": "^2.1.1",
         "@carto/airship-icons": "^2.1.1",
         "@carto/airship-style": "^2.1.1",
-        "@carto/carto.js": "^4.1.11",
-        "@clr/angular": "^3.0.0-next.3",
-        "@clr/core": "^3.0.0-next.3",
-        "@clr/icons": "^3.0.0-next.3",
-        "@clr/ui": "^3.0.0-next.3",
+        "@carto/carto-vl": "^1.4.2",
+        "@clr/angular": "^3.0.0-next.4",
+        "@clr/core": "^3.0.0-next.4",
+        "@clr/icons": "^3.0.0-next.4",
+        "@clr/ui": "^3.0.0-next.4",
         "@ngrx/data": "^8.5.2",
         "@ngrx/effects": "8.5.2",
         "@ngrx/entity": "^8.5.2",
@@ -35,6 +36,7 @@
         "leaflet": "^1.6.0",
         "lit-element": "^2.2.1",
         "lodash": "^4.17.15",
+        "mapbox-gl": "^1.6.0",
         "ramda": "^0.26.1",
         "rxjs": "^6.5.3",
         "sass": "^1.23.7",
@@ -57,6 +59,7 @@
         "@angular/language-service": "~9.0.0-rc.5",
         "@types/jasmine": "~3.5.0",
         "@types/jasminewd2": "~2.0.3",
+        "@types/mapbox": "^1.6.39",
         "@types/node": "^12.11.1",
         "codelyzer": "^5.1.2",
         "jasmine-core": "~3.5.0",
@@ -66,13 +69,15 @@
         "karma-coverage-istanbul-reporter": "~2.1.1",
         "karma-jasmine": "~2.0.1",
         "karma-jasmine-html-reporter": "^1.4.2",
+        "node-sass": "~4.12.0",
         "protractor": "~5.4.0",
         "ts-node": "~8.5.4",
         "tslint": "^5.11.0",
-        "typescript": "3.6.4"
-    },
-    "resolutions": {
-        "**/jquery": "3.4.0",
-        "**/mustache": "2.2.1"
+        "typescript": "3.6.4",
+        "webpack": "~4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "~3.8.2",
+        "webpack-pwa-manifest": "~4.0.0",
+        "workbox-webpack-plugin": "~4.1.1"
     }
 }

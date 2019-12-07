@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import * as carto from '@carto/carto.js';
+import * as carto from '@carto/carto-vl';
 import { Map } from 'leaflet';
 
 @Component({

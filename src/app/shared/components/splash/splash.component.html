@@ -1,18 +1,16 @@
 <div class="clr-row">
     <div class="clr-col-12">
         <div class="card" [(ngStyle)]="backgroundSetting">
-            <div class='card-header clr-row clr-align-content-start'>
-                <img [src]='logoSrc' height='100px'>
+            <div class='card-header card-header clr-row clr-align-content-start'>
+                <img [src]='logoSrc' class="clr-col-4 clr-col-sm-2 clr-col-xl-1" [routerLink]="[ parentFragment, '' ]">
                 <ng-content select='[splash-page]'></ng-content>
             </div>
-            <div class="card-block clr-col-12">
-                <div class="card-title clr-justify-content-center">
+            <div class="card-block clr-justify-content-center clr-col clr-col-sm-10 clr-col-12">
+                <div class="card-title clr-row">
                     <ng-content select='[splash-title]'></ng-content>
                     <ng-content select='[splash-subtitle]'></ng-content>
                 </div>
-                <div class="card-text clr-justify-content-center">
-                    <ng-content select='[splash-buttons]'></ng-content>
-                </div>
+                <ng-content select='[splash-buttons]'></ng-content>
             </div>
         </div>
     </div>

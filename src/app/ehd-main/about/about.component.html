@@ -1,7 +1,14 @@
 <app-splash [backgroundSetting]='backgroundStyle' logoSrc='../../../assets/img/NwkLogo-EHD.svg'>
-    <h1 splash-page>Department of Economic & Housing Development</h1>
-    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>{{ splash.fields['Content'] }}</h2>
-    <div splash-buttons class="splash-buttons clr-row clr-justify-content-center">
+    <div splash-page class='clr-col'>
+        <h3 class='dept clr-hidden-xs-down'>Department of</h3>
+        <br>
+        <h2 class='dept-ehd clr-hidden-xs-down'>Economic & Housing Development</h2>
+    </div>
+    <h2 splash-title class='splash-title'>
+        <clr-icon shape='home' class='full-icon'></clr-icon>
+        Welcome to EHD
+    </h2>
+    <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
         <button class="btn btn-primary btn-lg btn-block">
           <clr-icon shape='calendar' size='24'></clr-icon>
           Board Meetings

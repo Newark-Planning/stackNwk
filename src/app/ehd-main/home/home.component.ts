@@ -27,12 +27,5 @@ export class EhdHomeComponent implements OnInit {
         data => {
           this.splashTitle$ = data[records];
         });
-    const param = 'maxRecords=3&sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=asc';
-    // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('Articles', param)
-      .subscribe(
-        data => {
-          this.article$ = data[records];
-        });
   }
 }
