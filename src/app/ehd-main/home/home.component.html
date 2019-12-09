@@ -1,4 +1,4 @@
-<app-splash [backgroundSetting]='backgroundStyle' logoSrc='../../../assets/img/NwkLogo-EHD.svg'>
+<app-splash [backgroundSetting]='backgroundStyle' searchDisplay="inherit" logoSrc='assets/img/NwkLogo-EHD.svg' parentFragment='/ehd'>
     <div splash-page class='clr-col'>
         <h3 class='dept clr-hidden-xs-down'>Department of</h3>
         <br>
@@ -9,30 +9,14 @@
         Welcome to EHD
     </h2>
     <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button class="btn btn-secondary btn-success btn-lg btn-block">
+        <button class="btn btn-secondary btn-success btn-lg btn-block" [routerLink]="['/ehd', 'about']">
             <clr-icon shape='users' size='24'></clr-icon>
             About EHD
         </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='pop-out' size='24'></clr-icon>
-          Housing
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='pop-out' size='24'></clr-icon>
-          Opportunity Zones
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='pop-out' size='24'></clr-icon>
-          Planning & Zoning
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='pop-out' size='24'></clr-icon>
-          <span class="clr-hidden-sm-down">Property Management</span>
-          <span class="clr-hidden-sm-up">Property Mgmt</span>
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='pop-out' size='24'></clr-icon>
-          Rent Control
+        <button *ngFor="let button of button$ " class="btn btn-primary btn-lg btn-block " [routerLink]="button.parentLink">
+          <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
+          <span class=" clr-hidden-sm-down ">{{ button.text }}</span>
+          <span class="clr-hidden-sm-up ">{{ button.textSmall }}</span>
         </button>
     </div>
 </app-splash>

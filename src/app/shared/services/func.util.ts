@@ -1,5 +1,6 @@
 import { isNil } from 'lodash/fp';
 
+// tslint:disable-next-line: invalid-void
 const executeIfFunction = (fn: () => void | any) => (typeof fn === 'function' ? fn() : fn);
 
 export const getOrNil = (fallback: any) => (value?: any) => (isNil(value) || !value ? fallback : value);

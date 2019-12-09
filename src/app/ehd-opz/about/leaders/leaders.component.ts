@@ -16,7 +16,7 @@ export class LeadersComponent implements OnInit {
   ngOnInit(): void {
     const records = 'records';
     // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('Staff', "filterByFormula=%7BHierarchy%7D%3C'3'")
+    this.airData.getRecords('Staff', 'view=Leadership')
       .subscribe(
         data => {
           this.leadership$ = data[records];

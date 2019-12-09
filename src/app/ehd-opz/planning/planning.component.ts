@@ -13,7 +13,7 @@ export class OpzPlanningComponent implements OnInit {
   splashTitle$: Array<Record>;
   article$: Array<Record>;
   backgroundStyle = {
-    'background-image': "url('../../../../assets/img/NewarkCitySKy.jpg')"
+    'background-image': "url('assets/img/NewarkCitySKy.jpg')"
   };
   constructor(
     public airData: AirService) { }

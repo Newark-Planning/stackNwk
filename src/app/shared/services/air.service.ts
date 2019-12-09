@@ -11,7 +11,6 @@ export class AirService {
   readonly API_BASE_URL = 'https://api.airtable.com';
   // tslint:disable-next-line: restrict-plus-operands
   header = { authorization: `${this.API_STRING + environment.config.AIRTABLE_API_KEY}` };
-  params: { 'view': 'Grid view' };
   records: Observable<Record>;
   constructor(
     public http: HttpClient) {
@@ -25,8 +24,7 @@ export class AirService {
     return this.http.get<Record>(
       `${this.API_BASE_URL}/v0/${this.API_APP_ID}/${BASE_NAME}?${FILTER}`,
       {
-        headers: this.header,
-        params: this.params
+        headers: this.header
       }
     );
   }

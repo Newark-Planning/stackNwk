@@ -13,8 +13,20 @@ export class OpzHomeComponent implements OnInit {
   splashTitle$: Array<Record>;
   article$: Array<Record>;
   backgroundStyle = {
-    'background-image': "url('../../../assets/img/NwkCitySky.png')"
+    'background-blend-mode': 'multiply',
+    'background-color': 'rgba(150,100,100, .5)',
+    'background-image': `
+    url('assets/img/HalseyStreet_image7.png'),
+    url('assets/textures/mocha-grunge.png')`,
+    'background-repeat': 'no-repeat, repeat',
+    'background-size': 'cover, auto auto'
   };
+  button$ = [
+    { icon: 'calendar', index: 1, text: 'Board Meetings', textSmall: 'Board Meetings' },
+    { icon: 'file', index: 2, text: 'Plans & Documents', textSmall: 'Plans & Docs' },
+    { icon: 'map', index: 3, text: 'Zoning Map', textSmall: 'Zoning Map' },
+    { icon: 'pop-out', index: 4, text: 'Application Portal', textSmall: 'Applications' }
+ ];
   constructor(
     public airData: AirService) { }
 

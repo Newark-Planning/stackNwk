@@ -1,6 +1,9 @@
 import { MyRoute } from '../shared/models';
 import * as components from './index';
 
+import { LeadersComponent } from './about/leaders/leaders.component';
+import { SupportComponent } from './about/support/support.component';
+
 export const EHD_ROUTES: Array<MyRoute> = [
   {
     path: '',
@@ -16,6 +19,11 @@ export const EHD_ROUTES: Array<MyRoute> = [
     path: 'home'
   },
   {
+    children: [
+      { path: '', redirectTo: 'leadership', pathMatch: 'full' },
+      { component: LeadersComponent, path: 'leadership' },
+      { component: SupportComponent, path: 'support' }
+    ],
     component: components.EhdAboutComponent,
     data: {
       icon: 'users',

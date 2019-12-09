@@ -7,6 +7,8 @@ import { PLANNING_ROUTING } from './ehd-opz-routing.module';
 
 import * as components from './index';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     components.planningComponents,
@@ -16,8 +18,10 @@ import * as components from './index';
   ],
   imports: [
     CommonModule,
-    ClarityModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ClarityModule,
     PLANNING_ROUTING
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

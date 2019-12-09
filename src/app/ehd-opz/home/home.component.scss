@@ -21,6 +21,7 @@
     font-size: calc(var(--vw) * 0.01 + 25px);
     border-radius: .5rem;
     margin: unset !important;
+    text-shadow: .1rem .1rem .5rem black;
     h2 {
         margin: unset;
         text-align: center;
@@ -47,4 +48,10 @@
 #search_input {
     width: 100%;
     border-radius: .25rem;
+}
+
+.secondary-content {
+    height: auto;
+    width: 100%;
+    margin-bottom: 2rem
 }

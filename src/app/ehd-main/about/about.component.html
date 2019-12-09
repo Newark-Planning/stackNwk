@@ -1,59 +1,31 @@
-<app-splash [backgroundSetting]='backgroundStyle' logoSrc='../../../assets/img/NwkLogo-EHD.svg'>
+<app-splash [backgroundSetting]='backgroundStyle' logoSrc='assets/img/NwkLogo-EHD.svg' parentFragment='/ehd'>
     <div splash-page class='clr-col'>
         <h3 class='dept clr-hidden-xs-down'>Department of</h3>
         <br>
         <h2 class='dept-ehd clr-hidden-xs-down'>Economic & Housing Development</h2>
     </div>
-    <h2 splash-title class='splash-title'>
-        <clr-icon shape='home' class='full-icon'></clr-icon>
-        Welcome to EHD
+    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>
+        <clr-icon shape='users' class='full-icon'></clr-icon>
+        {{ splash.fields['Content'] }}
     </h2>
     <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='calendar' size='24'></clr-icon>
-          Board Meetings
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='file' size='24'></clr-icon>
-          Plans & Documents
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='map' size='24'></clr-icon>
-          Zoning Map
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='pop-out' size='24'></clr-icon>
-          Application Portal
+        <button *ngFor="let button of button$" class="btn btn-primary btn-lg btn-block">
+          <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
+          <span class="clr-hidden-sm-down">{{ button.text }}</span>
+          <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
         </button>
     </div>
 </app-splash>
 <section class='secondary-content'>
-    <h3 class='clr-justify-content-center'>Recent Acomplishments</h3>
-    <div class="clr-row clr-justify-content-center" *ngFor='let article of article$'>
-        <div class="clr-col-xl-8 clr-col-md-10 clr-col-12">
-            <div class="card ">
-                <div class="card-header">
-                    <h2>{{ article.fields['Name']}}</h2>
-                    <a *ngFor="let tag of article.fields['Tags'] " class="label label-purple clickable ">
-                      {{ tag }}
-                    </a>
-                </div>
-                <div class="card-block">
-                    <div class="clr-row clr-justify-content-center">
-                        <div class="card-text clr-col-7">
-                            <p class='p3'>{{ article.fields['BodyText'] }}</p>
-                        </div>
-                        <div class="card-img clr-col-4">
-                            <img src="{{ article.fields[ 'CoverPhoto'][0][ 'url'] }} " />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-footer ">
-                    <button class="btn btn-sm btn-link ">Footer Action 1</button>
-                    <button class="btn btn-sm btn-link ">Footer Action 2</button>
-                </div>
-            </div>
-        </div>
+    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Our Staff</h2>
+    <ul id="tab-content" class="nav" role="tablist">
+        <li *ngFor="let subComponent of subComponents" role="presentation" class="nav-item">
+            <button class="btn btn-link nav-link" [routerLink]="subComponent.path" routerLinkActive="active" [attr.aria-selected]="router.url.endsWith(subComponent.path)" type="button" aria-controls="tabs-content">
+                {{subComponent.label}}
+          </button>
+        </li>
+    </ul>
+    <div id="tabs-content">
+        <router-outlet></router-outlet>
     </div>
 </section>

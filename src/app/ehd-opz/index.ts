@@ -9,7 +9,6 @@ import { OpzZoningComponent } from './zoning/zoning.component';
 import { LeadersComponent } from './about/leaders/leaders.component';
 import { PlannersComponent } from './about/planners/planners.component';
 import { SupportComponent } from './about/support/support.component';
-import { ZonersComponent } from './about/zoners/zoners.component';
 
 // Our City page components imports
 import { MapPipelineComponent } from './ourcity/map-pipeline/map-pipeline.component';
@@ -31,8 +30,7 @@ export const planningComponents = [
 export const planningAboutComponents = [
   LeadersComponent,
   PlannersComponent,
-  SupportComponent,
-  ZonersComponent
+  SupportComponent
 ];
 
 export const planningMapComponents = [
@@ -59,7 +57,6 @@ export * from './zoning/zoning.component';
 export * from './about/leaders/leaders.component';
 export * from './about/planners/planners.component';
 export * from './about/support/support.component';
-export * from './about/zoners/zoners.component';
 
 // Our City page components exports
 export * from './ourcity/map-pipeline/map-pipeline.component';

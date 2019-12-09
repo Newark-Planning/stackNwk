@@ -3,13 +3,12 @@ import { Record } from '../../../shared/models';
 import { AirService } from '../../../shared/services/air.service';
 
 @Component({
-  selector: 'app-zoners',
+  selector: 'app-leaders',
   styleUrls: ['../about.component.scss'],
-  templateUrl: './zoners.component.html'
+  templateUrl: './leaders.component.html'
 })
-
-export class ZonersComponent implements OnInit {
-  zoningStaff$: Array<Record>;
+export class LeadersComponent implements OnInit {
+  leadership$: Array<Record>;
   constructor(
     public airData: AirService
   ) { }
@@ -17,10 +16,11 @@ export class ZonersComponent implements OnInit {
   ngOnInit(): void {
     const records = 'records';
     // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('Staff', "filterByFormula=%7BHierarchy%7D%3E'4'")
+    this.airData.getRecords('Staff', 'view=Leadership')
       .subscribe(
         data => {
-          this.zoningStaff$ = data[records];
+          this.leadership$ = data[records];
         });
   }
+
 }

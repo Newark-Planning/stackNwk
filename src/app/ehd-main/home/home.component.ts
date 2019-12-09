@@ -13,9 +13,16 @@ export class EhdHomeComponent implements OnInit {
   article$: Array<Record>;
   name: Array<any>;
   backgroundStyle = {
-    'background-image': "url('../../../assets/img/NwkDawn.jpg')"
+    'background-image': "url('assets/img/NwkDawn.jpg')"
   };
-
+  button$ = [
+    { icon: 'pop-out', index: 1, text: 'Housing', textSmall: 'Housing' },
+    { icon: 'pop-out', index: 2, text: 'Opportunity Zones', textSmall: 'Opportunity Zoness' },
+    { icon: 'pop-out', index: 3, text: 'Planning & Zoning', textSmall: 'Planning & Zoning', parentLink: '/opz' },
+    { icon: 'pop-out', index: 4, text: 'Opportunity Zones', textSmall: 'Opportunity Zones' },
+    { icon: 'pop-out', index: 5, text: 'Property Management', textSmall: 'Property Mgmt' },
+    { icon: 'pop-out', index: 6, text: 'Rent Control', textSmall: 'Rent Control'}
+  ];
   constructor(
     public airData: AirService
   ) { }

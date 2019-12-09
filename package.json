@@ -36,6 +36,7 @@
         "leaflet": "^1.6.0",
         "lit-element": "^2.2.1",
         "lodash": "^4.17.15",
+        "lunr": "^2.3.8",
         "mapbox-gl": "^1.6.0",
         "ramda": "^0.26.1",
         "rxjs": "^6.5.3",
@@ -51,7 +52,8 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "build-prod": "node --max_old_space_size=5120 ./node_modules/@angular/cli/bin/ng build --prod --base-href https://newark-planning.github.io/stackNwk/"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.900.0-rc.5",

@@ -15,8 +15,14 @@ export class OpzResourcesComponent implements OnInit {
   ];
   splashTitle$: Record;
   backgroundStyle = {
-    'background-image': "url('../../../../assets/img/NwkLibrary.jpg')"
+    'background-image': "url('assets/img/NwkLibrary.jpg')"
   };
+  button$ = [
+    { icon: 'pinboard', index: 1, text: 'Applications', textSmall: 'Applications' },
+    { icon: 'building', index: 2, text: 'Master Plans', textSmall: 'Master Plans' },
+    { icon: 'bicycle', index: 3, text: 'Redevelopment Plans', textSmall: 'Redevelopments' },
+    { icon: 'bicycle', index: 3, text: 'FAQs', textSmall: 'FAQs' }
+  ];
   constructor(
     public airData: AirService,
     readonly route: ActivatedRoute,

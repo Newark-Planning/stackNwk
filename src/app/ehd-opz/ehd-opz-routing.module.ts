@@ -21,7 +21,6 @@ export const PLANNING_ROUTES: Routes = [
       { path: '', redirectTo: 'leadership', pathMatch: 'full' },
       { path: 'leadership', component: components.LeadersComponent },
       { path: 'planners', component: components.PlannersComponent },
-      { path: 'zoners', component: components.ZonersComponent },
       { path: 'support', component: components.SupportComponent }
     ]
     ,
@@ -55,7 +54,7 @@ export const PLANNING_ROUTES: Routes = [
   {
     component: components.OpzZoningComponent,
     data: {
-      icon: 'build',
+      icon: 'cloud-chart',
       title: 'Zoning'
     },
     path: 'zoning'

@@ -1,27 +1,23 @@
-<app-splash [backgroundSetting]='backgroundStyle' logoSrc='../../../assets/img/NwkLogo-ext.svg'>
-    <h2 splash-page>Office of Planning & Zoning</h2>
-    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>{{ splash.fields['Content'] }}</h2>
+<app-splash [backgroundSetting]='backgroundStyle' searchDisplay="inherit" logoSrc='assets/img/NwkLogo-ext.svg' parentFragment='/opz'>
+    <div splash-page class='clr-col'>
+        <h3 class='dept clr-hidden-xs-down'>division of</h3>
+        <br>
+        <h2 class='dept-ehd clr-hidden-xs-down'>Planning & Zoning</h2>
+    </div>
+    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>
+        <clr-icon shape='home' class='full-icon clr-hidden-sm-down'></clr-icon>
+        {{ splash.fields['Content'] }}
+    </h2>
     <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='calendar' size='24'></clr-icon>
-          Board Meetings
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='file' size='24'></clr-icon>
-          Plans & Documents
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='map' size='24'></clr-icon>
-          Zoning Map
-        </button>
-        <button class="btn btn-primary btn-lg btn-block">
-          <clr-icon shape='pop-out' size='24'></clr-icon>
-          Application Portal
+        <button *ngFor="let button of button$" class="btn btn-primary btn-lg btn-block">
+          <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
+          <span class="clr-hidden-sm-down">{{ button.text }}</span>
+          <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
         </button>
     </div>
 </app-splash>
 <section class='secondary-content'>
-    <h3 class='clr-justify-content-center'>Recent Acomplishments</h3>
+    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Recent Work</h2>
     <div class="clr-row clr-justify-content-center" *ngFor='let article of article$'>
         <div class="clr-col-xl-8 clr-col-md-10 clr-col-12">
             <div class="card ">

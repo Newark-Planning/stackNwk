@@ -1,24 +1,60 @@
 @import '../../app.component.scss';
 .splash-buttons {
-    margin: auto;
-    display: flex;
+    flex-basis: content;
     .btn {
         display: flex;
         box-shadow: .1rem .1rem .25rem black;
         border-color: transparent;
-        font-size: 1rem;
-        width: 33vw;
+        font-size: .9rem;
         align-items: center;
         justify-content: space-between;
     }
 }
 
-#tabs-content {
-    min-height: 50vh;
+.splash-title {
+    display: flex;
+    flex-direction: row;
+    line-height: normal;
+    color: white;
+    -webkit-text-fill-color: white;
+    font-weight: bold;
+    font-size: calc(var(--vw) * 0.01 + 25px);
+    border-radius: .5rem;
+    margin: unset !important;
+    h2 {
+        margin: unset;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+.dept-ehd {
+    line-height: 1.2rem !important;
+    margin: 0 !important;
+}
+
+.dept {
+    margin: 0 !important;
+    margin-bottom: -1rem !important;
+    line-height: normal !important;
+}
+
+.full-icon {
+    height: 1em;
+    width: 1.25em;
+}
+
+#search_input {
+    width: 100%;
+    border-radius: .25rem;
 }
 
 .secondary-content {
     height: auto;
     width: 100%;
     margin-bottom: 2rem
+}
+
+#tabs-content {
+    min-height: 50vh
 }

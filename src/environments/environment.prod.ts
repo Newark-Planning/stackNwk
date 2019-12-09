@@ -8,6 +8,10 @@ export const environment = {
     api: false,
     url: './assets/params/json/',
 
+    LOGIN_URL: 'login',
+
+    IS_LOGGEDIN_URL: 'in',
+
     // HMR (Hot Module Replacement)
     // Allow to refresh ts, css, html without reload the application
     hmr: false,
@@ -59,7 +63,9 @@ export const environment = {
     // cli environments are great but sometimes you might want to
     // have a dynamic environment (at runtime)
     // if so, take a look into /assets/runtime-environments
-    loadRuntimeEnvironment: false
+    loadRuntimeEnvironment: false,
+
+    i18nPrefix: 'en'
 
   },
   production: true
