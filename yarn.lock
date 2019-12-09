@@ -1500,13 +1500,6 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular-bootstrap-md@^8.7.0:
-  version "8.7.0"
-  resolved "https://registry.yarnpkg.com/angular-bootstrap-md/-/angular-bootstrap-md-8.7.0.tgz#a672dd852f35ffa5b6b323aec8a24d12915e219f"
-  integrity sha512-yb98WkqUSGQjxCf/pA2cFj37blbz2huw6actRE7Ze6geax4ZjVhxUqKNvYORJf0vB6uGYcUrC9tVYsnoc5yZbA==
-  dependencies:
-    tslib "^1.9.0"
-
 ansi-colors@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"

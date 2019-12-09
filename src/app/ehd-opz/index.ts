@@ -1,14 +1,16 @@
 import { OpzAboutComponent } from './about/about.component';
+import { OpzContactComponent } from './contact/contact.component';
 import { OpzHomeComponent } from './home/home.component';
 import { OurCityComponent } from './ourcity/ourcity.component';
 import { OpzPlanningComponent } from './planning/planning.component';
 import { OpzResourcesComponent } from './resources/resources.component';
+import { OpzStaffComponent } from './staff/staff.component';
 import { OpzZoningComponent } from './zoning/zoning.component';
 
-// About page components imports
-import { LeadersComponent } from './about/leaders/leaders.component';
-import { PlannersComponent } from './about/planners/planners.component';
-import { SupportComponent } from './about/support/support.component';
+// Staff page components imports
+import { LeadersComponent } from './staff/leaders/leaders.component';
+import { PlannersComponent } from './staff/planners/planners.component';
+import { SupportComponent } from './staff/support/support.component';
 
 // Our City page components imports
 import { MapPipelineComponent } from './ourcity/map-pipeline/map-pipeline.component';
@@ -19,12 +21,14 @@ import * as mapPieces from './ourcity/map-pipeline';
 import { ApplicationsDataComponent } from './resources/sub-pages/applications/applications.component';
 
 export const planningComponents = [
-  OpzAboutComponent,
   OpzHomeComponent,
+  OpzAboutComponent,
+  OpzStaffComponent,
   OurCityComponent,
   OpzPlanningComponent,
   OpzResourcesComponent,
-  OpzZoningComponent
+  OpzZoningComponent,
+  OpzContactComponent
 ];
 
 export const planningAboutComponents = [
@@ -47,16 +51,18 @@ export const planningResComponents = [
 
 // page component exports
 export * from './about/about.component';
+export * from './contact/contact.component';
 export * from './home/home.component';
 export * from './ourcity/ourcity.component';
 export * from './planning/planning.component';
 export * from './resources/resources.component';
+export * from './staff/staff.component';
 export * from './zoning/zoning.component';
 
-// About page components exports
-export * from './about/leaders/leaders.component';
-export * from './about/planners/planners.component';
-export * from './about/support/support.component';
+// Staff page components exports
+export * from './staff/leaders/leaders.component';
+export * from './staff/planners/planners.component';
+export * from './staff/support/support.component';
 
 // Our City page components exports
 export * from './ourcity/map-pipeline/map-pipeline.component';

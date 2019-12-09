@@ -5,11 +5,11 @@ import { AirService } from '../../shared/services/air.service';
 
 @Component({
   selector: 'app-opz-home',
-  styleUrls: ['./home.component.scss'],
-  templateUrl: './home.component.html'
+  styleUrls: ['./contact.component.scss'],
+  templateUrl: './contact.component.html'
 })
 
-export class OpzHomeComponent implements OnInit {
+export class OpzContactComponent implements OnInit {
   splashTitle$: Array<Record>;
   article$: Array<Record>;
   backgroundStyle = {
@@ -38,5 +38,12 @@ export class OpzHomeComponent implements OnInit {
         data => {
           this.splashTitle$ = data[records];
         });
-      }
+    const param = 'maxRecords=3&sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=asc';
+    // tslint:disable-next-line: no-floating-promises
+    this.airData.getRecords('Articles', param)
+      .subscribe(
+        data => {
+          this.article$ = data[records];
+        });
+  }
 }

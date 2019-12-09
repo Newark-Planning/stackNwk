@@ -4,7 +4,7 @@ import { AirService } from '../../../shared/services/air.service';
 
 @Component({
   selector: 'app-planners',
-  styleUrls: ['../about.component.scss'],
+  styleUrls: ['../staff.component.scss'],
   templateUrl: './planners.component.html'
 })
 export class PlannersComponent implements OnInit {

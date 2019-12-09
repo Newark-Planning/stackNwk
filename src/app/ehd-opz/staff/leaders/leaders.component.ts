@@ -3,12 +3,12 @@ import { Record } from '../../../shared/models';
 import { AirService } from '../../../shared/services/air.service';
 
 @Component({
-  selector: 'app-support',
-  styleUrls: ['../about.component.scss'],
-  templateUrl: './support.component.html'
+  selector: 'app-leaders',
+  styleUrls: ['../staff.component.scss'],
+  templateUrl: './leaders.component.html'
 })
-export class SupportComponent implements OnInit {
-  supportStaff$: Array<Record>;
+export class LeadersComponent implements OnInit {
+  leadership$: Array<Record>;
   constructor(
     public airData: AirService
   ) { }
@@ -16,10 +16,11 @@ export class SupportComponent implements OnInit {
   ngOnInit(): void {
     const records = 'records';
     // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('Staff', 'view=ZoningSupportStaff')
+    this.airData.getRecords('Staff', 'view=Leadership')
       .subscribe(
         data => {
-          this.supportStaff$ = data[records];
+          this.leadership$ = data[records];
         });
   }
+
 }

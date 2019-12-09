@@ -17,6 +17,14 @@ export const PLANNING_ROUTES: Routes = [
     path: 'home'
   },
   {
+    component: components.OpzAboutComponent,
+    data: {
+      icon: 'info',
+      title: 'About OPZ'
+    },
+    path: 'about'
+  },
+  {
     children: [
       { path: '', redirectTo: 'leadership', pathMatch: 'full' },
       { path: 'leadership', component: components.LeadersComponent },
@@ -24,12 +32,12 @@ export const PLANNING_ROUTES: Routes = [
       { path: 'support', component: components.SupportComponent }
     ]
     ,
-    component: components.OpzAboutComponent,
+    component: components.OpzStaffComponent,
     data: {
       icon: 'users',
-      title: 'About Us'
+      title: 'Our Team'
     },
-    path: 'about'
+    path: 'team'
   },
   {
     children: [
@@ -70,7 +78,15 @@ export const PLANNING_ROUTES: Routes = [
       title: 'Resources'
     },
     path: 'resources'
-  }
+  },
+  {
+  component: components.OpzContactComponent,
+  data: {
+    icon: 'info',
+    title: 'Contact Us'
+  },
+  path: 'contact'
+}
 ];
 
 export const PLANNING_ROUTING: ModuleWithProviders<RouterModule> =

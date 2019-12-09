@@ -7,18 +7,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
-  selector: 'app-opz-about',
-  styleUrls: ['./about.component.scss'],
-  templateUrl: './about.component.html'
+  selector: 'app-opz-staff',
+  styleUrls: ['./staff.component.scss'],
+  templateUrl: './staff.component.html'
 })
 
-export class OpzAboutComponent implements OnInit {
+export class OpzStaffComponent implements OnInit {
   splashTitle$: Record;
-  article$: Array<Record>;
+  zoningStaff$: Array<Record>;
   inOverflow = true;
   backgroundStyle = {
     'background-image': "url('assets/img/ironboundbig.jpg')"
   };
+  subComponents = [
+    { label: 'Our Leadership', path: 'leadership' },
+    { label: 'Planning Staff', path: 'planners' },
+    { label: 'Zoning & Support Staff', path: 'support' }
+  ];
   button$ = [
     { icon: 'calendar', index: 1, text: 'Board Meetings', textSmall: 'Board Meetings' },
     { icon: 'file', index: 2, text: 'Plans & Documents', textSmall: 'Plans & Docs' },
@@ -38,13 +43,6 @@ export class OpzAboutComponent implements OnInit {
       .subscribe(
         data => {
           this.splashTitle$ = data[records];
-        });
-    const param = 'maxRecords=3&sort%5B0%5D%5Bfield%5D=Date&sort%5B0%5D%5Bdirection%5D=asc';
-    // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('Articles', param)
-      .subscribe(
-        data => {
-          this.article$ = data[records];
         });
   }
 }
