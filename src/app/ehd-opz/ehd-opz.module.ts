@@ -8,13 +8,15 @@ import { PLANNING_ROUTING } from './ehd-opz-routing.module';
 import * as components from './index';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MapComponent } from './ourcity/map.component';
 
 @NgModule({
   declarations: [
     components.planningComponents,
     components.planningAboutComponents,
     components.planningMapComponents,
-    components.planningResComponents
+    components.planningResComponents,
+    MapComponent
   ],
   imports: [
     CommonModule,
