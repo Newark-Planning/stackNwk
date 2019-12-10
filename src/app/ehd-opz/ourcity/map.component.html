@@ -1,4 +1,4 @@
-<clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [(ngModel)]="legendItems" ngDefaultControl>
+<clr-vertical-nav style.color="black" [ngStyle]='mapNavStyle' [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [(ngModel)]="legendItems" ngDefaultControl>
     <a clrVerticalNavLink *ngFor="let legendItem of legendItems">
         <clr-icon clrVerticalNavIcon [attr.shape]="legendItem.icon">
         </clr-icon>
@@ -6,5 +6,5 @@
     </a>
 </clr-vertical-nav>
 <div class='content-area'>
-    <div id='map' [ngStyle]="mapStyle"></div>
+    <div id='map' class='map' [ngStyle]="mapStyle"></div>
 </div>

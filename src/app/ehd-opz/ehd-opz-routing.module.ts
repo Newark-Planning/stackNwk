@@ -41,7 +41,6 @@ export const PLANNING_ROUTES: Routes = [
   },
   {
     children: [
-      { path: '', redirectTo: 'map-pipeline', pathMatch: 'full' },
       { path: 'map-pipeline', component: components.MapPipelineComponent }
     ],
     component: components.OurCityComponent,
