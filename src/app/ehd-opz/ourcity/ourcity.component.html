@@ -1,37 +1,12 @@
-<app-splash [backgroundSetting]='backgroundStyle' logoSrc='assets/img/NwkLogo-ext.svg' parentFragment='/opz'>
-    <div splash-page class='clr-col'>
-        <h3 class='dept clr-hidden-xs-down'>division of</h3>
-        <br>
-        <h2 class='dept-ehd clr-hidden-xs-down'>Planning & Zoning</h2>
+<div class="card">
+    <div class="card-block clr-row">
+        <clr-vertical-nav style.color="black" [ngStyle]='mapNavStyle' [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [(ngModel)]="legendItems" ngDefaultControl>
+            <a clrVerticalNavLink *ngFor="let legendItem of legendItems">
+                <clr-icon clrVerticalNavIcon [attr.shape]="legendItem.icon">
+                </clr-icon>
+                <span class="nav-text clr-row clr-justify-content-center">{{ legendItem.title }}</span>
+            </a>
+        </clr-vertical-nav>
+        <app-map class='content-area clr-row flex-row'></app-map>
     </div>
-    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>
-        <clr-icon shape='compass' class='full-icon'></clr-icon>
-        {{ splash.fields['Content'] }}
-    </h2>
-    <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button *ngFor="let button of button$" class="btn btn-primary btn-lg btn-block">
-          <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
-          <span class="clr-hidden-sm-down">{{ button.text }}</span>
-          <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
-        </button>
-    </div>
-</app-splash>
-<section class='secondary-content'>
-    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Our Staff</h2>
-    <ul id="tabs-content" class="nav" role="tablist">
-        <li *ngFor="let subComponent of subComponents" role="presentation" class="nav-item">
-            <button class="btn btn-link nav-link" [routerLink]="subComponent.path" routerLinkActive="active" [attr.aria-selected]="router.url.endsWith(subComponent.path)" type="button" aria-controls="tabs-content">
-                {{subComponent.label}}
-          </button>
-        </li>
-    </ul>
-    <div id="tabs-content" class="clr-row clr-justify-content-center">
-        <div class="clr-col-12">
-            <div class="card">
-                <div class="card-block">
-                    <app-map class='clr-row flex-row'></app-map>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</div>

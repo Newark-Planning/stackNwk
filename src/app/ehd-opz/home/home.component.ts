@@ -22,11 +22,11 @@ export class OpzHomeComponent implements OnInit {
     'background-size': 'cover, auto auto'
   };
   button$ = [
-    { icon: 'calendar', index: 1, text: 'Board Meetings', textSmall: 'Board Meetings' },
-    { icon: 'file', index: 2, text: 'Plans & Documents', textSmall: 'Plans & Docs' },
-    { icon: 'map', index: 3, text: 'Zoning Map', textSmall: 'Zoning Map' },
-    { icon: 'pop-out', index: 4, text: 'Application Portal', textSmall: 'Applications' }
- ];
+    { icon: 'calendar', index: 1, text: 'Board Meetings', textSmall: 'Board Meetings', link: '' },
+    { icon: 'file', index: 2, text: 'Plans & Documents', textSmall: 'Plans & Docs', link: '/opz/resources' },
+    { icon: 'map', index: 3, text: 'Zoning Map', textSmall: 'Zoning Map', link: '/opz/ourcity/map-zoning' },
+    { icon: 'pop-out', index: 4, text: 'Application Portal', textSmall: 'Applications', link: 'https://newarkportal.us/' }
+  ];
   constructor(
     public airData: AirService) { }
 

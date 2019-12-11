@@ -1,0 +1,17 @@
+<div class="clr-row clr-justify-content-center" *ngFor='let zoner of zoners$'>
+    <div class="clr-col-lg-8 clr-col-md-10 clr-col-12">
+        <div class="card ">
+            <div class="card-header">
+                <h2>{{ zoner.fields['Name-First']}} {{ zoner.fields['Name-Last'] }}</h2>
+                <span *ngIf="zoner.fields['Position']" class="label label-warning" [ngStyle]="{'font-size': '.75rem'}" innerHtml="{{ zoner.fields['Position'] }}"></span>
+            </div>
+            <div class="card-block">
+                <div class="clr-row clr-justify-content-center">
+                    <div class="card-text clr-col-12">
+                        <p class='p3'>{{ zoner.fields['BoardCommission'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

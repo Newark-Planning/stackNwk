@@ -7,33 +7,24 @@ import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
     selector: 'app-map',
     styleUrls: [
         './ourcity.component.scss',
-        '../../../../node_modules/mapbox-gl/src/css/mapbox-gl.css',
+        '../../../../node_modules/mapbox-gl/src/css/mapbox-gl.css'
     ],
-    templateUrl: './map.component.html'
+    template: `
+        <div id='map' class='map clr-col-6' [ngStyle]="mapStyle"></div>
+        <app-sidepanel [mapInput]='clicked' class='clr-col-6'></app-sidepanel>
+        `
 })
 
 export class MapComponent implements OnInit {
-    collapsed = true;
-    legendItems = [
-        {
-            icon: 'nodes',
-            title: 'Neighborhoods'
-        }
-    ];
+    const bbox = [[-74.2917734, 40.794438], [-74.0947297, 40.6829833]];
     mapStyle = {
+        'border-radius': '.5rem',
         bottom: 0,
         display: 'flex',
-        position: 'relative',
-        top: 0,
-        width: '100%',
         height: '80vh',
-        'border-radius': '.5rem'
+        position: 'relative',
+        top: 0
     };
-    mapNavStyle = {
-        'background-color': 'lightsalmon',
-        'border-radius': '.25rem',
-        top: '1rem'
-      };
     clicked;
     ngOnInit(): void {
         const map: any = new mapboxgl.Map({
@@ -57,36 +48,6 @@ export class MapComponent implements OnInit {
         });
         // tslint:disable-next-line: no-null-keyword
         let hoveredStateId = null;
-    //     const delay = 0;
-    //     const clickedFeatureId: any = undefined;
-    //     const hoodMapSource = new carto.source.GeoJSON(nwkHood);
-
-    //     const hoodMapViz = new carto.Viz(`
-    //       @v_features: viewportFeatures($NAME)
-
-    //       color: opacity(#FFFFFF, 0.0)
-    //       strokeColor: opacity(#229A00, 0.5)
-    //       strokeWidth: scaled(2, 12)
-    //       lineOpacity: 0.4
-    //   `);
-    //     const hoodMapLayer = new carto.Layer('hoodMapLayer', hoodMapSource, hoodMapViz);
-    //     const hoodPopup = new carto.Interactivity(hoodMapLayer);
-
-    //     hoodPopup.on('featureEnter', (event: any) => {
-    //         event.features.forEach((feature: any) => {
-    //             if (feature.id !== clickedFeatureId) {
-    //                 feature.strokeColor.blendTo('opacity(aqua, 0.8)', delay);
-    //             }
-    //         });
-    //     });
-
-    //     hoodPopup.on('featureLeave', (event: any) => {
-    //         event.features.forEach((feature: any) => {
-    //             if (feature.id !== clickedFeatureId) {
-    //                 feature.strokeColor.reset(delay);
-    //             }
-    //         });
-    //     });
 
         map.on('load', () => {
             map.addSource('hoodMap', {
@@ -125,7 +86,7 @@ export class MapComponent implements OnInit {
                     'text-letter-spacing': 0.1,
                     'text-max-width': 5,
                     'text-transform': 'uppercase',
-                    'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+                    'text-variable-anchor': ['top', 'bottom', 'left', 'right']
                     },
                 source: 'hoodMap',
                 type: 'symbol'
@@ -146,11 +107,11 @@ export class MapComponent implements OnInit {
                     );
                 }
             });
-            map.on('click', 'hoods-inner', (e) => {
+            map.on('click', 'hoods-inner', e => {
                 if (e.features.length > 0) {
-                    this.clicked = e.features[0].properties['NAME'];
+                    const NAME = 'NAME';
+                    this.clicked = e.features[0].properties[NAME];
                 }
-                console.log(this.clicked)
             });
         });
         // const layers = [hoodMapLayer];

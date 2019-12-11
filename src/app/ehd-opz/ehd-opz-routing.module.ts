@@ -19,10 +19,25 @@ export const PLANNING_ROUTES: Routes = [
   {
     component: components.OpzAboutComponent,
     data: {
-      icon: 'info',
+      icon: 'info-standard',
       title: 'About OPZ'
     },
     path: 'about'
+  },
+  {
+    children: [
+      { path: '', redirectTo: 'zba', pathMatch: 'full' },
+      { path: 'zba', component: components.ZBAComponent },
+      { path: 'cpb', component: components.CPBComponent },
+      { path: 'lhpc', component: components.LHPCComponent },
+      { path: 'ec', component: components.ECComponent }
+    ],
+    component: components.OpzBoardsComponent,
+    data: {
+      icon: 'users',
+      title: 'Boards & Commissions'
+    },
+    path: 'boards'
   },
   {
     children: [
@@ -34,13 +49,14 @@ export const PLANNING_ROUTES: Routes = [
     ,
     component: components.OpzStaffComponent,
     data: {
-      icon: 'users',
+      icon: 'id-badge',
       title: 'Our Team'
     },
     path: 'team'
   },
   {
     children: [
+      { path: '', redirectTo: 'map-pipeline', pathMatch: 'full' },
       { path: 'map-pipeline', component: components.MapPipelineComponent }
     ],
     component: components.OurCityComponent,
@@ -53,7 +69,7 @@ export const PLANNING_ROUTES: Routes = [
   {
     component: components.OpzPlanningComponent,
     data: {
-      icon: 'team',
+      icon: 'network-globe',
       title: 'Planning'
     },
     path: 'planning'
@@ -79,13 +95,13 @@ export const PLANNING_ROUTES: Routes = [
     path: 'resources'
   },
   {
-  component: components.OpzContactComponent,
-  data: {
-    icon: 'info',
-    title: 'Contact Us'
-  },
-  path: 'contact'
-}
+    component: components.OpzContactComponent,
+    data: {
+      icon: 'phone-handset',
+      title: 'Contact Us'
+    },
+    path: 'contact'
+  }
 ];
 
 export const PLANNING_ROUTING: ModuleWithProviders<RouterModule> =

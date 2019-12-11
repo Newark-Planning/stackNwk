@@ -1,0 +1,17 @@
+<div class="clr-row clr-justify-content-center" *ngFor='let enviro of enviros$'>
+    <div class="clr-col-lg-8 clr-col-md-10 clr-col-12">
+        <div class="card ">
+            <div class="card-header">
+                <h2>{{ enviro.fields['Name-First']}} {{ enviro.fields['Name-Last'] }}</h2>
+                <span *ngIf="enviro.fields['Position']" class="label label-warning" [ngStyle]="{'font-size': '.75rem'}" innerHtml="{{ enviro.fields['Position'] }}"></span>
+            </div>
+            <div class="card-block">
+                <div class="clr-row clr-justify-content-center">
+                    <div class="card-text clr-col-12">
+                        <p class='p3'>{{ enviro.fields['BoardCommission'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

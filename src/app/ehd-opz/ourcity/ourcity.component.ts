@@ -11,6 +11,7 @@ import { AirService } from '../../shared/services/air.service';
   templateUrl: './ourcity.component.html'
 })
 export class OurCityComponent implements OnInit {
+  collapsed = true;
   subComponents: any = [
     { label: 'Pipeline Map', path: 'map-pipeline' }
   ];
@@ -18,11 +19,17 @@ export class OurCityComponent implements OnInit {
   backgroundStyle = {
     'background-image': "url('assets/img/NwkLibrary.jpg')"
   };
-  button$ = [
-    { icon: 'pinboard', index: 1, text: 'Zoning Map', textSmall: 'Zoning' },
-    { icon: 'building', index: 2, text: 'Pipeline Map', textSmall: 'Pipeline' },
-    { icon: 'bicycle', index: 3, text: 'Transit Map', textSmall: 'Transit' }
+  legendItems = [
+    {
+      icon: 'nodes',
+      title: 'Neighborhoods'
+    }
   ];
+  mapNavStyle = {
+    'background-color': 'lightsalmon',
+    'border-radius': '.25rem',
+    top: '1rem'
+  };
 
   constructor(
     public airData: AirService,
