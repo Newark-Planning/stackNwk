@@ -1,11 +1,15 @@
 <div class="card">
     <div class="card-block clr-row">
         <clr-vertical-nav style.color="black" [ngStyle]='mapNavStyle' [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [(ngModel)]="legendItems" ngDefaultControl>
-            <a clrVerticalNavLink *ngFor="let legendItem of legendItems">
-                <clr-icon clrVerticalNavIcon [attr.shape]="legendItem.icon">
-                </clr-icon>
+            <clr-vertical-nav-group routerLinkActive="active" *ngFor="let legendItem of legendItems">
+                <clr-icon [attr.shape]="legendItem.icon" clrVerticalNavIcon></clr-icon>
                 <span class="nav-text clr-row clr-justify-content-center">{{ legendItem.title }}</span>
-            </a>
+                <clr-vertical-nav-group-children *ngIf='legendItem.children'>
+                    <a *ngFor="let legendchild of legendItem.children" clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                        <span class="nav-text clr-row clr-justify-content-center">{{ legendchild.title }}</span>
+                    </a>
+                </clr-vertical-nav-group-children>
+            </clr-vertical-nav-group>
         </clr-vertical-nav>
         <app-map class='content-area clr-row flex-row'></app-map>
     </div>

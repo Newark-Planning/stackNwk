@@ -21,8 +21,16 @@ export class OurCityComponent implements OnInit {
   };
   legendItems = [
     {
+      children: [
+        {
+          title: 'Neighborhoods'
+        },
+        {
+          title: 'Wards'
+        }
+      ],
       icon: 'nodes',
-      title: 'Neighborhoods'
+      title: 'Geographies'
     }
   ];
   mapNavStyle = {

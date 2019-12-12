@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import carto from '@carto/carto-vl';
 import mapboxgl from 'mapbox-gl';
+
+import bbox from '@turf/bbox';
 import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
+
+import { loadlayer } from '../../../assets/data/index';
 
 @Component({
     selector: 'app-map',
-    styleUrls: [
-        './ourcity.component.scss',
-        '../../../../node_modules/mapbox-gl/src/css/mapbox-gl.css'
-    ],
+    styleUrls: ['./map.component.scss'],
     template: `
         <div id='map' class='map clr-col-6' [ngStyle]="mapStyle"></div>
         <app-sidepanel [mapInput]='clicked' class='clr-col-6'></app-sidepanel>
@@ -37,7 +38,8 @@ export class MapComponent implements OnInit {
         });
 
         const nav = new mapboxgl.NavigationControl({
-            showCompass: false
+            showCompass: false,
+            showZoom: true
         });
         map.addControl(nav, 'top-left');
         map.addControl(new mapboxgl.FullscreenControl(), 'top-left');
@@ -110,6 +112,10 @@ export class MapComponent implements OnInit {
                 if (e.features.length > 0) {
                     const NAME = 'NAME';
                     this.clicked = e.features[0].properties[NAME];
+                    const featurebound = bbox(e.features[0].geometry);
+                    map.setFilter('hoods-inner', ['!=', 'NAME', this.clicked]);
+                    map.fitBounds(featurebound);
+                    loadlayer(e.features[0].properties[NAME], map);
                 }
             });
         });
