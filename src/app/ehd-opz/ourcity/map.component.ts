@@ -16,7 +16,6 @@ import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
 })
 
 export class MapComponent implements OnInit {
-    const bbox = [[-74.2917734, 40.794438], [-74.0947297, 40.6829833]];
     mapStyle = {
         'border-radius': '.5rem',
         bottom: 0,
