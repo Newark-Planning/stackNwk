@@ -9,6 +9,7 @@ export const PLANNING_ROUTES: Routes = [
     redirectTo: 'home'
   },
   {
+    children: undefined,
     component: components.OpzHomeComponent,
     data: {
       icon: 'home',
@@ -17,6 +18,7 @@ export const PLANNING_ROUTES: Routes = [
     path: 'home'
   },
   {
+    children: undefined,
     component: components.OpzAboutComponent,
     data: {
       icon: 'info-standard',
@@ -67,6 +69,7 @@ export const PLANNING_ROUTES: Routes = [
     path: 'ourcity'
   },
   {
+    children: undefined,
     component: components.OpzPlanningComponent,
     data: {
       icon: 'network-globe',
@@ -75,6 +78,7 @@ export const PLANNING_ROUTES: Routes = [
     path: 'planning'
   },
   {
+    children: undefined,
     component: components.OpzZoningComponent,
     data: {
       icon: 'cloud-chart',
@@ -95,6 +99,7 @@ export const PLANNING_ROUTES: Routes = [
     path: 'resources'
   },
   {
+    children: undefined,
     component: components.OpzContactComponent,
     data: {
       icon: 'phone-handset',

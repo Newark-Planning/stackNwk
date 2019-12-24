@@ -1,9 +1,22 @@
 <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [clr-nav-level]="1" [(ngModel)]="sideMenuItems" ngDefaultControl>
-    <a clrVerticalNavLink *ngFor="let sideMenuItem of sideMenuItems" [routerLinkActive]="['active']" [routerLink]="[sideMenuItem.path]">
-        <clr-icon clrVerticalNavIcon [attr.shape]="sideMenuItem.icon">
-        </clr-icon>
-        <span class="nav-text clr-row clr-justify-content-center">{{ sideMenuItem.title }}</span>
-    </a>
+    <ng-container *ngFor="let sideMenuItem of sideMenuItems" [ngSwitch]="sideMenuItem.children">
+        <a clrVerticalNavLink *ngSwitchCase="undefined" [routerLinkActive]="['active']" [routerLink]="[sideMenuItem.path]">
+            <clr-icon clrVerticalNavIcon [attr.shape]="sideMenuItem.icon">
+            </clr-icon>
+            <span class="nav-text clr-row clr-justify-content-center">{{ sideMenuItem.title }}</span>
+        </a>
+        <ng-template *ngSwitchDefault>
+            <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon [attr.shape]="sideMenuItem.icon" clrVerticalNavIcon></clr-icon>
+                <span class="nav-text clr-row clr-justify-content-center">{{ sideMenuItem.title }}</span>
+                <clr-vertical-nav-group-children>
+                    <a *ngFor="let child of sideMenuItem.children" clrVerticalNavLink [routerLinkActive]="['active']" [routerLink]="[child.path]">
+                        <span class="nav-text clr-row clr-justify-content-center">{{ child.title }}</span>
+                    </a>
+                </clr-vertical-nav-group-children>
+            </clr-vertical-nav-group>
+        </ng-template>
+    </ng-container>
 </clr-vertical-nav>
 <div class='content-area'>
     <router-outlet></router-outlet>

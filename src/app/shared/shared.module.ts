@@ -5,6 +5,7 @@ import * as fromComponents from './components';
 import { AirService } from './services/air.service';
 
 import { RouterModule } from '@angular/router';
+import { SearchService } from './services';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     RouterModule
   ],
-  providers: [AirService],
+  providers: [AirService, SearchService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule { }

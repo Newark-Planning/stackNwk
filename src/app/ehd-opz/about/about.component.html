@@ -23,9 +23,8 @@
             <div class="card ">
                 <div class="card-header">
                     <h2>{{ article.fields['Name']}}</h2>
-                    <a *ngFor="let tag of article.fields['Tags'] " class="label label-purple clickable ">
-                      {{ tag }}
-                    </a>
+                    <span *ngFor="let tag of article.fields['Tags'] " class="label label-info" [ngStyle]="{'font-size': '.6rem'}" innerHtml="{{ tag }}">
+                    </span>
                 </div>
                 <div class="card-block">
                     <div class="clr-row clr-justify-content-center">

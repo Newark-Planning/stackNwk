@@ -12,7 +12,7 @@ import { loadlayer } from '../../../assets/data/index';
     styleUrls: ['./map.component.scss'],
     template: `
         <div id='map' class='map clr-col-6' [ngStyle]="mapStyle"></div>
-        <app-sidepanel [mapInput]='clicked' class='clr-col-6'></app-sidepanel>
+        <app-sidepanel [mapInput]='hoodClicked' class='clr-col-6'></app-sidepanel>
         `
 })
 
@@ -25,13 +25,16 @@ export class MapComponent implements OnInit {
         position: 'relative',
         top: 0
     };
-    clicked;
+    hoodClicked;
+    lotClicked;
+    hoveredStateId;
+    parcelhover;
+
     ngOnInit(): void {
         const map: any = new mapboxgl.Map({
             center: [-74.1723667, 40.735657],
             container: 'map',
             dragRotate: false,
-            scrollZoom: false,
             style: carto.basemaps.positron,
             touchZoomRotate: false,
             zoom: 12
@@ -42,13 +45,10 @@ export class MapComponent implements OnInit {
             showZoom: true
         });
         map.addControl(nav, 'top-left');
-        map.addControl(new mapboxgl.FullscreenControl(), 'top-left');
         carto.setDefaultAuth({
             apiKey: '0c3e2b7cbff1b34a35e1f2ce3ff94114493bd681',
             user: 'nzlur'
         });
-        // tslint:disable-next-line: no-null-keyword
-        let hoveredStateId = null;
 
         map.on('load', () => {
             map.addSource('hoodMap', {
@@ -95,27 +95,57 @@ export class MapComponent implements OnInit {
             map.resize();
             map.on('mousemove', 'hoods-inner', e => {
                 if (e.features.length > 0) {
-                    if (hoveredStateId) {
+                    if (this.hoveredStateId) {
                         map.setFeatureState(
-                            { source: 'hoodMap', id: hoveredStateId },
+                            { source: 'hoodMap', id: this.hoveredStateId },
                             { hover: false }
                         );
                     }
-                    hoveredStateId = e.features[0].id;
+                    this.hoveredStateId = e.features[0].id;
                     map.setFeatureState(
-                        { source: 'hoodMap', id: hoveredStateId },
+                        { source: 'hoodMap', id: this.hoveredStateId },
                         { hover: true }
                     );
                 }
             });
+            const removal = () => {
+                if (map.getLayer('parcels_inner')) { map.removeLayer('parcels_inner'); }
+                if (map.getLayer('parcels_layer')) { map.removeLayer('parcels_layer'); }
+                if (map.getSource('parcels')) { map.removeSource('parcels'); }
+            };
             map.on('click', 'hoods-inner', e => {
                 if (e.features.length > 0) {
+                    removal();
                     const NAME = 'NAME';
-                    this.clicked = e.features[0].properties[NAME];
+                    this.hoodClicked = e.features[0].properties[NAME];
                     const featurebound = bbox(e.features[0].geometry);
-                    map.setFilter('hoods-inner', ['!=', 'NAME', this.clicked]);
+                    map.setFilter('hoods-inner', ['!=', 'NAME', this.hoodClicked]);
                     map.fitBounds(featurebound);
                     loadlayer(e.features[0].properties[NAME], map);
+                }
+            });
+            map.on('mousemove', 'parcels_inner', e => {
+                if (e.features.length > 0) {
+                    if (this.parcelhover) {
+                        map.setFeatureState(
+                            { source: 'parcels', id: this.parcelhover },
+                            { hover: false }
+                        );
+                    }
+                    const FID = 'FID';
+                    this.parcelhover = e.features[0].properties[FID];
+                    map.setFeatureState(
+                        { source: 'parcels', id: this.parcelhover },
+                        { hover: true }
+                    );
+                }
+            });
+            map.on('click', 'parcels_inner', e => {
+                if (e.features.length > 0) {
+                    const PAMS_PIN = 'PAMS_PIN';
+                    this.lotClicked = e.features[0].properties[PAMS_PIN];
+                    const featurebound = bbox(e.features[0].geometry);
+                    map.fitBounds(featurebound);
                 }
             });
         });

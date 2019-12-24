@@ -7,8 +7,10 @@ import { PLANNING_ROUTING } from './ehd-opz-routing.module';
 
 import * as components from './index';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MapComponent } from './ourcity/map.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,8 @@ import { MapComponent } from './ourcity/map.component';
     CommonModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule,
     ClarityModule,
+    HttpClientModule,
     PLANNING_ROUTING
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

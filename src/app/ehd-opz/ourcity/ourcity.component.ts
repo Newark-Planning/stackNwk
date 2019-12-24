@@ -34,7 +34,6 @@ export class OurCityComponent implements OnInit {
     }
   ];
   mapNavStyle = {
-    'background-color': 'lightsalmon',
     'border-radius': '.25rem',
     top: '1rem'
   };
