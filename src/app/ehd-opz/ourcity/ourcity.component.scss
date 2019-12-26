@@ -55,14 +55,6 @@
     margin-bottom: 2rem
 }
 
-.clr-vertical-nav .nav-link,
-clr-icon.nav-trigger-icon {
-    color: black !important;
-    $clr-use-custom-properties: true;
-    $clr-vertical-nav-icon-active-color: black !default;
-    $clr-vertical-nav-toggle-icon-color: black !default;
-}
-
 .mapboxgl-canvas-container {
     height: 100vh;
     color: white;

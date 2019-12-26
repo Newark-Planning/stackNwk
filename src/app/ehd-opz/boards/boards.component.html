@@ -17,7 +17,7 @@
     </div>
 </app-splash>
 <section class='secondary-content'>
-    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Members</h2>
+    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Our Staff</h2>
     <ul id="tab-content" class="nav" role="tablist">
         <li *ngFor="let subComponent of subComponents" role="presentation" class="nav-item">
             <button class="btn btn-link nav-link" [routerLink]="subComponent.path" routerLinkActive="active" [attr.aria-selected]="router.url.endsWith(subComponent.path)" type="button" aria-controls="tabs-content">

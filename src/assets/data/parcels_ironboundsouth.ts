@@ -1,4 +1,4 @@
-    // tslint:disable
+// tslint:disable
 export const parcels_ironboundsouth =
 {
     "type": "FeatureCollection",

@@ -1,20 +1,18 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Record } from '../../shared/models';
 
-import { ActivatedRoute, Router } from '@angular/router';
-
 @Component({
-  changeDetection: ChangeDetectionStrategy.Default,
   selector: 'app-opz-boards',
   styleUrls: ['./boards.component.scss'],
   templateUrl: './boards.component.html'
 })
 
 export class OpzBoardsComponent {
+  inOverflow = true;
+  layout = 'horizontal';
   splashTitle$: Record;
   article$: Array<Record>;
-  inOverflow = true;
   backgroundStyle = {
     'background-image': "url('assets/img/ironboundbig.jpg')"
   };

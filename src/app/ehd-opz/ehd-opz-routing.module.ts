@@ -26,11 +26,11 @@ export const PLANNING_ROUTES: Routes = [
   },
   {
     children: [
-      { path: '', redirectTo: 'zba', pathMatch: 'full' },
-      { path: 'zba', component: components.ZBAComponent },
-      { path: 'cpb', component: components.CPBComponent },
-      { path: 'lhpc', component: components.LHPCComponent },
-      { path: 'ec', component: components.ECComponent }
+      {path: '', redirectTo: 'zba', pathMatch: 'full'},
+      {component: components.ZBAComponent, data: {title: 'Zoning Board'}, path: 'zba'},
+      {component: components.CPBComponent, data: {title: 'Planning Board'}, path: 'cpb'},
+      {component: components.LHPCComponent, data: {title: 'LHPC'}, path: 'lhpc'},
+      {component: components.ECComponent, data: {title: 'Environmental'}, path: 'ec'}
     ],
     component: components.OpzBoardsComponent,
     data: {
@@ -41,12 +41,11 @@ export const PLANNING_ROUTES: Routes = [
   },
   {
     children: [
-      { path: '', redirectTo: 'leadership', pathMatch: 'full' },
-      { path: 'leadership', component: components.LeadersComponent },
-      { path: 'planners', component: components.PlannersComponent },
-      { path: 'support', component: components.SupportComponent }
-    ]
-    ,
+      {path: '', redirectTo: 'leadership', pathMatch: 'full'},
+      {component: components.LeadersComponent, data: {title: 'Leadership'}, path: 'leadership'},
+      {component: components.PlannersComponent, data: {title: 'Planners'}, path: 'planners'},
+      {component: components.SupportComponent, data: {title: 'Support'}, path: 'support'}
+    ],
     component: components.OpzStaffComponent,
     data: {
       icon: 'id-badge',
@@ -56,8 +55,8 @@ export const PLANNING_ROUTES: Routes = [
   },
   {
     children: [
-      { path: '', redirectTo: 'map-pipeline', pathMatch: 'full' },
-      { path: 'map-pipeline', component: components.MapPipelineComponent }
+      {path: '', redirectTo: 'map-pipeline', pathMatch: 'full'},
+      {component: components.MapPipelineComponent, data: {title: 'Pipeline'}, path: 'map-pipeline'}
     ],
     component: components.OurCityComponent,
     data: {
@@ -85,7 +84,7 @@ export const PLANNING_ROUTES: Routes = [
   {
     children: [
       { path: '', redirectTo: 'res-apps', pathMatch: 'full' },
-      { path: 'res-apps', component: components.ApplicationsDataComponent }
+      {component: components.ApplicationsDataComponent, data: {title: 'Applications'}, path: 'res-apps'}
     ],
     component: components.OpzResourcesComponent,
     data: {
