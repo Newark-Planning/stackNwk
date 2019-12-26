@@ -11,7 +11,8 @@ import { AirService } from '../../shared/services/air.service';
 
 export class OpzResourcesComponent implements OnInit {
   subComponents: any = [
-    { label: 'Applications', path: 'res-apps' }
+    { label: 'Applications', path: 'res-apps' },
+    { label: 'Redevelopment Plans', path: 'res-redev' }
   ];
   splashTitle$: Record;
   backgroundStyle = {
@@ -21,7 +22,7 @@ export class OpzResourcesComponent implements OnInit {
     { icon: 'pinboard', index: 1, text: 'Applications', textSmall: 'Applications' },
     { icon: 'building', index: 2, text: 'Master Plans', textSmall: 'Master Plans' },
     { icon: 'bicycle', index: 3, text: 'Redevelopment Plans', textSmall: 'Redevelopments' },
-    { icon: 'bicycle', index: 3, text: 'FAQs', textSmall: 'FAQs' }
+    { icon: 'bicycle', index: 4, text: 'FAQs', textSmall: 'FAQs' }
   ];
   constructor(
     public airData: AirService,

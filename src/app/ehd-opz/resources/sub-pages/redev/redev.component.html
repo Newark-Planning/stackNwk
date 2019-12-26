@@ -1,0 +1,21 @@
+<clr-datagrid>
+    <clr-dg-column clrDgField="id" [clrDgColType]="'number'" [style.width.px]="20">id</clr-dg-column>
+    <clr-dg-column [clrDgField]="'document'">Document</clr-dg-column>
+    <clr-dg-column [clrDgField]="'type'">Type</clr-dg-column>
+    <clr-dg-column [clrDgField]="'pubDate'">Publication Date</clr-dg-column>
+    <clr-dg-column [clrDgField]="'filetype'">File Type</clr-dg-column>
+    <clr-dg-row *clrDgItems="let data of listOfData" [clrDgItem]="data">
+        <clr-dg-cell>{{data.id}}</clr-dg-cell>
+        <clr-dg-cell>{{data.document}}</clr-dg-cell>
+        <clr-dg-cell>{{data.type}}</clr-dg-cell>
+        <clr-dg-cell>{{data.pubDate | date}}</clr-dg-cell>
+        <clr-dg-cell>{{data.filetype}}</clr-dg-cell>
+        <clr-dg-cell>
+            <a class="btn btn-primary btn-lg btn-block" href="{{ data.link }}">
+                <clr-icon shape='pop-out' size='12'></clr-icon>
+                <span>Open Document</span>
+            </a>
+        </clr-dg-cell>
+    </clr-dg-row>
+    <clr-dg-footer>{{listOfData.length}} Plans</clr-dg-footer>
+</clr-datagrid>

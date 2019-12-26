@@ -25,8 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     SharedModule,
     FormsModule,
-    ClarityModule,
     HttpClientModule,
+    ClarityModule,
     PLANNING_ROUTING
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

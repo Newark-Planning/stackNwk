@@ -26,6 +26,7 @@ import * as mapPieces from './ourcity/map-pipeline';
 
 // Resources page component imports
 import { ApplicationsDataComponent } from './resources/sub-pages/applications/applications.component';
+import { RedevDataComponent } from './resources/sub-pages/redev/redev.component';
 
 import { SidePanelComponent } from './ourcity/sidepanel.component';
 
@@ -57,7 +58,8 @@ export const planningMapComponents = [
 ];
 
 export const planningResComponents = [
-  ApplicationsDataComponent
+  ApplicationsDataComponent,
+  RedevDataComponent
 ];
 export const planningBoardsComponents = [
   CPBComponent,
@@ -93,3 +95,4 @@ export *  from './ourcity/sidepanel.component';
 
 // Resources page components exports
 export * from './resources/sub-pages/applications/applications.component';
+export * from './resources/sub-pages/redev/redev.component';

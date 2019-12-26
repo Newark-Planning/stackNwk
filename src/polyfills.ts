@@ -42,7 +42,7 @@
 /** Evergreen browsers require these. */
 // import 'core-js/es6/reflect';
 // import 'core-js/es7/reflect';
-import 'core-js/es/reflect';
+// import 'core-js/es/reflect';
 /**
  * Web Animations `@angular/platform-browser/animations`
  * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
@@ -63,5 +63,3 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10
  */
 // import 'intl';  // Run `npm install --save intl`.
-// tslint:disable-next-line: no-import-side-effect
-import '@webcomponents/custom-elements';
