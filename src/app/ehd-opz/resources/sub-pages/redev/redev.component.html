@@ -27,11 +27,11 @@
     </clr-dg-row>
     <clr-dg-detail *clrIfDetail="let detail">
         <clr-dg-detail-header>
-            {{detail.document}}<br>
-            <h3>{{detail.pubDate | date}}</h3>
+            {{detail.document}}
         </clr-dg-detail-header>
         <clr-dg-detail-body>
-            <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(detail.embedLink)" [ngStyle]="{'width': '100%', 'height': '70vh'}"></iframe>
+            <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(detail.embedLink)" [ngStyle]="{'width': '100%', 'height': '70vh', 'border-radius': '10px'}">
+            </iframe>
         </clr-dg-detail-body>
     </clr-dg-detail>
     <clr-dg-footer>

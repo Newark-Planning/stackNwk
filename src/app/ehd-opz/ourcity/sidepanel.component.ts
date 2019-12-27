@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-sidepanel',
@@ -7,5 +7,10 @@ import { Component, Input, TemplateRef } from '@angular/core';
 })
 
 export class SidePanelComponent {
-    @Input() mapInput: TemplateRef<any>;
+    @Input() mapInput: MapInput;
+}
+
+export interface MapInput {
+    hood?: string;
+    lot?: string;
 }

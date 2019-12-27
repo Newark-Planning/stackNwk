@@ -6,13 +6,14 @@ import bbox from '@turf/bbox';
 import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
 
 import { loadlayer } from '../../../assets/data/index';
+import { MapInput } from './sidepanel.component';
 
 @Component({
     selector: 'app-map',
     styleUrls: ['./map.component.scss'],
     template: `
-        <div id='map' class='map clr-col-6' [ngStyle]="mapStyle"></div>
-        <app-sidepanel [mapInput]='hoodClicked' class='clr-col-6'></app-sidepanel>
+        <div id='map' class='map clr-col-6 clr-col-12-md' [ngStyle]="mapStyle"></div>
+        <app-sidepanel [mapInput]='clicked' class='clr-col-6 clr-hidden-md-down'></app-sidepanel>
         `
 })
 
@@ -25,10 +26,11 @@ export class MapComponent implements OnInit {
         position: 'relative',
         top: 0
     };
-    hoodClicked;
-    lotClicked;
+    hoodClicked = '';
+    lotClicked = '';
     hoveredStateId;
     parcelhover;
+    clicked: MapInput = {hood: '', lot: ''};
 
     ngOnInit(): void {
         const map: any = new mapboxgl.Map({
@@ -122,6 +124,10 @@ export class MapComponent implements OnInit {
                     map.setFilter('hoods-inner', ['!=', 'NAME', this.hoodClicked]);
                     map.fitBounds(featurebound);
                     loadlayer(e.features[0].properties[NAME], map);
+                    this.clicked = {
+                        hood: this.hoodClicked,
+                        lot: ''
+                    };
                 }
             });
             map.on('mousemove', 'parcels_inner', e => {
@@ -146,6 +152,7 @@ export class MapComponent implements OnInit {
                     this.lotClicked = e.features[0].properties[PAMS_PIN];
                     const featurebound = bbox(e.features[0].geometry);
                     map.fitBounds(featurebound);
+                    this.clicked.lot = this.lotClicked;
                 }
             });
         });
