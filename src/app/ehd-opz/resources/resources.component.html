@@ -1,21 +1,3 @@
-<app-splash [backgroundSetting]='backgroundStyle' logoSrc='assets/img/NwkLogo-ext.svg' parentFragment='/opz'>
-    <div splash-page class='clr-col'>
-        <h3 class='dept clr-hidden-xs-down'>division of</h3>
-        <br>
-        <h2 class='dept-ehd clr-hidden-xs-down'>Planning & Zoning</h2>
-    </div>
-    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>
-        <clr-icon shape='compass' class='full-icon'></clr-icon>
-        {{ splash.fields['Content'] }}
-    </h2>
-    <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button *ngFor="let button of button$" class="btn btn-primary btn-lg btn-block">
-          <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
-          <span class="clr-hidden-sm-down">{{ button.text }}</span>
-          <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
-        </button>
-    </div>
-</app-splash>
 <section class='secondary-content'>
     <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Documents</h2>
     <ul id="demoTabs" class="nav" role="tablist">
@@ -26,12 +8,8 @@
         </li>
     </ul>
     <div id="tabs-content" class="clr-row clr-justify-content-center">
-        <div class="clr-col-md-11 clr-col-12">
-            <div class="card">
-                <div class="card-block">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
+        <div class="clr-col-12">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </section>

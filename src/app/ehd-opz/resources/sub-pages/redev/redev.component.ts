@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ClrDatagridStateInterface } from '@clr/angular';
+import { Resource } from '../data';
 import { redevPlans } from './redev.plans';
 
 @Component({
@@ -8,11 +11,26 @@ import { redevPlans } from './redev.plans';
 })
 
 export class RedevDataComponent implements OnInit {
-  mapOfExpandData: { [key: string]: boolean } = {};
-  listOfData;
+  loading = false;
+  // tslint:disable-next-line: prefer-output-readonly
+  @Output() page = 1;
+  currentQuery: number = Math.min((this.page * 15), redevPlans.length);
+  nextQuery: number = Math.min((this.currentQuery + 15), redevPlans.length);
+  listOfData: Array<Resource> = redevPlans;
 
-  ngOnInit(): void {
+  constructor(
+    public sanitizer: DomSanitizer
+    ) { }
 
-    this.listOfData = redevPlans;
+  ngOnInit(): any {
+    this.loading = true;
+  }
+
+  refresh(state: ClrDatagridStateInterface): any {
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      this.listOfData = redevPlans.slice(0, this.nextQuery);
+    }, 500);
   }
 }

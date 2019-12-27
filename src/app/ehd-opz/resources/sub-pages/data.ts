@@ -5,7 +5,7 @@ export interface Resource {
     filetype?: string;
     id?: number;
     link?: string;
-    pubDate?: string;
+    pubDate?: string | Date;
     type?: string;
     [key: string]: any;
   }

@@ -54,3 +54,19 @@
     width: 100%;
     margin-bottom: 2rem
 }
+
+clr-dg-cell {
+    align-self: center
+}
+
+.open-doc {
+    display: flex;
+    box-shadow: .1rem .1rem .25rem black;
+    border-color: transparent;
+    font-size: .8rem;
+    align-items: center;
+    text-transform: lowercase;
+    justify-content: space-evenly;
+    width: 12rem;
+    margin: auto;
+}

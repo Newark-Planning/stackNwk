@@ -1,21 +1,42 @@
-<clr-datagrid>
-    <clr-dg-column clrDgField="id" [clrDgColType]="'number'" [style.width.px]="20">id</clr-dg-column>
-    <clr-dg-column [clrDgField]="'document'">Document</clr-dg-column>
-    <clr-dg-column [clrDgField]="'type'">Type</clr-dg-column>
-    <clr-dg-column [clrDgField]="'pubDate'">Publication Date</clr-dg-column>
-    <clr-dg-column [clrDgField]="'filetype'">File Type</clr-dg-column>
-    <clr-dg-row *clrDgItems="let data of listOfData" [clrDgItem]="data">
-        <clr-dg-cell>{{data.id}}</clr-dg-cell>
+<clr-datagrid (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading">
+    <clr-dg-column [clrDgField]="'document'">
+        Document
+    </clr-dg-column>
+    <clr-dg-column [clrDgField]="'pubDate'">
+        <ng-container>
+            Publication Date
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-column [clrDgField]="'filetype'" [style.width.px]="10">
+        <ng-container>
+            File Type
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-column></clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let data of listOfData" [clrDgItem]='data'>
         <clr-dg-cell>{{data.document}}</clr-dg-cell>
-        <clr-dg-cell>{{data.type}}</clr-dg-cell>
         <clr-dg-cell>{{data.pubDate | date}}</clr-dg-cell>
         <clr-dg-cell>{{data.filetype}}</clr-dg-cell>
         <clr-dg-cell>
-            <a class="btn btn-primary btn-lg btn-block" href="{{ data.link }}">
+            <a class="open-doc btn btn-primary btn-lg btn-block" href="{{ data.link }}">
                 <clr-icon shape='pop-out' size='12'></clr-icon>
                 <span>Open Document</span>
             </a>
         </clr-dg-cell>
     </clr-dg-row>
-    <clr-dg-footer>{{listOfData.length}} Plans</clr-dg-footer>
+    <clr-dg-detail *clrIfDetail="let detail">
+        <clr-dg-detail-header>
+            {{detail.document}}<br>
+            <h3>{{detail.pubDate | date}}</h3>
+        </clr-dg-detail-header>
+        <clr-dg-detail-body>
+            <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(detail.embedLink)" [ngStyle]="{'width': '100%', 'height': '70vh'}"></iframe>
+        </clr-dg-detail-body>
+    </clr-dg-detail>
+    <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="15" [(clrDgPage)]="page">
+            {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}}
+        </clr-dg-pagination>
+    </clr-dg-footer>
 </clr-datagrid>
