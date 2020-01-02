@@ -20,12 +20,15 @@
                 <div class="btn-group btn-inverse" [innerHTML]="mapInput.labelStyle">
                     <a class='btn {{ propInfo.code }}'>{{ propInfo.code }}</a>
                 </div>
-                <h2 class="btn-group btn-inverse">
-                    <button class="btn">
+                <h2 class="btn-group">
+                    <button class="btn btn-inverse">
                         Block {{ mapInput.block }}
                     </button>
-                    <button class="btn">
+                    <button class="btn btn-inverse">
                         Lot {{ mapInput.lot }}
+                    </button>
+                    <button class="btn" style="background-color: darkorange; border-color: black;">
+                        <clr-icon shape="copy" title="Copy Block and Lot" class='is-inverse' style="height: 16px; width: 16px; margin: .3rem"></clr-icon>
                     </button>
                 </h2>
             </div>

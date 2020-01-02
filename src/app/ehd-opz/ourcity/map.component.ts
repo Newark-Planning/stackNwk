@@ -146,8 +146,8 @@ export class MapComponent implements OnInit {
                             { hover: false }
                         );
                     }
-                    const FID = 'FID';
-                    this.parcelhover = e.features[0].properties[FID];
+                    const fid = 'fid';
+                    this.parcelhover = e.features[0].properties[fid];
                     map.setFeatureState(
                         { source: 'parcels', id: this.parcelhover },
                         { hover: true }

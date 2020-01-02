@@ -57,10 +57,10 @@ export const loadlayer = (name: any, map: any) => {
             parcelSource(parcels.parcels_lincoln_park, map);
             break;
         case 'Lower Broadway':
-            parcelSource(parcels.parcels_lower_roseville, map);
+            parcelSource(parcels.parcels_lower_broadway, map);
             break;
         case 'Lower Clinton Hill':
-            parcelSource(parcels.parcels_lower_roseville, map);
+            parcelSource(parcels.parcels_lower_clinton_hill, map);
             break;
         case 'Lower Roseville':
             parcelSource(parcels.parcels_lower_roseville, map);
