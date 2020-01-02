@@ -9,3 +9,7 @@ interface Window {
   ClarityIcons: any;
   carto: any;
 }
+declare module "*.geojson" {
+  const value: any;
+  export default value;
+}

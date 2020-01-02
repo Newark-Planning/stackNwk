@@ -1,8 +1,4 @@
-import { parcels_dayton } from './parcels_dayton';
-import { parcels_downtown } from './parcels_downtown';
-import { parcels_ironbound } from './parcels_ironbound';
-import { parcels_ironboundsouth } from './parcels_ironboundsouth';
-import { parcels_southbroadvalley } from './parcels_southbroadvalley';
+import * as parcels from './parcels';
 
 const parcelSource = (sourceData: any, map: any) => {
     map.addSource('parcels', {
@@ -40,19 +36,19 @@ const parcelSource = (sourceData: any, map: any) => {
 export const loadlayer = (name: any, map: any) => {
     switch (name) {
         case 'Dayton':
-            parcelSource(parcels_dayton, map);
+            parcelSource(parcels.parcels_dayton, map);
             break;
-        case 'Central Business District':
-            parcelSource(parcels_downtown, map);
+        case 'Downtown':
+            parcelSource(parcels.parcels_downtown, map);
             break;
         case 'Ironbound':
-            parcelSource(parcels_ironbound, map);
+            parcelSource(parcels.parcels_ironbound, map);
             break;
-        case 'South Ironbound':
-            parcelSource(parcels_ironboundsouth, map);
+        case 'Lincoln Park':
+            parcelSource(parcels.parcels_lincoln_park, map);
             break;
-        case 'South Broad Valley':
-            parcelSource(parcels_southbroadvalley, map);
+        case 'West Side':
+            parcelSource(parcels.parcels_west_side, map);
             break;
         default :
             return {};
