@@ -6,14 +6,17 @@ import bbox from '@turf/bbox';
 import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
 
 import { loadlayer } from '../../../assets/data/index';
-import { MapInput } from './sidepanel.component';
+
+import { CartoService } from '../../shared/services';
+
+import { CartoSQLResp, MapInput, ZoningFields } from '../../shared/models/map.input';
 
 @Component({
     selector: 'app-map',
     styleUrls: ['./map.component.scss'],
     template: `
         <div id='map' class='map clr-col-6 clr-col-12-md' [ngStyle]="mapStyle"></div>
-        <app-sidepanel [mapInput]='clicked' class='clr-col-6 clr-hidden-md-down'></app-sidepanel>
+        <app-sidepanel [mapInput]='clicked' [propInfo]='propInfo' class='clr-col-6 clr-hidden-md-down'></app-sidepanel>
         `
 })
 
@@ -31,12 +34,16 @@ export class MapComponent implements OnInit {
     hoveredStateId;
     parcelhover;
     clicked: MapInput = {hood: '', lot: ''};
+    propInfo: ZoningFields = { code: '' };
+
+    constructor(readonly cartodata: CartoService) {}
 
     ngOnInit(): void {
         const map: any = new mapboxgl.Map({
             center: [-74.1723667, 40.735657],
             container: 'map',
             dragRotate: false,
+            maxZoom: 18,
             style: carto.basemaps.positron,
             touchZoomRotate: false,
             zoom: 12
@@ -125,8 +132,9 @@ export class MapComponent implements OnInit {
                     map.fitBounds(featurebound);
                     loadlayer(e.features[0].properties[NAME], map);
                     this.clicked = {
+                        block: undefined,
                         hood: this.hoodClicked,
-                        lot: ''
+                        lot: undefined
                     };
                 }
             });
@@ -152,11 +160,26 @@ export class MapComponent implements OnInit {
                     this.lotClicked = e.features[0].properties[PAMS_PIN];
                     const featurebound = bbox(e.features[0].geometry);
                     map.fitBounds(featurebound);
-                    this.clicked.lot = this.lotClicked;
+                    this.clicked.block = this.lotClicked.split('_')[1];
+                    this.clicked.lot = this.lotClicked.split('_')[2];
+                    this.getPropInfo(this.clicked);
                 }
             });
         });
         // const layers = [hoodMapLayer];
         // layers.forEach(layer => layer.addTo(map, 'watername_ocean'));
+    }
+    zoneLabel = (data: string) => `<a class="btn ${data}">${data}</a>`;
+
+    getPropInfo(mapInputter: MapInput): void {
+        // tslint:disable-next-line: no-non-null-assertion
+        this.cartodata.getZoning('*', mapInputter.block!, mapInputter.lot!)
+            .subscribe(
+                ( data: CartoSQLResp ) => {
+                    // tslint:disable-next-line: no-non-null-assertion
+                    this.propInfo = data.rows[0]!;
+                    // tslint:disable-next-line: no-non-null-assertion
+                    this.clicked.labelStyle! = this.zoneLabel(this.propInfo.code ? this.propInfo.code : '');
+                });
     }
 }

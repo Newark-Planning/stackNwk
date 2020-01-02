@@ -299,11 +299,11 @@ $clr-btn-link-hover-color: hsl(194, 78%, 63%); // hover-color
 $clr-btn-link-checked-color: hsl(198, 65%, 57%); // checked-color
 $clr-btn-link-disabled-color: $clr-btn-outline-disabled-font-color; // disabled-color
 // Inverse button
-$clr-btn-inverse-border-color: hsl(210, 16%, 93%); // border-color
+$clr-btn-inverse-border-color: hsl(0, 0%, 0%); // border-color
 $clr-btn-inverse-bg-color: transparent; // background-color
-$clr-btn-inverse-color: hsl(210, 16%, 93%); // color
-$clr-btn-inverse-hover-bg-color: rgba(0, 0, 0, 0.1); // hover-background-color
-$clr-btn-inverse-hover-color: hsl(0, 0%, 100%); // hover-color
+$clr-btn-inverse-color: hsl(0, 0%, 0%); // color
+$clr-btn-inverse-hover-bg-color: hsla(0, 0%, 100%, 0.15); // hover-background-color
+$clr-btn-inverse-hover-color: hsl(0, 0%, 50%); // hover-color
 $clr-btn-inverse-box-shadow-color: hsl(203, 14%, 70%); // active-box-shadow-color
 $clr-btn-inverse-checked-bg-color: hsla(0, 0%, 100%, 0.15); // checked-background-color
 $clr-btn-inverse-checked-color: hsl(0, 0%, 100%); // checked-color
@@ -624,7 +624,7 @@ $clr-stack-view-border-box-color: $clr-stack-view-border-color;
 $clr-stack-block-changed-border-top-color: hsl(205, 100%, 34%); // TODO: Figure out where this shows in the UI.
 $clr-stack-view-stack-block-label-and-content-bg-color: $clr-global-app-background; // stkvw row bg color when not expanded
 $clr-stack-view-stack-children-stack-block-border-bottom-color: $clr-stack-view-border-color; // children of an expanded row
-$clr-stack-view-stack-children-stack-block-label-and-content-bg-color: hsl( 198, 28%, 18%); // children of an expanded row
+$clr-stack-view-stack-children-stack-block-label-and-content-bg-color: hsl(198, 28%, 18%); // children of an expanded row
 $clr-stack-view-stack-block-label-text-color: hsl(212, 10%, 61%);
 $clr-stack-view-stack-block-expanded-bg-color: hsl(203, 32%, 29%);
 $clr-stack-view-stack-block-expandable-hover: hsl(203, 32%, 29%);

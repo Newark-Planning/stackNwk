@@ -1,5 +1,5 @@
-<div class="clr-row clr-justify-content-center" [(ngModel)]="mapInput" ngDefaultControl>
-    <div class="clr-col-12">
+<div class="clr-row clr-justify-content-center" [(ngModel)]='propInfo' ngDefaultControl>
+    <div [(ngModel)]="mapInput.hood" ngDefaultControl class="clr-col-12">
         <div class="card">
             <div class="card-header">
                 <h2>{{ mapInput.hood }}</h2>
@@ -13,15 +13,32 @@
             </div>
         </div>
     </div>
-    <div class="clr-col-12">
+    <div class="clr-col-12" [(ngModel)]="mapInput.block && mapInput.lot" ngDefaultControl *ngIf='mapInput.block && mapInput.lot'>
         <div class="card">
             <div class="card-header">
-                <h2>{{ mapInput.lot }}</h2>
+                <h2 innerHTML="{{ propInfo.proploc ? propInfo.proploc : propInfo.blocklot | titlecase}}"></h2>
+                <div class="btn-group btn-inverse" [innerHTML]="mapInput.labelStyle">
+                    <a class='btn {{ propInfo.code }}'>{{ propInfo.code }}</a>
+                </div>
+                <h2 class="btn-group btn-inverse">
+                    <button class="btn">
+                        Block {{ mapInput.block }}
+                    </button>
+                    <button class="btn">
+                        Lot {{ mapInput.lot }}
+                    </button>
+                </h2>
             </div>
             <div class="card-block">
                 <div class="clr-row clr-justify-content-center">
                     <div class="card-text clr-col-12">
-                        <p class='p3'>{{ mapInput.lot }}</p>
+                        <p><span innerHTML="{{ propInfo.redevelopment_plan }}"></span></p>
+                        <p><span innerHTML="{{ propInfo.historic_district }}"></span></p>
+                        <p><span innerHTML="{{ propInfo.landmark }}"></span></p>
+                        <p innerHTML="{{ propInfo.property_description }}"></p>
+                        <p innerHTML="{{ propInfo.permbt }}"></p>
+                        <p innerHTML="{{ propInfo.permuse }}"></p>
+                        <p innerHTML="{{ propInfo.pdf }}"></p>
                     </div>
                 </div>
             </div>

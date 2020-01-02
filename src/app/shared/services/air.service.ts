@@ -11,12 +11,9 @@ export class AirService {
   readonly API_BASE_URL = 'https://api.airtable.com';
   // tslint:disable-next-line: restrict-plus-operands
   header = { authorization: `${this.API_STRING + environment.config.AIRTABLE_API_KEY}` };
-  records: Observable<Record>;
   constructor(
-    public http: HttpClient) {
-    // tslint:disable-next-line: no-console
-    console.log(this.records);
-  }
+    public http: HttpClient) { }
+
   getRecords(API_BASE_NAME: string, API_FILTER: string): Observable<any> {
     const BASE_NAME = API_BASE_NAME;
     const FILTER = API_FILTER;
