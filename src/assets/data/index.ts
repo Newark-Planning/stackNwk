@@ -47,6 +47,36 @@ export const loadlayer = (name: any, map: any) => {
         case 'Lincoln Park':
             parcelSource(parcels.parcels_lincoln_park, map);
             break;
+        case 'Lower Roseville':
+            parcelSource(parcels.parcels_lower_roseville, map);
+            break;
+        case 'Mount Pleasant': 
+            parcelSource(parcels.parcels_mount_pleasant, map);
+            break;
+        case 'Newark Industrial District':
+            parcelSource(parcels.parcels_newark_industrial_district, map);
+            break;
+        case 'North Broadway-Woodside':
+            parcelSource(parcels.parcels_north_broadway - woodside, map);
+            break;
+        case 'Port District':
+            parcelSource(parcels.parcels_port_district, map);
+            break;
+        case 'University Heights':
+            parcelSource(parcels.parcels_university_heights, map);
+            break;
+        case 'Upper Clinton Hill':
+            parcelSource(parcels.parcels_upper_clinton_hill, map);
+            break;
+        case 'Upper Roseville':
+            parcelSource(parcels.parcels_upper_roseville, map);
+            break;
+        case 'Vailsburg':
+            parcelSource(parcels.parcels_vailsburg, map);
+            break;
+        case 'Weequahic':
+            parcelSource(parcels.parcels_weequahic, map);
+            break;
         case 'West Side':
             parcelSource(parcels.parcels_west_side, map);
             break;
