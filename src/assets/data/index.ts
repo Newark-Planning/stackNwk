@@ -32,14 +32,23 @@ const parcelSource = (sourceData: any, map: any) => {
     });
 
 };
-
+// tslint:disable-next-line: cyclomatic-complexity
 export const loadlayer = (name: any, map: any) => {
     switch (name) {
+        case 'Belmont':
+            parcelSource(parcels.parcels_belmont, map);
+            break;
         case 'Dayton':
             parcelSource(parcels.parcels_dayton, map);
             break;
         case 'Downtown':
             parcelSource(parcels.parcels_downtown, map);
+            break;
+        case 'Fairmount':
+            parcelSource(parcels.parcels_fairmount, map);
+            break;
+        case 'Forest Hill':
+            parcelSource(parcels.parcels_forest_hill, map);
             break;
         case 'Ironbound':
             parcelSource(parcels.parcels_ironbound, map);
@@ -47,17 +56,23 @@ export const loadlayer = (name: any, map: any) => {
         case 'Lincoln Park':
             parcelSource(parcels.parcels_lincoln_park, map);
             break;
+        case 'Lower Broadway':
+            parcelSource(parcels.parcels_lower_roseville, map);
+            break;
+        case 'Lower Clinton Hill':
+            parcelSource(parcels.parcels_lower_roseville, map);
+            break;
         case 'Lower Roseville':
             parcelSource(parcels.parcels_lower_roseville, map);
             break;
-        case 'Mount Pleasant': 
+        case 'Mount Pleasant':
             parcelSource(parcels.parcels_mount_pleasant, map);
             break;
         case 'Newark Industrial District':
             parcelSource(parcels.parcels_newark_industrial_district, map);
             break;
         case 'North Broadway-Woodside':
-            parcelSource(parcels.parcels_north_broadway - woodside, map);
+            parcelSource(parcels.parcels_north_broadway_woodside, map);
             break;
         case 'Port District':
             parcelSource(parcels.parcels_port_district, map);
@@ -80,7 +95,7 @@ export const loadlayer = (name: any, map: any) => {
         case 'West Side':
             parcelSource(parcels.parcels_west_side, map);
             break;
-        default :
+        default:
             return {};
     }
 };
