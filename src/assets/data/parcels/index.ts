@@ -1,3 +1,4 @@
+    // tslint:disable
 import { parcels_belmont } from './layer_parcels_Belmont';
 import { parcels_dayton } from './layer_parcels_Dayton';
 import { parcels_downtown } from './layer_parcels_Downtown';
@@ -7,17 +8,17 @@ import { parcels_ironbound } from './layer_parcels_Ironbound';
 import { parcels_lincoln_park } from './layer_parcels_Lincoln_Park';
 import { parcels_lower_broadway } from './layer_parcels_Lower_Broadway';
 import { parcels_lower_clinton_hill } from './layer_parcels_Lower_Clinton_Hill';
-import { parcels_lower_roseville } from './layer_parcels_Lower_Roseville';
-import { parcels_mount_pleasant } from './layer_parcels_Mount_Pleasant';
-import { parcels_newark_industrial_district } from './layer_parcels_Newark_Industrial_District';
-import { parcels_north_broadway_woodside } from './layer_parcels_North_Broadway-Woodside';
-import { parcels_port_district } from './layer_parcels_Port_District';
-import { parcels_university_heights } from './layer_parcels_University_Heights';
-import { parcels_upper_clinton_hill } from './layer_parcels_Upper_Clinton_Hill';
-import { parcels_upper_roseville } from './layer_parcels_Upper_Roseville';
-import { parcels_vailsburg } from './layer_parcels_Vailsburg';
-import { parcels_weequahic } from './layer_parcels_Weequahic';
-import { parcels_west_side } from './layer_parcels_West_side';
+import { parcels_lower_roseville } from './layer_parcels_Lower_Roseville';
+import { parcels_mount_pleasant } from './layer_parcels_Mount_Pleasant';
+import { parcels_newark_industrial_district } from './layer_parcels_Newark_Industrial_District';
+import { parcels_north_broadway_woodside } from './layer_parcels_North_Broadway-Woodside';
+import { parcels_port_district } from './layer_parcels_Port_District';
+import { parcels_university_heights } from './layer_parcels_University_Heights';
+import { parcels_upper_clinton_hill } from './layer_parcels_Upper_Clinton_Hill';
+import { parcels_upper_roseville } from './layer_parcels_Upper_Roseville';
+import { parcels_vailsburg } from './layer_parcels_Vailsburg';
+import { parcels_weequahic } from './layer_parcels_Weequahic';
+import { parcels_west_side } from './layer_parcels_West_side';
 
 export const parcelLayers = [
     parcels_belmont,

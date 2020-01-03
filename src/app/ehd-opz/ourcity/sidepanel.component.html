@@ -1,21 +1,17 @@
 <div class="clr-row clr-justify-content-center" [(ngModel)]='propInfo' ngDefaultControl>
-    <div [(ngModel)]="mapInput.hood" ngDefaultControl class="clr-col-12">
-        <div class="card">
-            <div class="card-header">
+    <clr-accordion>
+        <clr-accordion-panel [(ngModel)]="mapInput.hood" ngDefaultControl>
+            <clr-accordion-title>
                 <h2>{{ mapInput.hood }}</h2>
-            </div>
-            <div class="card-block">
-                <div class="clr-row clr-justify-content-center">
-                    <div class="card-text clr-col-12">
-                        <p class='p3'>{{ mapInput.hood }}</p>
-                    </div>
+            </clr-accordion-title>
+            <clr-accordion-content *clrIfExpanded>
+                <div class="clr-col-12">
+                    <p class='p3'>{{ mapInput.hood }}</p>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="clr-col-12" [(ngModel)]="mapInput.block && mapInput.lot" ngDefaultControl *ngIf='mapInput.block && mapInput.lot'>
-        <div class="card">
-            <div class="card-header">
+            </clr-accordion-content>
+        </clr-accordion-panel>
+        <clr-accordion-panel [(ngModel)]="mapInput.block && mapInput.lot" ngDefaultControl *ngIf='mapInput.block && mapInput.lot'>
+            <clr-accordion-title>
                 <h2 innerHTML="{{ propInfo.proploc ? propInfo.proploc : propInfo.blocklot | titlecase}}"></h2>
                 <div class="btn-group btn-inverse" [innerHTML]="mapInput.labelStyle">
                     <a class='btn {{ propInfo.code }}'>{{ propInfo.code }}</a>
@@ -31,8 +27,8 @@
                         <clr-icon shape="copy" title="Copy Block and Lot" class='is-inverse' style="height: 16px; width: 16px; margin: .3rem"></clr-icon>
                     </button>
                 </h2>
-            </div>
-            <div class="card-block">
+            </clr-accordion-title>
+            <clr-accordion-content *clrIfExpanded>
                 <div class="clr-row clr-justify-content-center">
                     <div class="card-text clr-col-12">
                         <p><span innerHTML="{{ propInfo.redevelopment_plan }}"></span></p>
@@ -44,7 +40,7 @@
                         <p innerHTML="{{ propInfo.pdf }}"></p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </clr-accordion-content>
+        </clr-accordion-panel>
+    </clr-accordion>
 </div>

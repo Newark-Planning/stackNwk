@@ -33,6 +33,7 @@ export class OurCityComponent implements OnInit {
       title: 'Geographies'
     }
   ];
+  parcelView;
   mapNavStyle = {
     'border-radius': '.25rem',
     top: '1rem'

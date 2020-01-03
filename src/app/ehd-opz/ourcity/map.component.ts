@@ -1,33 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import carto from '@carto/carto-vl';
 import mapboxgl from 'mapbox-gl';
 
 import bbox from '@turf/bbox';
 import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
 
-import { loadlayer } from '../../../assets/data/index';
+import { loadlayer } from './parcels';
 
 import { CartoService } from '../../shared/services';
 
 import { CartoSQLResp, MapInput, ZoningFields } from '../../shared/models/map.input';
+import { layersToAdd } from './layers';
 
 @Component({
     selector: 'app-map',
     styleUrls: ['./map.component.scss'],
     template: `
-        <div id='map' class='map clr-col-6 clr-col-12-md' [ngStyle]="mapStyle"></div>
+        <div id='map' class='map clr-col-6 clr-col-12-md clr-col-12-sm' [ngStyle]="mapStyle"></div>
         <app-sidepanel [mapInput]='clicked' [propInfo]='propInfo' class='clr-col-6 clr-hidden-md-down'></app-sidepanel>
         `
 })
 
 export class MapComponent implements OnInit {
+    @Output() readonly parcelView;
     mapStyle = {
         'border-radius': '.5rem',
-        bottom: 0,
         display: 'flex',
-        height: '80vh',
-        position: 'relative',
-        top: 0
+        height: '75vh',
+        margin: 'auto',
+        position: 'relative'
     };
     hoodClicked = '';
     lotClicked = '';
@@ -64,43 +65,7 @@ export class MapComponent implements OnInit {
                 data: nwkHood,
                 type: 'geojson'
             });
-            map.addLayer({
-                id: 'hoods',
-                layout: {},
-                paint: {
-                    'line-color': '#627BC1',
-                    'line-width': 2
-                    },
-                source: 'hoodMap',
-                type: 'line'
-            });
-            map.addLayer({
-                id: 'hoods-inner',
-                layout: {},
-                paint: {
-                    'fill-color': '#627BC1',
-                    'fill-opacity': [
-                        'case',
-                        ['boolean', ['feature-state', 'hover'], false],
-                        1,
-                        0.5
-                    ]
-                },
-                source: 'hoodMap',
-                type: 'fill'
-            });
-            map.addLayer({
-                id: 'hoods-labels',
-                layout: {
-                    'text-field': ['get', 'NAME'],
-                    'text-letter-spacing': 0.1,
-                    'text-max-width': 5,
-                    'text-transform': 'uppercase',
-                    'text-variable-anchor': ['top', 'bottom', 'left', 'right']
-                    },
-                source: 'hoodMap',
-                type: 'symbol'
-            });
+            layersToAdd.forEach(layer => map.addLayer(layer), 'watername_ocean');
             map.resize();
             map.on('mousemove', 'hoods-inner', e => {
                 if (e.features.length > 0) {
@@ -146,8 +111,7 @@ export class MapComponent implements OnInit {
                             { hover: false }
                         );
                     }
-                    const fid = 'fid';
-                    this.parcelhover = e.features[0].properties[fid];
+                    this.parcelhover = e.features[0].id;
                     map.setFeatureState(
                         { source: 'parcels', id: this.parcelhover },
                         { hover: true }
@@ -166,8 +130,6 @@ export class MapComponent implements OnInit {
                 }
             });
         });
-        // const layers = [hoodMapLayer];
-        // layers.forEach(layer => layer.addTo(map, 'watername_ocean'));
     }
     zoneLabel = (data: string) => `<a class="btn ${data}">${data}</a>`;
 

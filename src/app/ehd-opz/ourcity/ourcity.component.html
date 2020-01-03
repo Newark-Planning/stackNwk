@@ -8,6 +8,21 @@
                     <a *ngFor="let legendchild of legendItem.children" clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
                         <span class="nav-text clr-row clr-justify-content-center">{{ legendchild.title }}</span>
                     </a>
+                    <clr-radio-container>
+                        <label>Parcel Data</label>
+                        <clr-radio-wrapper>
+                            <input type="radio" clrRadio name="options" value="base" [(ngModel)]="parcelView" enabled />
+                            <label>Base</label>
+                        </clr-radio-wrapper>
+                        <clr-radio-wrapper>
+                            <input type="radio" clrRadio name="options" value="zoning" [(ngModel)]="parcelView" disabled />
+                            <label>Zoning</label>
+                        </clr-radio-wrapper>
+                        <clr-radio-wrapper>
+                            <input type="radio" clrRadio name="options" value="landuse" [(ngModel)]="parcelView" disabled />
+                            <label>Land Use</label>
+                        </clr-radio-wrapper>
+                    </clr-radio-container>
                 </clr-vertical-nav-group-children>
             </clr-vertical-nav-group>
         </clr-vertical-nav>
