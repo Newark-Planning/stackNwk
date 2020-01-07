@@ -5,12 +5,10 @@ import mapboxgl from 'mapbox-gl';
 import bbox from '@turf/bbox';
 import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
 
-import { loadlayer } from './parcels';
-
-import { CartoService } from '../../shared/services';
+import { CartoService, MapService } from '../../shared/services';
 
 import { CartoSQLResp, MapInput, ZoningFields } from '../../shared/models/map.input';
-import { layersToAdd } from './layers';
+import { hoods, hoodsInner, hoodsLabels } from './layers';
 
 @Component({
     selector: 'app-map',
@@ -36,8 +34,13 @@ export class MapComponent implements OnInit {
     parcelhover;
     clicked: MapInput = {hood: '', lot: ''};
     propInfo: ZoningFields = { code: '' };
+    layersToAdd = [
+        hoods,
+        hoodsInner,
+        hoodsLabels
+    ];
 
-    constructor(readonly cartodata: CartoService) {}
+    constructor(readonly cartodata: CartoService, readonly mapper: MapService) {}
 
     ngOnInit(): void {
         const map: any = new mapboxgl.Map({
@@ -60,12 +63,40 @@ export class MapComponent implements OnInit {
             user: 'nzlur'
         });
 
+        const zoningMapSource = new carto.source.Dataset(`
+        public.zoning
+      `);
+        const zoningMapViz = new carto.Viz(`
+        @code: $code
+        @proploc: $proploc
+        color: opacity(ramp(buckets($code,
+        [
+          "R-1","R-2","R-3","R-4",
+          "C-1","C-2","C-3",
+          "MX-1","MX-2","MX-3",
+          "I-1","I-2","I-3","RDV",
+          "PARK","INST","CEM",
+          "PORT","EWR"
+        ]), [
+          #fffaca, #fff68f, #fff100, #ebd417,
+          #a18aad, #da2028, #850204,
+          #e4a024, #f37520, #FF2900,
+          #e1c3dd, #A53ED5, #c0188c, #dddddd,
+          #229A00, #0063ff, #561818,
+          #B81609, #820c0c
+        ]),0.7)
+        strokeWidth: scaled(.1, 12)
+        strokeColor: rgb(200, 200, 200)
+      `);
+        const zoningMapLayer = new carto.Layer('zoningMapLayer', zoningMapSource, zoningMapViz);
+        const layers = [zoningMapLayer];
+        layers.forEach(layer => layer.addTo(map, 'watername_ocean'));
         map.on('load', () => {
             map.addSource('hoodMap', {
                 data: nwkHood,
                 type: 'geojson'
             });
-            layersToAdd.forEach(layer => map.addLayer(layer), 'watername_ocean');
+            this.layersToAdd.forEach(layer => map.addLayer(layer), 'watername_ocean');
             map.resize();
             map.on('mousemove', 'hoods-inner', e => {
                 if (e.features.length > 0) {
@@ -82,20 +113,14 @@ export class MapComponent implements OnInit {
                     );
                 }
             });
-            const removal = () => {
-                if (map.getLayer('parcels_inner')) { map.removeLayer('parcels_inner'); }
-                if (map.getLayer('parcels_layer')) { map.removeLayer('parcels_layer'); }
-                if (map.getSource('parcels')) { map.removeSource('parcels'); }
-            };
             map.on('click', 'hoods-inner', e => {
                 if (e.features.length > 0) {
-                    removal();
                     const NAME = 'NAME';
                     this.hoodClicked = e.features[0].properties[NAME];
                     const featurebound = bbox(e.features[0].geometry);
                     map.setFilter('hoods-inner', ['!=', 'NAME', this.hoodClicked]);
                     map.fitBounds(featurebound);
-                    loadlayer(e.features[0].properties[NAME], map);
+                    this.mapper.loadlayer(e.features[0].properties[NAME], map);
                     this.clicked = {
                         block: undefined,
                         hood: this.hoodClicked,
@@ -103,22 +128,22 @@ export class MapComponent implements OnInit {
                     };
                 }
             });
-            map.on('mousemove', 'parcels_inner', e => {
+            map.on('mousemove', 'zoningMapLayer', e => {
                 if (e.features.length > 0) {
                     if (this.parcelhover) {
                         map.setFeatureState(
-                            { source: 'parcels', id: this.parcelhover },
+                            { source: zoningMapSource, id: this.parcelhover },
                             { hover: false }
                         );
                     }
                     this.parcelhover = e.features[0].id;
                     map.setFeatureState(
-                        { source: 'parcels', id: this.parcelhover },
+                        { source: zoningMapSource, id: this.parcelhover },
                         { hover: true }
                     );
                 }
             });
-            map.on('click', 'parcels_inner', e => {
+            map.on('click', 'zoningMapLayer', e => {
                 if (e.features.length > 0) {
                     const PAMS_PIN = 'PAMS_PIN';
                     this.lotClicked = e.features[0].properties[PAMS_PIN];

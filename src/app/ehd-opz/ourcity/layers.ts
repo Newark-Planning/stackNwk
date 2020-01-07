@@ -1,4 +1,4 @@
-const hoods = {
+export const hoods = {
     id: 'hoods',
     layout: {},
     paint: {
@@ -8,7 +8,7 @@ const hoods = {
     source: 'hoodMap',
     type: 'line'
 };
-const hoodsInner = {
+export const hoodsInner = {
     id: 'hoods-inner',
     layout: {},
     paint: {
@@ -30,7 +30,7 @@ const hoodsInner = {
     source: 'hoodMap',
     type: 'fill'
 };
-const hoodsLabels = {
+export const hoodsLabels = {
     id: 'hoods-labels',
     layout: {
         'text-field': ['get', 'NAME'],
@@ -42,8 +42,3 @@ const hoodsLabels = {
     source: 'hoodMap',
     type: 'symbol'
 };
-export const layersToAdd = [
-    hoods,
-    hoodsInner,
-    hoodsLabels
-];

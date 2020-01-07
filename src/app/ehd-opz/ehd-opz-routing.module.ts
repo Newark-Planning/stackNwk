@@ -54,10 +54,10 @@ export const PLANNING_ROUTES: Routes = [
     path: 'team'
   },
   {
-    children: [
-      {path: '', redirectTo: 'map-pipeline', pathMatch: 'full'},
-      {component: components.MapPipelineComponent, data: {title: 'Pipeline'}, path: 'map-pipeline'}
-    ],
+    // children: [
+    //   {path: '', redirectTo: 'map-pipeline', pathMatch: 'full'},
+    //   {component: components.MapPipelineComponent, data: {title: 'Pipeline'}, path: 'map-pipeline'}
+    // ],
     component: components.OurCityComponent,
     data: {
       icon: 'compass',

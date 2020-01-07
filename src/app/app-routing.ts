@@ -11,12 +11,18 @@ export const APP_ROUTES: Routes = [
   },
   {
     component: EhdMainComponent,
+    data: {
+      logoSrc: 'assets/img/NwkEhdLogos/SVG/NwkEhd_EHD_Web.svg'
+    },
     loadChildren: async () => import('./ehd-main/ehd-main.module')
       .then(m => m.EhdMainModule),
     path: 'ehd'
   },
   {
     component: EhdOpzComponent,
+    data: {
+      logoSrc: 'assets/img/NwkEhdLogos/SVG/NwkEhd_Divs_web_Planning & Zoning.svg'
+    },
     loadChildren: async () => import('./ehd-opz/ehd-opz.module')
       .then(m => m.EhdOpzModule),
     path: 'opz'

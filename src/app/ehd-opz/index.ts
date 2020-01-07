@@ -19,11 +19,6 @@ import { LeadersComponent } from './staff/leaders/leaders.component';
 import { PlannersComponent } from './staff/planners/planners.component';
 import { SupportComponent } from './staff/support/support.component';
 
-// Our City page components imports
-import { MapPipelineComponent } from './ourcity/map-pipeline/map-pipeline.component';
-
-import * as mapPieces from './ourcity/map-pipeline';
-
 // Resources page component imports
 import { ApplicationsDataComponent } from './resources/sub-pages/applications/applications.component';
 import { RedevDataComponent } from './resources/sub-pages/redev/redev.component';
@@ -49,11 +44,6 @@ export const planningAboutComponents = [
 ];
 
 export const planningMapComponents = [
-  MapPipelineComponent,
-  mapPieces.BasemapComponent,
-  mapPieces.LayerComponent,
-  mapPieces.WidgetComponent,
-  mapPieces.MapComponent,
   SidePanelComponent
 ];
 
@@ -90,7 +80,6 @@ export * from './staff/planners/planners.component';
 export * from './staff/support/support.component';
 
 // Our City page components exports
-export * from './ourcity/map-pipeline/map-pipeline.component';
 export *  from './ourcity/sidepanel.component';
 
 // Resources page components exports

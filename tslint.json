@@ -1,7 +1,5 @@
 {
-    "extends": [
-        "tslint:recommended"
-    ],
+    "extends": "tslint:recommended",
     "rules": {
         "no-unnecessary-class": [
             true,

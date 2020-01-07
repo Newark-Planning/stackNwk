@@ -1,46 +1,45 @@
 <div class="clr-row clr-justify-content-center" [(ngModel)]='propInfo' ngDefaultControl>
-    <clr-accordion>
-        <clr-accordion-panel [(ngModel)]="mapInput.hood" ngDefaultControl>
-            <clr-accordion-title>
-                <h2>{{ mapInput.hood }}</h2>
-            </clr-accordion-title>
-            <clr-accordion-content *clrIfExpanded>
-                <div class="clr-col-12">
-                    <p class='p3'>{{ mapInput.hood }}</p>
-                </div>
-            </clr-accordion-content>
-        </clr-accordion-panel>
-        <clr-accordion-panel [(ngModel)]="mapInput.block && mapInput.lot" ngDefaultControl *ngIf='mapInput.block && mapInput.lot'>
-            <clr-accordion-title>
-                <h2 innerHTML="{{ propInfo.proploc ? propInfo.proploc : propInfo.blocklot | titlecase}}"></h2>
-                <div class="btn-group btn-inverse" [innerHTML]="mapInput.labelStyle">
-                    <a class='btn {{ propInfo.code }}'>{{ propInfo.code }}</a>
-                </div>
-                <h2 class="btn-group">
-                    <button class="btn btn-inverse">
-                        Block {{ mapInput.block }}
-                    </button>
-                    <button class="btn btn-inverse">
-                        Lot {{ mapInput.lot }}
-                    </button>
-                    <button class="btn" style="background-color: darkorange; border-color: black;">
-                        <clr-icon shape="copy" title="Copy Block and Lot" class='is-inverse' style="height: 16px; width: 16px; margin: .3rem"></clr-icon>
-                    </button>
-                </h2>
-            </clr-accordion-title>
-            <clr-accordion-content *clrIfExpanded>
-                <div class="clr-row clr-justify-content-center">
-                    <div class="card-text clr-col-12">
-                        <p><span innerHTML="{{ propInfo.redevelopment_plan }}"></span></p>
-                        <p><span innerHTML="{{ propInfo.historic_district }}"></span></p>
-                        <p><span innerHTML="{{ propInfo.landmark }}"></span></p>
-                        <p innerHTML="{{ propInfo.property_description }}"></p>
-                        <p innerHTML="{{ propInfo.permbt }}"></p>
-                        <p innerHTML="{{ propInfo.permuse }}"></p>
-                        <p innerHTML="{{ propInfo.pdf }}"></p>
+    <div class="card" [(ngModel)]="mapInput.hood" ngDefaultControl>
+        <div class="card-block">
+            <h2 class="card-title">{{ mapInput.hood }}</h2>
+            <p class="card-text">
+                {{ mapInput.hood }}
+            </p>
+        </div>
+    </div>
+    <div class="card" [(ngModel)]="mapInput.block && mapInput.lot" ngDefaultControl *ngIf='mapInput.block && mapInput.lot'>
+        <div class='card-header' innerHTML="{{ propInfo.proploc ? propInfo.proploc : propInfo.blocklot | titlecase}}"></div>
+        <div class="card-block">
+            <div class="card-media-block">
+                <img src="..." class="card-media-image">
+                <div class="card-media-description">
+                    <div class="card-media-image btn btn-inverse" [innerHTML]="mapInput.labelStyle">
+                        <a class='btn {{ propInfo.code }}'>{{ propInfo.code }}</a>
                     </div>
+                    <span class="card-media-title">
+                        <h2 class="btn-group">
+                            <button class="btn btn-inverse">
+                                Block {{ mapInput.block }}
+                            </button>
+                            <button class="btn btn-inverse">
+                                Lot {{ mapInput.lot }}
+                            </button>
+                            <button class="btn" style="background-color: darkorange; border-color: black;">
+                                <clr-icon shape="copy" title="Copy Block and Lot" class='is-inverse' style="height: 16px; width: 16px; margin: .3rem"></clr-icon>
+                            </button>
+                        </h2>
+                    </span>
                 </div>
-            </clr-accordion-content>
-        </clr-accordion-panel>
-    </clr-accordion>
+            </div>
+            <div class="card-text clr-col-12">
+                <p><span innerHTML="{{ propInfo.redevelopment_plan }}"></span></p>
+                <p><span innerHTML="{{ propInfo.historic_district }}"></span></p>
+                <p><span innerHTML="{{ propInfo.landmark }}"></span></p>
+                <p innerHTML="{{ propInfo.property_description }}"></p>
+                <p innerHTML="{{ propInfo.permbt }}"></p>
+                <p innerHTML="{{ propInfo.permuse }}"></p>
+                <p innerHTML="{{ propInfo.pdf }}"></p>
+            </div>
+        </div>
+    </div>
 </div>
