@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import carto from '@carto/carto-vl';
 import mapboxgl from 'mapbox-gl';
 
@@ -7,8 +7,21 @@ import { nwkHood } from '../../../assets/data/NwkNeighborhoods';
 
 import { CartoService, MapService } from '../../shared/services';
 
+import { nwkWards } from '../../../assets/data/NwkWards';
 import { CartoSQLResp, MapInput, ZoningFields } from '../../shared/models/map.input';
-import { hoods, hoodsInner, hoodsLabels } from './layers';
+import {
+    baseViz,
+    hoods,
+    hoodsInner,
+    hoodsLabels,
+    luSource,
+    luViz,
+    wardLabels,
+    wards,
+    wardsInner,
+    zoningMapViz,
+    zoningSource
+} from './layers';
 
 @Component({
     selector: 'app-map',
@@ -20,7 +33,7 @@ import { hoods, hoodsInner, hoodsLabels } from './layers';
 })
 
 export class MapComponent implements OnInit {
-    @Output() readonly parcelView;
+    @Input() parcelView;
     mapStyle = {
         'border-radius': '.5rem',
         display: 'flex',
@@ -34,16 +47,21 @@ export class MapComponent implements OnInit {
     parcelhover;
     clicked: MapInput = {hood: '', lot: ''};
     propInfo: ZoningFields = { code: '' };
+    geoLayer = hoods;
+    geoLayerInner = hoodsInner;
+    geoLayerLabels = hoodsLabels;
     layersToAdd = [
-        hoods,
-        hoodsInner,
-        hoodsLabels
+        this.geoLayer,
+        this.geoLayerInner,
+        this.geoLayerLabels
     ];
+    mainLayer = new carto.Layer('mainLayer', zoningSource, zoningMapViz);
+    map: any;
 
     constructor(readonly cartodata: CartoService, readonly mapper: MapService) {}
 
     ngOnInit(): void {
-        const map: any = new mapboxgl.Map({
+        this.map = new mapboxgl.Map({
             center: [-74.1723667, 40.735657],
             container: 'map',
             dragRotate: false,
@@ -52,75 +70,47 @@ export class MapComponent implements OnInit {
             touchZoomRotate: false,
             zoom: 12
         });
-
         const nav = new mapboxgl.NavigationControl({
             showCompass: false,
             showZoom: true
         });
-        map.addControl(nav, 'top-left');
+        this.map.addControl(nav, 'top-left');
         carto.setDefaultAuth({
             apiKey: '0c3e2b7cbff1b34a35e1f2ce3ff94114493bd681',
             user: 'nzlur'
         });
-
-        const zoningMapSource = new carto.source.Dataset(`
-        public.zoning
-      `);
-        const zoningMapViz = new carto.Viz(`
-        @code: $code
-        @proploc: $proploc
-        color: opacity(ramp(buckets($code,
-        [
-          "R-1","R-2","R-3","R-4",
-          "C-1","C-2","C-3",
-          "MX-1","MX-2","MX-3",
-          "I-1","I-2","I-3","RDV",
-          "PARK","INST","CEM",
-          "PORT","EWR"
-        ]), [
-          #fffaca, #fff68f, #fff100, #ebd417,
-          #a18aad, #da2028, #850204,
-          #e4a024, #f37520, #FF2900,
-          #e1c3dd, #A53ED5, #c0188c, #dddddd,
-          #229A00, #0063ff, #561818,
-          #B81609, #820c0c
-        ]),0.7)
-        strokeWidth: scaled(.1, 12)
-        strokeColor: rgb(200, 200, 200)
-      `);
-        const zoningMapLayer = new carto.Layer('zoningMapLayer', zoningMapSource, zoningMapViz);
-        const layers = [zoningMapLayer];
-        layers.forEach(layer => layer.addTo(map, 'watername_ocean'));
-        map.on('load', () => {
-            map.addSource('hoodMap', {
+        this.mainLayer.addTo(this.map, 'watername_ocean');
+        this.map.on('load', () => {
+            this.map.addSource('hoodMap', {
                 data: nwkHood,
                 type: 'geojson'
             });
-            this.layersToAdd.forEach(layer => map.addLayer(layer), 'watername_ocean');
-            map.resize();
-            map.on('mousemove', 'hoods-inner', e => {
+            this.layersToAdd.forEach(
+                layer => this.map.addLayer(layer, 'watername_ocean')
+                );
+            this.map.resize();
+            this.map.on('mousemove', 'hoods-inner', e => {
                 if (e.features.length > 0) {
                     if (this.hoveredStateId) {
-                        map.setFeatureState(
+                        this.map.setFeatureState(
                             { source: 'hoodMap', id: this.hoveredStateId },
                             { hover: false }
                         );
                     }
                     this.hoveredStateId = e.features[0].id;
-                    map.setFeatureState(
+                    this.map.setFeatureState(
                         { source: 'hoodMap', id: this.hoveredStateId },
                         { hover: true }
                     );
                 }
             });
-            map.on('click', 'hoods-inner', e => {
+            this.map.on('click', 'hoods-inner', e => {
                 if (e.features.length > 0) {
                     const NAME = 'NAME';
                     this.hoodClicked = e.features[0].properties[NAME];
                     const featurebound = bbox(e.features[0].geometry);
-                    map.setFilter('hoods-inner', ['!=', 'NAME', this.hoodClicked]);
-                    map.fitBounds(featurebound);
-                    this.mapper.loadlayer(e.features[0].properties[NAME], map);
+                    this.map.setFilter('hoods-inner', ['!=', 'NAME', this.hoodClicked]);
+                    this.map.fitBounds(featurebound);
                     this.clicked = {
                         block: undefined,
                         hood: this.hoodClicked,
@@ -128,27 +118,27 @@ export class MapComponent implements OnInit {
                     };
                 }
             });
-            map.on('mousemove', 'zoningMapLayer', e => {
+            this.map.on('mousemove', 'mainLayer', e => {
                 if (e.features.length > 0) {
                     if (this.parcelhover) {
-                        map.setFeatureState(
-                            { source: zoningMapSource, id: this.parcelhover },
+                        this.map.setFeatureState(
+                            { source: 'mainLayer', id: this.parcelhover },
                             { hover: false }
                         );
                     }
                     this.parcelhover = e.features[0].id;
-                    map.setFeatureState(
-                        { source: zoningMapSource, id: this.parcelhover },
+                    this.map.setFeatureState(
+                        { source: 'mainLayer', id: this.parcelhover },
                         { hover: true }
                     );
                 }
             });
-            map.on('click', 'zoningMapLayer', e => {
+            this.map.on('click', 'mainLayer', e => {
                 if (e.features.length > 0) {
                     const PAMS_PIN = 'PAMS_PIN';
                     this.lotClicked = e.features[0].properties[PAMS_PIN];
                     const featurebound = bbox(e.features[0].geometry);
-                    map.fitBounds(featurebound);
+                    this.map.fitBounds(featurebound);
                     this.clicked.block = this.lotClicked.split('_')[1];
                     this.clicked.lot = this.lotClicked.split('_')[2];
                     this.getPropInfo(this.clicked);
@@ -158,6 +148,50 @@ export class MapComponent implements OnInit {
     }
     zoneLabel = (data: string) => `<a class="btn ${data}">${data}</a>`;
 
+    updateViz(layer): any {
+        switch (layer) {
+            case 'landuse':
+                this.mainLayer.update(luSource, luViz);
+                break;
+            case 'zoning':
+                this.mainLayer.update(zoningSource, zoningMapViz);
+                break;
+            default:
+                return this.mainLayer.update(zoningSource, baseViz);
+        }
+    }
+    changeGeo(geolayer): any {
+        switch (geolayer) {
+            case 'hoods':
+                if (this.map.getLayer('wards')) {
+                    this.map.removeLayer('wards');
+                    this.map.removeLayer('wards-inner');
+                    this.map.removeLayer('wards-labels');
+                    this.map.addLayer(hoods, 'watername_ocean');
+                    this.map.addLayer(hoodsInner, 'watername_ocean');
+                    this.map.addLayer(hoodsLabels, 'watername_ocean');
+                }
+                break;
+            case 'wards':
+                if (!this.map.getSource('wardMap')) {
+                    this.map.addSource('wardMap', {
+                        data: nwkWards,
+                        type: 'geojson'
+                    });
+                }
+                if (this.map.getLayer('hoods')) {
+                    this.map.removeLayer('hoods');
+                    this.map.removeLayer('hoods-inner');
+                    this.map.removeLayer('hoods-labels');
+                    this.map.addLayer(wards, 'watername_ocean');
+                    this.map.addLayer(wardsInner, 'watername_ocean');
+                    this.map.addLayer(wardLabels, 'watername_ocean');
+                }
+                break;
+            default:
+                return;
+        }
+    }
     getPropInfo(mapInputter: MapInput): void {
         // tslint:disable-next-line: no-non-null-assertion
         this.cartodata.getZoning('*', mapInputter.block!, mapInputter.lot!)

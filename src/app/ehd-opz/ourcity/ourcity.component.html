@@ -5,24 +5,24 @@
                 <clr-icon [attr.shape]="legendItem.icon" clrVerticalNavIcon></clr-icon>
                 <span class="nav-text clr-row clr-justify-content-center">{{ legendItem.title }}</span>
                 <clr-vertical-nav-group-children *ngIf='legendItem.children'>
-                    <a *ngFor="let legendchild of legendItem.children" clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">
+                    <a *ngFor="let legendchild of legendItem.children" clrVerticalNavLink (click)='changeGeo(legendchild.item)' routerLinkActive="active">
                         <span class="nav-text clr-row clr-justify-content-center">{{ legendchild.title }}</span>
                     </a>
-                    <clr-radio-container>
-                        <label>Parcel Data</label>
-                        <clr-radio-wrapper>
-                            <input type="radio" clrRadio name="options" value="base" [(ngModel)]="parcelView" enabled />
-                            <label>Base</label>
-                        </clr-radio-wrapper>
-                        <clr-radio-wrapper>
-                            <input type="radio" clrRadio name="options" value="zoning" [(ngModel)]="parcelView" disabled />
-                            <label>Zoning</label>
-                        </clr-radio-wrapper>
-                        <clr-radio-wrapper>
-                            <input type="radio" clrRadio name="options" value="landuse" [(ngModel)]="parcelView" disabled />
-                            <label>Land Use</label>
-                        </clr-radio-wrapper>
-                    </clr-radio-container>
+                </clr-vertical-nav-group-children>
+            </clr-vertical-nav-group>
+            <clr-vertical-nav-group routerLinkActive="active">
+                <clr-icon shape="grid-chart" clrVerticalNavIcon></clr-icon>
+                <span class="nav-text clr-row clr-justify-content-center">Parcel Style</span>
+                <clr-vertical-nav-group-children>
+                    <a clrVerticalNavLink (click)='changeLayer("base")'>
+                        <span class="nav-text clr-row clr-justify-content-center">Base</span>
+                    </a>
+                    <a clrVerticalNavLink (click)='changeLayer("zoning")'>
+                        <span class="nav-text clr-row clr-justify-content-center">Zoning</span>
+                    </a>
+                    <a clrVerticalNavLink (click)='changeLayer("landuse")'>
+                        <span class="nav-text clr-row clr-justify-content-center">Land Use</span>
+                    </a>
                 </clr-vertical-nav-group-children>
             </clr-vertical-nav-group>
         </clr-vertical-nav>

@@ -1,9 +1,10 @@
 import {
-  Component, OnInit
+  Component, OnInit, ViewChild
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Record } from '../../shared/models';
 import { AirService } from '../../shared/services/air.service';
+import { MapComponent } from './map.component';
 
 @Component({
   selector: 'app-planning-ourcity',
@@ -11,10 +12,8 @@ import { AirService } from '../../shared/services/air.service';
   templateUrl: './ourcity.component.html'
 })
 export class OurCityComponent implements OnInit {
+  @ViewChild(MapComponent) map: MapComponent;
   collapsed = true;
-  subComponents: any = [
-    { label: 'Pipeline Map', path: 'map-pipeline' }
-  ];
   splashTitle$: Record;
   backgroundStyle = {
     'background-image': "url('assets/img/NwkLibrary.jpg')"
@@ -23,9 +22,11 @@ export class OurCityComponent implements OnInit {
     {
       children: [
         {
+          item: 'hoods',
           title: 'Neighborhoods'
         },
         {
+          item: 'wards',
           title: 'Wards'
         }
       ],
@@ -51,5 +52,12 @@ export class OurCityComponent implements OnInit {
         data => {
           this.splashTitle$ = data[records];
         });
+  }
+
+  changeLayer(layer): any {
+    this.map.updateViz(layer);
+  }
+  changeGeo(layer): any {
+    this.map.changeGeo(layer);
   }
 }
