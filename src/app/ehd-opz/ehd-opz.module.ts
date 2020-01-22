@@ -1,16 +1,14 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { ClarityModule } from '@clr/angular';
+import { FormsModule } from '@angular/forms';
+import { ClarityModule, CLR_TABS_DIRECTIVES } from '@clr/angular';
 
 import { SharedModule } from '../shared/shared.module';
 import { PLANNING_ROUTING } from './ehd-opz-routing.module';
 
 import * as components from './index';
-
-import { FormsModule } from '@angular/forms';
 import { MapComponent } from './ourcity/map.component';
-
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     ClarityModule,
     PLANNING_ROUTING
   ],
+  providers: [CLR_TABS_DIRECTIVES],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class EhdOpzModule { }

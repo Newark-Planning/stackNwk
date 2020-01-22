@@ -5,7 +5,7 @@
                 <clr-icon [attr.shape]="legendItem.icon" clrVerticalNavIcon></clr-icon>
                 <span class="nav-text clr-row clr-justify-content-center">{{ legendItem.title }}</span>
                 <clr-vertical-nav-group-children *ngIf='legendItem.children'>
-                    <a *ngFor="let legendchild of legendItem.children" clrVerticalNavLink (click)='changeGeo(legendchild.item)' routerLinkActive="active">
+                    <a *ngFor="let legendchild of legendItem.children" clrVerticalNavLink routerLinkActive="active" (click)='changeGeo(legendchild.item)'>
                         <span class="nav-text clr-row clr-justify-content-center">{{ legendchild.title }}</span>
                     </a>
                 </clr-vertical-nav-group-children>

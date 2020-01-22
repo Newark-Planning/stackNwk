@@ -57,6 +57,7 @@ export const planningBoardsComponents = [
   LHPCComponent,
   ZBAComponent
 ];
+
 // page component exports
 export * from './about/about.component';
 export * from './boards/boards.component';
@@ -81,6 +82,7 @@ export * from './staff/support/support.component';
 
 // Our City page components exports
 export *  from './ourcity/sidepanel.component';
+export * from './ourcity/sidepanel.component';
 
 // Resources page components exports
 export * from './resources/sub-pages/applications/applications.component';

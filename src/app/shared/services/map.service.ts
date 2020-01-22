@@ -1,105 +1,77 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+import Map from 'ol/Map';
+import View from 'ol/View';
+
+// Openlayers map service to acces maps by id
+// Inject the service in the class that has to use it and access the map with the getMap method.
+// @example
+//   import { MapService } from '../map.service';
+//   import OlMap from 'ol/Map';
+//   constructor(
+//     private mapService: MapService,
+//   ) { }
+//   ngOnInit() {
+//     // Get the current map
+//     const map: OlMap = this.mapService.getMap('map');
+//   }
+
+@Injectable({
+    providedIn: 'root'
+})
 export class MapService {
 
-    parcelSource(sourceData: string, map: any): void {
-        map.addSource('parcels', {
-            data: sourceData,
-            type: 'geojson'
-        });
-        map.addLayer({
-            id: 'parcels_layer',
-            paint: {
-                'line-color': 'darkgrey',
-                'line-opacity': 0.75,
-                'line-width': 0.5
-            },
-            source: 'parcels',
-            type: 'line'
-        });
-        map.addLayer({
-            id: 'parcels_inner',
-            layout: {},
-            paint: {
-                'fill-color': '#627BC1',
-                'fill-opacity': [
-                    'case',
-                    ['boolean', ['feature-state', 'hover'], false],
-                    0.5,
-                    0
-                ]
-            },
-            source: 'parcels',
-            type: 'fill'
+    /**
+     * List of Openlayer map objects [ol.Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html)
+     */
+    map = {};
+
+    /**
+     * Create a map
+     * @param id map id
+     * @returns [ol.Map](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html) the map
+     */
+    createMap(id): Map {
+        const map = new Map({
+            target: id,
+            view: new View({
+                center: [-74.1723667, 40.735657],
+                projection: 'EPSG:3857',
+                zoom: 12
+            })
         });
 
+        return map;
     }
-    // tslint:disable-next-line: cyclomatic-complexity
-    loadlayer(name: any, map: any): void {
-        switch (name) {
-            case 'Belmont':
-                this.parcelSource('assets/data/parcels/layer_parcels_Belmont.geojson', map);
-                break;
-            case 'Dayton':
-                this.parcelSource('assets/data/parcels/layer_parcels_Dayton.geojson', map);
-                break;
-            case 'Downtown':
-                this.parcelSource('assets/data/parcels/layer_parcels_Downtown.geojson', map);
-                break;
-            case 'Fairmount':
-                this.parcelSource('assets/data/parcels/layer_parcels_Fairmount.geojson', map);
-                break;
-            case 'Forest Hill':
-                this.parcelSource('assets/data/parcels/layer_parcels_Forest_Hill.geojson', map);
-                break;
-            case 'Ironbound':
-                this.parcelSource('assets/data/parcels/layer_parcels_Ironbound.geojson', map);
-                break;
-            case 'Lincoln Park':
-                this.parcelSource('assets/data/parcels/layer_parcels_Lincoln_Park.geojson', map);
-                break;
-            case 'Lower Broadway':
-                this.parcelSource('assets/data/parcels/layer_parcels_Lower_Broadway.geojson', map);
-                break;
-            case 'Lower Clinton Hill':
-                this.parcelSource('assets/data/parcels/layer_parcels_Lower_Clinton_Hill.geojson', map);
-                break;
-            case 'Lower Roseville':
-                this.parcelSource('assets/data/parcels/layer_parcels_Lower_Roseville.geojson', map);
-                break;
-            case 'Mount Pleasant':
-                this.parcelSource('assets/data/parcels/layer_parcels_Mount_Pleasant.geojson', map);
-                break;
-            case 'Newark Industrial District':
-                this.parcelSource('assets/data/parcels/layer_parcels_Newark_Industrial_District.geojson', map);
-                break;
-            case 'North Broadway-Woodside':
-                this.parcelSource('assets/data/parcels/layer_parcels_North_Broadway-Woodside.geojson', map);
-                break;
-            case 'Port District':
-                this.parcelSource('assets/data/parcels/layer_parcels_Port_District.geojson', map);
-                break;
-            case 'University Heights':
-                this.parcelSource('assets/data/parcels/layer_parcels_University_Heights.geojson', map);
-                break;
-            case 'Upper Clinton Hill':
-                this.parcelSource('assets/data/parcels/layer_parcels_Upper_Clinton_Hill.geojson', map);
-                break;
-            case 'Upper Roseville':
-                this.parcelSource('assets/data/parcels/layer_parcels_Upper_Roseville.geojson', map);
-                break;
-            case 'Vailsburg':
-                this.parcelSource('assets/data/parcels/layer_parcels_Vailsburg.geojson', map);
-                break;
-            case 'Weequahic':
-                this.parcelSource('assets/data/parcels/layer_parcels_Weequahic.geojson', map);
-                break;
-            case 'West Side':
-                this.parcelSource('assets/data/parcels/layer_parcels_West_Side.geojson', map);
-                break;
-            default:
-                return;
+
+    /**
+     * Get a map. If it doesn't exist it will be created.
+     * @param id id of the map or an objet with a getId method (from mapid service), default 'map'
+     */
+    getMap(id): Map {
+        // tslint:disable-next-line: no-parameter-reassignment
+        id = ((id && id.getId) ? id.getId() : id) || 'map';
+        // Create map if not exist
+        if (!this.map[id]) {
+            this.map[id] = this.createMap(id);
         }
+
+        // return the map
+        return this.map[id];
     }
+
+    // Get all maps
+    // NB: to access the complete list of maps you should use the ngAfterViewInit() method to have all maps instanced.
+    // @return the list of maps
+    getMaps(): any {
+        return this.map;
+    }
+
+    // Get all maps
+    // NB: to access the complete list of maps you should use the ngAfterViewInit() method to have all maps instanced.
+    // @return array of maps
+    getArrayMaps(): any {
+        return Object.values(this.map);
+    }
+
 }

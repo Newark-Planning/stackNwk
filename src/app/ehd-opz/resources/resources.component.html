@@ -1,15 +1,11 @@
 <section class='secondary-content'>
     <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Documents</h2>
-    <ul id="demoTabs" class="nav" role="tablist">
-        <li *ngFor="let subComponent of subComponents" role="presentation" class="nav-item">
-            <button class="btn btn-link nav-link" [routerLink]="subComponent.path" routerLinkActive="active" [attr.aria-selected]="router.url.endsWith(subComponent.path)" type="button" aria-controls="tabs-content">
-                {{subComponent.label}}
-          </button>
-        </li>
-    </ul>
-    <div id="tabs-content" class="clr-row clr-justify-content-center">
-        <div class="clr-col-12">
-            <router-outlet></router-outlet>
-        </div>
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+            {{link.label}}
+        </a>
+    </nav>
+    <div id="tabs-content">
+        <router-outlet></router-outlet>
     </div>
 </section>

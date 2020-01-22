@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Record } from '../../shared/models';
+import { Record, SubComponent } from '../../shared/models';
 
 @Component({
   selector: 'app-opz-boards',
@@ -8,7 +8,7 @@ import { Record } from '../../shared/models';
   templateUrl: './boards.component.html'
 })
 
-export class OpzBoardsComponent {
+export class OpzBoardsComponent implements OnInit {
   inOverflow = true;
   layout = 'horizontal';
   splashTitle$: Record;
@@ -16,19 +16,28 @@ export class OpzBoardsComponent {
   backgroundStyle = {
     'background-image': "url('assets/img/ironboundbig.jpg')"
   };
-  subComponents = [
-    { label: 'Zoning Board of Adjustment', path: 'zba' },
-    { label: 'Central Planning Board', path: 'cpb' },
-    { label: 'Landmark & Historic Preservation Commission', path: 'lhpc' },
-    { label: 'Environmental Commission', path: 'ec' }
-  ];
   button$ = [
     { icon: 'calendar', index: 1, text: 'Scheduled Meetings', textSmall: 'Meetings' },
     { icon: 'file', index: 2, text: 'Minutes', textSmall: 'Minutes' },
     { icon: 'file', index: 3, text: 'Agendas', textSmall: 'Agendas' }
   ];
-
+  subComponents: Array<SubComponent | any>;
+  activeLinkIndex = -1;
   constructor(
     readonly route: ActivatedRoute,
-    readonly router: Router) { }
+    readonly router: Router) {
+      this.subComponents = [
+        { label: 'Zoning Board of Adjustment', path: 'zba', index: 0 },
+        { label: 'Central Planning Board', path: 'cpb', index: 1 },
+        { label: 'Landmark & Historic Preservation Commission', path: 'lhpc', index: 2 },
+        { label: 'Environmental Commission', path: 'ec', index: 3 }
+      ];
+    }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(res => {
+      this.activeLinkIndex = this.subComponents.indexOf(this.subComponents.find(tab => tab.link === `.${this.router.url}`));
+    });
+
+  }
 }

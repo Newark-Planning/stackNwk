@@ -9,3 +9,9 @@ export interface MyRoute extends Route {
   icon?: string;
   title?: string;
 }
+export interface SubComponent {
+  icon?: string;
+  index?: number;
+  label: string;
+  path: string;
+}

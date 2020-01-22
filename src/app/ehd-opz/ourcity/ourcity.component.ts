@@ -1,6 +1,4 @@
-import {
-  Component, OnInit, ViewChild
-} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Record } from '../../shared/models';
 import { AirService } from '../../shared/services/air.service';
@@ -43,7 +41,8 @@ export class OurCityComponent implements OnInit {
   constructor(
     public airData: AirService,
     readonly route: ActivatedRoute,
-    readonly router: Router) { }
+    readonly router: Router
+    ) { }
 
   ngOnInit(): void {
     const records = 'records';

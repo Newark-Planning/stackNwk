@@ -20,6 +20,14 @@
     color: white;
 }
 
+#map {
+    border-radius: .5rem;
+    display: flex;
+    height: 75vh;
+    margin: auto;
+    position: relative;
+}
+
 a.btn {
     &.R-1 {
         background-color: #fffaca !important;
