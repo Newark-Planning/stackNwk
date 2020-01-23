@@ -10,27 +10,68 @@
                 "MX-2"
             ],
             "Notes": "For accessory bulldings in residential districts see Note 7 on page 114. For fire escapes, see Note 9 on page 115.",
-            "Min Lot Size for Subdivision": 2500,
-            "Min Lot Width for Subdivision": 25,
+            "Min Lot Size for Subdivision": {
+                "If R-1": 5000,
+                "Else": 2500
+            },
+            "Min Lot Width for Subdivision": {
+                "If R-1": 50,
+                "Else": 25
+            },
             "Max Building Height": {
                 "stories": 3,
                 "height": 36,
+                "If R-1, height": 35,
                 "notes": "For towers, cupolas, and other elements of architectural character, see Note 1 on page 114."
             },
-            "Front Yard": [
-                "Front setback shall match the shorter front setback of the two closest principle buildings on each side of the project site on the same block as the site or 6 feet if no prevailing setback.",
-                "Regarding exceptions for bay windows, balconies, stoops, porches, and other elements of architectural character, see Note 2 on page 114.",
-                "For through lots, see Note 3 on page 114.",
-                "For corner lots, see Note 4 on page 114."
-            ],
-            "Side Yard": "3 ft minimum",
-            "Min Rear Yard": 30,
+            "Front Yard": {
+                "If R-1": [
+                    "Front setback shall match the shorter front setback of the two closest principle buildings on each side of the project site on the same block as the site up to 50 feet. If no prevailing setback, 15 feet max and min.",
+                    "For through lots, a front yard shall be provided at each street.",
+                    "For corner lots, there shall be a front yard on each street-facing frontage, provided that the width of such lot for building purposes shall not be reduced to less than 25 feet and no accessory building shall project into the front yard on either street.",
+                    "No front yard on the longer side of a corner need exceed 12½ feet."
+                ],
+                "Else": [
+                    "Front setback shall match the shorter front setback of the two closest principle buildings on each side of the project site on the same block as the site or 6 feet if no prevailing setback.",
+                    "Regarding exceptions for bay windows, balconies, stoops, porches, and other elements of architectural character, see Note 2 on page 114.",
+                    "For through lots, see Note 3 on page 114.",
+                    "For corner lots, see Note 4 on page 114."
+                ]
+            },
+            "Side Yard": {
+                "If R-1": [
+                    "One side yard must be 10 feet minimum and other must be 5 feet minimum.",
+                    "For ornamental features, window sills, bay windows, and balconies, see Note 10 on page 115.",
+                    "For chimneys, see Note 12 on page 115."
+                ],
+                "Else": [
+                    "3 ft minimum"
+                ]
+            },
+            "Min Rear Yard": {
+                "If R-1": [
+                    30,
+                    "For ornamental features, window sills, bay windows, and balconies, see Note 10 on page 115.",
+                    "For chimneys, see Note 12 on page 115.",
+                    "When a rear yard opens onto a public alley, see Note 13 on page 115."
+                ],
+                "Else": 30
+            },
             "Min Lot Area per Dwelling": "n/a",
-            "Max Lot Coverage": 0.5,
+            "Max Lot Coverage": {
+                "If R-1": 0.40,
+                "Else": 0.5
+            },
             "Max Impervious (Paved) Yard Area": {
-                "Front Yard": 0.65,
-                "Rear Yard": 0.30,
-                "notes": "Only one driveway no wider than 10 feet permitted in the front yard. A paved walkway is permitted along one side of a dwelling."
+                "Front Yard": {
+                    "If R-1": 0.30,
+                    "Else": 0.65
+                },
+                "Rear Yard": {
+                    "If R-1": 0.50,
+                    "Else": 0.30
+                },
+                "notes": "Only one driveway no wider than 10 feet permitted in the front yard. A paved walkway is permitted along one side of a dwelling at the side yard."
             },
             "Min Building Transparency": {
                 "Primary Front Facade": 0.30,
@@ -352,10 +393,10 @@
             "Min Lot Size for Subdivision": 3500,
             "Min Lot Width for Subdivision": 35,
             "Max Building Height": {
-                "In C1 zone": "4 stories and 48 feet",
-                "In C2 zone": "5 stories and 60 feet",
-                "In C3 zone": "8 stories and 96 feet",
-                "In MX-1 & MX-2 zones": "4 stories and 48 feet"
+                "If C1": "4 stories and 48 feet",
+                "If C2": "5 stories and 60 feet",
+                "If C3": "8 stories and 96 feet",
+                "If MX-1 or MX-2": "4 stories and 48 feet"
             },
             "Front Yard": {
                 "Minimum": 0,
@@ -368,9 +409,9 @@
                 "Abutting a nonresidential district": 20
             },
             "Min Lot Area per Dwelling": {
-                "In C1 zone": 580,
-                "In C2 zone": 340,
-                "In C3 zone": 310
+                "If C1": 580,
+                "If C2": 340,
+                "If C3": 310
             },
             "Max Lot Coverage": 0.80,
             "Max Impervious (Paved) Yard Area": {
@@ -462,8 +503,8 @@
             "Min Lot Size for Subdivision": 5000,
             "Min Lot Width for Subdivision": 50,
             "Max Building Height": {
-                "In MX-1 zone": "4 stories and 48 feet",
-                "In I-1, I-2, I-3 & EWR-S zones": "8 stories and 96 feet"
+                "If MX-1": "4 stories and 48 feet",
+                "If I-1, I-2, I-3 or EWR-S": "8 stories and 96 feet"
             },
             "Front Yard": "Front setback shall match the shorter front setback of the two closest principle buildings on each side of the project site on the same block as the site or 6 feet if no prevaling setback.",
             "Side Yard": "3 ft minimum",
