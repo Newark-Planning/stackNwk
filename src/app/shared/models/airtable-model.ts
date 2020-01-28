@@ -79,4 +79,5 @@ export interface Record extends EntityMap<object> {
     | DocsFields
     | ArticleFields
   ];
+  createdTime: string;
 }

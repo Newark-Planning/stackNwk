@@ -2,21 +2,28 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { CartoSQLResp } from '../models';
+import { Record } from '../models';
 
 @Injectable()
 export class GetRegsService {
-    // tslint:disable-next-line: restrict-plus-operands
-    header = { authorization: `${this.API_STRING + environment.config.AIRTABLE_API_KEY}` };
-    constructor(
-        public http: HttpClient) { }
+  readonly API_STRING = 'Bearer ';
+  readonly API_APP_ID = 'app5cKW5Cd7EsABJX';
+  readonly API_BASE_URL = 'https://api.airtable.com';
+  // tslint:disable-next-line: restrict-plus-operands
+  header = { authorization: `${this.API_STRING + environment.config.AIRTABLE_API_KEY}` };
+  constructor(
+    public http: HttpClient) { }
 
-    getZoning(API_SELECT: string, API_WHERE_BLOCK: string, API_WHERE_LOT: string): Observable<any> {
-        const SQL_QUERY =
-            `select ${API_SELECT} from public.zoning where blocklot = '${API_WHERE_BLOCK}-${API_WHERE_LOT}'`;
+  getZones(API_BASE_NAME: string, API_FILTER: string): Observable<any> {
+    const BASE_NAME = API_BASE_NAME;
+    const FILTER = API_FILTER;
 
-        return this.http.get<CartoSQLResp>(
-            `${this.API_BASE_URL}${SQL_QUERY}`
-        );
-    }
+    return this.http.get<Record>(
+      `${this.API_BASE_URL}/v0/${this.API_APP_ID}/${BASE_NAME}?${FILTER}`,
+      {
+        headers: this.header
+      }
+    );
+  }
+
 }
