@@ -373,6 +373,8 @@
             true,
             "element", [
                 "nwk",
+                "opz",
+                "sub",
                 "app",
                 "page",
                 "test"
