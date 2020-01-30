@@ -1,6 +1,8 @@
 import { Route } from '@angular/router';
 
 export * from './airtable-model';
+export * from './airtable-fields.model';
+export * from './airtable-bulks.model';
 export * from './map.input';
 export * from './map';
 export * from './bulk-use.models';

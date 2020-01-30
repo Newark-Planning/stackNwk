@@ -1,37 +1,15 @@
-<app-splash [backgroundSetting]='backgroundStyle' parentFragment='/opz'>
-    <div splash-page class='clr-col'>
-        <h3 class='dept clr-hidden-xs-down'>division of</h3>
-        <br>
-        <h2 class='dept-ehd clr-hidden-xs-down'>Planning & Zoning</h2>
-    </div>
-    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>
-        <clr-icon shape='cloud-chart' class='full-icon'></clr-icon>
-        {{ splash.fields['Content'] }}
-    </h2>
-    <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button *ngFor="let button of button$" class="btn btn-primary btn-lg btn-block">
-          <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
-          <span class="clr-hidden-sm-down">{{ button.text }}</span>
-          <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
-        </button>
-    </div>
-</app-splash>
-<section class='secondary-content'>
-    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Our Staff</h2>
-    <ul id="tabs-content" class="nav" role="tablist">
-        <li *ngFor="let subComponent of subComponents" role="presentation" class="nav-item">
-            <button class="btn btn-link nav-link" [routerLink]="subComponent.path" routerLinkActive="active" [attr.aria-selected]="router.url.endsWith(subComponent.path)" type="button" aria-controls="tabs-content">
-                {{subComponent.label}}
-          </button>
-        </li>
-    </ul>
-    <div id="tabs-content" class="clr-row clr-justify-content-center">
-        <div class="clr-col-lg-8 clr-col-md-10 clr-col-12">
-            <div class="card ">
-                <div class="card-block as-app-body">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
+<div class="card">
+    <div class="card-block clr-row">
+        <opz-lot [zone]="zoneName"></opz-lot>
+        <div class="card-footer">
+            <form clrForm (submit)="changeDiagram(zoneName)">
+                <clr-datalist-container>
+                    <input clrDatalistInput [(ngModel)]="zoneName" placeholder="Search for a Zone" name="Options" />
+                    <datalist id='zoneChoices'>
+                        <option *ngFor="let zone of zoneOptions" [value]="zone"></option>
+                    </datalist>
+                </clr-datalist-container>
+            </form>
         </div>
     </div>
-</section>
+</div>

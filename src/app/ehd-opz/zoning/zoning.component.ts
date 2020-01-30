@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, ViewChild } from '@angular/core';
 
 import { routeAnimations } from '../../core/core.module';
-import { Record } from '../../shared/models';
+import { LotComponent } from './diagrams/lot.component';
 
-import { AirService } from '../../shared/services/air.service';
+import { buildingTypes } from './zoning.model';
 
 @Component({
   animations: [routeAnimations],
@@ -12,35 +11,32 @@ import { AirService } from '../../shared/services/air.service';
   styleUrls: ['./zoning.component.scss'],
   templateUrl: './zoning.component.html'
 })
-export class OpzZoningComponent implements OnInit {
-  subComponents = [
-    { label: 'Our Leadership', path: 'leadership' },
-    { label: 'Planning Staff', path: 'planners' },
-    { label: 'Zoning Staff', path: 'zoners' },
-    { label: 'Support Staff', path: 'support' }
+export class OpzZoningComponent {
+  @ViewChild(LotComponent) lotComponent: LotComponent;
+  zoneOptions: Array<string> = [
+    'R-1',
+    'R-2',
+    'R-3',
+    'R-4',
+    'R-5',
+    'R-6',
+    'C-1',
+    'C-2',
+    'C-3',
+    'I-1',
+    'I-2',
+    'I-3',
+    'MX-1',
+    'MX-2',
+    'MX-3',
+    'INST',
+    'EWR-S'
   ];
-  splashTitle$: Record;
-  backgroundStyle = {
-    'background-image': "url('assets/img/NwkCitySky.png')"
-  };
-  button$ = [
-    { icon: 'pinboard', index: 1, text: 'Zoning Map', textSmall: 'Zoning' },
-    { icon: 'building', index: 2, text: 'Pipeline Map', textSmall: 'Pipeline' },
-    { icon: 'bicycle', index: 3, text: 'Transit Map', textSmall: 'Transit' }
-  ];
+  buildingtypes = buildingTypes;
+  @Input() zoneName;
+  dimensions;
 
-  constructor(
-    public airData: AirService,
-    readonly route: ActivatedRoute,
-    readonly router: Router) { }
-
-  ngOnInit(): void {
-    const records = 'records';
-    // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('PageComps', "filterByFormula=%7BName%7D%3D'Zoning+Splash+Title'")
-      .subscribe(
-        data => {
-          this.splashTitle$ = data[records];
-        });
+  changeDiagram(newZone): any {
+    this.lotComponent.updateDiagram(newZone);
   }
 }

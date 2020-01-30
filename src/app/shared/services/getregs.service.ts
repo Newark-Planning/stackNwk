@@ -7,14 +7,30 @@ import { Record } from '../models';
 @Injectable()
 export class GetRegsService {
   readonly API_STRING = 'Bearer ';
-  readonly API_APP_ID = 'app5cKW5Cd7EsABJX';
+  readonly API_APP_ID = 'appxRUzRJWREStdoU';
   readonly API_BASE_URL = 'https://api.airtable.com';
   // tslint:disable-next-line: restrict-plus-operands
   header = { authorization: `${this.API_STRING + environment.config.AIRTABLE_API_KEY}` };
   constructor(
     public http: HttpClient) { }
 
-  getZones(API_BASE_NAME: string, API_FILTER: string): Observable<any> {
+  getAllZones(): Observable<any> {
+    return this.http.get<Record>(
+      `${this.API_BASE_URL}/v0/${this.API_APP_ID}/Zones?view=Grouped%20by%20Type`,
+      {
+        headers: this.header
+      }
+    );
+  }
+  getZoneRecord(): Observable<any> {
+    return this.http.get<Record>(
+      `${this.API_BASE_URL}/v0/${this.API_APP_ID}/Zones?view=Grouped%20by%20Type`,
+      {
+        headers: this.header
+      }
+    );
+  }
+  getPrimaryUses(API_BASE_NAME: string, API_FILTER: string): Observable<any> {
     const BASE_NAME = API_BASE_NAME;
     const FILTER = API_FILTER;
 

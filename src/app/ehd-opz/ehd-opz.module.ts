@@ -17,6 +17,7 @@ import { MapComponent } from './ourcity/map.component';
     components.planningMapComponents,
     components.planningResComponents,
     components.planningBoardsComponents,
+    components.planningZonesComponents,
     MapComponent
   ],
   imports: [
