@@ -34,9 +34,10 @@ export class OpzZoningComponent {
   ];
   buildingtypes = buildingTypes;
   @Input() zoneName;
+  @Input() bldgType;
   dimensions;
 
-  changeDiagram(newZone): any {
-    this.lotComponent.updateDiagram(newZone);
+  changeDiagram(newZone, bldgType): any {
+    this.lotComponent.updateDiagram(newZone, bldgType);
   }
 }

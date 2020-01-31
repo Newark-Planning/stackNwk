@@ -1,4 +1,5 @@
 import {
+    ChangeDetectionStrategy,
     Component,
     Input,
     OnInit
@@ -6,6 +7,7 @@ import {
 import { BulkReqs, getReqs } from '../zoning.model';
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.Default,
     selector: 'opz-lot',
     styleUrls: ['./lot.component.scss'],
     templateUrl: './lot.component.html'
@@ -13,31 +15,51 @@ import { BulkReqs, getReqs } from '../zoning.model';
 export class LotComponent implements OnInit {
 
     @Input() zone;
-    currentReqs: BulkReqs = getReqs('R-1', 'One-family');
+    @Input() bldgType;
+    @Input() currentReqs: BulkReqs = getReqs('R-1', 'One-family');
     lotHeight = this.currentReqs.MinLotSize / this.currentReqs.MinLotWidth;
+    viewBox = '0 0 125 125';
+    frontYard = 25;
+    rearYard = 30;
     envelope = {
-        height: 50,
+        height: 45,
         width: 35,
-        x: 30
+        x: 62.5,
+        y: 37.5
     };
     @Input() dimensions = {
         envelope: {
             height: this.envelope.height,
             width: this.envelope.width,
-            x: (this.currentReqs.SideYard.other) ? this.currentReqs.SideYard.other + 25 : this.currentReqs.SideYard + 25
+            x: this.envelope.x,
+            y: this.envelope.y
         },
+        frontYard: this.frontYard,
         lotHeight: this.lotHeight,
         lotWidth: this.currentReqs.MinLotWidth,
-        viewBox: `0 0 ${this.currentReqs.MinLotWidth + 50} ${this.lotHeight + 50}`,
-        widthLine: this.currentReqs.MinLotWidth + 25,
-        widthLineCap: this.currentReqs.MinLotWidth + 25,
-        widthLineTransform: `matrix(1 0 0 1 ${this.currentReqs.MinLotWidth * 0.5 + 21.0253} 21.0253)`
+        rearYard: {
+            height: this.rearYard,
+            y: this.envelope.y + this.envelope.height
+        },
+        sideYard: {
+            left: 5,
+            right: 10,
+            rightX: this.currentReqs.MinLotWidth + 57.5 - 10,
+            y: this.frontYard + 12.5
+        },
+        viewBox: `0 0 ${this.currentReqs.MinLotWidth + 57.5 + 17.5} ${this.lotHeight + 25}`,
+        widthLine: {
+            x1: this.currentReqs.MinLotWidth + 57.5
+        }
     };
     ngOnInit(): void {
-        this.zone = 'R1';
+        this.zone = 'R-1';
+        this.bldgType = 'One-family';
     }
 
-    updateDiagram(zone, buildingType = 'One-family'): any {
+    updateDiagram(zone, buildingType): any {
         this.currentReqs = getReqs(zone, buildingType);
+        // tslint:disable-next-line: no-console
+        console.log(this.currentReqs);
     }
 }

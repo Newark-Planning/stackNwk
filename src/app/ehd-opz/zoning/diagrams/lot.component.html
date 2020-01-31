@@ -1,52 +1,55 @@
-<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" [attr.viewBox]="dimensions.viewBox" style="enable-background:new 0 0 100 150;" xml:space="preserve">
-
-<g id="Layer_2">
-	<path class="bg" d="M97,150H3c-1.7,0-3-1.3-3-3V3c0-1.7,1.3-3,3-3h94c1.7,0,3,1.3,3,3v144C100,148.7,98.7,150,97,150z"/>
-</g>
-<g id="Layer_1">
-	<g>
-		<rect id="lot" x="25" y="24.5" class="lot" [attr.width]='dimensions.lotWidth' height="100"/>
-	</g>
-	<g>
-		<rect id="sidewalk" x="25" y="28.5" class="walkway" width="50" height="3.5"/>
-		<rect id="walkway" x="45.5" y="28.5" class="walkway" width="3.5" height="10.5"/>
-	</g>
-	<g>
-		<rect id="driveway" x="65" y="24.5" class="driveway" width="10" height="42"/>
-	</g>
-	<text transform="matrix(1 0 0 1 6.8408 74)" class="main-text">
-		<tspan x="0" y="0" class="text-fam text-size">Lot Area {{ zone }}</tspan>
-		<tspan x="2" y="2.4" class="text-fam text-small">1 px = 1 ft</tspan>
-    </text>
-    <g id="envelope">
-        <rect [attr.x]="dimensions.envelope.x" y="39" class="envelope" [attr.width]="dimensions.envelope.width" [attr.height]="dimensions.envelope.height"/>
-        <text transform="matrix(1 0 0 1 35 74)" class="envelope-text text-fam text-size">Building Envelope</text>
+<svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="dimensions.viewBox">
+  <title>LotDiagram</title>
+  <g id="YardSides">
+    <g id="FrontYard">
+      <rect class="yard" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.frontYard' />
     </g>
-    <rect id="lotOutline" x="25" y="24.5" class="lot-line" [attr.width]='dimensions.lotWidth' height="100"/>
-	<g>
-		<g>
-			<line class="length-line" x1="78.1" y1="24.6" x2="78.1" y2="124.4"/>
-			<g>
-				<rect x="77.3" y="24.5" width="1.6" height="0.3"/>
-			</g>
-			<g>
-				<rect x="77.3" y="124.3" width="1.6" height="0.3"/>
-			</g>
-		</g>
-	</g>
-	<text transform="matrix(-3.464102e-07 1 -1 -3.464102e-07 78.8702 70.9392)" class="text-fam text-size">100 ft</text>
-	<g>
-		<g>
-			<line class="length-line" x1="25.1" y1="21.4" [attr.x2]='dimensions.widthLine' y2="21.4"/>
-			<g>
-				<rect x="25" y="20.8" width="0.2" height="1.1"/>
-			</g>
-			<g>
-				<rect y="20.8" width="0.2" height="1.1" [attr.x]='dimensions.widthLineCap'/>
-			</g>
-		</g>
-	</g>
-	<text [attr.transform]="dimensions.widthLineTransform" class="text-fam text-size">{{ dimensions.lotWidth }} ft</text>
-</g>
+    <g id="RearYard">
+      <rect class="yard" x="57.5" [attr.y]='dimensions.rearYard.y' [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.rearYard.height' />
+    </g>
+    <rect id="LeftSide" class="yard" x="57.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.left' [attr.height]="dimensions.envelope.height"/>
+    <rect id="RightSide" class="yard" [attr.x]='dimensions.sideYard.rightX' x="97.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.right' [attr.height]="dimensions.envelope.height"/>
+  </g>
+  <g id="envelope">
+    <g id="BldgEnvelope">
+      <rect class="envelope" [attr.x]="dimensions.envelope.x" [attr.y]="dimensions.envelope.y"  [attr.width]="dimensions.envelope.width" [attr.height]="dimensions.envelope.height" />
+    </g>
+  </g>
+  <g id="Ways">
+    <rect id="Driveway" class="asphalt" x="97.5" y="12.5" width="10" height="50"/>
+    <rect id="Sidewalk" class="walkway" x="57.5" y="16" width="40" height="3.5"/>
+    <rect id="Walkway" class="walkway" x="78.25" y="19.5" width="3.5" height="18"/>
+    <rect id="Stoop" class="walkway" x="78.25" y="32.75" width="3.5" height="6" transform="translate(115.75 -44.25) rotate(90)"/>
+  </g>
+  <g id="Outline">
+    <rect id="LotOutline" class="lotOutline" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.lotHeight'/>
+  </g>
+  <g id="Scales">
+    <g id="LotDepth">
+      <g>
+        <line class="scaleLine"  x1="111.5" y1="12.69" x2="111.5" y2="112.31"/>
+        <rect x="110.28" y="12.5" width="2.44" height="0.38"/>
+        <rect x="110.28" y="112.13" width="2.44" height="0.38"/>
+      </g>
+    </g>
+    <g id="LotWidth">
+      <g>
+        <line class="scaleLine" [attr.x1]="dimensions.widthLine.x1" y1="8.5" x2="57.69" y2="8.5"/>
+        <rect [attr.x]="dimensions.widthLine.x1" y="7.28" width="0.38" height="2.44"/>
+        <rect x="57.5" y="7.28" width="0.38" height="2.44"/>
+      </g>
+    </g>
+    <text class="scaleText" transform="translate(79.58 6.4)">{{ dimensions.lotWidth }}’</text>
+<text class="scaleText" transform="translate(112.97 62.67)">{{ dimensions.lotHeight }}’</text>
+  </g>
+  <g id="Title">
+    <text class="title-zone" transform="translate(22.76 60.25)">
+		{{ zone }}
+		<tspan class="title-bldg">
+			<tspan x="-8.85" y="6">
+				{{ bldgType }}
+			</tspan>
+		</tspan>
+	</text>
+  </g>
 </svg>

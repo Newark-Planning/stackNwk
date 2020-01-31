@@ -8,48 +8,16 @@ svg {
     height: inherit;
 }
 
-.bg {
-    fill: #FFFFFF;
-}
-
-.lot {
-    fill: #009650;
-}
-
-.walkway {
-    fill: #646478;
-}
-
-.driveway {
-    fill: #323232;
-}
-
-.main-text {
-    enable-background: new;
-}
-
-.text-fam {
-    font-family: 'Century Gothic';
-}
-
-.text-size {
-    font-size: 3px;
-    font-weight: 700;
-}
-
-.text-small {
-    font-size: 2px;
+.yard {
+    fill: #9bf78b;
 }
 
 .envelope {
-    fill: lightslategrey;
-    stroke: darkslategrey;
-    stroke-width: 0.25;
+    fill: #c7b299;
 }
 
 #envelope:hover .envelope {
     fill: darkslategrey;
-    stroke: lightslategrey;
     cursor: pointer;
 }
 
@@ -57,21 +25,40 @@ svg {
     fill: slategray
 }
 
-.envelope-text {
-    fill: white;
+.asphalt {
+    fill: #515151;
 }
 
-.lot-line {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 0.5;
-    stroke-linecap: round;
-    stroke-dasharray: 0, 1, 2;
+.walkway {
+    fill: #c1c1c1;
 }
 
-.length-line {
+.lotOutline,
+.scaleLine {
     fill: none;
-    stroke: #000000;
+    stroke: #000;
     stroke-width: 0.25;
     stroke-miterlimit: 10;
+    stroke-linejoin: round;
+}
+
+.scaleText {
+    font-size: 4px;
+}
+
+.scaleText,
+.cls-9 {
+    font-family: 'Century Gothic';
+}
+
+.title-zone {
+    font-size: 8px;
+    font-family: 'Century Gothic';
+    font-weight: 700;
+}
+
+.title-bldg {
+    font-size: 5px;
+    font-weight: 400;
+    max-width: 5vw;
 }

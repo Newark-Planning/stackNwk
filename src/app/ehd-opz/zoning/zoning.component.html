@@ -1,15 +1,22 @@
 <div class="card">
     <div class="card-block clr-row">
-        <opz-lot [zone]="zoneName"></opz-lot>
+        <opz-lot [zone]="zoneName" [bldgType]="bldgType"></opz-lot>
         <div class="card-footer">
-            <form clrForm (submit)="changeDiagram(zoneName)">
-                <clr-datalist-container>
-                    <input clrDatalistInput [(ngModel)]="zoneName" placeholder="Search for a Zone" name="Options" />
-                    <datalist id='zoneChoices'>
-                        <option *ngFor="let zone of zoneOptions" [value]="zone"></option>
-                    </datalist>
-                </clr-datalist-container>
+            <form clrForm ngDefaultControl>
+                <clr-select-container>
+                    <label>Choose a Zone</label>
+                    <select clrSelect name="options" [(ngModel)]="zoneName">
+                        <option *ngFor="let zone of zoneOptions" [value]="zone">{{ zone }}</option>
+                    </select>
+                </clr-select-container>
+                <clr-select-container>
+                    <label>Choose a Building Type</label>
+                    <select clrSelect name="options" [(ngModel)]="bldgType">
+                        <option *ngFor="let type of buildingtypes" [value]="type">{{ type }}</option>
+                    </select>
+                </clr-select-container>
             </form>
+            <button type="submit" class="btn btn-success-outline" (click)="changeDiagram(zoneName,bldgType)">Submit</button>
         </div>
     </div>
 </div>
