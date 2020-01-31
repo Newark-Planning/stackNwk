@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-block clr-row">
-        <opz-lot [zone]="zoneName" [bldgType]="bldgType"></opz-lot>
+        <opz-lot [zone]="zoneName" [bldgType]="bldgType" ></opz-lot>
         <div class="card-footer">
             <form clrForm ngDefaultControl>
                 <clr-select-container>
@@ -12,7 +12,7 @@
                 <clr-select-container>
                     <label>Choose a Building Type</label>
                     <select clrSelect name="options" [(ngModel)]="bldgType">
-                        <option *ngFor="let type of buildingtypes" [value]="type">{{ type }}</option>
+                        <option *ngFor="let type of buildingTypes" [value]="type">{{ type }}</option>
                     </select>
                 </clr-select-container>
             </form>

@@ -16,15 +16,6 @@ svg {
     fill: #c7b299;
 }
 
-#envelope:hover .envelope {
-    fill: darkslategrey;
-    cursor: pointer;
-}
-
-#envelope:active .envelope {
-    fill: slategray
-}
-
 .asphalt {
     fill: #515151;
 }
@@ -44,6 +35,7 @@ svg {
 
 .scaleText {
     font-size: 4px;
+    user-select: none;
 }
 
 .scaleText,
@@ -52,13 +44,41 @@ svg {
 }
 
 .title-zone {
+    user-select: none;
     font-size: 8px;
     font-family: 'Century Gothic';
     font-weight: 700;
 }
 
 .title-bldg {
+    user-select: none;
     font-size: 5px;
     font-weight: 400;
     max-width: 5vw;
+}
+
+#envelope:hover,
+#LeftSide.yard:hover,
+#RightSide.yard:hover,
+#Driveway.asphalt:hover,
+#Sidewalk.walkway:hover,
+#Walkway:hover,
+#Stoop:hover,
+#FrontYard:hover,
+#RearYard:hover {
+    fill: lightsteelblue;
+    cursor: pointer;
+}
+
+#envelope:active,
+#LeftSide.yard:active,
+#RightSide.yard:active,
+#Driveway.asphalt:active,
+#Sidewalk.walkway:active,
+#Walkway:active,
+#Stoop:active,
+#FrontYard:active,
+#RearYard:active {
+    fill: orchid;
+    cursor: pointer;
 }

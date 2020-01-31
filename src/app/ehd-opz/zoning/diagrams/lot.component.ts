@@ -1,10 +1,19 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    ContentChild,
+    HostListener,
     Input,
     OnInit
 } from '@angular/core';
+
 import { BulkReqs, getReqs } from '../zoning.model';
+
+interface HoverTarget {
+    target: EventTarget | string;
+    x: number;
+    y: number;
+}
 
 @Component({
     changeDetection: ChangeDetectionStrategy.Default,
@@ -13,10 +22,11 @@ import { BulkReqs, getReqs } from '../zoning.model';
     templateUrl: './lot.component.html'
 })
 export class LotComponent implements OnInit {
-
+    @ContentChild('#DiagramTextBox') diagramTextBox: any;
     @Input() zone;
     @Input() bldgType;
     @Input() currentReqs: BulkReqs = getReqs('R-1', 'One-family');
+    hoverTarget: HoverTarget = { x: 0, y: 0, target: document.body};
     lotHeight = this.currentReqs.MinLotSize / this.currentReqs.MinLotWidth;
     viewBox = '0 0 125 125';
     frontYard = 25;
@@ -52,6 +62,16 @@ export class LotComponent implements OnInit {
             x1: this.currentReqs.MinLotWidth + 57.5
         }
     };
+    @HostListener('document:mousemove', ['$event']) onMouseMove(e: MouseEvent): void {
+        this.hoverTarget.x = e.clientX;
+        this.hoverTarget.y = e.clientY;
+        this.hoverTarget.target =  (e.target instanceof Element) ? e.target.id : document.body;
+        this.hoverTarget.target instanceof SVGElement
+        ? this.diagramTextBox.textContent = this.hoverTarget.target.id
+        : this.diagramTextBox.textContent = '';
+        // tslint:disable-next-line: no-console
+        console.log(this.hoverTarget.target);
+    }
     ngOnInit(): void {
         this.zone = 'R-1';
         this.bldgType = 'One-family';

@@ -1,20 +1,3 @@
-export const buildingTypes = [
-'One-family',
-'Two-family',
-'Three-family',
-'Townhouse',
-'Low-rise multifamily & Four-Family',
-'Mid-rise multifamily',
-'High-rise multifamily',
-'Ground-floor commercial with commercial or residential above',
-'Detached commercial',
-'Industrial',
-'University',
-'Hospital or Medical Institution',
-'Schools (Elementary, Middle, High Schools)',
-'Place of Worship',
-'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'
-];
 export interface BulkReqs {
     MinLotSize: number;
     MinLotWidth: number;
