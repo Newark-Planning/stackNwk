@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="dimensions.viewBox">
   <title>LotDiagram</title>
   <g id="YardSides">
-    <rect id="FrontYard" class="yard" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.frontYard' />
-    <rect id="RearYard" class="yard" x="57.5" [attr.y]='dimensions.rearYard.y' [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.rearYard.height' />
-    <rect id="LeftSide" class="yard" x="57.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.left' [attr.height]="dimensions.envelope.height"/>
-    <rect id="RightSide" class="yard" [attr.x]='dimensions.sideYard.rightX' x="97.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.right' [attr.height]="dimensions.envelope.height"/>
+    <rect id="FrontYard" data-name="Front Yard" class="yard" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.frontYard' />
+    <rect id="RearYard" data-name="Rear Yard" class="yard" x="57.5" [attr.y]='dimensions.rearYard.y' [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.rearYard.height' />
+    <rect id="LeftSide" data-name="Side Yard 1" class="yard" x="57.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.left' [attr.height]="dimensions.envelope.height"/>
+    <rect id="RightSide" data-name="Side Yard 2" class="yard" [attr.x]='dimensions.sideYard.rightX' x="97.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.right' [attr.height]="dimensions.envelope.height"/>
   </g>
-  <rect id="envelope" class="envelope" [attr.x]="dimensions.envelope.x" [attr.y]="dimensions.envelope.y"  [attr.width]="dimensions.envelope.width" [attr.height]="dimensions.envelope.height" />
+  <rect id="envelope" data-name="Building Envelope" class="envelope" [attr.x]="dimensions.envelope.x" [attr.y]="dimensions.envelope.y"  [attr.width]="dimensions.envelope.width" [attr.height]="dimensions.envelope.height" />
   <g id="Ways">
-    <rect id="Driveway" class="asphalt" x="97.5" y="12.5" width="10" height="50"/>
-    <rect id="Sidewalk" class="walkway" x="57.5" y="16" width="40" height="3.5"/>
-    <rect id="Walkway" class="walkway" x="78.25" y="19.5" width="3.5" height="18"/>
-    <rect id="Stoop" class="walkway" x="78.25" y="32.75" width="3.5" height="6" transform="translate(115.75 -44.25) rotate(90)"/>
+    <rect id="Driveway" data-name="Driveway" class="asphalt" x="97.5" y="12.5" width="10" height="50"/>
+    <rect id="Sidewalk" data-name="Sidewalk" class="walkway" x="57.5" y="16" width="40" height="3.5"/>
+    <rect id="Walkway" data-name="Walkway" class="walkway" x="78.25" y="19.5" width="3.5" height="18"/>
+    <rect id="Stoop" data-name="Stoop" class="walkway" x="78.25" y="32.75" width="3.5" height="6" transform="translate(115.75 -44.25) rotate(90)"/>
   </g>
   <g id="Outline">
-    <rect id="LotOutline" class="lotOutline" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.lotHeight'/>
+    <rect id="LotOutline" data-name="Lot Outline" class="lotOutline" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.lotHeight'/>
   </g>
   <g id="Scales">
     <g id="LotDepth">
@@ -41,4 +41,4 @@
 	</text>
   </g>
 </svg>
-<p id='DiagramTextBox'></p>
+<p id='DiagramTextBox' [innerHTML]='diagramTextBox.content' [ngStyle]='diagramTextBox.style'></p>

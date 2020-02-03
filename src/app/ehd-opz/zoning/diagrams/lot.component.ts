@@ -1,7 +1,6 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    ContentChild,
     HostListener,
     Input,
     OnInit
@@ -10,9 +9,14 @@ import {
 import { BulkReqs, getReqs } from '../zoning.model';
 
 interface HoverTarget {
+    name?: string;
     target: EventTarget | string;
     x: number;
     y: number;
+}
+interface DiagramTextBox {
+    content?: string;
+    style?: any;
 }
 
 @Component({
@@ -22,11 +26,11 @@ interface HoverTarget {
     templateUrl: './lot.component.html'
 })
 export class LotComponent implements OnInit {
-    @ContentChild('#DiagramTextBox') diagramTextBox: any;
     @Input() zone;
     @Input() bldgType;
     @Input() currentReqs: BulkReqs = getReqs('R-1', 'One-family');
-    hoverTarget: HoverTarget = { x: 0, y: 0, target: document.body};
+    diagramTextBox: DiagramTextBox;
+    hoverTarget: HoverTarget = { name: '', x: 0, y: 0, target: document.body};
     lotHeight = this.currentReqs.MinLotSize / this.currentReqs.MinLotWidth;
     viewBox = '0 0 125 125';
     frontYard = 25;
@@ -63,14 +67,30 @@ export class LotComponent implements OnInit {
         }
     };
     @HostListener('document:mousemove', ['$event']) onMouseMove(e: MouseEvent): void {
-        this.hoverTarget.x = e.clientX;
-        this.hoverTarget.y = e.clientY;
-        this.hoverTarget.target =  (e.target instanceof Element) ? e.target.id : document.body;
-        this.hoverTarget.target instanceof SVGElement
-        ? this.diagramTextBox.textContent = this.hoverTarget.target.id
-        : this.diagramTextBox.textContent = '';
-        // tslint:disable-next-line: no-console
-        console.log(this.hoverTarget.target);
+        this.hoverTarget.x = (e.target instanceof Element)
+            ? (e.target.clientWidth / 2) + e.target.clientLeft
+            : 0;
+        this.hoverTarget.y = (e.target instanceof Element)
+            ? (e.target.clientHeight / 2) + e.target.clientTop
+            : 0;
+        this.hoverTarget.name = (e.target instanceof Element) ? e.target.getAttribute('data-name')! : undefined;
+        this.hoverTarget.target = (e.target instanceof Element) ? e.target.id : document.body;
+        this.hoverTarget.target
+        ? this.diagramTextBox.content = `<span>${this.hoverTarget.target}</span>`
+        : this.diagramTextBox.content = '';
+        (e.target instanceof SVGElement) ? this.diagramTextBox.style = {
+            '-webkit-text-fill-color': 'white',
+            'background-color': 'darkorchid',
+            'border-radius': '5px',
+            'box-shadow': '1px 1px 1px black',
+            color: 'white',
+            display: 'flex',
+            left: `${this.hoverTarget.x}px`,
+            position: 'absolute',
+            top: `${this.hoverTarget.y}px`
+        } : this.diagramTextBox.style = {
+            display: 'none'
+        };
     }
     ngOnInit(): void {
         this.zone = 'R-1';
