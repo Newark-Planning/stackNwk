@@ -3,6 +3,8 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { routeAnimations } from '../../core/core.module';
 import { LotComponent } from './diagrams/lot.component';
 
+import { buildingTypes } from './zoning.model';
+
 @Component({
   animations: [routeAnimations],
   selector: 'app-planning-zoning',
@@ -30,27 +32,14 @@ export class OpzZoningComponent {
     'INST',
     'EWR-S'
   ];
-  buildingTypes: Array<string> = [
-    'One-family',
-    'Two-family',
-    'Three-family',
-    'Townhouse',
-    'Low-rise multifamily & Four-Family',
-    'Mid-rise multifamily',
-    'High-rise multifamily',
-    'Ground-floor commercial with commercial or residential above',
-    'Detached commercial',
-    'Industrial',
-    'University',
-    'Hospital or Medical Institution',
-    'Schools (Elementary, Middle, High Schools)',
-    'Place of Worship',
-    'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'
-    ];
   @Input() zoneName;
+  buildingTypes: Iterable<string> = ['One-family'];
   @Input() bldgType;
   dimensions;
 
+  changeTypes(zone): any {
+    this.buildingTypes = buildingTypes(this.zoneName);
+  }
   changeDiagram(newZone, bldgType): any {
     this.lotComponent.updateDiagram(newZone, bldgType);
   }

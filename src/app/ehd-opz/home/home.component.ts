@@ -4,14 +4,13 @@ import { Record } from '../../shared/models';
 import { AirService } from '../../shared/services/air.service';
 
 @Component({
-  selector: 'app-opz-home',
+  selector: 'opz-home',
   styleUrls: ['./home.component.scss'],
   templateUrl: './home.component.html'
 })
 
 export class OpzHomeComponent implements OnInit {
   splashTitle$: Array<Record>;
-  article$: Array<Record>;
   backgroundStyle = {
     'background-blend-mode': 'multiply',
     'background-color': 'rgba(150,100,100, .5)',

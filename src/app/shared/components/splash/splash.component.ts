@@ -22,6 +22,10 @@ export class SplashComponent implements OnInit {
   constructor(readonly route: ActivatedRoute) {  }
   ngOnInit(): void {
     switch (this.parentFragment) {
+        case '/rc': {
+          this.logoSrc = '../../../../assets/img/NwkEhdLogos/PNG/NwkEhd_divs_web_Rent Control.png';
+          break;
+        }
         case '/opz': {
           this.logoSrc = '../../../../assets/img/NwkEhdLogos/PNG/NwkEhd_divs_web_Planning & Zoning.png';
           break;

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  title = 'nwk-web';
+  title = 'nwk-ehd-web';
   document: Document;
 
   ngOnInit(): void {

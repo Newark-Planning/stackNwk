@@ -1,11 +1,11 @@
 <div class="card">
     <div class="card-block clr-row">
-        <opz-lot [zone]="zoneName" [bldgType]="bldgType" ></opz-lot>
+        <opz-lot></opz-lot>
         <div class="card-footer">
             <form clrForm ngDefaultControl>
                 <clr-select-container>
                     <label>Choose a Zone</label>
-                    <select clrSelect name="options" [(ngModel)]="zoneName">
+                    <select clrSelect name="options" [(ngModel)]="zoneName" (change)='changeTypes(zoneName)'>
                         <option *ngFor="let zone of zoneOptions" [value]="zone">{{ zone }}</option>
                     </select>
                 </clr-select-container>

@@ -71,7 +71,7 @@ export const isRouteAnimationsPage = () => AnimationsService.isRouteAnimationsTy
 
 export const isRouteAnimationsElements = () => AnimationsService.isRouteAnimationsType('ELEMENTS');
 
-export const routeAnimations = trigger('routeAnimations', [
+export const routeAnimations: any = trigger('routeAnimations', [
   transition(isRouteAnimationsAll, STEPS_ALL),
   transition(isRouteAnimationsNone, STEPS_NONE),
   transition(isRouteAnimationsPage, STEPS_PAGE),

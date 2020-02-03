@@ -26,5 +26,14 @@ export const APP_ROUTES: Routes = [
     loadChildren: async () => import('./ehd-opz/ehd-opz.module')
       .then(m => m.EhdOpzModule),
     path: 'opz'
+  },
+  {
+    component: EhdRCComponent,
+    data: {
+      logoSrc: 'assets/img/NwkEhdLogos/SVG/NwkEhd_Divs_web_Rent Control.svg'
+    },
+    loadChildren: async () => import('./ehd-rc/ehd-RC.module')
+      .then(m => m.EhdRCModule),
+    path: 'rc'
   }
 ];

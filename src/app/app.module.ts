@@ -14,12 +14,18 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { EhdMainComponent } from './ehd-main/ehd-main.component';
 import { EhdOpzComponent } from './ehd-opz/ehd-opz.component';
+import { EhdRcComponent } from './ehd-rc/ehd-rc.component';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent, EhdMainComponent, EhdOpzComponent],
+  declarations: [
+    AppComponent,
+    EhdMainComponent,
+    EhdOpzComponent,
+    EhdRcComponent
+  ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'nwk-ehd' }),
+    BrowserModule.withServerTransition({ appId: 'nwk-ehd-web' }),
     BrowserAnimationsModule,
     FormsModule,
     CommonModule,
