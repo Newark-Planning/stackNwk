@@ -1,9 +1,10 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 import { routeAnimations } from '../../core/core.module';
 import { LotComponent } from './diagrams/lot.component';
 
-import { buildingTypes } from './zoning.model';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { buildingTypes, getDimensions } from './zoning.model';
 
 @Component({
   animations: [routeAnimations],
@@ -11,7 +12,7 @@ import { buildingTypes } from './zoning.model';
   styleUrls: ['./zoning.component.scss'],
   templateUrl: './zoning.component.html'
 })
-export class OpzZoningComponent {
+export class OpzZoningComponent implements OnInit {
   @ViewChild(LotComponent) lotComponent: LotComponent;
   zoneOptions: Array<string> = [
     'R-1',
@@ -33,14 +34,28 @@ export class OpzZoningComponent {
     'EWR-S'
   ];
   @Input() zoneName;
+  @Input() zoneSelect;
   buildingTypes: Iterable<string> = ['One-family'];
+  @Input() bldgTypeSel;
   @Input() bldgType;
-  dimensions;
+  @Input() dimensions: any;
+  currentReqs;
+  changeZoneBldgType = new FormGroup({
+    buildingTypes: new FormControl('One-family', Validators.required),
+    zones: new FormControl('R-1', Validators.required)
+  });
+
+  ngOnInit(): void {
+    this.dimensions = getDimensions('R-1', 'One-family');
+  }
 
   changeTypes(zone): any {
     this.buildingTypes = buildingTypes(this.zoneName);
   }
-  changeDiagram(newZone, bldgType): any {
-    this.lotComponent.updateDiagram(newZone, bldgType);
+
+  changeDiagram(newZone, newBldgType): void {
+    this.dimensions = getDimensions(newZone, newBldgType);
+    this.bldgTypeSel = newBldgType;
+    this.zoneSelect = newZone;
   }
 }

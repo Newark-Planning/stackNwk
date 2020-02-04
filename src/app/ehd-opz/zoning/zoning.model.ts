@@ -17,7 +17,46 @@ export interface BulkReqs {
         rear?: number;
     };
 }
-
+export interface LotToSVGDimensions {
+    driveway: string | boolean;
+    envelope: {
+        height: number;
+        width: number;
+        x: number;
+        y: number;
+    };
+    frontYard: number;
+    heightLine: {
+        endCapsX: number;
+        text: string;
+        x: number;
+    };
+    lotHeight: (number);
+    lotWidth: number;
+    rearYard: {
+        height: number;
+        y: number;
+    };
+    sideYard: {
+        left: number;
+        right: number;
+        rightX: number;
+        y: number;
+    };
+    viewBox: string;
+    walkways: {
+        center: number;
+        height: number;
+        stoop: {
+            center: number;
+            y: number;
+        }
+    };
+    widthLine: {
+        text: string;
+        x1: number;
+    };
+}
 export const getReqs = (zone: string, buildingType: string) => {
     switch (buildingType) {
         case 'One-family': {
@@ -278,7 +317,7 @@ export const buildingTypes = (zone: string) => {
         case 'R-5': return ['Low-rise multifamily & Four-Family', 'Mid-rise multifamily', 'Ground-floor commercial with commercial or residential above', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship', 'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'];
         case 'R-6': return ['Low-rise multifamily & Four-Family', 'Mid-rise multifamily', 'High-rise multifamily', 'Ground-floor commercial with commercial or residential above', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship', 'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'];
         case 'C-1': return ['Low-rise multifamily & Four-Family', 'Ground-floor commercial with commercial or residential above', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship', 'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'];
-        case 'C-2': return ['Ground-floor commercial with commercial or residential above', 'Schools (Elementary, Middle, High Schools)",Place of Worship,"Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'];
+        case 'C-2': return ['Ground-floor commercial with commercial or residential above', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship', 'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'];
         case 'C-3': return ['Ground-floor commercial with commercial or residential above', 'Detached commercial', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship', 'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'];
         case 'I-1': return ['Detached commercial', 'Industrial', 'Place of Worship'];
         case 'I-2': return ['Industrial'];
@@ -290,3 +329,62 @@ export const buildingTypes = (zone: string) => {
         case 'INST': return ['Townhouse', 'Low-rise multifamily & Four-Family', 'Mid-rise multifamily', 'Ground-floor commercial with commercial or residential above', 'University', 'Hospital or Medical Institution', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship'];
         default: return [''];
 }};
+export const getDimensions = (newZone: string, bldgType: string) => {
+    const currentReqs: BulkReqs = getReqs(newZone, bldgType);
+    const lotHeight = currentReqs.MinLotSize / currentReqs.MinLotWidth;
+    const halfLotWidth = currentReqs.MinLotWidth / 2;
+    const leftBuffer = 15;
+    const rightBuffer = 15;
+    const topBuffer = 12.5;
+    const bottomBuffer = 12.5;
+
+    return {
+        driveway: {
+            display: (newZone === 'R-1') ? 'inherit' : 'none',
+            x: rightBuffer + currentReqs.MinLotWidth - 10
+        },
+        envelope: {
+            height: lotHeight - currentReqs.FrontYard[0] - currentReqs.MinRearYard[0],
+            width: (newZone === 'R-1')
+                ? currentReqs.MinLotWidth - currentReqs.SideYard[0] - currentReqs.SideYard[1]
+                : currentReqs.MinLotWidth - (currentReqs.SideYard[0] * 2),
+            x: currentReqs.SideYard[0] + leftBuffer,
+            y: currentReqs.FrontYard[0] + topBuffer
+        },
+        frontYard: currentReqs.FrontYard[0],
+        heightLine: {
+            endCapsX: currentReqs.MinLotWidth + leftBuffer + 4 - 1.22,
+            text: `translate(${currentReqs.MinLotWidth + leftBuffer + 4}, 62.67)`,
+            x: currentReqs.MinLotWidth + leftBuffer + 4
+        },
+        lotHeight: (lotHeight),
+        lotWidth: currentReqs.MinLotWidth,
+        rearYard: {
+            height: currentReqs.MinRearYard[0],
+            y: topBuffer + currentReqs.FrontYard[0] + (lotHeight - currentReqs.FrontYard[0] - currentReqs.MinRearYard[0])
+        },
+        sideYard: {
+            left: currentReqs.SideYard[0],
+            leftX: leftBuffer,
+            right: (currentReqs.SideYard[1]) ? currentReqs.SideYard[1] : currentReqs.SideYard[0],
+            rightX: currentReqs.MinLotWidth + leftBuffer - (
+                (currentReqs.SideYard[1]) ? currentReqs.SideYard[1] : currentReqs.SideYard[0]
+                ),
+            y: currentReqs.FrontYard[0] + topBuffer
+        },
+        viewBox: `0 0 ${currentReqs.MinLotWidth + leftBuffer + rightBuffer} ${lotHeight + topBuffer + bottomBuffer}`,
+        walkways: {
+            center: halfLotWidth + leftBuffer - 1.25,
+            height: currentReqs.FrontYard[0] - 5,
+            stoop: {
+                center: halfLotWidth + leftBuffer - 3,
+                y: currentReqs.FrontYard[0] + topBuffer - 2.5
+            }
+        },
+        widthLine: {
+            text: `translate(${halfLotWidth + leftBuffer}, 6.4)`,
+            x1: currentReqs.MinLotWidth + leftBuffer,
+            x2: leftBuffer
+            }
+    };
+};

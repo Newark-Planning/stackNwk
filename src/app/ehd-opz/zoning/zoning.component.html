@@ -1,22 +1,22 @@
 <div class="card">
     <div class="card-block clr-row">
-        <opz-lot></opz-lot>
+        <opz-lot [dimensions]='dimensions' [currentZone]='zoneSelect' [currentBldgType]='bldgTypeSel'></opz-lot>
         <div class="card-footer">
-            <form clrForm ngDefaultControl>
+            <form clrForm>
                 <clr-select-container>
                     <label>Choose a Zone</label>
-                    <select clrSelect name="options" [(ngModel)]="zoneName" (change)='changeTypes(zoneName)'>
+                    <select clrSelect required name="zones" [(ngModel)]="zoneName" (change)='changeTypes(zoneName)'>
                         <option *ngFor="let zone of zoneOptions" [value]="zone">{{ zone }}</option>
                     </select>
                 </clr-select-container>
                 <clr-select-container>
                     <label>Choose a Building Type</label>
-                    <select clrSelect name="options" [(ngModel)]="bldgType">
+                    <select clrSelect required name="bldgTypes" [(ngModel)]="bldgType">
                         <option *ngFor="let type of buildingTypes" [value]="type">{{ type }}</option>
                     </select>
                 </clr-select-container>
+                <button type="submit" class="btn btn-success-outline" (click)="changeDiagram(zoneName,bldgType)">Submit</button>
             </form>
-            <button type="submit" class="btn btn-success-outline" (click)="changeDiagram(zoneName,bldgType)">Submit</button>
         </div>
     </div>
 </div>

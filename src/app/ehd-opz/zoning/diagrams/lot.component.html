@@ -1,44 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="dimensions.viewBox">
-  <title>LotDiagram</title>
   <g id="YardSides">
-    <rect id="FrontYard" data-name="Front Yard" class="yard" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.frontYard' />
-    <rect id="RearYard" data-name="Rear Yard" class="yard" x="57.5" [attr.y]='dimensions.rearYard.y' [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.rearYard.height' />
-    <rect id="LeftSide" data-name="Side Yard" class="yard" x="57.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.left' [attr.height]="dimensions.envelope.height"/>
-    <rect id="RightSide" data-name="Side Yard" class="yard" [attr.x]='dimensions.sideYard.rightX' x="97.5" [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.right' [attr.height]="dimensions.envelope.height"/>
+    <rect id="FrontYard" data-name="Front Yard" class="yard" [attr.x]='dimensions.sideYard.leftX' y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.frontYard' />
+    <rect id="RearYard" data-name="Rear Yard" class="yard" [attr.x]='dimensions.sideYard.leftX' [attr.y]='dimensions.rearYard.y' [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.rearYard.height' />
+    <rect id="LeftSide" data-name="Side Yard" class="yard" [attr.x]='dimensions.sideYard.leftX' [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.left' [attr.height]="dimensions.envelope.height"/>
+    <rect id="RightSide" data-name="Side Yard" class="yard" [attr.x]='dimensions.sideYard.rightX' [attr.y]='dimensions.sideYard.y' [attr.width]='dimensions.sideYard.right' [attr.height]="dimensions.envelope.height"/>
   </g>
   <rect id="envelope" data-name="Building Envelope" class="envelope" [attr.x]="dimensions.envelope.x" [attr.y]="dimensions.envelope.y"  [attr.width]="dimensions.envelope.width" [attr.height]="dimensions.envelope.height" />
   <g id="Ways">
-    <rect id="Driveway" data-name="Driveway" class="asphalt" x="97.5" y="12.5" [style.display]='dimensions.driveway' width="10" height="50"/>
-    <rect id="Sidewalk" data-name="Sidewalk" class="walkway" x="57.5" y="16" [attr.width]='dimensions.lotWidth' height="3.5"/>
-    <rect id="Walkway" data-name="Walkway" class="walkway" x="78.25" y="19.5" width="3.5" height="18"/>
-    <rect id="Stoop" data-name="Stoop" class="walkway" x="78.25" y="32.75" width="3.5" height="6" transform="translate(115.75 -44.25) rotate(90)"/>
+    <rect id="Driveway" data-name="Driveway" class="asphalt" [attr.x]='dimensions.driveway.x' y="12.5" [style.display]='dimensions.driveway.display' width="10" height="50"/>
+    <rect id="Sidewalk" data-name="Sidewalk" class="walkway" [attr.x]="dimensions.widthLine.x2" y="15" [attr.width]='dimensions.lotWidth' height="2.5"/>
+    <rect id="Walkway" data-name="Walkway" class="walkway" [attr.x]='dimensions.walkways.center' y="17.5" width="2.5" [attr.height]='dimensions.walkways.height'/>
+    <rect id="Stoop" data-name="Stoop" class="walkway" [attr.x]='dimensions.walkways.stoop.center' [attr.y]='dimensions.walkways.stoop.y' width="6" height="2.5"/>
   </g>
   <g id="Outline">
-    <rect id="LotOutline" data-name="Lot Outline" class="lotOutline" x="57.5" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.lotHeight'/>
+    <rect id="LotOutline" data-name="Lot Outline" class="lotOutline" [attr.x]="dimensions.widthLine.x2" y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.lotHeight'/>
   </g>
   <g id="Scales">
     <g id="LotDepth">
-        <line class="scaleLine"  x1="111.5" y1="12.69" x2="111.5" y2="112.31"/>
-        <rect x="110.28" y="12.5" width="2.44" height="0.38"/>
-        <rect x="110.28" y="112.13" width="2.44" height="0.38"/>
+        <line class="scaleLine" [attr.x1]="dimensions.heightLine.x" y1="12.69" [attr.x2]="dimensions.heightLine.x" y2="112.31"/>
+        <rect [attr.x]="dimensions.heightLine.endCapsX" y="12.5" width="2.44" height="0.38"/>
+        <rect [attr.x]="dimensions.heightLine.endCapsX" y="112.13" width="2.44" height="0.38"/>
     </g>
     <g id="LotWidth">
-        <line class="scaleLine" [attr.x1]="dimensions.widthLine.x1" y1="8.5" x2="57.69" y2="8.5"/>
+        <line class="scaleLine" [attr.x1]="dimensions.widthLine.x1" y1="8.5" [attr.x2]="dimensions.widthLine.x2" y2="8.5"/>
         <rect [attr.x]="dimensions.widthLine.x1" y="7.28" width="0.38" height="2.44"/>
-        <rect x="57.5" y="7.28" width="0.38" height="2.44"/>
+        <rect [attr.x]="dimensions.widthLine.x2" y="7.28" width="0.38" height="2.44"/>
     </g>
     <text class="scaleText" [attr.transform]="dimensions.widthLine.text">{{ dimensions.lotWidth }}’</text>
-    <text class="scaleText" transform="translate(112.97 62.67)">{{ dimensions.lotHeight }}’</text>
-  </g>
-  <g id="Title">
-    <text class="title-zone" transform="translate(22.76 60.25)">
-		{{ zone }}
-		<tspan class="title-bldg">
-			<tspan x="-15" y="6">
-				{{ bldgType }}
-			</tspan>
-		</tspan>
-	</text>
+    <text class="scaleText" [attr.transform]="dimensions.heightLine.text">{{ dimensions.lotHeight }}’</text>
   </g>
 </svg>
+<h2 id="Title" class="title-zone">
+  {{ currentZone }}
+  <span class="title-bldg">
+      {{ currentBldgType }}
+  </span>
+</h2>
 <p #toolTip id='DiagramTextBox' [innerHTML]='diagramTextBox.content' [ngStyle]='diagramTextBox.style'></p>
