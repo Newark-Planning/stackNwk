@@ -30,7 +30,7 @@ interface DiagramTextBox {
     templateUrl: './lot.component.html'
 })
 export class LotComponent {
-    @Input() zone = 'R-1';
+    @Input() zone = 'R-2';
     @Input() bldgType = 'One-family';
     @Input() currentReqs: BulkReqs = getReqs(this.zone, this.bldgType);
     @Output() readonly reqChange = new EventEmitter<any>();
@@ -53,7 +53,7 @@ export class LotComponent {
             height: this.lotHeight - this.currentReqs.FrontYard[0] - this.currentReqs.MinRearYard[0],
             width: (this.zone === 'R-1')
                 ? this.currentReqs.MinLotWidth - this.currentReqs.SideYard[0] - this.currentReqs.SideYard[1]
-                : this.currentReqs.MinLotWidth - this.currentReqs.SideYard[0],
+                : this.currentReqs.MinLotWidth - (this.currentReqs.SideYard[0] * 2),
             x: this.currentReqs.SideYard[0] + 57.5,
             y: this.currentReqs.FrontYard[0] + 12.5
         },
@@ -66,12 +66,15 @@ export class LotComponent {
         },
         sideYard: {
             left: this.currentReqs.SideYard[0],
-            right: this.currentReqs.SideYard[1] ? this.currentReqs.SideYard[1] : this.currentReqs.SideYard[0],
-            rightX: this.currentReqs.MinLotWidth + 57.5 - 10,
+            right: (this.currentReqs.SideYard[1]) ? this.currentReqs.SideYard[1] : this.currentReqs.SideYard[0],
+            rightX: this.currentReqs.MinLotWidth + 57.5 - (
+                (this.currentReqs.SideYard[1]) ? this.currentReqs.SideYard[1] : this.currentReqs.SideYard[0]
+                ),
             y: this.currentReqs.FrontYard[0] + 12.5
         },
         viewBox: `0 0 ${this.currentReqs.MinLotWidth + 57.5 + 17.5} ${this.lotHeight + 25}`,
         widthLine: {
+            text: `translate(${(this.currentReqs.MinLotWidth / 2) + 57.5}, 6.4)`,
             x1: this.currentReqs.MinLotWidth + 57.5
         }
     };

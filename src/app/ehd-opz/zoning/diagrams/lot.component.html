@@ -27,7 +27,7 @@
         <rect [attr.x]="dimensions.widthLine.x1" y="7.28" width="0.38" height="2.44"/>
         <rect x="57.5" y="7.28" width="0.38" height="2.44"/>
     </g>
-    <text class="scaleText" transform="translate(79.58 6.4)">{{ dimensions.lotWidth }}’</text>
+    <text class="scaleText" [attr.transform]="dimensions.widthLine.text">{{ dimensions.lotWidth }}’</text>
     <text class="scaleText" transform="translate(112.97 62.67)">{{ dimensions.lotHeight }}’</text>
   </g>
   <g id="Title">
