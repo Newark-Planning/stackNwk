@@ -8,7 +8,7 @@ import { AirService } from '../../shared/services/air.service';
   templateUrl: './home.component.html'
 })
 
-export class RCHomeComponent implements OnInit {
+export class RcHomeComponent implements OnInit {
   splashTitle$: Array<Record>;
   article$: Array<Record>;
   name: Array<any>;

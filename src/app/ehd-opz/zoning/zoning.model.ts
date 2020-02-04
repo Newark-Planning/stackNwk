@@ -1,25 +1,16 @@
 export interface BulkReqs {
     MinLotSize: number;
     MinLotWidth: number;
-    MaxBuildingHeight?: {
+    MaxBuildingHeight: {
         height?: number;
         stories?: number;
     };
-    FrontYard?: number | {
-        min?: number;
-        max?: number;
-    };
-    SideYard: number | {
-        one: number;
-        other: number;
-    } | {
-        min: number;
-        max: number;
-    };
-    MinRearYard?: number | {
-        abuttingRes?: number;
-        abuttingNonRes?: number;
-    };
+    FrontYard: Array<number>;
+    FrontYardType?: Array<string> | boolean;
+    SideYard: Array<number>;
+    SideYardType?: Array<string>;
+    MinRearYard: Array<number>;
+    MinRearYardType?: Array<string>;
     MaxLotCoverage?: number;
     MaxImperviousArea?: {
         front?: number;
@@ -38,9 +29,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 35,
                     stories: 3
                 },
-                FrontYard: 15,
-                SideYard: { one: 10, other: 5 },
-                MinRearYard: 30,
+                FrontYard: [15],
+                FrontYardType: false,
+                SideYard: [ 5, 10 ],
+                SideYardType: ['one', 'other'],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.4,
                 MaxImperviousArea: { front: 0.3, rear: 0.5 }
             } : {
@@ -51,9 +44,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 36,
                     stories: 3
                 },
-                FrontYard: 6,
-                SideYard: 3,
-                MinRearYard: 30,
+                FrontYard: [6],
+                SideYard: [3],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.5,
                 MaxImperviousArea: { front: 0.65, rear: 0.3 }
             };
@@ -67,9 +60,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 36,
                     stories: 3
                 },
-                FrontYard: 6,
-                SideYard: 3,
-                MinRearYard: 30,
+                FrontYard: [6],
+                SideYard: [3],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.5,
                 MaxImperviousArea: { front: 0.6, rear: 0.3 }
             };
@@ -83,9 +76,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 36,
                     stories: 3
                 },
-                FrontYard: 6,
-                SideYard: 3,
-                MinRearYard: 30,
+                FrontYard: [6],
+                SideYard: [3],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.55,
                 MaxImperviousArea: { front: 0.55, rear: 0.75 }
             };
@@ -99,9 +92,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 36,
                     stories: 3
                 },
-                FrontYard: 6,
-                SideYard: 3,
-                MinRearYard: 30,
+                FrontYard: [6],
+                SideYard: [3],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.6,
                 MaxImperviousArea: { front: 0.55, rear: 0.15 }
             };
@@ -115,9 +108,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 48,
                     stories: 4
                 },
-                FrontYard: 6,
-                SideYard: 5,
-                MinRearYard: 30,
+                FrontYard: [6],
+                SideYard: [5],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.66,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -131,9 +124,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 96,
                     stories: 8
                 },
-                FrontYard: 6,
-                SideYard: 5,
-                MinRearYard: 30,
+                FrontYard: [6],
+                SideYard: [5],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.6,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -147,9 +140,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 120,
                     stories: 10
                 },
-                FrontYard: 6,
-                SideYard: 10,
-                MinRearYard: 30,
+                FrontYard: [6],
+                SideYard: [10],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.66,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -163,9 +156,12 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: (zone === 'MX-1') ? 48 : 96,
                     stories: (zone === 'MX-1') ? 4 : 8
                 },
-                FrontYard: {min: 0, max: 5},
-                SideYard: { min: 0, max: 5 },
-                MinRearYard: { abuttingRes: 25, abuttingNonRes: 20 },
+                FrontYard: [0, 5],
+                FrontYardType: ['min', 'max'],
+                SideYard: [0, 5],
+                SideYardType: ['min', 'max'],
+                MinRearYard: [ 25, 20 ],
+                MinRearYardType: ['abuttingRes', 'abuttingNonRes'],
                 MaxLotCoverage: 0.85,
                 MaxImperviousArea: { front: 0.55, rear: 0.6 }
             };
@@ -179,9 +175,10 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: (zone === 'MX-1') ? 48 : 96,
                     stories: (zone === 'MX-1') ? 4 : 8
                 },
-                FrontYard: 6,
-                SideYard: 3,
-                MinRearYard: { abuttingRes: 50, abuttingNonRes: 20},
+                FrontYard: [6],
+                SideYard: [3],
+                MinRearYard: [ 50, 20 ],
+                MinRearYardType: ['abuttingRes', 'abuttingNonRes'],
                 MaxLotCoverage: 0.85,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -195,9 +192,10 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 210,
                     stories: 20
                 },
-                FrontYard: {min: 5, max: 10},
-                SideYard: 5,
-                MinRearYard: 30,
+                FrontYard: [5, 10],
+                FrontYardType: ['min', 'max'],
+                SideYard: [5],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.8,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -211,9 +209,10 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 210,
                     stories: 20
                 },
-                FrontYard: { min: 5, max: 10 },
-                SideYard: 10,
-                MinRearYard: 30,
+                FrontYard: [5, 10],
+                FrontYardType: ['min', 'max'],
+                SideYard: [10],
+                MinRearYard: [30],
                 MaxLotCoverage: undefined,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -227,9 +226,10 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 55,
                     stories: 5
                 },
-                FrontYard: { min: 5, max: 10 },
-                SideYard: 5,
-                MinRearYard: 30,
+                FrontYard: [5, 10],
+                FrontYardType: ['min', 'max'],
+                SideYard: [5],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -243,9 +243,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 30,
                     stories: 2
                 },
-                FrontYard: { min: 5, max: 10 },
-                SideYard: 5,
-                MinRearYard: 20,
+                FrontYard: [ 5, 10 ],
+                SideYard: [5],
+                MinRearYard: [20],
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.2 }
             };
@@ -259,9 +259,10 @@ export const getReqs = (zone: string, buildingType: string) => {
                     height: 35,
                     stories: 3
                 },
-                FrontYard: { min: 5, max: 10 },
-                SideYard: 5,
-                MinRearYard: 30,
+                FrontYard: [ 5, 10 ],
+                FrontYardType: ['min', 'max'],
+                SideYard: [5],
+                MinRearYard: [30],
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.2 }
             };

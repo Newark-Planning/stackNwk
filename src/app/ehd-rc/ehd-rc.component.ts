@@ -9,7 +9,7 @@ import { RC_ROUTES } from './ehd-rc-routing.module';
   templateUrl: './ehd-rc.component.html'
 })
 
-export class EhdRCComponent {
+export class EhdRcComponent {
   collapsed = true;
   @HostBinding('class.content-container') class = true;
   @Input() parentFragment = '/rc';

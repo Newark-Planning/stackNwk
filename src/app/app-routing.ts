@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { EhdMainComponent } from './ehd-main/ehd-main.component';
 import { EhdOpzComponent } from './ehd-opz/ehd-opz.component';
+import { EhdRcComponent } from './ehd-rc/ehd-rc.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -28,12 +29,12 @@ export const APP_ROUTES: Routes = [
     path: 'opz'
   },
   {
-    component: EhdRCComponent,
+    component: EhdRcComponent,
     data: {
       logoSrc: 'assets/img/NwkEhdLogos/SVG/NwkEhd_Divs_web_Rent Control.svg'
     },
     loadChildren: async () => import('./ehd-rc/ehd-RC.module')
-      .then(m => m.EhdRCModule),
+      .then(m => m.EhdRcModule),
     path: 'rc'
   }
 ];

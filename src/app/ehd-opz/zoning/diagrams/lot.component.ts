@@ -10,9 +10,7 @@ import {
     ViewChild
 } from '@angular/core';
 
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BulkReqs, getReqs } from '../zoning.model';
-import { BottomSheetComponent } from './bottom-sheet.component';
 
 interface HoverTarget {
     name?: string;
@@ -50,24 +48,27 @@ export class LotComponent {
         y: 37.5
     };
     @Input() dimensions = {
+        driveway: (this.zone === 'R-1') ? 'inherit' : 'none',
         envelope: {
-            height: this.envelope.height,
-            width: this.envelope.width,
-            x: this.envelope.x,
-            y: this.envelope.y
+            height: this.lotHeight - this.currentReqs.FrontYard[0] - this.currentReqs.MinRearYard[0],
+            width: (this.zone === 'R-1')
+                ? this.currentReqs.MinLotWidth - this.currentReqs.SideYard[0] - this.currentReqs.SideYard[1]
+                : this.currentReqs.MinLotWidth - this.currentReqs.SideYard[0],
+            x: this.currentReqs.SideYard[0] + 57.5,
+            y: this.currentReqs.FrontYard[0] + 12.5
         },
-        frontYard: this.frontYard,
-        lotHeight: this.lotHeight,
+        frontYard: this.currentReqs.FrontYard[0],
+        lotHeight: this.currentReqs.MinLotSize / this.currentReqs.MinLotWidth,
         lotWidth: this.currentReqs.MinLotWidth,
         rearYard: {
-            height: this.rearYard,
+            height: this.currentReqs.MinRearYard,
             y: this.envelope.y + this.envelope.height
         },
         sideYard: {
-            left: 5,
-            right: 10,
+            left: this.currentReqs.SideYard[0],
+            right: this.currentReqs.SideYard[1] ? this.currentReqs.SideYard[1] : this.currentReqs.SideYard[0],
             rightX: this.currentReqs.MinLotWidth + 57.5 - 10,
-            y: this.frontYard + 12.5
+            y: this.currentReqs.FrontYard[0] + 12.5
         },
         viewBox: `0 0 ${this.currentReqs.MinLotWidth + 57.5 + 17.5} ${this.lotHeight + 25}`,
         widthLine: {
@@ -75,8 +76,8 @@ export class LotComponent {
         }
     };
     constructor(
-        private readonly renderer: Renderer2,
-        private readonly _bottomSheet: MatBottomSheet) { }
+        private readonly renderer: Renderer2
+        ) { }
 
     @HostListener('document:mousemove', ['$event']) onMouseMove(e: MouseEvent): void {
         const svgEl = e.target as HTMLElement;
@@ -91,7 +92,7 @@ export class LotComponent {
         (this.hoverTarget.target)
         ? this.diagramTextBox.style = {
             '-webkit-text-fill-color': 'white',
-            'background-color': 'darkorchid',
+            'background-color': 'rgba(100,100,100,.75)',
             'border-radius': '5px',
             'box-shadow': '1px 1px 1px black',
             color: 'white',
@@ -111,11 +112,5 @@ export class LotComponent {
         this.bldgType = buildingType;
         this.currentReqs = getReqs(this.zone, this.bldgType);
         this.reqChange.emit(this.dimensions);
-    }
-
-    openDrawer(e: Event, id: string): void {
-        this._bottomSheet.open(BottomSheetComponent, {
-            data: id
-        });
     }
 }

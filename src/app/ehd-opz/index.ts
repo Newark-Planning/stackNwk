@@ -24,7 +24,6 @@ import { ApplicationsDataComponent } from './resources/sub-pages/applications/ap
 import { RedevDataComponent } from './resources/sub-pages/redev/redev.component';
 
 import { SidePanelComponent } from './ourcity/sidepanel.component';
-import { BottomSheetComponent } from './zoning/diagrams/bottom-sheet.component';
 import { LotComponent } from './zoning/diagrams/lot.component';
 import { OpzZoningResComponent } from './zoning/sub-pages/res/res.component';
 
@@ -63,8 +62,7 @@ export const planningBoardsComponents = [
 
 export const planningZonesComponents = [
   OpzZoningResComponent,
-  LotComponent,
-  BottomSheetComponent
+  LotComponent
 ];
 // page component exports
 export * from './about/about.component';
@@ -98,4 +96,3 @@ export * from './resources/sub-pages/redev/redev.component';
 
 export * from './zoning/sub-pages/res/res.component';
 export * from './zoning/diagrams/lot.component';
-export * from './zoning/diagrams/bottom-sheet.component';
