@@ -18,7 +18,10 @@ export interface BulkReqs {
     };
 }
 export interface LotToSVGDimensions {
-    driveway: string | boolean;
+    driveway: {
+        display: string;
+        x: number;
+    };
     envelope: {
         height: number;
         width: number;
@@ -39,6 +42,7 @@ export interface LotToSVGDimensions {
     };
     sideYard: {
         left: number;
+        leftX: number;
         right: number;
         rightX: number;
         y: number;
@@ -55,6 +59,7 @@ export interface LotToSVGDimensions {
     widthLine: {
         text: string;
         x1: number;
+        x2: number;
     };
 }
 export const getReqs = (zone: string, buildingType: string) => {
