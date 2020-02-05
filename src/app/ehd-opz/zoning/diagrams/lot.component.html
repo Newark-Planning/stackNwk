@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="dimensions.viewBox">
+  <defs>
+    <linearGradient id="envelopeGradient" gradientTransform="rotate(90)">
+      <stop offset="50%"  stop-color="#c7b299" />
+      <stop offset="50%" stop-color="#BC9975" />
+    </linearGradient>
+  </defs>
   <g id="YardSides">
     <rect id="FrontYard" data-name="Front Yard" class="yard" [attr.x]='dimensions.sideYard.leftX' y="12.5" [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.frontYard' />
     <rect id="RearYard" data-name="Rear Yard" class="yard" [attr.x]='dimensions.sideYard.leftX' [attr.y]='dimensions.rearYard.y' [attr.width]='dimensions.lotWidth' [attr.height]='dimensions.rearYard.height' />
@@ -30,10 +36,4 @@
     <text class="scaleText" [attr.transform]="dimensions.heightLine.text">{{ dimensions.lotHeight }}’</text>
   </g>
 </svg>
-<h2 id="Title" class="title-zone">
-  {{ currentZone }}
-  <span class="title-bldg">
-      {{ currentBldgType }}
-  </span>
-</h2>
 <p #toolTip id='DiagramTextBox' [innerHTML]='diagramTextBox.content' [ngStyle]='diagramTextBox.style'></p>

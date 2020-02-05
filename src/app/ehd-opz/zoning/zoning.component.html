@@ -1,7 +1,28 @@
 <div class="card">
+    <div class="card-header">
+        <clr-dropdown id="Title">
+            <button class="btn btn-outline-primary" clrDropdownTrigger>
+                {{ zoneSelect }}
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen>
+                <label class="dropdown-header" aria-hidden="true">Pick a Zone</label>
+                <div clrDropdownItem *ngFor="let zone of zoneOptions" >{{ zone }}</div>
+                <div clrDropdownItem>Link 2</div>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+            
+            <clr-icon shape="caret down"></clr-icon>
+            <span class="title-bldg">
+                {{ bldgTypeSel }}
+                <clr-icon shape="caret down"></clr-icon>
+            </span>
+        </h2>
+    </div>
     <div class="card-block clr-row">
-        <opz-lot [dimensions]='dimensions' [currentZone]='zoneSelect' [currentBldgType]='bldgTypeSel'></opz-lot>
-        <div class="card-footer">
+        <opz-lot [dimensions]='dimensions'></opz-lot>
+    </div>
+     <div class="card-footer">
             <form clrForm>
                 <clr-select-container>
                     <label>Choose a Zone</label>
@@ -18,5 +39,4 @@
                 <button type="submit" class="btn btn-success-outline" (click)="changeDiagram(zoneName,bldgType)">Submit</button>
             </form>
         </div>
-    </div>
 </div>

@@ -1,12 +1,11 @@
 :host {
     width: 50vh;
-    height: 75vh;
+    height: 50vh;
 }
 
 svg {
     width: inherit;
     height: inherit;
-    margin-top: 4rem;
 }
 
 .yard {
@@ -14,7 +13,7 @@ svg {
 }
 
 .envelope {
-    fill: linear-gradient(0deg, #c7b299 50%, #BC9975 50%);
+    fill: url(#envelopeGradient);
 }
 
 .asphalt {
