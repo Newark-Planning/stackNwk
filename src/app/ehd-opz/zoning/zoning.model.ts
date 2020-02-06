@@ -1,66 +1,29 @@
 export interface BulkReqs {
     MinLotSize: number;
     MinLotWidth: number;
-    MaxBuildingHeight: {
-        height?: number;
-        stories?: number;
-    };
+    MaxBuildingHeight: { height?: number; stories?: number; };
     FrontYard: Array<number>;
-    FrontYardType?: Array<string> | boolean;
+    FrontYardType: Array<string>;
     SideYard: Array<number>;
-    SideYardType?: Array<string>;
+    SideYardType: Array<string>;
     MinRearYard: Array<number>;
-    MinRearYardType?: Array<string>;
-    MaxLotCoverage?: number;
-    MaxImperviousArea?: {
-        front?: number;
-        rear?: number;
-    };
+    MinRearYardType: Array<string>;
+    MaxLotCoverage: number | string;
+    MaxImperviousArea?: { front?: number; rear?: number; };
 }
 export interface LotToSVGDimensions {
-    driveway: {
-        display: string;
-        x: number;
-    };
-    envelope: {
-        height: number;
-        width: number;
-        x: number;
-        y: number;
-    };
+    driveway: { display: string;  x: number;  };
+    envelope: { height: number; width: number;  x: number;  y: number; };
     frontYard: number;
-    heightLine: {
-        endCapsX: number;
-        text: string;
-        x: number;
-    };
+    heightLine: { endCapsX: number; text: string;  x: number; };
     lotHeight: (number);
+    lotSize: number;
     lotWidth: number;
-    rearYard: {
-        height: number;
-        y: number;
-    };
-    sideYard: {
-        left: number;
-        leftX: number;
-        right: number;
-        rightX: number;
-        y: number;
-    };
+    rearYard: { height: number; y: number; };
+    sideYard: { left: number; leftX: number; right: number; rightX: number; y: number;  };
     viewBox: string;
-    walkways: {
-        center: number;
-        height: number;
-        stoop: {
-            center: number;
-            y: number;
-        }
-    };
-    widthLine: {
-        text: string;
-        x1: number;
-        x2: number;
-    };
+    walkways: { center: number; height: number; stoop: { center: number; y: number; } };
+    widthLine: { text: string; x1: number; x2: number;  };
 }
 export const getReqs = (zone: string, buildingType: string) => {
     switch (buildingType) {
@@ -74,10 +37,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 3
                 },
                 FrontYard: [15],
-                FrontYardType: false,
+                FrontYardType: ['min'],
                 SideYard: [ 5, 10 ],
                 SideYardType: ['one', 'other'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.4,
                 MaxImperviousArea: { front: 0.3, rear: 0.5 }
             } : {
@@ -89,8 +53,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 3
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [3],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.5,
                 MaxImperviousArea: { front: 0.65, rear: 0.3 }
             };
@@ -105,8 +72,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 3
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [3],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.5,
                 MaxImperviousArea: { front: 0.6, rear: 0.3 }
             };
@@ -121,8 +91,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 3
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [3],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.55,
                 MaxImperviousArea: { front: 0.55, rear: 0.75 }
             };
@@ -137,8 +110,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 3
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [3],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.6,
                 MaxImperviousArea: { front: 0.55, rear: 0.15 }
             };
@@ -153,8 +129,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 4
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [5],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.66,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -169,8 +148,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 8
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [5],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.6,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -185,8 +167,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 10
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [10],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.66,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -205,7 +190,7 @@ export const getReqs = (zone: string, buildingType: string) => {
                 SideYard: [0, 5],
                 SideYardType: ['min', 'max'],
                 MinRearYard: [ 25, 20 ],
-                MinRearYardType: ['abuttingRes', 'abuttingNonRes'],
+                MinRearYardType: ['Abutting Residential Zone', 'Abutting Non-Residential Zone'],
                 MaxLotCoverage: 0.85,
                 MaxImperviousArea: { front: 0.55, rear: 0.6 }
             };
@@ -220,9 +205,11 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: (zone === 'MX-1') ? 4 : 8
                 },
                 FrontYard: [6],
+                FrontYardType: ['min'],
                 SideYard: [3],
+                SideYardType: ['min'],
                 MinRearYard: [ 50, 20 ],
-                MinRearYardType: ['abuttingRes', 'abuttingNonRes'],
+                MinRearYardType: ['Abutting Residential Zone', 'Abutting Non-Residential Zone'],
                 MaxLotCoverage: 0.85,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -240,6 +227,7 @@ export const getReqs = (zone: string, buildingType: string) => {
                 FrontYardType: ['min', 'max'],
                 SideYard: [5],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.8,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -256,8 +244,10 @@ export const getReqs = (zone: string, buildingType: string) => {
                 FrontYard: [5, 10],
                 FrontYardType: ['min', 'max'],
                 SideYard: [10],
+                SideYardType: ['min'],
                 MinRearYard: [30],
-                MaxLotCoverage: undefined,
+                MinRearYardType: ['min'],
+                MaxLotCoverage: 'n/a',
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
         }
@@ -273,7 +263,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                 FrontYard: [5, 10],
                 FrontYardType: ['min', 'max'],
                 SideYard: [5],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
@@ -288,7 +280,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                     stories: 2
                 },
                 FrontYard: [ 5, 10 ],
+                FrontYardType: ['min'],
                 SideYard: [5],
+                SideYardType: ['min'],
                 MinRearYard: [20],
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.2 }
@@ -306,7 +300,9 @@ export const getReqs = (zone: string, buildingType: string) => {
                 FrontYard: [ 5, 10 ],
                 FrontYardType: ['min', 'max'],
                 SideYard: [5],
+                SideYardType: ['min'],
                 MinRearYard: [30],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.2 }
             };
@@ -335,7 +331,7 @@ export const buildingTypes = (zone: string) => {
         default: return [''];
 }};
 export const getDimensions = (newZone: string, bldgType: string) => {
-    const currentReqs: BulkReqs = getReqs(newZone, bldgType);
+    const currentReqs = getReqs(newZone, bldgType);
     const lotHeight = currentReqs.MinLotSize / currentReqs.MinLotWidth;
     const halfLotWidth = currentReqs.MinLotWidth / 2;
     const leftBuffer = 15;
@@ -363,6 +359,7 @@ export const getDimensions = (newZone: string, bldgType: string) => {
             x: currentReqs.MinLotWidth + leftBuffer + 4
         },
         lotHeight: (lotHeight),
+        lotSize: currentReqs.MinLotSize,
         lotWidth: currentReqs.MinLotWidth,
         rearYard: {
             height: currentReqs.MinRearYard[0],

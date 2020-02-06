@@ -1,10 +1,11 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 import { routeAnimations } from '../../core/core.module';
 import { LotComponent } from './diagrams/lot.component';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { buildingTypes, getDimensions } from './zoning.model';
+import { buildingTypes, getDimensions, getReqs } from './zoning.model';
 
 @Component({
   animations: [routeAnimations],
@@ -14,6 +15,7 @@ import { buildingTypes, getDimensions } from './zoning.model';
 })
 export class OpzZoningComponent implements OnInit {
   @ViewChild(LotComponent) lotComponent: LotComponent;
+  @ViewChild('reqReport') report: ElementRef;
   zoneOptions: Array<string> = [
     'R-1',
     'R-2',
@@ -35,16 +37,17 @@ export class OpzZoningComponent implements OnInit {
   ];
   @Input() zoneName;
   @Input() zoneSelect;
+  opened = false;
   buildingTypes: Iterable<string> = ['One-family'];
   @Input() bldgTypeSel;
   @Input() bldgType;
   @Input() dimensions: any;
-  currentReqs;
-  changeZoneBldgType = new FormGroup({
-    buildingTypes: new FormControl('One-family', Validators.required),
-    zones: new FormControl('R-1', Validators.required)
+  currentReqs = getReqs('R-1', 'One-family');
+  diagramUpdater = new FormGroup({
+    bldgTypes: new FormControl('One-family', [ Validators.required ]),
+    zones: new FormControl('R-1', [ Validators.required ])
   });
-
+  constructor(public clipboard: Clipboard ) { }
   ngOnInit(): void {
     this.dimensions = getDimensions('R-1', 'One-family');
   }
@@ -55,7 +58,13 @@ export class OpzZoningComponent implements OnInit {
 
   changeDiagram(newZone, newBldgType): void {
     this.dimensions = getDimensions(newZone, newBldgType);
+    this.currentReqs = getReqs(newZone, newBldgType);
     this.bldgTypeSel = newBldgType;
     this.zoneSelect = newZone;
+  }
+
+  copyReqs(zone, bldgType): any {
+    this.clipboard.beginCopy(JSON.stringify(this.currentReqs));
+    alert('copied to the clipboard');
   }
 }
