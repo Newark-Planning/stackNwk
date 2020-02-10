@@ -16,6 +16,7 @@ import { buildingTypes, getDimensions, getReqs } from './zoning.model';
 export class OpzZoningComponent implements OnInit {
   @ViewChild(LotComponent) lotComponent: LotComponent;
   @ViewChild('reqReport') report: ElementRef;
+  @Input() reportVal;
   zoneOptions: Array<string> = [
     'R-1',
     'R-2',
@@ -42,12 +43,13 @@ export class OpzZoningComponent implements OnInit {
   @Input() bldgTypeSel;
   @Input() bldgType;
   @Input() dimensions: any;
+  // tslint:disable-next-line: no-non-null-assertion
   currentReqs = getReqs('R-1', 'One-family');
   diagramUpdater = new FormGroup({
     bldgTypes: new FormControl('One-family', [ Validators.required ]),
     zones: new FormControl('R-1', [ Validators.required ])
   });
-  constructor(public clipboard: Clipboard ) { }
+  constructor(public clipboard: Clipboard) { }
   ngOnInit(): void {
     this.dimensions = getDimensions('R-1', 'One-family');
   }
@@ -63,8 +65,20 @@ export class OpzZoningComponent implements OnInit {
     this.zoneSelect = newZone;
   }
 
-  copyReqs(zone, bldgType): any {
-    this.clipboard.beginCopy(JSON.stringify(this.currentReqs));
-    alert('copied to the clipboard');
+  copyReqs(): any {
+    this.reportVal = this.report.nativeElement.innerText;
+    const pending = this.clipboard.beginCopy(this.reportVal);
+    let remainingAttempts = 3;
+    const attempt = () => {
+      const result = pending.copy();
+      // tslint:disable-next-line: increment-decrement
+      if (!result && --remainingAttempts) {
+        setTimeout(attempt);
+      } else {
+        // Remember to destroy when you're done!
+        pending.destroy();
+      }
+    };
+    setTimeout(attempt);
   }
 }
