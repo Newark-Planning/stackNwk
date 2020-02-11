@@ -11,7 +11,7 @@ export const RC_ROUTES: Array<MyRoute> = [
     component: components.RcHomeComponent,
     data: {
       icon: 'home',
-      title: 'RC Home'
+      title: 'Rent Control'
     },
     path: 'home'
   }

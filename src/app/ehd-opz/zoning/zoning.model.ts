@@ -1,41 +1,15 @@
-export interface BulkReqs {
-    MinLotSize: number;
-    MinLotWidth: number;
-    MaxBuildingHeight: { height?: number; stories?: number; };
-    FrontYard: Array<number>;
-    FrontYardType: Array<string>;
-    SideYard: Array<number>;
-    SideYardType: Array<string>;
-    MinRearYard: Array<number>;
-    MinRearYardType: Array<string>;
-    MaxLotCoverage: number | string;
-    MaxImperviousArea?: { front?: number; rear?: number; };
-}
-export interface LotToSVGDimensions {
-    driveway: { display: string;  x: number;  };
-    envelope: { height: number; width: number;  x: number;  y: number; };
-    frontYard: number;
-    heightLine: { endCapsX: number; text: string;  x: number; };
-    lotHeight: (number);
-    lotSize: number;
-    lotWidth: number;
-    rearYard: { height: number; y: number; };
-    sideYard: { left: number; leftX: number; right: number; rightX: number; y: number;  };
-    viewBox: string;
-    walkways: { center: number; height: number; stoop: { center: number; y: number; } };
-    widthLine: { text: string; x1: number; x2: number;  };
-}
+import { BulkReqs } from './zoning.interfaces';
+
+// tslint:disable-next-line: cyclomatic-complexity
 export const getReqs = (zone: string, buildingType: string) => {
-    switch (buildingType) {
-        case 'One-family': {
-            return (zone === 'R-1') ? {
+    let reqs: BulkReqs;
+    switch (true) {
+        case zone === 'R-1': {
+            reqs = {
                 MinLotSize: 5000,
                 MinLotWidth: 50,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 35,
-                    stories: 3
-                },
+                MaxBuildingHeight: { height: 35, stories: 3 },
                 FrontYard: [15],
                 FrontYardType: ['min'],
                 SideYard: [ 5, 10 ],
@@ -44,14 +18,15 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MinRearYardType: ['min'],
                 MaxLotCoverage: 0.4,
                 MaxImperviousArea: { front: 0.3, rear: 0.5 }
-            } : {
+            };
+            break;
+        }
+        case buildingType === 'One-family': {
+            reqs = {
                 MinLotSize: 2500,
                 MinLotWidth: 25,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 36,
-                    stories: 3
-                },
+                MaxBuildingHeight: { height: 36, stories: 3 },
                 FrontYard: [6],
                 FrontYardType: ['min'],
                 SideYard: [3],
@@ -61,16 +36,14 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.5,
                 MaxImperviousArea: { front: 0.65, rear: 0.3 }
             };
+            break;
         }
-        case 'Two-family': {
-            return {
+        case buildingType === 'Two-family': {
+            reqs = {
                 MinLotSize: 2500,
                 MinLotWidth: 25,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 36,
-                    stories: 3
-                },
+                MaxBuildingHeight: { height: 36, stories: 3 },
                 FrontYard: [6],
                 FrontYardType: ['min'],
                 SideYard: [3],
@@ -80,16 +53,14 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.5,
                 MaxImperviousArea: { front: 0.6, rear: 0.3 }
             };
+            break;
         }
-        case 'Three-family': {
-            return {
+        case buildingType === 'Three-family': {
+            reqs = {
                 MinLotSize: 3500,
                 MinLotWidth: 35,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 36,
-                    stories: 3
-                },
+                MaxBuildingHeight: { height: 36, stories: 3 },
                 FrontYard: [6],
                 FrontYardType: ['min'],
                 SideYard: [3],
@@ -99,16 +70,14 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.55,
                 MaxImperviousArea: { front: 0.55, rear: 0.75 }
             };
+            break;
         }
-        case 'Townhouse': {
-            return {
+        case buildingType === 'Townhouse': {
+            reqs = {
                 MinLotSize: 7000,
                 MinLotWidth: 70,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 36,
-                    stories: 3
-                },
+                MaxBuildingHeight: { height: 36, stories: 3 },
                 FrontYard: [6],
                 FrontYardType: ['min'],
                 SideYard: [3],
@@ -118,16 +87,14 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.6,
                 MaxImperviousArea: { front: 0.55, rear: 0.15 }
             };
+            break;
         }
-        case 'Low-rise multifamily & Four-Family': {
-            return {
+        case buildingType === 'Low-rise multifamily & Four-Family': {
+            reqs = {
                 MinLotSize: 10000,
                 MinLotWidth: 100,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 48,
-                    stories: 4
-                },
+                MaxBuildingHeight: { height: 48, stories: 4 },
                 FrontYard: [6],
                 FrontYardType: ['min'],
                 SideYard: [5],
@@ -137,16 +104,14 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.66,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
+            break;
         }
-        case 'Mid-rise multifamily': {
-            return {
+        case buildingType === 'Mid-rise multifamily': {
+            reqs = {
                 MinLotSize: 10000,
                 MinLotWidth: 100,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 96,
-                    stories: 8
-                },
+                MaxBuildingHeight: { height: 96, stories: 8 },
                 FrontYard: [6],
                 FrontYardType: ['min'],
                 SideYard: [5],
@@ -156,9 +121,10 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.6,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
+            break;
         }
-        case 'High-rise multifamily': {
-            return {
+        case buildingType === 'High-rise multifamily': {
+            reqs = {
                 MinLotSize: 10000,
                 MinLotWidth: 100,
                 // tslint:disable-next-line: object-literal-sort-keys
@@ -175,16 +141,51 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.66,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
+            break;
         }
-        case 'Detached Commercial': {
-            return {
+        case buildingType === 'Ground-floor commercial with commercial or residential above'
+            && zone === 'MX-3': {
+            reqs = {
+                MinLotSize: 10000,
+                MinLotWidth: 100,
+                // tslint:disable-next-line: object-literal-sort-keys
+                MaxBuildingHeight: {height: 145, stories: 'any'},
+                FrontYard: [6],
+                FrontYardType: ['min'],
+                SideYard: [5, 10],
+                SideYardType: ['min (up to 8 stories)', 'min (8+ stories)'],
+                MinRearYard: [25, 20],
+                MinRearYardType: ['Abutting Residential Zone', 'Abutting Non-Residential Zone'],
+                MaxLotCoverage: 0.85,
+                MaxImperviousArea: { front: 0.55, rear: 0.3 }
+            };
+            break;
+        }
+        case buildingType === 'Ground-floor commercial with commercial or residential above': {
+            reqs = {
+                MinLotSize: 3500,
+                MinLotWidth: 35,
+                // tslint:disable-next-line: object-literal-sort-keys
+                MaxBuildingHeight: { height: 48, stories: 4 },
+                FrontYard: [0, 5],
+                FrontYardType: ['min', 'max'],
+                SideYard: [0, 0],
+                SideYardType: ['min', 'max'],
+                MinRearYard: [25, 20],
+                MinRearYardType: ['Abutting Residential Zone', 'Abutting Non-Residential Zone'],
+                MaxLotCoverage: 0.8,
+                MaxImperviousArea: { front: 'n/a', rear: 0.5 }
+            };
+            if (zone === 'C-3') { reqs.MaxBuildingHeight.height = 96; reqs.MaxBuildingHeight.stories = 8; }
+            if (zone === 'C-2') { reqs.MaxBuildingHeight.height = 60; reqs.MaxBuildingHeight.stories = 5; }
+            break;
+        }
+        case buildingType === 'Detached Commercial': {
+            reqs = {
                 MinLotSize: 5000,
                 MinLotWidth: 50,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: (zone === 'MX-1') ? 48 : 96,
-                    stories: (zone === 'MX-1') ? 4 : 8
-                },
+                MaxBuildingHeight: { height: 96, stories: 8 },
                 FrontYard: [0, 5],
                 FrontYardType: ['min', 'max'],
                 SideYard: [0, 5],
@@ -194,16 +195,15 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.85,
                 MaxImperviousArea: { front: 0.55, rear: 0.6 }
             };
+            if (zone === 'MX-1') { reqs.MaxBuildingHeight.height = 48; reqs.MaxBuildingHeight.stories = 4; }
+            break;
         }
-        case 'Industrial': {
-            return {
+        case buildingType === 'Industrial': {
+            reqs = {
                 MinLotSize: 5000,
                 MinLotWidth: 50,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: (zone === 'MX-1') ? 48 : 96,
-                    stories: (zone === 'MX-1') ? 4 : 8
-                },
+                MaxBuildingHeight: { height: 96, stories: 8 },
                 FrontYard: [6],
                 FrontYardType: ['min'],
                 SideYard: [3],
@@ -213,34 +213,32 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.85,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
+            if (zone === 'MX-1') { reqs.MaxBuildingHeight.height = 48; reqs.MaxBuildingHeight.stories = 4; }
+            break;
         }
-        case 'University': {
-            return {
+        case buildingType === 'University': {
+            reqs = {
                 MinLotSize: 10000,
                 MinLotWidth: 100,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 210,
-                    stories: 20
-                },
+                MaxBuildingHeight: { height: 210, stories: 20 },
                 FrontYard: [5, 10],
                 FrontYardType: ['min', 'max'],
                 SideYard: [5],
+                SideYardType: ['min'],
                 MinRearYard: [30],
                 MinRearYardType: ['min'],
                 MaxLotCoverage: 0.8,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
+            break;
         }
-        case 'Hospital or Medical Institution': {
-            return {
+        case buildingType === 'Hospital or Medical Institution': {
+            reqs = {
                 MinLotSize: 10000,
                 MinLotWidth: 100,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 210,
-                    stories: 20
-                },
+                MaxBuildingHeight: { height: 210, stories: 20 },
                 FrontYard: [5, 10],
                 FrontYardType: ['min', 'max'],
                 SideYard: [10],
@@ -250,16 +248,14 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 'n/a',
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
+            break;
         }
-        case 'Schools (Elementary, Middle, High Schools)': {
-            return {
+        case buildingType === 'Schools (Elementary, Middle, High Schools)': {
+            reqs = {
                 MinLotSize: 10000,
                 MinLotWidth: 100,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 55,
-                    stories: 5
-                },
+                MaxBuildingHeight: { height: 55, stories: 5},
                 FrontYard: [5, 10],
                 FrontYardType: ['min', 'max'],
                 SideYard: [5],
@@ -269,34 +265,31 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.3 }
             };
+            break;
         }
-        case 'Place of Worship': {
-            return {
+        case buildingType === 'Place of Worship': {
+            reqs = {
                 MinLotSize: 10000,
                 MinLotWidth: 100,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 30,
-                    stories: 2
-                },
+                MaxBuildingHeight: { height: 30, stories: 2 },
                 FrontYard: [ 5, 10 ],
                 FrontYardType: ['min'],
                 SideYard: [5],
                 SideYardType: ['min'],
                 MinRearYard: [20],
+                MinRearYardType: ['min'],
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.2 }
             };
+            break;
         }
         default: {
-            return {
+            reqs = {
                 MinLotSize: 5000,
                 MinLotWidth: 50,
                 // tslint:disable-next-line: object-literal-sort-keys
-                MaxBuildingHeight: {
-                    height: 35,
-                    stories: 3
-                },
+                MaxBuildingHeight: { height: 35, stories: 3 },
                 FrontYard: [ 5, 10 ],
                 FrontYardType: ['min', 'max'],
                 SideYard: [5],
@@ -306,12 +299,14 @@ export const getReqs = (zone: string, buildingType: string) => {
                 MaxLotCoverage: 0.65,
                 MaxImperviousArea: { front: 0.55, rear: 0.2 }
             };
+            break;
         }
     }
+
+    return reqs;
 };
 export const buildingTypes = (zone: string) => {
     switch (zone) {
-        case 'R-1': return ['One-family'];
         case 'R-2': return ['One-family', 'Two-family', 'Townhouse', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship'];
         case 'R-3': return ['One-family', 'Two-family', 'Three-family', 'Townhouse', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship'];
         case 'R-4': return ['One-family', 'Two-family', 'Three-family', 'Townhouse', 'Low-rise multifamily & Four-Family', 'Ground-floor commercial with commercial or residential above', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship', 'Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings'];
@@ -328,7 +323,7 @@ export const buildingTypes = (zone: string) => {
         case 'MX-3': return ['Community Center, Stand-Alone Daycare or Preschool in a Non-residential Area, and other Civic Buildings', 'Detached commercial', 'Ground-floor commercial with commercial or residential above', 'High-rise multifamily', 'Mid-rise multifamily', 'Low-rise multifamily & Four-Family'];
         case 'EWR-S': return ['Detached commercial', 'Industrial'];
         case 'INST': return ['Townhouse', 'Low-rise multifamily & Four-Family', 'Mid-rise multifamily', 'Ground-floor commercial with commercial or residential above', 'University', 'Hospital or Medical Institution', 'Schools (Elementary, Middle, High Schools)', 'Place of Worship'];
-        default: return [''];
+        default: return ['One-family'];
 }};
 export const getDimensions = (newZone: string, bldgType: string) => {
     const currentReqs = getReqs(newZone, bldgType);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Record, SubComponent } from '../../shared/models';
+import { AirService } from '../../shared/services/air.service';
 
 @Component({
   selector: 'app-opz-boards',
@@ -12,6 +13,7 @@ export class OpzBoardsComponent implements OnInit {
   inOverflow = true;
   layout = 'horizontal';
   splashTitle$: Record;
+  board$: Array<Record>;
   article$: Array<Record>;
   backgroundStyle = {
     'background-image': "url('assets/img/ironboundbig.jpg')"
@@ -22,8 +24,10 @@ export class OpzBoardsComponent implements OnInit {
     { icon: 'file', index: 3, text: 'Agendas', textSmall: 'Agendas' }
   ];
   subComponents: Array<SubComponent | any>;
-  activeLinkIndex = -1;
+  activeFragment;
+
   constructor(
+    public airData: AirService,
     readonly route: ActivatedRoute,
     readonly router: Router) {
       this.subComponents = [
@@ -35,9 +39,17 @@ export class OpzBoardsComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.router.events.subscribe(res => {
-      this.activeLinkIndex = this.subComponents.indexOf(this.subComponents.find(tab => tab.link === `.${this.router.url}`));
-    });
+    this.activeFragment = this.router.url.slice(this.router.url.lastIndexOf('/') + 1)
+      .toUpperCase();
+    this.getTab(this.activeFragment);
+  }
 
+  getTab(view): any {
+    const records = 'records';
+    this.airData.getRecords('Boards', `view=${view.toUpperCase()}`)
+      .subscribe(
+        data => {
+          this.board$ = data[records];
+        });
   }
 }

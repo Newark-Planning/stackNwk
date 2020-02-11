@@ -23,7 +23,29 @@
             {{link.label}}
         </a>
     </nav>
-    <div id="tabs-content">
-        <router-outlet></router-outlet>
+    <div id="tabs-content" class="clr-row clr-justify-content-center" *ngFor='let staff of staff$'>
+        <div class="clr-col-lg-8 clr-col-md-10 clr-col-12">
+            <div class="card ">
+                <div class="card-header">
+                    <h2>{{ staff.fields['Name-First']}} {{ staff.fields['Name-Last'] }}</h2>
+                    <span class="label label-warning" [ngStyle]="{'font-size': '.75rem'}"
+                        innerHtml="{{ staff.fields['Position'] }}"></span>
+                </div>
+                <div class="card-block">
+                    <div class="clr-row clr-justify-content-center">
+                        <div class="card-text clr-col-7">
+                            <p class='p3'>{{ staff.fields['Bio'] }}</p>
+                        </div>
+                        <div class="card-img clr-col-4">
+                            <img src="{{ staff.fields['Headshot'][0]['url'] }} " />
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card-footer ">
+                    <button class="btn btn-lg btn-secondary ">City Hall | Office: Room {{ staff.fields['Room'] }}</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

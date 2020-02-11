@@ -17,4 +17,5 @@ export interface SubComponent {
   index?: number;
   label: string;
   path: string;
+  viewName?: string;
 }

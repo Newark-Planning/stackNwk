@@ -8,17 +8,6 @@ import { OpzResourcesComponent } from './resources/resources.component';
 import { OpzStaffComponent } from './staff/staff.component';
 import { OpzZoningComponent } from './zoning/zoning.component';
 
-// Boards page component imports
-import { CPBComponent } from './boards/cpb/cpb.component';
-import { ECComponent } from './boards/ec/ec.component';
-import { LHPCComponent } from './boards/lhpc/lhpc.component';
-import { ZBAComponent } from './boards/zba/zba.component';
-
-// Staff page components imports
-import { LeadersComponent } from './staff/leaders/leaders.component';
-import { PlannersComponent } from './staff/planners/planners.component';
-import { SupportComponent } from './staff/support/support.component';
-
 // Resources page component imports
 import { ApplicationsDataComponent } from './resources/sub-pages/applications/applications.component';
 import { RedevDataComponent } from './resources/sub-pages/redev/redev.component';
@@ -39,12 +28,6 @@ export const planningComponents = [
   OpzContactComponent
 ];
 
-export const planningAboutComponents = [
-  LeadersComponent,
-  PlannersComponent,
-  SupportComponent
-];
-
 export const planningMapComponents = [
   SidePanelComponent
 ];
@@ -52,12 +35,6 @@ export const planningMapComponents = [
 export const planningResComponents = [
   ApplicationsDataComponent,
   RedevDataComponent
-];
-export const planningBoardsComponents = [
-  CPBComponent,
-  ECComponent,
-  LHPCComponent,
-  ZBAComponent
 ];
 
 export const planningZonesComponents = [
@@ -74,17 +51,6 @@ export * from './planning/planning.component';
 export * from './resources/resources.component';
 export * from './staff/staff.component';
 export * from './zoning/zoning.component';
-
-// Boards page component imports
-export * from './boards/cpb/cpb.component';
-export * from './boards/ec/ec.component';
-export * from './boards/lhpc/lhpc.component';
-export * from './boards/zba/zba.component';
-
-// Staff page components exports
-export * from './staff/leaders/leaders.component';
-export * from './staff/planners/planners.component';
-export * from './staff/support/support.component';
 
 // Our City page components exports
 export *  from './ourcity/sidepanel.component';
