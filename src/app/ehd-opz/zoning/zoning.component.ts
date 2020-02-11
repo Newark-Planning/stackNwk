@@ -81,4 +81,53 @@ export class OpzZoningComponent implements OnInit {
     };
     setTimeout(attempt);
   }
+  zoningColors(zonedist: string): any {
+    switch (zonedist) {
+        case 'R-1':
+        case 'R-2':
+        case 'R-3':
+        case 'R-4':
+        case 'R-5':
+        case 'R-6':
+            return '#F3F88F';
+            break;
+        case 'C-1':
+        case 'C-2':
+        case 'C-3':
+            return '#F8B7FB';
+            break;
+        case 'I-1':
+        case 'I-2':
+        case 'I-3':
+            return '#F8B7FB';
+            break;
+        case 'MX-1':
+        case 'MX-2':
+        case 'MX-3':
+            return '#F8B7FB';
+            break;
+        case 'RDV':
+            return '#dddddd';
+            break;
+        case 'PARK':
+            return '#B5E6B9';
+            break;
+        case 'INST':
+            return '#0063ff';
+            break;
+        case 'CEM':
+            return '#F8B7FB';
+            break;
+        case 'PORT':
+            return '#F8B7FB';
+            break;
+        case 'EWR':
+        case 'EWR-S':
+            return '#F8B7FB';
+            break;
+        default:
+            return '#BCBCBB';
+            break;
+    }
+  }
 }
