@@ -70,6 +70,12 @@ export const PLANNING_ROUTES: Routes = [
     path: 'planning'
   },
   {
+    children: [
+      { path: '', redirectTo: 'zone-info', pathMatch: 'full' },
+      {component: components.OpzZoningInfoComponent, data: {title: 'Zoning Info'}, path: 'zone-info'},
+      {component: components.OpzZoningResComponent, data: {title: 'Residential Zoning'}, path: 'zone-res'},
+      {component: components.DiagramsComponent, data: {title: 'Zoning Diagrams'}, path: 'diagrams'}
+    ],
     component: components.OpzZoningComponent,
     data: {
       icon: 'cloud-chart',

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Record } from '../../../../shared/models';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { GetRegsService } from '../../../../shared/services';
+import { buildingTypes, getDimensions } from '../../diagrams/diagrams.model';
 
 @Component({
   selector: 'opz-zoning-res',
@@ -9,18 +8,28 @@ import { GetRegsService } from '../../../../shared/services';
   templateUrl: './res.component.html'
 })
 export class OpzZoningResComponent implements OnInit {
-  zones: Observable<Record>;
+  @Input() dimensions: any;
+  @Input() typeNumber: number;
+  @Input() zone: string;
 
   constructor(
     public zoner: GetRegsService
     ) { }
 
   ngOnInit(): void {
-    const records = 'records';
-    // tslint:disable-next-line: no-floating-promises
-    this.zoner.getAllZones()
-      .subscribe(
-        data => this.zones = data[records]
-      );
+    this.dimensions = getDimensions('R-2', 'One-family');
+    this.typeNumber = buildingTypes('R-2').length - 1;
+    document.addEventListener('click');
+  }
+
+  resBldgTypes(value: number): any {
+    const currentType = buildingTypes('R-2')[value];
+
+    return currentType;
+  }
+
+  changeType(value): any {
+    const currentType = buildingTypes('R-2')[value];
+    this.dimensions = getDimensions('R-2', currentType);
   }
 }

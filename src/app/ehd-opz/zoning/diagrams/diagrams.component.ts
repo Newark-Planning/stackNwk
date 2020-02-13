@@ -13,7 +13,7 @@ import { buildingTypes, getDimensions, getReqs } from './diagrams.model';
   styleUrls: ['./diagrams.component.scss'],
   templateUrl: './diagrams.component.html'
 })
-export class OpzZoningComponent implements OnInit {
+export class DiagramsComponent implements OnInit {
   @ViewChild(LotComponent) lotComponent: LotComponent;
   @ViewChild('reqReport') report: ElementRef;
   @Input() reportVal;

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSliderModule} from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import * as fromComponents from './components';
 import { AirService } from './services/air.service';
@@ -16,6 +17,7 @@ import { GridStateService } from './services/grid.service';
   exports: [
     FormsModule,
     ReactiveFormsModule,
+    MatSliderModule,
     MatTabsModule,
     ...fromComponents.components
   ],
@@ -24,6 +26,7 @@ import { GridStateService } from './services/grid.service';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    MatSliderModule,
     MatTabsModule
   ],
   providers: [AirService, CartoService, GetRegsService, GridStateService, MapService, MapidService, SearchService],
