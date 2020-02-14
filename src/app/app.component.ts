@@ -10,7 +10,13 @@ import { filter, map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   document: Document;
-
+  divisions = [
+    { name: 'Housing', path: '#' },
+    { name: 'Opportunity Zones', path: '#' },
+    { name: 'Planning & Zoning', path: '/opz' },
+    { name: 'Property Management', path: '/opm' },
+    { name: 'Rent Control', path: '/rc' }
+  ];
   constructor(
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,

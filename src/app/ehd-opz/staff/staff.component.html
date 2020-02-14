@@ -19,7 +19,7 @@
 <section class='secondary-content'>
     <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Our Staff</h2>
     <nav mat-tab-nav-bar>
-        <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+        <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.path)'>
             {{link.label}}
         </a>
     </nav>
@@ -33,17 +33,17 @@
                 </div>
                 <div class="card-block">
                     <div class="clr-row clr-justify-content-center">
-                        <div class="card-text clr-col-7">
-                            <p class='p3'>{{ staff.fields['Bio'] }}</p>
-                        </div>
-                        <div class="card-img clr-col-4">
-                            <img src="{{ staff.fields['Headshot'][0]['url'] }} " />
+                        <div class="card-text clr-col-11">
+                            <img src="{{ staff.fields['Headshot'][0]['url'] }} " class='card-image'/>
+                            <h5 innerHtml="{{ staff.fields['Bio'] }}"></h5>
                         </div>
                     </div>
                 </div>
     
                 <div class="card-footer ">
-                    <button class="btn btn-lg btn-secondary ">City Hall | Office: Room {{ staff.fields['Room'] }}</button>
+                    <button class="btn btn-lg btn-secondary">City Hall | Office: Room {{ staff.fields['Room'] }}</button>
+                    <a class="btn btn-lg btn-secondary" href="mailto:{{ staff.fields['Email'] }}?Subject=Website%20Inquiry">Email: {{ staff.fields['Email'] }}</a>
+                    <a class="btn btn-lg btn-secondary" href="tel:{{ staff.fields['Phone'] }}">Tel: {{ staff.fields['Phone'] }}</a>
                 </div>
             </div>
         </div>

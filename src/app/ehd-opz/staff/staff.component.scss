@@ -1,6 +1,8 @@
 @import '../../app.component.scss';
+
 .splash-buttons {
     flex-basis: content;
+
     .btn {
         display: flex;
         box-shadow: .1rem .1rem .25rem black;
@@ -21,6 +23,7 @@
     font-size: calc(var(--vw) * 0.01 + 25px);
     border-radius: .5rem;
     margin: unset !important;
+
     h2 {
         margin: unset;
         text-align: center;
@@ -57,4 +60,12 @@
 
 #tabs-content {
     min-height: 50vh
+}
+
+.card-image {
+    max-width: 40%;
+    float: right;
+    border-radius: 0.25rem;
+    margin: 1rem;
+    max-height: 25vh;
 }

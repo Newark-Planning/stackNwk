@@ -32,7 +32,9 @@ export class LotComponent {
     @ViewChild('toolTip') tooltip: ElementRef;
     diagramTextBox: DiagramTextBox = {content: '', style: ''};
     hoverTarget: HoverTarget = { name: '', x: '0px', y: '0px', target: document.body};
-
+    sidebarVisibility;
+    sideBarTarget;
+    sideBarContent;
     constructor(
         private readonly renderer: Renderer2
         ) { }
@@ -54,5 +56,9 @@ export class LotComponent {
         : this.diagramTextBox.style = {
             display: 'none'
         };
+    }
+    @HostListener('click', ['$event.target']) onClick(target: any): any {
+        (this.sidebarVisibility === false) ? this.sidebarVisibility = true : this.sidebarVisibility = false;
+        this.sideBarTarget = target.getAttribute('data-name');
     }
 }

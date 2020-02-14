@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, HostListener } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GetRegsService } from '../../../../shared/services';
 import { buildingTypes, getDimensions } from '../../diagrams/diagrams.model';
 
@@ -11,6 +11,7 @@ export class OpzZoningResComponent implements OnInit {
   @Input() dimensions: any;
   @Input() typeNumber: number;
   @Input() zone: string;
+  @Input() value;
 
   constructor(
     public zoner: GetRegsService
@@ -19,7 +20,6 @@ export class OpzZoningResComponent implements OnInit {
   ngOnInit(): void {
     this.dimensions = getDimensions('R-2', 'One-family');
     this.typeNumber = buildingTypes('R-2').length - 1;
-    document.addEventListener('click');
   }
 
   resBldgTypes(value: number): any {

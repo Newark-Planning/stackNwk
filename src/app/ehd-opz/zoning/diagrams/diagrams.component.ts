@@ -1,10 +1,10 @@
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { routeAnimations } from '../../../core/core.module';
 import { LotComponent } from './lot.component';
 
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { buildingTypes, getDimensions, getReqs } from './diagrams.model';
 
 @Component({
@@ -17,6 +17,7 @@ export class DiagramsComponent implements OnInit {
   @ViewChild(LotComponent) lotComponent: LotComponent;
   @ViewChild('reqReport') report: ElementRef;
   @Input() reportVal;
+  display;
   zoneOptions: Array<string> = [
     'R-1',
     'R-2',

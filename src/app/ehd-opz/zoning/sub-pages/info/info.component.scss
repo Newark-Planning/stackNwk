@@ -1,52 +1,43 @@
 @import '../../zoning.component.scss';
+
 svg {
     display: flex;
     width: 20rem;
-    user-select: none;
 }
 
-.zoneText {
-    font-family: 'Century Gothic';
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.zoneText:hover {
-    cursor: pointer;
-}
-
-#Other,
-.st0 {
+#Other {
     fill: #4273cc;
 }
 
-#Special,
-.st3 {
+#Special {
     fill: #fff;
     font-size: 10px;
 }
 
-#MX,
-.st5 {
+#MX {
     fill: #cff;
     font-size: 15px;
 }
 
-#Ind,
-.st7 {
+#Ind {
     fill: #a18aad;
     font-size: 15px;
 }
 
-#Com,
-.st8 {
+#Com {
     font-size: 13px;
     fill: #fc8b93;
 }
 
-#Res,
-.st10 {
+#Res {
     fill: #fffaca;
+}
+
+.zoneText {
+    user-select: none;
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .bgrnd {
@@ -70,5 +61,4 @@ svg {
 #Special:active .bgrnd,
 #Other:active .bgrnd {
     fill: orchid;
-    cursor: pointer;
 }

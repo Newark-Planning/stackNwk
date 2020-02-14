@@ -42,9 +42,9 @@ export const PLANNING_ROUTES: Routes = [
   {
     children: [
       {path: '', redirectTo: 'leadership', pathMatch: 'full'},
-      {data: {title: 'Leadership'}, path: 'leadership'},
-      {data: {title: 'Planners'}, path: 'planners'},
-      {data: {title: 'Support'}, path: 'support'}
+      { data: { title: 'Leadership', viewName: 'Leadership'}, path: 'leadership'},
+      { data: { title: 'Planners', viewName: 'Planners'}, path: 'planners'},
+      { data: { title: 'Support', viewName: 'ZoningSupportStaff'}, path: 'support'}
     ],
     component: components.OpzStaffComponent,
     data: {

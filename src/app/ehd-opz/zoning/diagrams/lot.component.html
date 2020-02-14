@@ -37,3 +37,6 @@
   </g>
 </svg>
 <p #toolTip id='DiagramTextBox' [innerHTML]='diagramTextBox.content' [ngStyle]='diagramTextBox.style'></p>
+<p-sidebar [(visible)]="sidebarVisibility" styleClass="ui-sidebar-md" position="right">
+  <h1 style="font-weight:normal">{{ sideBarTarget }}</h1>
+</p-sidebar>

@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { Router } from '@angular/router';
 import { Record, SubComponent } from '../../shared/models';
 import { AirService } from '../../shared/services/air.service';
 
@@ -14,7 +13,8 @@ import { AirService } from '../../shared/services/air.service';
 export class OpzStaffComponent implements OnInit {
   splashTitle$: Record;
   staff$: Array<Record>;
-  activeLinkIndex = -1;
+  activeFragment;
+  activeViewName;
   backgroundStyle = {
     'background-image': "url('assets/img/ironboundbig.jpg')"
   };
@@ -28,23 +28,18 @@ export class OpzStaffComponent implements OnInit {
 
   constructor(
     public airData: AirService,
-    readonly route: ActivatedRoute,
-    readonly router: Router) {
+    private readonly router: Router
+    ) {
       this.subComponents = [
-        { label: 'Our Leadership', path: 'leadership', viewName: 'Leadership', index: 0 },
-        { label: 'Planning Staff', path: 'planners', viewName: 'Planners', index: 1 },
-        { label: 'Zoning & Support Staff', path: 'support', viewName: 'ZoningSupportStaff', index: 2 }
+        { label: 'Our Leadership', path: 'leadership' },
+        { label: 'Planning Staff', path: 'planners' },
+        { label: 'Zoning & Support Staff', path: 'support' }
       ];
     }
 
   ngOnInit(): void {
-    this.router.events.subscribe(res => {
-      this.activeLinkIndex = this.subComponents.indexOf(
-        this.subComponents.find(
-          tab => tab.path === `${this.router.url.slice(this.router.url.lastIndexOf('/') + 1)}`
-          )
-        );
-    });
+    this.activeFragment = this.router.url.slice(this.router.url.lastIndexOf('/') + 1);
+    this.getTab(this.activeFragment);
     const records = 'records';
     // tslint:disable-next-line: no-floating-promises
     this.airData.getRecords('PageComps', "filterByFormula=%7BName%7D%3D'Staff+Splash+Title'")
@@ -52,8 +47,11 @@ export class OpzStaffComponent implements OnInit {
         data => {
           this.splashTitle$ = data[records];
         });
-    // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('Staff', `view=${this.subComponents[this.activeLinkIndex].viewName}`)
+  }
+
+  getTab(view): any {
+    const records = 'records';
+    this.airData.getRecords('Staff', `view=${view}`)
       .subscribe(
         data => {
           this.staff$ = data[records];
