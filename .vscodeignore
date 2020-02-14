@@ -1,6 +1,0 @@
-node_modules/**/test/**
-node_modules
-out/
-src/
-tsconfig.json
-webpack.config.json

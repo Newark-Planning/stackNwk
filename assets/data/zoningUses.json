@@ -1,0 +1,1650 @@
+{
+    "uses": {
+        "residential": {
+            "primaryUses": [{
+                    "use": "Single-Family Dwelling"
+                },
+                {
+                    "use": "Two-Family Dwelling"
+                },
+                {
+                    "use": "Three-Family Dwelling"
+                },
+                {
+                    "use": "Town House, Dwelling"
+                },
+                {
+                    "use": "Low-Rise Multi-Family Dwellings"
+                },
+                {
+                    "use": "Mid-Rise Multi-Family Dwellings"
+                },
+                {
+                    "use": "High-Rise Multi-Family Dwellings"
+                },
+                {
+                    "use": "Active Recreation Park"
+                },
+                {
+                    "use": "Assisted Living Facilities & Nursing Homes"
+                },
+                {
+                    "use": "Childcare Center"
+                },
+                {
+                    "use": "Community Centers"
+                },
+                {
+                    "use": "Community Gardens"
+                },
+                {
+                    "use": "Community Residences",
+                    "longName": "Community Residences for the Developmentally Disabled Persons with Head Injuries and Terminally Ill Persons and Community Shelters for Victims of Domestic Violence, Adult Family Care Home"
+                },
+                {
+                    "use": "Ground Floor Use",
+                    "longName": "Ground Floor Use for Childcare Center, Community Center, Consignment Store, Convenience Retail, Finance, Insurance Real Estate, or Securities Brokerage Consumer Services, Fresh Food Market, Governmental (Non-Municipal) Use, Municipal Use, Offices, Personal Services Establishment, or General Consumer Goods Retail Sales."
+                },
+                {
+                    "use": "Municipal Uses"
+                },
+                {
+                    "use": "Passive Recreation Park"
+                },
+                {
+                    "use": "Places of Worship"
+                },
+                {
+                    "use": "Primary and Secondary Schools"
+                },
+                {
+                    "use": "Urban Farm"
+                }
+            ],
+            "accessoryUses": [{
+                    "use": "Automotive Lifts"
+                },
+                {
+                    "use": "Coldframe"
+                },
+                {
+                    "use": "Commercial Antennas & Microwave Dishes"
+                },
+                {
+                    "use": "Composting"
+                },
+                {
+                    "use": "Family Day Care Homes"
+                },
+                {
+                    "use": "Greenhouse"
+                },
+                {
+                    "use": "Home Occupation"
+                },
+                {
+                    "use": "Home Professional Offices"
+                },
+                {
+                    "use": "Hoophouse"
+                },
+                {
+                    "use": "Outdoor Storage, Portable Storage Units"
+                },
+                {
+                    "use": "Parking, Structured"
+                },
+                {
+                    "use": "Parking Garage, Private Residential"
+                },
+                {
+                    "use": "Private Private Sports Courts"
+                },
+                {
+                    "use": "Sheds and Other Accessory Storage Structures"
+                },
+                {
+                    "use": "Solar Energy Systems"
+                },
+                {
+                    "use": "Swimming Pools, Private"
+                },
+                {
+                    "use": "Wind Energy Systems, Small"
+                }
+            ]
+        },
+        "commercial": {
+            "primaryUses": [{
+                    "use": "Dwelling, Above the Ground Floor of Retail, Office or Service Use"
+                },
+                {
+                    "use": "Animal Daycare, Animal Grooming"
+                },
+                {
+                    "use": "Automobile Rentals"
+                },
+                {
+                    "use": "Automobile Repair and Tire Repair"
+                },
+                {
+                    "use": "Automobile Sales"
+                },
+                {
+                    "use": "Bail Bond Agency"
+                },
+                {
+                    "use": "Bar/Lounge, Cigar or Hookah"
+                },
+                {
+                    "use": "Bars, Taverns, Lounges"
+                },
+                {
+                    "use": "Billboards"
+                },
+                {
+                    "use": "Body Art Studio"
+                },
+                {
+                    "use": "Business, Specialized or Vocational Schools"
+                },
+                {
+                    "use": "Check-Cashing Establishments"
+                },
+                {
+                    "use": "Childcare Center"
+                },
+                {
+                    "use": "Cigar/Tobacco Retail Sales Establishment (See Section 40: 4-6. Additional Standards)"
+                },
+                {
+                    "use": "Commercial Antennas & Microwave Dishes"
+                },
+                {
+                    "use": "Commercial Recreation"
+                },
+                {
+                    "use": "Community Centers"
+                },
+                {
+                    "use": "Community Gardens"
+                },
+                {
+                    "use": "Consignment Store"
+                },
+                {
+                    "use": "Consumer Repair Services"
+                },
+                {
+                    "use": "Convenience Retail (permitted on ground floor only)"
+                },
+                {
+                    "use": "Department Store"
+                },
+                {
+                    "use": "Dry Cleaning and Laundry Establishment"
+                },
+                {
+                    "use": "Emergency Food Distribution Center, Food Pantry, Soup Kitchen"
+                },
+                {
+                    "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services"
+                },
+                {
+                    "use": "Fish, Meat and  Poultry Markets"
+                },
+                {
+                    "use": "Fitness Center"
+                },
+                {
+                    "use": "Fresh Food Market"
+                },
+                {
+                    "use": "Funeral Home or Mortuary"
+                },
+                {
+                    "use": "Furniture and Appliance Stores, Used"
+                },
+                {
+                    "use": "Gasoline Station"
+                },
+                {
+                    "use": "Governmental (Non-Municipal) Uses"
+                },
+                {
+                    "use": "Gun, Ammunition/Weapons Dealers"
+                },
+                {
+                    "use": "Hotels (See Section 40: 4-6. Additional Standards)"
+                },
+                {
+                    "use": "Large Format Retail and/or Shopping Centers"
+                },
+                {
+                    "use": "Laundromat"
+                },
+                {
+                    "use": "Liquor Stores"
+                },
+                {
+                    "use": "Market Gardens"
+                },
+                {
+                    "use": "Massage Facility"
+                },
+                {
+                    "use": "Medical Clinic or Emergency Care Facility"
+                },
+                {
+                    "use": "Medical Offices"
+                },
+                {
+                    "use": "Methadone Maintenance Clinic"
+                },
+                {
+                    "use": "Municipal Uses"
+                },
+                {
+                    "use": "Nightclubs, Discotheques & Cabarets"
+                },
+                {
+                    "use": "Offices (only permitted on second floor or above in C-2)"
+                },
+                {
+                    "use": "Pawn Shops"
+                },
+                {
+                    "use": "Personal Service Establishment"
+                },
+                {
+                    "use": "Pet Shop (See Section 40: 4-6. Additional Standards)"
+                },
+                {
+                    "use": "Place of Worship"
+                },
+                {
+                    "use": "Primary & Secondary Schools"
+                }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts" },
+                { "use": "Childcare Center" },
+                { "use": "Coldframe" },
+                { "use": "Composting" },
+                { "use": "Donation Bin" },
+                { "use": "Drive-Through Facilities" },
+                { "use": "Emergency Food Distribution Center, Food Pantry, Soup Kitchen" },
+                { "use": "Greenhouse" },
+                { "use": "Home Occupation" },
+                { "use": "Hoophouse" },
+                { "use": "Farm Stand" },
+                { "use": "Massage Facilities" },
+                { "use": "Ice Cream Service Window" },
+                { "use": "Outdoor Storage, Portable Storage Units" },
+                { "use": "Parking, Structured" },
+                { "use": "Sidewalk Café (accessory to permitted restaurant only, see Section 40: 4 - 6. Additional Standards)" },
+                { "use": "Solar Energy Systems" },
+                { "use": "Wind Energy Systems, Small" }
+            ]
+        },
+        "industrial": {
+            "primaryUses": [{
+                    "use": "Airport"
+                },
+                {
+                    "use": "Animal Boarding or Kennel, Animal Shelter, Pound"
+                },
+                {
+                    "use": "Animal Daycare, Animal Grooming"
+                },
+                {
+                    "use": "Artist Live/Work Studio (Nuisance Producing)"
+                },
+                {
+                    "use": "Automobile Paint and Body Repair"
+                },
+                {
+                    "use": "Automobile Rentals"
+                },
+                {
+                    "use": "Automobile Repair and Tire Repair"
+                },
+                {
+                    "use": "Automobile Sales"
+                },
+                {
+                    "use": "Automobile Car Wash"
+                },
+                {
+                    "use": "Bail Bond Agency"
+                },
+                {
+                    "use": "Billboards"
+                },
+                {
+                    "use": "Check-Cashing Establishment"
+                },
+                {
+                    "use": "Childcare Center"
+                },
+                {
+                    "use": "Commercial, Industrial Truck and Bus Services"
+                },
+                {
+                    "use": "Commercial Antennas & Microwave Dishes"
+                },
+                {
+                    "use": "Commercial Recreation"
+                },
+                {
+                    "use": "Convenience Retail"
+                },
+                {
+                    "use": "Crematorium, Animal"
+                },
+                {
+                    "use": "Data Center"
+                },
+                {
+                    "use": "Dry Cleaning & Laundry Establishment"
+                },
+                {
+                    "use": "Electrical or Gas Switching Facility, Power Distribution or Substation"
+                },
+                {
+                    "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen"
+                },
+                {
+                    "use": "Exterminator / Pesticide Application Business"
+                },
+                {
+                    "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services"
+                },
+                {
+                    "use": "Fish, Meat and Poultry Markets"
+                },
+                {
+                    "use": "Fitness Center"
+                },
+                {
+                    "use": "Gasoline Station"
+                },
+                {
+                    "use": "Governmental (Non-Municipal) Uses"
+                },
+                {
+                    "use": "Heavy Retail and Service"
+                },
+                {
+                    "use": "Heliport"
+                },
+                {
+                    "use": "Homeless Shelter"
+                },
+                {
+                    "use": "Hotels (See Section 40: 4-6. Additional Standards)"
+                },
+                {
+                    "use": "Laundry Facility-Commercial/Wholesale"
+                },
+                {
+                    "use": "Live Animal Market"
+                },
+                {
+                    "use": "Manufacturing, Heavy"
+                },
+                {
+                    "use": "Manufacturing, Light"
+                },
+                {
+                    "use": "Manufacturing, Medium"
+                },
+                {
+                    "use": "Materials Salvage or Junk Facility"
+                },
+                {
+                    "use": "Methadone Maintenance Clinic"
+                },
+                {
+                    "use": "Municipal Uses"
+                },
+                {
+                    "use": "Nightclubs, Discotheques & Cabarets"
+                },
+                {
+                    "use": "Operation Facilities for Bus/Taxicab/Ambulance/Limousine"
+                },
+                {
+                    "use": "Outdoor Storage"
+                },
+                {
+                    "use": "Outdoor Storage, Chemical"
+                },
+                {
+                    "use": "Parking Garage, Commercial Vehicle"
+                },
+                {
+                    "use": "Places of Worship"
+                },
+                {
+                    "use": "Power Generation Facilities"
+                },
+                {
+                    "use": "Recycling Center"
+                },
+                {
+                    "use": "Research and Development"
+                },
+                {
+                    "use": "Self Storage"
+                },
+                {
+                    "use": "Sexually Oriented Businesses"
+                },
+                {
+                    "use": "Sit-Down Restaurant"
+                },
+                {
+                    "use": "Solar Energy System"
+                },
+                {
+                    "use": "Substance Abuse Treatment Centers"
+                },
+                {
+                    "use": "Take-Out Restaurant"
+                },
+                {
+                    "use": "Telephone Switching Facility"
+                },
+                {
+                    "use": "Truck Terminal"
+                },
+                {
+                    "use": "Vehicle Towing Facility"
+                },
+                {
+                    "use": "Veterinary Clinic, Office or Hospital"
+                },
+                {
+                    "use": "Warehousing, Wholesaling and Distribution"
+                },
+                {
+                    "use": "Waste Transfer Station"
+                },
+                {
+                    "use": "Wholesale Bakeries"
+                },
+                {
+                    "use": "Wind Energy Systems, Large"
+                }
+            ],
+            "accessoryUses": [{
+                    "use": "Automotive Lifts (see Section 40: 4-6. Additional Standards)"
+                },
+                {
+                    "use": "Childcare Center"
+                },
+                {
+                    "use": "Commercial, Industrial Truck and Bus Wash"
+                },
+                {
+                    "use": "Composting (see Section 40: 4-6. Additional Standards)"
+                },
+                {
+                    "use": "Parking Area, Private"
+                },
+                {
+                    "use": "Donation Bin (See Section 40: 4-6. Additional Standards)"
+                },
+                {
+                    "use": "Drive-Through Facilities"
+                },
+                {
+                    "use": "Emergency"
+                },
+                {
+                    "use": "Offices"
+                },
+                {
+                    "use": "Outdoor Display Area"
+                },
+                {
+                    "use": "Outdoor Storage"
+                },
+                {
+                    "use": "Outdoor Storage, Chemical"
+                },
+                {
+                    "use": "Outdoor Storage, Portable Storage Units"
+                },
+                {
+                    "use": "Parking, Structured"
+                },
+                {
+                    "use": "Power Plant"
+                },
+                {
+                    "use": "Solar Energy Systems"
+                },
+                {
+                    "use": "Wind Energy Systems, Small"
+                }
+            ]
+        },
+        "other": {
+            "primaryUses": [{
+                    "use": "Single-Family Dwelling"
+                },
+                {
+                    "use": "Two-Family Dwelling"
+                },
+                {
+                    "use": "Three-Family Dwelling"
+                },
+                {
+                    "use": "Town House, Dwelling"
+                },
+                {
+                    "use": "Low-Rise Multi-Family Dwellings"
+                },
+                {
+                    "use": "Mid-Rise Multi-Family Dwellings"
+                },
+                {
+                    "use": "Artist Live/Work Studio"
+                },
+                {
+                    "use": "Active Recreation Park"
+                },
+                {
+                    "use": "Animal Boarding or Kennel, Animal Shelter, Pound"
+                },
+                {
+                    "use": "Animal Daycare, Animal Grooming"
+                },
+                {
+                    "use": "Automobile Repair and Tire Repair"
+                },
+                {
+                    "use": "Bar/Lounge, Cigar or Hookah"
+                },
+                {
+                    "use": "Bars, Taverns, Lounges"
+                },
+                {
+                    "use": "Body Art Studio"
+                },
+                {
+                    "use": "Business, Specialized or Vocational Schools"
+                },
+                {
+                    "use": "Cemeteries"
+                },
+                {
+                    "use": "Childcare Center"
+                },
+                {
+                    "use": "Colleges and Universities"
+                },
+                {
+                    "use": "Commercial Recreation"
+                },
+                {
+                    "use": "Community Centers"
+                },
+                {
+                    "use": "Community Gardens"
+                },
+                {
+                    "use": "Consignment Store"
+                },
+                {
+                    "use": "Consumer Repair Services"
+                },
+                {
+                    "use": "Convenience Retail"
+                },
+                {
+                    "use": "Data Center"
+                },
+                {
+                    "use": "Dormitory"
+                },
+                {
+                    "use": "Dry Cleaning and Laundry Establishment"
+                },
+                {
+                    "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen"
+                },
+                {
+                    "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services"
+                },
+                {
+                    "use": "Fish, Meat and Poultry Markets"
+                },
+                {
+                    "use": "Fitness Center"
+                },
+                {
+                    "use": "Fresh Food Market"
+                },
+                {
+                    "use": "Funeral Home or Mortuary"
+                },
+                {
+                    "use": "Governmental (Non-Municipal)"
+                },
+                {
+                    "use": "Homeless Shelter"
+                },
+                {
+                    "use": "Hospital or Medical Institution"
+                },
+                {
+                    "use": "Hotels"
+                },
+                {
+                    "use": "Laundromat"
+                },
+                {
+                    "use": "Manufacturing, Light"
+                },
+                {
+                    "use": "Massage Facilities"
+                },
+                {
+                    "use": "Medical Clinic or Emergency Care Facility"
+                },
+                {
+                    "use": "Medical Offices"
+                },
+                {
+                    "use": "Methadone Maintenance Clinic"
+                },
+                {
+                    "use": "Municipal Uses"
+                },
+                {
+                    "use": "Museums"
+                },
+                {
+                    "use": "Offices"
+                },
+                {
+                    "use": "Passive Recreation Park"
+                },
+                {
+                    "use": "Personal Service Establishment"
+                },
+                {
+                    "use": "Places of Worship"
+                },
+                {
+                    "use": "Primary and Secondary Schools"
+                },
+                {
+                    "use": "Private Clubs"
+                },
+                {
+                    "use": "Recycling Center"
+                },
+                {
+                    "use": "Resale or Thrift Shop"
+                },
+                {
+                    "use": "Research and Development"
+                },
+                {
+                    "use": "Retail Sales, General Consumer Goods"
+                },
+                {
+                    "use": "Sit-Down Restaurant"
+                },
+                {
+                    "use": "Substance Abuse Treatment Center"
+                },
+                {
+                    "use": "Supermarket"
+                },
+                {
+                    "use": "Take-Out Restaurant"
+                },
+                {
+                    "use": "Theater"
+                },
+                {
+                    "use": "Urban Farms"
+                },
+                {
+                    "use": "Veterinary Clinic, Office or Hospital"
+                },
+                {
+                    "use": "Warehousing, Wholesaling and Distribution"
+                },
+                {
+                    "use": "Wholesale Bakeries"
+                }
+            ],
+            "accessoryUses": [{
+                    "use": "Automotive Lifts"
+                },
+                {
+                    "use": "Childcare Center"
+                },
+                {
+                    "use": "Coldframe"
+                },
+                {
+                    "use": "Composting"
+                },
+                {
+                    "use": "Crematorium, Animal"
+                },
+                {
+                    "use": "Crematorium, Human"
+                },
+                {
+                    "use": "Donation Bin"
+                },
+                {
+                    "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen"
+                },
+                {
+                    "use": "Farm Stand"
+                },
+                {
+                    "use": "Greenhouse"
+                },
+                {
+                    "use": "Home Occupation"
+                },
+                {
+                    "use": "Home Professional Offices"
+                },
+                {
+                    "use": "Hoophouse"
+                },
+                {
+                    "use": "Maintenance Buildings"
+                },
+                {
+                    "use": "Massage Facilities"
+                },
+                {
+                    "use": "Mausoleum"
+                },
+                {
+                    "use": "Mausoleum, Family"
+                },
+                {
+                    "use": "Offices"
+                },
+                {
+                    "use": "Outdoor Storage, Portable Storage Units"
+                },
+                {
+                    "use": "Parking, Structured"
+                },
+                {
+                    "use": "Parking Garage, Private Residential"
+                },
+                {
+                    "use": "Place of Worship"
+                },
+                {
+                    "use": "Sidewalk Café"
+                },
+                {
+                    "use": "Solar Energy Systems"
+                },
+                {
+                    "use": "Tombstones and Monuments"
+                },
+                {
+                    "use": "Wind Energy Systems, Small"
+                }
+            ]
+        }
+    },
+    "zoningDistricts": {
+        "R-1": {
+            "primaryUses": [
+                { "use": "Single-Family Dwelling", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Community Residences", "longName": "Community Residences for the Developmentally Disabled Persons with Head Injuries and Terminally Ill Persons and Community Shelters for Victims of Domestic Violence, Adult Family Care Home", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Primary and Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Composting", "conditional": false },
+                { "use": "Family Day Care Homes", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sheds and Other Accessory Storage Structures", "conditional": false },
+                { "use": "Swimming Pools, Private", "conditional": false },
+                { "use": "Private Private Sports Courts", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "R-2": {
+            "primaryUses": [
+                { "use": "Single-Family Dwelling", "conditional": false },
+                { "use": "Two-Family Dwelling", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Community Residences", "longName": "Community Residences for the Developmentally Disabled Persons with Head Injuries and Terminally Ill Persons and Community Shelters for Victims of Domestic Violence, Adult Family Care Home", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Childcare Center", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Composting", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Family Day Care Homes", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sheds and Other Accessory Storage Structures", "conditional": false },
+                { "use": "Swimming Pools, Private", "conditional": false },
+                { "use": "Private Private Sports Courts", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "R-3": {
+            "primaryUses": [
+                { "use": "Single-Family Dwelling", "conditional": false },
+                { "use": "Two-Family Dwelling", "conditional": false },
+                { "use": "Three-Family Dwelling", "conditional": false },
+                { "use": "Town House, Dwelling", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Community Residences", "longName": "Community Residences for the Developmentally Disabled Persons with Head Injuries and Terminally Ill Persons and Community Shelters for Victims of Domestic Violence, Adult Family Care Home", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Urban Farm", "conditional": false },
+                { "use": "Childcare Center", "conditional": true },
+                { "use": "Community Centers", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Composting", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Family Day Care Homes", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sheds and Other Accessory Storage Structures", "conditional": false },
+                { "use": "Swimming Pools, Private", "conditional": false },
+                { "use": "Private Private Sports Courts", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "R-4": {
+            "primaryUses": [
+                { "use": "Single-Family Dwelling", "conditional": false },
+                { "use": "Two-Family Dwelling", "conditional": false },
+                { "use": "Three-Family Dwelling", "conditional": false },
+                { "use": "Town House, Dwelling", "conditional": false },
+                { "use": "Low-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Community Residences", "longName": "Community Residences for the Developmentally Disabled Persons with Head Injuries and Terminally Ill Persons and Community Shelters for Victims of Domestic Violence, Adult Family Care Home", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Urban Farm", "conditional": false },
+                { "use": "Assisted Living Facilities & Nursing Homes", "conditional": true },
+                { "use": "Childcare Center", "conditional": true },
+                { "use": "Community Centers", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Composting", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Family Day Care Homes", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Home Professional Offices", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sheds and Other Accessory Storage Structures", "conditional": false },
+                { "use": "Swimming Pools, Private", "conditional": false },
+                { "use": "Private Private Sports Courts", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "R-5": {
+            "primaryUses": [
+                { "use": "Low-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Mid-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Community Residences", "longName": "Community Residences for the Developmentally Disabled Persons with Head Injuries and Terminally Ill Persons and Community Shelters for Victims of Domestic Violence, Adult Family Care Home", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Urban Farm", "conditional": false },
+                { "use": "Assisted Living Facilities & Nursing Homes", "conditional": true },
+                { "use": "Childcare Center", "conditional": true },
+                { "use": "Community Centers", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Family Day Care Homes", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Home Professional Offices", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sheds and Other Accessory Storage Structures", "conditional": false },
+                { "use": "Swimming Pools, Private", "conditional": false },
+                { "use": "Private Private Sports Courts", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "R-6": {
+            "primaryUses": [
+                { "use": "Low-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Mid-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "High-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Community Residences", "longName": "Community Residences for the Developmentally Disabled Persons with Head Injuries and Terminally Ill Persons and Community Shelters for Victims of Domestic Violence, Adult Family Care Home", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Urban Farm", "conditional": false },
+                { "use": "Assisted Living Facilities & Nursing Homes", "conditional": true },
+                { "use": "Childcare Center", "conditional": true },
+                { "use": "Community Centers", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Family Day Care Homes", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Home Professional Offices", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sheds and Other Accessory Storage Structures", "conditional": false },
+                { "use": "Swimming Pools, Private", "conditional": false },
+                { "use": "Private Private Sports Courts", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "C-1": {
+            "primaryUses": [
+                { "use": "Dwelling, Above the Ground Floor of Retail, Office or Service Use", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Community Centers", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Consignment Store", "conditional": false },
+                { "use": "Consumer Repair Services", "conditional": false },
+                { "use": "Convenience Retail (permitted on ground floor only)", "conditional": false },
+                { "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services", "conditional": false },
+                { "use": "Fresh Food Market", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Laundromat", "conditional": false },
+                { "use": "Market Gardens", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Offices (only permitted on second floor or above in C-2)", "conditional": false },
+                { "use": "Personal Service Establishment", "conditional": false },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Funeral Home or Mortuary", "conditional": true },
+                { "use": "Furniture and Appliance Stores, Used", "conditional": true },
+                { "use": "Place of Worship", "conditional": true },
+                { "use": "Primary & Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Farm Stand", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Sidewalk Café (accessory to permitted restaurant only, see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Emergency Food Distribution Center, Food Pantry, Soup Kitchen", "conditional": true },
+                { "use": "Massage Facilities", "conditional": true },
+                { "use": "Ice Cream Service Window", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "C-2": {
+            "primaryUses": [
+                { "use": "Dwelling, Above the Ground Floor of Retail, Office or Service Use", "conditional": false },
+                { "use": "Bail Bond Agency", "conditional": false },
+                { "use": "Business, Specialized or Vocational Schools", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Community Centers", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Consignment Store", "conditional": false },
+                { "use": "Consumer Repair Services", "conditional": false },
+                { "use": "Convenience Retail (permitted on ground floor only)", "conditional": false },
+                { "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services", "conditional": false },
+                { "use": "Fish, Meat and Poultry Markets", "conditional": false },
+                { "use": "Fitness Center", "conditional": false },
+                { "use": "Fresh Food Market", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Laundromat", "conditional": false },
+                { "use": "Market Gardens", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Offices (only permitted on second floor or above in C-2)", "conditional": false },
+                { "use": "Personal Service Establishment", "conditional": false },
+                { "use": "Bars, Taverns, Lounges", "conditional": true },
+                { "use": "Body Art Studio", "conditional": true },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Dry Cleaning & Laundry Establishment", "conditional": true },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": true },
+                { "use": "Funeral Home or Mortuary", "conditional": true },
+                { "use": "Furniture and Appliance Stores, Used", "conditional": true },
+                { "use": "Massage Facility", "conditional": true },
+                { "use": "Nightclubs, Discotheques & Cabarets", "conditional": true },
+                { "use": "Place of Worship", "conditional": true },
+                { "use": "Primary & Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Farm Stand", "conditional": false },
+                { "use": "Sidewalk Café (accessory to permitted restaurant only, see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Emergency Food Distribution Center, Food Pantry, Soup Kitchen", "conditional": true },
+                { "use": "Massage Facilities", "conditional": true },
+                { "use": "Ice Cream Service Window", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "C-3": {
+            "primaryUses": [
+                { "use": "Dwelling, Above the Ground Floor of Retail, Office or Service Use", "conditional": false },
+                { "use": "Bail Bond Agency", "conditional": false },
+                { "use": "Business, Specialized or Vocational Schools", "conditional": false },
+                { "use": "Check-Cashing Establishment", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Cigar/Tobacco Retail Sales Establishment (See Section 40: 4-6. Additional Standards)", "conditional": false },
+                { "use": "Commercial Recreation", "conditional": false },
+                { "use": "Community Centers", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Consignment Store", "conditional": false },
+                { "use": "Consumer Repair Services", "conditional": false },
+                { "use": "Convenience Retail (permitted on ground floor only)", "conditional": false },
+                { "use": "Department Store", "conditional": false },
+                { "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services", "conditional": false },
+                { "use": "Fish, Meat and Poultry Markets", "conditional": false },
+                { "use": "Fitness Center", "conditional": false },
+                { "use": "Fresh Food Market", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Hotels", "conditional": false },
+                { "use": "Laundromat", "conditional": false },
+                { "use": "Market Gardens", "conditional": false },
+                { "use": "Medical Clinic or Emergency Care Facility", "conditional": false },
+                { "use": "Medical Offices", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Offices (only permitted on second floor or above in C-2)", "conditional": false },
+                { "use": "Personal Service Establishment", "conditional": false },
+                { "use": "Pet Shop (See Section 40: 4-6. Additional Standards)", "conditional": false },
+                { "use": "Animal Daycare, Animal Grooming", "conditional": true },
+                { "use": "Automobile Rentals", "conditional": true },
+                { "use": "Automobile Repair and Tire Repair", "conditional": true },
+                { "use": "Automobile Sales", "conditional": true },
+                { "use": "Bars, Taverns, Lounges", "conditional": true },
+                { "use": "Body Art Studio", "conditional": true },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Dry Cleaning & Laundry Establishment", "conditional": true },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": true },
+                { "use": "Funeral Home or Mortuary", "conditional": true },
+                { "use": "Furniture and Appliance Stores, Used", "conditional": true },
+                { "use": "Gasoline Station", "conditional": true },
+                { "use": "Large Format Retail and/or Shopping Centers", "conditional": true },
+                { "use": "Liquor Stores", "conditional": true },
+                { "use": "Massage Facility", "conditional": true },
+                { "use": "Methadone Maintenance Clinic", "conditional": true },
+                { "use": "Nightclubs, Discotheques & Cabarets", "conditional": true },
+                { "use": "Pawn Shops", "conditional": true },
+                { "use": "Place of Worship", "conditional": true },
+                { "use": "Primary & Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Farm Stand", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Sidewalk Café (accessory to permitted restaurant only, see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Drive-Through Facilities", "conditional": true },
+                { "use": "Emergency Food Distribution Center, Food Pantry, Soup Kitchen", "conditional": true },
+                { "use": "Massage Facilities", "conditional": true },
+                { "use": "Ice Cream Service Window", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "I-1": {
+            "primaryUses": [
+                { "use": "Bail Bond Agency", "conditional": false },
+                { "use": "Check-Cashing Establishment", "conditional": false },
+                { "use": "Commercial Recreation", "conditional": false },
+                { "use": "Convenience Retail", "conditional": false },
+                { "use": "Data Center", "conditional": false },
+                { "use": "Fish, Meat and Poultry Markets", "conditional": false },
+                { "use": "Fitness Center", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Heavy Retail and Service", "conditional": false },
+                { "use": "Laundry Facility-Commercial/Wholesale", "conditional": false },
+                { "use": "Manufacturing, Light", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Nightclubs, Discotheques & Cabarets", "conditional": false },
+                { "use": "Operation Facilities for Bus/Taxicab/Ambulance/Limousine", "conditional": false },
+                { "use": "Research and Development", "conditional": false },
+                { "use": "Self Storage", "conditional": false },
+                { "use": "Sit-Down Restaurant", "conditional": false },
+                { "use": "Solar Energy System", "conditional": false },
+                { "use": "Take-Out Restaurant", "conditional": false },
+                { "use": "Telephone Switching Facility", "conditional": false },
+                { "use": "Vehicle Towing Facility", "conditional": false },
+                { "use": "Warehousing, Wholesaling and Distribution", "conditional": false },
+                { "use": "Wholesale Bakeries", "conditional": false },
+                { "use": "Wind Energy Systems, Large", "conditional": false },
+                { "use": "Animal Boarding or Kennel, Animal Shelter, Pound", "conditional": true },
+                { "use": "Artist Live/Work Studio (Nuisance Producing)", "conditional": true },
+                { "use": "Automobile Rentals", "conditional": true },
+                { "use": "Automobile Repair and Tire Repair", "conditional": true },
+                { "use": "Automobile Sales", "conditional": true },
+                { "use": "Automobile Car Wash", "conditional": true },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Exterminator / Pesticide Application Business", "conditional": true },
+                { "use": "Gasoline Station", "conditional": true },
+                { "use": "Homeless Shelter", "conditional": true },
+                { "use": "Live Animal Market", "conditional": true },
+                { "use": "Methadone Maintenance Clinic", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Recycling Center", "conditional": true },
+                { "use": "Substance Abuse Treatment Centers", "conditional": true },
+                { "use": "Veterinary Clinic, Office or Hospital", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Childcare Center", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Parking Area, Private", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Drive-Through Facilities", "conditional": true },
+                { "use": "Emergency", "conditional": true },
+                { "use": "Outdoor Display Area", "conditional": true },
+                { "use": "Outdoor Storage", "conditional": true },
+                { "use": "Outdoor Storage, Chemical", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "I-2": {
+            "primaryUses": [
+                { "use": "Bail Bond Agency", "conditional": false },
+                { "use": "Check-Cashing Establishment", "conditional": false },
+                { "use": "Commercial Recreation", "conditional": false },
+                { "use": "Convenience Retail", "conditional": false },
+                { "use": "Data Center", "conditional": false },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": false },
+                { "use": "Fitness Center", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Heavy Retail and Service", "conditional": false },
+                { "use": "Laundry Facility-Commercial/Wholesale", "conditional": false },
+                { "use": "Manufacturing, Light", "conditional": false },
+                { "use": "Manufacturing, Medium", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Operation Facilities for Bus/Taxicab/Ambulance/Limousine", "conditional": false },
+                { "use": "Parking Garage, Commercial Vehicle", "conditional": false },
+                { "use": "Research and Development", "conditional": false },
+                { "use": "Solar Energy System", "conditional": false },
+                { "use": "Telephone Switching Facility", "conditional": false },
+                { "use": "Truck Terminal", "conditional": false },
+                { "use": "Vehicle Towing Facility", "conditional": false },
+                { "use": "Warehousing, Wholesaling and Distribution", "conditional": false },
+                { "use": "Wholesale Bakeries", "conditional": false },
+                { "use": "Wind Energy Systems, Large", "conditional": false },
+                { "use": "Animal Boarding or Kennel, Animal Shelter, Pound", "conditional": true },
+                { "use": "Automobile Paint and Body Repair", "conditional": true },
+                { "use": "Automobile Rentals", "conditional": true },
+                { "use": "Automobile Repair and Tire Repair", "conditional": true },
+                { "use": "Automobile Sales", "conditional": true },
+                { "use": "Automobile Car Wash", "conditional": true },
+                { "use": "Commercial, Industrial Truck and Bus Services", "conditional": true },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Crematorium, Animal", "conditional": true },
+                { "use": "Dry Cleaning & Laundry Establishment", "conditional": true },
+                { "use": "Exterminator / Pesticide Application Business", "conditional": true },
+                { "use": "Gasoline Station", "conditional": true },
+                { "use": "Live Animal Market", "conditional": true },
+                { "use": "Materials Salvage or Junk Facility", "conditional": true },
+                { "use": "Recycling Center", "conditional": true },
+                { "use": "Sexually Oriented Businesses", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Parking Area, Private", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Commercial, Industrial Truck and Bus Wash", "conditional": true },
+                { "use": "Outdoor Display Area", "conditional": true },
+                { "use": "Outdoor Storage", "conditional": true },
+                { "use": "Outdoor Storage, Chemical", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "I-3": {
+            "primaryUses": [
+                { "use": "Convenience Retail", "conditional": false },
+                { "use": "Data Center", "conditional": false },
+                { "use": "Electrical or Gas Switching Facility, Power Distribution or Substation", "conditional": false },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Laundry Facility-Commercial/Wholesale", "conditional": false },
+                { "use": "Manufacturing, Light", "conditional": false },
+                { "use": "Manufacturing, Medium", "conditional": false },
+                { "use": "Manufacturing, Heavy", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Parking Garage, Commercial Vehicle", "conditional": false },
+                { "use": "Power Generation Facilities", "conditional": false },
+                { "use": "Research and Development", "conditional": false },
+                { "use": "Solar Energy System", "conditional": false },
+                { "use": "Telephone Switching Facility", "conditional": false },
+                { "use": "Truck Terminal", "conditional": false },
+                { "use": "Warehousing, Wholesaling and Distribution", "conditional": false },
+                { "use": "Waste Transfer Station", "conditional": false },
+                { "use": "Wholesale Bakeries", "conditional": false },
+                { "use": "Wind Energy Systems, Large", "conditional": false },
+                { "use": "Automobile Paint and Body Repair", "conditional": true },
+                { "use": "Automobile Repair and Tire Repair", "conditional": true },
+                { "use": "Billboards", "conditional": true },
+                { "use": "Commercial, Industrial Truck and Bus Services", "conditional": true },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Crematorium, Animal", "conditional": true },
+                { "use": "Dry Cleaning & Laundry Establishment", "conditional": true },
+                { "use": "Exterminator / Pesticide Application Business", "conditional": true },
+                { "use": "Gasoline Station", "conditional": true },
+                { "use": "Live Animal Market", "conditional": true },
+                { "use": "Materials Salvage or Junk Facility", "conditional": true },
+                { "use": "Outdoor Storage", "conditional": true },
+                { "use": "Outdoor Storage, Chemical", "conditional": true },
+                { "use": "Recycling Center", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Composting", "conditional": false },
+                { "use": "Parking Area, Private", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Commercial, Industrial Truck and Bus Wash", "conditional": true },
+                { "use": "Outdoor Display Area", "conditional": true },
+                { "use": "Outdoor Storage", "conditional": true },
+                { "use": "Outdoor Storage, Chemical", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Power Plant", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "EWR": {
+            "primaryUses": [
+                { "use": "Airport", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Heliport", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Warehousing, Wholesaling and Distribution", "conditional": false },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts (see Section 40: 4-6. Additional Standards)", "conditional": false },
+                { "use": "Composting (see Section 40: 4-6. Additional Standards)", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Outdoor Display Area", "conditional": true },
+                { "use": "Outdoor Storage", "conditional": true },
+                { "use": "Outdoor Storage, Chemical", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "EWR-S": {
+            "primaryUses": [
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Convenience Retail", "conditional": false },
+                { "use": "Data Center", "conditional": false },
+                { "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services", "conditional": false },
+                { "use": "Gasoline Station", "conditional": false },
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Heliport", "conditional": false },
+                { "use": "Hotels (See Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Manufacturing, Light", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Operation Facilities for Bus/Taxicab/Ambulance/Limousine", "conditional": false },
+                { "use": "Research and Development", "conditional": false },
+                { "use": "Warehousing, Wholesaling and Distribution", "conditional": false },
+                { "use": "Wholesale Bakeries", "conditional": false },
+                { "use": "Automobile Paint and Body Repair", "conditional": true },
+                { "use": "Automobile Rentals", "conditional": true },
+                { "use": "Automobile Sales", "conditional": true },
+                { "use": "Automobile Car Wash", "conditional": true },
+                { "use": "Billboards", "conditional": true },
+                { "use": "Commercial, Industrial Truck and Bus Services", "conditional": true },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true },
+                { "use": "Dry Cleaning & Laundry Establishment", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts (see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Childcare Center", "conditional": false },
+                { "use": "Composting (see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Parking Area, Private", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Commercial, Industrial Truck and Bus Wash", "conditional": true },
+                { "use": "Drive-Through Facilities", "conditional": true },
+                { "use": "Outdoor Display Area", "conditional": true },
+                { "use": "Outdoor Storage", "conditional": true },
+                { "use": "Outdoor Storage, Chemical", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "PORT": {
+            "primaryUses": [
+                { "use": "Governmental (Non-Municipal) Uses", "conditional": false },
+                { "use": "Manufacturing, Heavy", "conditional": false },
+                { "use": "Manufacturing, Light", "conditional": false },
+                { "use": "Manufacturing, Medium", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Warehousing, Wholesaling and Distribution", "conditional": false },
+                { "use": "Billboards", "conditional": true },
+                { "use": "Commercial Antennas & Microwave Dishes", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts (see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Composting (see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Parking Area, Private", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Drive-Through Facilities", "conditional": true },
+                { "use": "Outdoor Display Area", "conditional": true },
+                { "use": "Outdoor Storage", "conditional": true },
+                { "use": "Outdoor Storage, Chemical", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "MX-1": {
+            "primaryUses": [
+                { "use": "Single-Family Dwelling", "conditional": false },
+                { "use": "Two-Family Dwelling", "conditional": false },
+                { "use": "Three-Family Dwelling", "conditional": false },
+                { "use": "Town House, Dwelling", "conditional": false },
+                { "use": "Low-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Community Centers", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Consignment Store", "conditional": false },
+                { "use": "Consumer Repair Services", "conditional": false },
+                { "use": "Convenience Retail", "conditional": false },
+                { "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services", "conditional": false },
+                { "use": "Fish, Meat and Poultry Markets", "conditional": false },
+                { "use": "Fitness Center", "conditional": false },
+                { "use": "Fresh Food Market", "conditional": false },
+                { "use": "Laundromat", "conditional": false },
+                { "use": "Medical Offices", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Personal Service Establishment", "conditional": false },
+                { "use": "Retail Sales, General Consumer Goods", "conditional": false },
+                { "use": "Sit-Down Restaurant", "conditional": false },
+                { "use": "Supermarket", "conditional": false },
+                { "use": "Take-Out Restaurant", "conditional": false },
+                { "use": "Urban Farms", "conditional": false },
+                { "use": "Animal Daycare, Animal Grooming", "conditional": true },
+                { "use": "Bars, Taverns, Lounges", "conditional": true },
+                { "use": "Dry Cleaning and Laundry Establishment", "conditional": true },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": true },
+                { "use": "Funeral Home or Mortuary", "conditional": true },
+                { "use": "Homeless Shelter", "conditional": true },
+                { "use": "Massage Facilities", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true },
+                { "use": "Private Clubs", "conditional": true },
+                { "use": "Resale or Thrift Shop", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Childcare Center", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Composting (see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Farm Stand", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Home Occupation", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sidewalk Café", "conditional": false },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": true },
+                { "use": "Home Professional Offices", "conditional": true },
+                { "use": "Massage Facilities", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "MX-2": {
+            "primaryUses": [
+                { "use": "Single-Family Dwelling", "conditional": false },
+                { "use": "Two-Family Dwelling", "conditional": false },
+                { "use": "Three-Family Dwelling", "conditional": false },
+                { "use": "Town House, Dwelling", "conditional": false },
+                { "use": "Low-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Automobile Repair and Tire Repair", "conditional": false },
+                { "use": "Business, Specialized or Vocational Schools", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Commercial Recreation", "conditional": false },
+                { "use": "Community Centers", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Consignment Store", "conditional": false },
+                { "use": "Consumer Repair Services", "conditional": false },
+                { "use": "Convenience Retail", "conditional": false },
+                { "use": "Data Center", "conditional": false },
+                { "use": "Finance, Insurance, Real Estate, or Securities Brokerage Consumer Services", "conditional": false },
+                { "use": "Fish, Meat and Poultry Markets", "conditional": false },
+                { "use": "Fitness Center", "conditional": false },
+                { "use": "Fresh Food Market", "conditional": false },
+                { "use": "Governmental (Non-Municipal)", "conditional": false },
+                { "use": "Laundromat", "conditional": false },
+                { "use": "Manufacturing, Light", "conditional": false },
+                { "use": "Medical Clinic or Emergency Care Facility", "conditional": false },
+                { "use": "Medical Offices", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Personal Service Establishment", "conditional": false },
+                { "use": "Research and Development", "conditional": false },
+                { "use": "Retail Sales, General Consumer Goods", "conditional": false },
+                { "use": "Sit-Down Restaurant", "conditional": false },
+                { "use": "Supermarket", "conditional": false },
+                { "use": "Take-Out Restaurant", "conditional": false },
+                { "use": "Urban Farms", "conditional": false },
+                { "use": "Warehousing, Wholesaling and Distribution", "conditional": false },
+                { "use": "Wholesale Bakeries", "conditional": false },
+                { "use": "Artist Live/Work Studio", "conditional": true },
+                { "use": "Animal Boarding or Kennel, Animal Shelter, Pound", "conditional": true },
+                { "use": "Animal Daycare, Animal Grooming", "conditional": true },
+                { "use": "Bars, Taverns, Lounges", "conditional": true },
+                { "use": "Body Art Studio", "conditional": true },
+                { "use": "Dry Cleaning and Laundry Establishment", "conditional": true },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": true },
+                { "use": "Funeral Home or Mortuary", "conditional": true },
+                { "use": "Homeless Shelter", "conditional": true },
+                { "use": "Massage Facilities", "conditional": true },
+                { "use": "Methadone Maintenance Clinic", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true },
+                { "use": "Recycling Center", "conditional": true },
+                { "use": "Resale or Thrift Shop", "conditional": true },
+                { "use": "Substance Abuse Treatment Center", "conditional": true },
+                { "use": "Veterinary Clinic, Office or Hospital", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Childcare Center", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Composting (see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Farm Stand", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Parking, Structured", "conditional": false },
+                { "use": "Parking Garage, Private Residential", "conditional": false },
+                { "use": "Sidewalk Café", "conditional": false },
+                { "use": "Emergency Food Distribution Center, Food Pantry & Soup Kitchen", "conditional": true },
+                { "use": "Home Professional Offices", "conditional": true },
+                { "use": "Massage Facilities", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "MX-3": {
+            "primaryUses": [],
+            "accessoryUses": []
+        },
+        "INST": {
+            "primaryUses": [
+                { "use": "Town House, Dwelling", "conditional": false },
+                { "use": "Low-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Mid-Rise Multi-Family Dwellings", "conditional": false },
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Child Care Center", "conditional": false },
+                { "use": "Colleges and Universities", "conditional": false },
+                { "use": "Community Centers", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Convenience Retail", "conditional": false },
+                { "use": "Dormitory", "conditional": false },
+                { "use": "Fitness Center", "conditional": false },
+                { "use": "Fresh Food Market", "conditional": false },
+                { "use": "Governmental (Non-Municipal)", "conditional": false },
+                { "use": "Hospital or Medical Institution", "conditional": false },
+                { "use": "Municipal Uses", "conditional": false },
+                { "use": "Museums", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false },
+                { "use": "Research and Development", "conditional": false },
+                { "use": "Retail Sales, General Consumer Goods", "conditional": false },
+                { "use": "Theater", "conditional": false },
+                { "use": "Urban Farms", "conditional": false },
+                { "use": "Dry Cleaning and Laundry Establishment", "conditional": true },
+                { "use": "Homeless Shelter", "conditional": true },
+                { "use": "Places of Worship", "conditional": true },
+                { "use": "Primary and Secondary Schools", "conditional": true }
+            ],
+            "accessoryUses": [
+                { "use": "Automotive Lifts", "conditional": false },
+                { "use": "Childcare Center", "conditional": false },
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Composting (see Section 40:4-6. Additional Standards)", "conditional": false },
+                { "use": "Donation Bin", "conditional": false },
+                { "use": "Farm Stand", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Maintenance Buildings", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Sidewalk Café", "conditional": false },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "PARK": {
+            "primaryUses": [
+                { "use": "Active Recreation Park", "conditional": false },
+                { "use": "Community Gardens", "conditional": false },
+                { "use": "Passive Recreation Park", "conditional": false }
+            ],
+            "accessoryUses": [
+                { "use": "Coldframe", "conditional": false },
+                { "use": "Composting (see Section 40: 4-6. Additional Standards)", "conditional": false },
+                { "use": "Greenhouse", "conditional": false },
+                { "use": "Hoophouse", "conditional": false },
+                { "use": "Maintenance Buildings", "conditional": false },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        },
+        "CEM": {
+            "primaryUses": [
+                { "use": "Cemeteries", "conditional": false }
+            ],
+            "accessoryUses": [
+                { "use": "Composting", "conditional": false },
+                { "use": "Maintenance Buildings", "conditional": false },
+                { "use": "Mausoleum", "conditional": false },
+                { "use": "Mausoleum, Family", "conditional": false },
+                { "use": "Offices", "conditional": false },
+                { "use": "Place of Worship", "conditional": false },
+                { "use": "Tombstones and Monuments", "conditional": false },
+                { "use": "Crematorium, Animal", "conditional": true },
+                { "use": "Crematorium, Human", "conditional": true },
+                { "use": "Outdoor Storage, Portable Storage Units", "conditional": true },
+                { "use": "Solar Energy Systems", "conditional": true },
+                { "use": "Wind Energy Systems, Small", "conditional": true }
+            ]
+        }
+    }
+}
