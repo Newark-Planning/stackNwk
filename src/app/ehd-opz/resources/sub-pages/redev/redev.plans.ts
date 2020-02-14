@@ -1,3 +1,14 @@
+export interface DataItem {
+  color: string;
+  description: string;
+  document: string;
+  embedLink: string;
+  filetype: string;
+  id: number;
+  link: string;
+  pubDate: Date;
+  type: string;
+}
 export const redevPlans = [
   {
     color: 'red',

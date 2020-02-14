@@ -11,6 +11,7 @@ import { CartoService, GetRegsService, MapidService, MapService, SearchService }
 import { GridStateService } from './services/grid.service';
 
 import { CarouselModule } from 'primeng/carousel';
+import { DataViewModule } from 'primeng/dataview';
 import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { SidebarModule } from 'primeng/sidebar';
     MatSliderModule,
     MatTabsModule,
     CarouselModule,
+    DataViewModule,
     SidebarModule,
     ...fromComponents.components
   ],
@@ -34,6 +36,7 @@ import { SidebarModule } from 'primeng/sidebar';
     MatSliderModule,
     MatTabsModule,
     CarouselModule,
+    DataViewModule,
     SidebarModule
   ],
   providers: [AirService, CartoService, GetRegsService, GridStateService, MapService, MapidService, SearchService],
