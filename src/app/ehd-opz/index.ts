@@ -16,6 +16,7 @@ import { SidePanelComponent } from './ourcity/sidepanel.component';
 import { DiagramsComponent } from './zoning/diagrams/diagrams.component';
 import { LotComponent } from './zoning/diagrams/lot.component';
 import { OpzZoningInfoComponent } from './zoning/sub-pages/info/info.component';
+import { OpzZoningRegsComponent } from './zoning/sub-pages/regs/regs.component';
 import { OpzZoningResComponent } from './zoning/sub-pages/res/res.component';
 
 export const planningComponents = [
@@ -42,6 +43,7 @@ export const planningResComponents = [
 export const planningZonesComponents = [
   DiagramsComponent,
   OpzZoningInfoComponent,
+  OpzZoningRegsComponent,
   OpzZoningResComponent,
   LotComponent
 ];
@@ -66,5 +68,6 @@ export * from './resources/sub-pages/redev/redev.component';
 
 export * from './zoning/diagrams/diagrams.component';
 export * from './zoning/sub-pages/info/info.component';
+export * from './zoning/sub-pages/regs/regs.component';
 export * from './zoning/sub-pages/res/res.component';
 export * from './zoning/diagrams/lot.component';

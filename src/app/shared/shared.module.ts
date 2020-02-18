@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CalendarService, CartoService, GetRegsService, MapidService, MapService } from './services';
 
 import { CarouselModule } from 'primeng/carousel';
+import { DataViewModule } from 'primeng/dataview';
 import { FullCalendarModule } from 'primeng/fullcalendar';
 import { MenuModule } from 'primeng/menu';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
@@ -20,6 +21,7 @@ const primeModules = [
   MenuModule,
   FullCalendarModule,
   CarouselModule,
+  DataViewModule,
   OverlayPanelModule,
   SidebarModule,
   StepsModule

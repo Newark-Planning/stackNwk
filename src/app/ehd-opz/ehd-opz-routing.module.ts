@@ -74,7 +74,8 @@ export const PLANNING_ROUTES: Routes = [
       { path: '', redirectTo: 'zone-info', pathMatch: 'full' },
       {component: components.OpzZoningInfoComponent, data: {title: 'Zoning Info'}, path: 'zone-info'},
       {component: components.OpzZoningResComponent, data: {title: 'Residential Zoning'}, path: 'zone-res'},
-      {component: components.DiagramsComponent, data: {title: 'Zoning Diagrams'}, path: 'diagrams'}
+      {component: components.DiagramsComponent, data: {title: 'Zoning Diagrams'}, path: 'diagrams'},
+      {component: components.OpzZoningRegsComponent, data: {title: 'Zoning Regulations'}, path: 'zone-regs'}
     ],
     component: components.OpzZoningComponent,
     data: {

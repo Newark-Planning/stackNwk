@@ -13,12 +13,12 @@
                     <clr-icon shape="caret down"></clr-icon>
                 </button>
                 <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
-                    <a [routerLinkActive]="['active']" routerLink="/ehd" clrDropdownItem>
+                    <a style='font-weight: bold; font-size: 1rem; white-space: pre-line;line-height: 2rem;' [routerLinkActive]="['active']" routerLink="/ehd" clrDropdownItem>
                         <clr-icon shape="bank"></clr-icon>
                         EHD Main
                     </a>
                     <div class='dropdown-divider'></div>
-                    <h4 class="dropdown-header">Divisions</h4>
+                    <h4 class="dropdown-header" style='font-weight: bold; font-size: 1rem; white-space: pre-line;line-height: 2rem;'>Divisions</h4>
                     <p-carousel [value]="divisions" [numVisible]="1" [numScroll]="1" [circular]="true">
                         <ng-template let-divisions pTemplate="item">
                             <a routerLink="{{ divisions.path }}" clrDropdownItem>
