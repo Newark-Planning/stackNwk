@@ -7,11 +7,27 @@ import * as fromComponents from './components';
 import { AirService } from './services/air.service';
 
 import { RouterModule } from '@angular/router';
-import { CartoService, GetRegsService, MapidService, MapService, SearchService } from './services';
-import { GridStateService } from './services/grid.service';
+import { CalendarService, CartoService, GetRegsService, MapidService, MapService } from './services';
 
 import { CarouselModule } from 'primeng/carousel';
+import { FullCalendarModule } from 'primeng/fullcalendar';
+import { MenuModule } from 'primeng/menu';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { SidebarModule } from 'primeng/sidebar';
+import { StepsModule } from 'primeng/steps';
+
+const primeModules = [
+  MenuModule,
+  FullCalendarModule,
+  CarouselModule,
+  OverlayPanelModule,
+  SidebarModule,
+  StepsModule
+];
+const matModules = [
+  MatSliderModule,
+  MatTabsModule
+];
 
 @NgModule({
   declarations: [
@@ -20,10 +36,8 @@ import { SidebarModule } from 'primeng/sidebar';
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    MatSliderModule,
-    MatTabsModule,
-    CarouselModule,
-    SidebarModule,
+    matModules,
+    primeModules,
     ...fromComponents.components
   ],
   imports: [
@@ -31,12 +45,10 @@ import { SidebarModule } from 'primeng/sidebar';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MatSliderModule,
-    MatTabsModule,
-    CarouselModule,
-    SidebarModule
+    matModules,
+    primeModules
   ],
-  providers: [AirService, CartoService, GetRegsService, GridStateService, MapService, MapidService, SearchService],
+  providers: [AirService, CalendarService, CartoService, GetRegsService, MapService, MapidService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule { }

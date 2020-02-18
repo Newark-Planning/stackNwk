@@ -9,7 +9,7 @@
         Boards & Commissions
     </h2>
     <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button *ngFor="let button of button$" class="btn btn-primary btn-lg btn-block">
+        <button *ngFor="let button of button$" (click)="overlay($event, op2)" class="btn btn-primary btn-lg btn-block">
           <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
           <span class="clr-hidden-sm-down">{{ button.text }}</span>
           <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
@@ -43,3 +43,6 @@
         </div>
     </div>
 </section>
+<p-overlayPanel #op2 [showCloseIcon]="true" [dismissable]="true">
+    <p-fullCalendar [events]="events" [options]="calOptions"></p-fullCalendar>
+</p-overlayPanel>

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Record, SubComponent } from '../../shared/models';
-import { AirService } from '../../shared/services/air.service';
+import { AirService, CalendarService } from '../../shared/services';
+
+import { OverlayPanel } from 'primeng/overlaypanel/public_api';
+
+import listMonth from '@fullcalendar/list';
 
 @Component({
   selector: 'app-opz-boards',
@@ -10,8 +14,6 @@ import { AirService } from '../../shared/services/air.service';
 })
 
 export class OpzBoardsComponent implements OnInit {
-  inOverflow = true;
-  layout = 'horizontal';
   splashTitle$: Record;
   board$: Array<Record>;
   article$: Array<Record>;
@@ -25,9 +27,12 @@ export class OpzBoardsComponent implements OnInit {
   ];
   subComponents: Array<SubComponent | any>;
   activeFragment;
+  events: Array<any>;
+  calOptions: any;
 
   constructor(
     public airData: AirService,
+    public getevents: CalendarService,
     readonly route: ActivatedRoute,
     readonly router: Router) {
       this.subComponents = [
@@ -42,6 +47,13 @@ export class OpzBoardsComponent implements OnInit {
     this.activeFragment = this.router.url.slice(this.router.url.lastIndexOf('/') + 1)
       .toUpperCase();
     this.getTab(this.activeFragment);
+    this.getevents.getBoardCommissionEvents()
+      .then(events => { this.events = events; });
+    this.calOptions = {
+      defaultView: 'listMonth',
+      editable: false,
+      plugins: [listMonth]
+    };
   }
 
   getTab(view): any {
@@ -51,5 +63,9 @@ export class OpzBoardsComponent implements OnInit {
         data => {
           this.board$ = data[records];
         });
+  }
+
+  overlay(event, overlay: OverlayPanel): any {
+    overlay.toggle(event);
   }
 }

@@ -1,6 +1,11 @@
 @import '../../app.component.scss';
+@import '../../../../node_modules/primeng/resources/components/calendar/calendar';
+@import '../../../../node_modules/@fullcalendar/core/main';
+@import '../../../../node_modules/@fullcalendar/list/main';
+
 .splash-buttons {
     flex-basis: auto;
+
     .btn {
         display: flex;
         box-shadow: .1rem .1rem .25rem black;
@@ -21,6 +26,7 @@
     font-size: calc(var(--vw) * 0.01 + 25px);
     border-radius: .5rem;
     margin: unset !important;
+
     h2 {
         margin: unset;
         text-align: center;

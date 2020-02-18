@@ -1,6 +1,7 @@
 export * from './air.service';
 export * from './getregs.service';
 export * from './carto.service';
+export * from './calendar.service';
 export * from './map.service';
 export * from './search.service';
 export * from './mapid.service';
