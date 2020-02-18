@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -27,7 +26,6 @@ import { EhdRcComponent } from './ehd-rc/ehd-rc.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'nwk-ehd-web' }),
     BrowserAnimationsModule,
-    FormsModule,
     CommonModule,
     HttpClientModule,
     CoreModule,

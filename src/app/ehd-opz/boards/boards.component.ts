@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Record, SubComponent } from '../../shared/models';
 import { AirService, CalendarService } from '../../shared/services';
 
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/timegrid';
 import { OverlayPanel } from 'primeng/overlaypanel/public_api';
-
-import listMonth from '@fullcalendar/list';
-
 @Component({
   selector: 'app-opz-boards',
   styleUrls: ['./boards.component.scss'],
@@ -50,9 +50,8 @@ export class OpzBoardsComponent implements OnInit {
     this.getevents.getBoardCommissionEvents()
       .then(events => { this.events = events; });
     this.calOptions = {
-      defaultView: 'listMonth',
       editable: false,
-      plugins: [listMonth]
+      plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin]
     };
   }
 
