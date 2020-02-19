@@ -1,6 +1,8 @@
 @import '../../app.component.scss';
+
 .splash-buttons {
     flex-basis: content;
+
     .btn {
         display: flex;
         box-shadow: .1rem .1rem .25rem black;
@@ -21,6 +23,7 @@
     font-size: calc(var(--vw) * 0.01 + 25px);
     border-radius: .5rem;
     margin: unset !important;
+
     h2 {
         margin: unset;
         text-align: center;
@@ -49,14 +52,10 @@
     border-radius: .25rem;
 }
 
-.secondary-content {
+.content {
     min-height: 75vh;
     width: 100%;
     margin-bottom: 2rem
-}
-
-clr-dg-cell {
-    align-self: center
 }
 
 .open-doc {
@@ -67,10 +66,48 @@ clr-dg-cell {
     align-items: center;
     text-transform: lowercase;
     justify-content: space-evenly;
-    width: 12rem;
     margin: auto;
 }
 
 #DocView {
     width: 80vw;
+    padding: .3rem;
+}
+
+.modal-body {
+    min-height: 70vh;
+}
+
+.filter-container {
+    text-align: center;
+}
+.data-doc {
+    font-size: 1rem;
+    line-height: normal;
+    padding: 0;
+    margin-top: .3rem;
+    margin-bottom: 0;
+}
+
+.data-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem;
+    border-bottom: 1px solid #d9dad9;
+}
+
+.data-details>div {
+    display: flex;
+    align-items: center;
+}
+
+.ui-panel-content {
+    padding: 1em;
+}
+
+@media (max-width: 1024px) {
+    .filter-container {
+        text-align: left;
+    }
 }

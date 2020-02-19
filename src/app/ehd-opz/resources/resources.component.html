@@ -1,4 +1,4 @@
-<section class='secondary-content'>
+<section class='content'>
     <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Documents</h2>
     <nav mat-tab-nav-bar>
         <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">

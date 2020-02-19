@@ -1,4 +1,4 @@
-<p-dataView #dv [value]="listOfData" [paginator]="true" [rows]="5" filterBy="document"
+<p-dataView #dv [value]="listOfData" [paginator]="true" [rows]="10" filterBy="document"
     [sortField]="sortField" [sortOrder]="sortOrder">
     <p-header>
         <div class="ui-helper-clearfix">
@@ -8,29 +8,32 @@
                 </div>
                 <div class="ui-g-6 ui-md-4 filter-container">
                     <div style="position:relative">
-                        <input type="search" ngDefaultControl pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
+                        <clr-icon shape='search' size='20' style="margin-right: .5rem;"></clr-icon>
+                        <input type="search" name="search" class="clr-input" ngDefaultControl pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
                     </div>
+                </div>
+                <div class="ui-g-6 ui-md-4" style="text-align:right">
+                    {{ listOfData.length }} {{ listOfData[0].type }}s
                 </div>
             </div>
         </div>
     </p-header>
     <ng-template let-data pTemplate="listItem">
-        <div>{{data.document}}</div>
-        <div>{{data.pubDate | date}}</div>
-        <div>{{data.filetype}}</div>
-        <div>
-             <a class="open-doc btn btn-primary btn-lg btn-block" (click)="openDoc($event, data)">
-                <clr-icon shape='pop-out' size='12'></clr-icon>
-                <span>Open Document</span>
-            </a>
+        <div class="ui-g-12 data-doc">{{data.document}}</div>
+        <div class="ui-g-12 data-details">
+            <div class="ui-g-8">
+                <div class="ui-g-12"><strong>Published: </strong>{{data.pubDate | date}}</div>
+                <div class="ui-g-12"><strong>File Types: </strong>{{data.filetype}}</div>
+            </div>
+            <p-splitButton 
+                class="ui-g-4"
+                [ngStyle]="{'white-space': 'nowrap'}"
+                label="View"
+                icon="pi pi-search"
+                (onClick)="openDoc($event, data)"
+                [model]="splitOptions">
+            </p-splitButton>
         </div>
-    </ng-template>
-    <ng-template pTemplate="paginatorleft" let-state>
-        {{state.first}}
-        <button type="button" pButton icon="fa-refresh"></button>
-    </ng-template>
-    <ng-template pTemplate="paginatorright">
-        <button type="button" pButton icon="fa-cloud-upload"></button>
     </ng-template>
 </p-dataView>
 <clr-modal id='DocView' [clrModalSize]="'xl'" *ngIf="selectedDoc" [(clrModalOpen)]="displayDialog" [clrModalStaticBackdrop]="false">
@@ -38,12 +41,12 @@
         {{ selectedDoc.document }}
     </h3>
     <div class="modal-body">
-             <iframe *ngIf="selectedDoc" [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.embedLink)" [ngStyle]="{'width': '100%', 'height': '70vh', 'border-radius': '10px'}">
-            </iframe>
+        <iframe *ngIf="selectedDoc" [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.embedLink)" [ngStyle]="{'width': '100%', 'height': '69vh', 'border-radius': '10px'}">
+        </iframe>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-primary" (click)="displayDialog = false">
-            I'm the only way to close the modal!
+            back
         </button>
     </div>
 </clr-modal>

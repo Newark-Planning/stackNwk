@@ -29,7 +29,9 @@
                         ],
                         "styles": [
                             "src/loading.scss",
-                            "node_modules/primeng/resources/themes/nova-light/theme.css",
+                            "node_modules/@fullcalendar/core/main.min.css",
+                            "node_modules/@fullcalendar/list/main.min.css",
+                            "node_modules/primeng/resources/themes/luna-blue/theme.css",
                             "node_modules/primeng/resources/primeng.min.css",
                             "node_modules/primeicons/primeicons.css",
                             "node_modules/@clr/icons/clr-icons.min.css",

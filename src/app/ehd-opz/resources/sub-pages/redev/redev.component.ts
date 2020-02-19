@@ -22,6 +22,7 @@ export class RedevDataComponent implements OnInit {
   sortKey: string;
   sortField: string;
   sortOrder: number;
+  splitOptions: Array<any>;
 
   constructor(
     public sanitizer: DomSanitizer
@@ -30,9 +31,13 @@ export class RedevDataComponent implements OnInit {
   ngOnInit(): any {
     this.loading = true;
     this.sortOptions = [
-      {label: 'Newest First', value: '!year'},
-      {label: 'Oldest First', value: 'year'},
-      {label: 'Brand', value: 'brand'}
+      { label: 'A - Z', value: 'document' },
+      { label: 'Z - A', value: '!document' },
+      { label: 'Newest First', value: '!pubDate' },
+      { label: 'Oldest First', value: 'pubDate' }
+    ];
+    this.splitOptions = [
+      { label: 'Source', icon: 'pi pi-external-link', command: (event: any) => { console.log(event); }}
     ];
   }
   openDoc(event: Event, data: DataItem): any {

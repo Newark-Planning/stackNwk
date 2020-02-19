@@ -11,21 +11,27 @@ import { CalendarService, CartoService, GetRegsService, MapidService, MapService
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { DataViewModule } from 'primeng/dataview';
+import { DropdownModule } from 'primeng/dropdown';
 import { FullCalendarModule } from 'primeng/fullcalendar';
 import { MenuModule } from 'primeng/menu';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { SidebarModule } from 'primeng/sidebar';
+import { SplitButtonModule } from 'primeng/splitbutton';
 import { StepsModule } from 'primeng/steps';
 
 const primeModules = [
-  MenuModule,
-  FullCalendarModule,
+  ButtonModule,
   CarouselModule,
   DataViewModule,
+  DropdownModule,
+  MenuModule,
+  FullCalendarModule,
   OverlayPanelModule,
   SidebarModule,
+  SplitButtonModule,
   StepsModule
 ];
 const matModules = [
