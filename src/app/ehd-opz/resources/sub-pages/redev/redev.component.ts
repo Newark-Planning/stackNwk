@@ -38,7 +38,7 @@ export class RedevDataComponent implements OnInit {
     ];
     this.splitOptions = [
       // tslint:disable-next-line: no-console
-      { label: 'Source', icon: 'pi pi-external-link', command: (event: any) => { console.log(event); }}
+      { label: 'Source', icon: 'pi pi-external-link', url: 'data.link' }
     ];
   }
   openDoc(event: Event, data: DataItem): any {
