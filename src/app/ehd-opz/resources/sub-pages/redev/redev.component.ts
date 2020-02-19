@@ -37,6 +37,7 @@ export class RedevDataComponent implements OnInit {
       { label: 'Oldest First', value: 'pubDate' }
     ];
     this.splitOptions = [
+      // tslint:disable-next-line: no-console
       { label: 'Source', icon: 'pi pi-external-link', command: (event: any) => { console.log(event); }}
     ];
   }
