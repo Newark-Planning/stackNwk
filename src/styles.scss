@@ -1,7 +1,8 @@
 // Your Application Theme File
 @import "./theme.scss";
 // Clarity Component SCSS
-@import "../node_modules/@clr/ui/src/utils/components.clarity";
+@import "../node_modules/@clr/ui/src/utils/components.clarity.scss";
+
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
 @import '../node_modules/@angular/material/theming';
 // Plus imports for other components in your app.
@@ -34,11 +35,15 @@ $candy-app-theme: mat-light-theme($candy-app-primary,
     -webkit-text-fill-color: white;
     font-family: "Century Gothic" !important;
     font-weight: bold !important;
-};
+}
+
+;
 
 .mat-tab-label-active {
     -webkit-text-fill-color: #03a9f4;
-};
+}
+
+;
 
 // -------- Colors -----------
 $primary-color: #0d47a1;
@@ -55,38 +60,26 @@ $clr-global-app-background: deeppink;
 // Base Scaffolding Variables
 // ---
 // Background color for `<body>`
-$font: bold 12px 'Rubik',
-sans-serif;
-$code-family: 'SFMono-Regular',
-Consolas,
-'Liberation Mono',
-Menlo,
-Courier,
-monospace;
+$font: bold 12px 'Rubik', sans-serif;
+$code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 $text-color: $black;
-$text-color-secondary: opacify($black,
-    .45);
+$text-color-secondary: opacify($black, .45);
 $text-color-inverse: $white;
 $icon-color: inherit;
-$icon-color-hover: opacify($black,
-    .75);
-$heading-color: opacify(#000,
-    .85);
-$heading-color-dark: opacify($white,
-    1);
-$text-color-dark: opacify($white,
-    .85);
-$text-color-secondary-dark: opacify($white,
-    .65);
+$icon-color-hover: opacify($black, .75);
+$heading-color: opacify(#000, .85);
+$heading-color-dark: opacify($white, 1);
+$text-color-dark: opacify($white, .85);
+$text-color-secondary-dark: opacify($white, .65);
 $text-selection-bg: $highlight-color;
 $font-variant-base: tabular-nums;
 $font-feature-settings-base: 'tnum';
 $line-height-lg: 1.5em+calc(var(--vh) * .003);
 $letter-spacing-lg: .015em+calc(var(--vw) * 0.1);
 $font-size-sm: 10px+calc(var(--vw) * 0.1);
-$font-size-base: 12px+calc(var(--vh)*0.3);
+$font-size-base: 12px+calc(var(--vh) * 0.3);
 $font-size-lg: 16.4px+calc(var(--vw) * 0.175);
-$font-size-wide: 10px+calc(var(--vw)*1);
+$font-size-wide: 10px+calc(var(--vw) * 1);
 $line-height-base: 1.5;
 $border-radius-base: .5rem;
 $border-radius-sm: .25rem;

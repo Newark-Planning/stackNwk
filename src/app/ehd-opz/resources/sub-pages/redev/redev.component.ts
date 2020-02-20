@@ -22,7 +22,6 @@ export class RedevDataComponent implements OnInit {
   sortKey: string;
   sortField: string;
   sortOrder: number;
-  splitOptions: Array<any>;
 
   constructor(
     public sanitizer: DomSanitizer
@@ -36,15 +35,14 @@ export class RedevDataComponent implements OnInit {
       { label: 'Newest First', value: '!pubDate' },
       { label: 'Oldest First', value: 'pubDate' }
     ];
-    this.splitOptions = [
-      // tslint:disable-next-line: no-console
-      { label: 'Source', icon: 'pi pi-external-link', url: 'data.link' }
-    ];
   }
   openDoc(event: Event, data: DataItem): any {
     this.selectedDoc = data;
     this.displayDialog = true;
     event.preventDefault();
+  }
+  openSource(data: string): any {
+    window.open(data, '_blank');
   }
   onDialogHide(): any {
     this.selectedDoc = undefined;
