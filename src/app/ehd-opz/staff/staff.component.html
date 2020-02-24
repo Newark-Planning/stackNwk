@@ -11,7 +11,7 @@
 </app-splash>
 <section class='secondary-content'>
     <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Our Staff</h2>
-    <nav mat-tab-nav-bar>
+    <nav mat-tab-nav-bar [ngStyle]="{'margin':'.5rem' }">
         <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.path)'>
             {{link.label}}
         </a>

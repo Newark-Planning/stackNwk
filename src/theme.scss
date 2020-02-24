@@ -44,7 +44,39 @@ $clr-use-custom-properties: false;
  * - $clr-stack-view-stack-block-label-and-content-bg-color
  */
 
-$clr-global-app-background: rgba(0, 0, 0, 1);
+$primary-color: #0d47a1;
+$info-color: lightblue;
+$success-color: #B3F5C9;
+$processing-color: #9C9372;
+$error-color: #EB907D;
+$highlight-color: #E8D04A;
+$warning-color: #B57D7B;
+$normal-color: #9C6F5A;
+$white: #fff;
+$black: #000;
+// Base Scaffolding Variables
+// ---
+// Background color for `<body>`
+$font: bold 12px 'Century Gothic',
+sans-serif;
+$text-color: $black;
+$text-color-secondary: opacify($black, .45);
+$text-color-inverse: $white;
+$icon-color: inherit;
+$icon-color-hover: opacify($black, .75);
+$heading-color: opacify(#000, .85);
+$heading-color-dark: opacify($white, 1);
+$text-color-dark: opacify($white, .85);
+$text-color-secondary-dark: opacify($white, .65);
+$text-selection-bg: $highlight-color;
+$line-height-lg: 1.5em+calc(var(--vh) * .003);
+$letter-spacing-lg: .015em+calc(var(--vw) * 0.1);
+$font-size-sm: 10px+calc(var(--vw) * 0.1);
+$font-size-base: 12px+calc(var(--vh) * 0.3);
+$font-size-lg: 16.4px+calc(var(--vw) * 0.175);
+$font-size-wide: 10px+calc(var(--vw) * 1);
+$line-height-base: 1.5;
+$clr-global-app-background: white;
 
 /*********
   * $clr-global-selection-color
@@ -449,7 +481,7 @@ $clr-forms-radio-disabled-shadow: $clr-forms-checkbox-checked-shadow;
   * -
   */
 
-$clr-header-bgColor: #0d47a1;
+$clr-header-bgColor: $primary-color;
 $clr-header-default-bg-color: $clr-header-bgColor;
 $clr-header-1-bg-color: $clr-header-bgColor;
 $clr-header-2-bg-color: hsl(195, 65%, 24%);
@@ -557,7 +589,7 @@ $clr-sliding-panel-text-color: hsl(0, 0%, 34%);
 // $clr-sliding-transition-time: 0.3s;
 $clr-transition-style: ease;
 $clr-nav-background-color: hsl(0, 0%, 93%);
-$clr-nav-background-color: hsl(201, 30%, 15%);
+$clr-nav-background-color: white;
 $clr-responsive-nav-hover-bg: $clr-global-selection-color;
 $clr-sliding-panel-text-color: hsl(0, 0%, 100%);
 $clr-sidenav-border-color: hsl(200, 30%, 12%);
@@ -744,9 +776,9 @@ $clr-p8-color: $clr-global-font-color;
   */
 
 // $clr-vertical-nav-item-height: $clr_baselineRem_1_5;
-$clr-vertical-nav-item-color: hsl(203, 16%, 72%);
+$clr-vertical-nav-item-color: black;
 $clr-vertical-nav-item-active-color: hsl(0, 0%, 100%);
-$clr-vertical-nav-bg-color: hsl(201, 30%, 13%);
+$clr-vertical-nav-bg-color: #DCDBEB;
 $clr-vertical-nav-active-bg-color: $clr-global-selection-color;
 $clr-vertical-nav-hover-bg-color: $clr-global-hover-bg-color;
 $clr-vertical-nav-icon-active-color: hsl(0, 0%, 100%);
