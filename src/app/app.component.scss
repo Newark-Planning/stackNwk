@@ -1,23 +1,24 @@
 @import '../styles.scss';
+
 header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231],
 header[_ngcontent-nwk-clr-c231] .header-nav[_ngcontent-nwk-clr-c231],
 header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231],
 .header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231],
 .header[_ngcontent-nwk-clr-c231] .header-nav[_ngcontent-nwk-clr-c231],
 .header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231] {
-    height: 2.5rem;
+    height: 3rem;
 }
 
 .main-container[_ngcontent-nwk-clr-c231] header[_ngcontent-nwk-clr-c231],
 .main-container[_ngcontent-nwk-clr-c231] .header[_ngcontent-nwk-clr-c231] {
-    flex: 0 0 2.5rem;
+    flex: 0 0 3rem;
 }
 
 header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231],
 header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231],
 .header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231],
 .header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231] {
-    height: 2.5rem;
+    height: 3rem;
 }
 
 .clr-row[_ngcontent-nwk-clr-c231] {
@@ -39,7 +40,8 @@ hr {
     font-weight: bold;
     color: white;
     -webkit-text-fill-color: white;
-     :nth-child(3) {
+
+    :nth-child(3) {
         font-weight: lighter !important;
     }
 }
@@ -63,14 +65,17 @@ span {
 html,
 body,
 :host {
+    font-size: unset;
+    font-size: calc(var(--vh) * 0.3 + 14);
     overflow-x: hidden;
-    font-family: 'Century Gothic', sans-serif;
+    font-family: 'Segoe UI', 'Open Sans', sans-serif;
 }
 
 .sub-nav,
 .subnav {
     background-color: transparent;
     height: 1.5rem;
+
     h3 {
         margin-top: -.5rem !important;
         color: white;
@@ -110,6 +115,7 @@ footer {
     letter-spacing: calc(.025em + .1vw);
     font-family: "Rubik", sans-serif;
     text-align: center;
+
     i {
         transform: translateX(-.5rem);
         vertical-align: middle;

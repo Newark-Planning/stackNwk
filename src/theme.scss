@@ -1,109 +1,51 @@
-// Copyright (c) 2016-2019 VMware, Inc. All Rights Reserved.
-// This software is released under MIT license.
-// The full license information can be found in LICENSE in the root directory of this project.
-// - Global
-// - Alerts
-// - Badge
-// - Button
-// - Card
-// - Datagrid
-// - Dropdown
-// - Form, Input, Checkbox, Radio, Toggle
-// - Header
-// - Label
-// - Login
-// - Modal
-// - Nav
-// - Table
-// - Progress Bars
-// - Signpost
-// - Spinner
-// - Stack View
-// - Table
-// - Tabs
-// - Tooltip
-// - Tree View
-// - Typography
-// - Vertical Nav
-// - Wizard
-
-/*********
- * Global variables will have an effect on or in multiple Clarity components.
- * Where possible, there is a list files affected by the variable.
- */
+//Global styles for Clr Components
 
 $clr-use-custom-properties: false;
 
-/*********
- * $clr-global-app-background
- * Change the background for the clarity application.
- * Usage: clarity-root/src/clr-angular/layout/main-container/_layout.clarity.scss
- * Affects:
- * - $clr-login-background-color
- * - $clr-stack-view-bg-color
- * - $clr-stack-view-stack-block-label-and-content-bg-color
- */
-
-$primary-color: #0d47a1;
-$info-color: lightblue;
-$success-color: #B3F5C9;
-$processing-color: #9C9372;
-$error-color: #EB907D;
-$highlight-color: #E8D04A;
-$warning-color: #B57D7B;
-$normal-color: #9C6F5A;
-$white: #fff;
-$black: #000;
-// Base Scaffolding Variables
-// ---
-// Background color for `<body>`
-$font: bold 12px 'Century Gothic',
-sans-serif;
-$text-color: $black;
-$text-color-secondary: opacify($black, .45);
-$text-color-inverse: $white;
-$icon-color: inherit;
-$icon-color-hover: opacify($black, .75);
-$heading-color: opacify(#000, .85);
-$heading-color-dark: opacify($white, 1);
-$text-color-dark: opacify($white, .85);
-$text-color-secondary-dark: opacify($white, .65);
-$text-selection-bg: $highlight-color;
-$line-height-lg: 1.5em+calc(var(--vh) * .003);
-$letter-spacing-lg: .015em+calc(var(--vw) * 0.1);
-$font-size-sm: 10px+calc(var(--vw) * 0.1);
-$font-size-base: 12px+calc(var(--vh) * 0.3);
-$font-size-lg: 16.4px+calc(var(--vw) * 0.175);
-$font-size-wide: 10px+calc(var(--vw) * 1);
-$line-height-base: 1.5;
 $clr-global-app-background: white;
 
-/*********
-  * $clr-global-selection-color
-  * Components that have a selected (or active) state use this to change the background-color when an item or element
-  * is in the active state.
-  * Usages:
-  * - _layout.clarity.scss
-  * - _datagrid.clarity.scss
-  * - _sidenav.clarity.scss
-  *
-  * Component's with variables affected in the dark theme (this file)
-  * - Stack View
-  * - Tree View
-  * - Dropdown
-  */
+$clr-global-selection-color: lightgray;
 
-$clr-global-selection-color: hsl(203, 32%, 29%);
+$clr-global-hover-bg-color: hsl(198, 65%, 57%);
 
-/*********
-  * $clr-global-hover-bg-color
-  * Components or elements that can be hovered will have this color applied to their background-color.
-  * Component's with variables affected in the dark theme (this file)
-  * - Dropdown
-  * - Tree View
-  */
+$info-color: hsl(198, 79%, 28%);
+$success-color: hsl(122, 45%, 23%);
+$danger-color: hsl(357, 50%, 35%);
+$warning-color: hsl(47, 87%, 27%);
+$app-info-color: hsl(198, 65%, 57%);
+$app-success-color: hsl(90, 67%, 38%);
+$app-danger-color: hsl(3, 90%, 62%);
+$app-warning-color: hsl(49, 98%, 51%);
 
-$clr-global-hover-bg-color: hsl(201, 31%, 23%);
+$white: hsl(0, 0%, 100%);
+$white-alt: hsl(210, 16%, 93%);
+$black: hsl(0, 0%, 0%);
+$black-alt: hsl(203, 30%, 8%);
+$black-alt-2: hsl(201, 30%, 13%);
+$black-light: hsla(0, 0%, 100%, 0.1);
+$gray: hsl(211, 10%, 47%);
+$gray-alt: hsl(200, 30%, 12%);
+$gray-light: hsl(203, 16%, 72%);
+$purple: hsl(281, 44%, 62%);
+$purple-dark: hsl(233, 26%, 33%);
+$blue: hsl(201, 100%, 36%);
+$blue-hover: hsl(194, 78%, 63%);
+$blue-light: hsl(194, 57%, 71%);
+$blue-dark: hsl(206, 63%, 27%);
+$red-hover: hsl(3, 100%, 69%);
+$red-dark: hsl(315, 27%, 28%);
+$orange: hsl(31, 100%, 60%);
+$green: hsl(92, 79%, 40%);
+$green-hover: hsl(83, 77%, 44%);
+$green-dark: hsl(195, 65%, 24%);
+$dropdown-bg: $white-alt;
+
+$font-size-base: calc(var(--vh) * 0.3 + 14);
+$clr-global-font-color: $black;
+$clr-font: 'Segoe UI',
+'Open Sans',
+sans-serif;
+$clr-basefont-size: $font-size-base;
 
 /*********
   * The close class is a utility class that can be applied to elements with a clr-icon thats used for closing something.
@@ -114,7 +56,6 @@ $clr-global-hover-bg-color: hsl(201, 31%, 23%);
   * Component's with variables affected in the dark theme (this file)
   * - ??
   */
-
 $clr-close-color--normal: hsl(201, 17%, 80%);
 $clr-close-color--normal-opacity: 1;
 $clr-close-color--hover: hsl(201, 0%, 100%);
@@ -126,7 +67,6 @@ $clr-close-color--hover-opacity: 1;
   * Usages: ./_dropdown.clarity.scss
   * Usages: ./_datepicker.clarity.scss
   */
-
 $clr-popover-box-shadow-color: hsla(0, 0%, 0%, 0.5);
 
 /*********
@@ -134,10 +74,9 @@ $clr-popover-box-shadow-color: hsla(0, 0%, 0%, 0.5);
   * Description the color for links and the active, hovered and visited state
   * Usages: ./_reboot.clarity.scss
   */
-
-$clr-link-active-color: hsl(198, 65%, 57%);
-$clr-link-color: hsl(198, 65%, 57%);
-$clr-link-hover-color: hsl(198, 65%, 57%);
+$clr-link-active-color: $app-info-color;
+$clr-link-color: $app-info-color;
+$clr-link-hover-color: $app-info-color;
 $clr-link-visited-color: hsl(228, 55%, 75%);
 // END: Global Clarity Variables
 
@@ -150,56 +89,65 @@ $clr-link-visited-color: hsl(228, 55%, 75%);
   * There are seven types of alert and we set the background-color and font color for each here.
   */
 
-$clr-theme-alert-font-color: hsl(210, 16%, 93%);
-$clr-theme-app-alert-font-color: hsl(0, 0%, 0%);
+$clr-theme-alert-font-color: $white-alt;
+$clr-theme-app-alert-font-color: $black;
+
 // Info type
-$clr-alert-info-bg-color: hsl(198, 79%, 28%);
+$clr-alert-info-bg-color: $info-color;
 $clr-alert-info-font-color: $clr-theme-alert-font-color;
 $clr-alert-info-border-color: transparent;
 $clr-alert-info-icon-color: $clr-theme-alert-font-color;
+
 // Success type
-$clr-alert-success-bg-color: hsl(122, 45%, 23%);
+$clr-alert-success-bg-color: $success-color;
 $clr-alert-success-font-color: $clr-theme-alert-font-color;
 $clr-alert-success-border-color: transparent;
 $clr-alert-success-icon-color: $clr-theme-alert-font-color;
+
 // Danger type
-$clr-alert-danger-bg-color: hsl(357, 50%, 35%);
+$clr-alert-danger-bg-color: $danger-color;
 $clr-alert-danger-font-color: $clr-theme-alert-font-color;
 $clr-alert-danger-border-color: transparent;
 $clr-alert-danger-icon-color: $clr-theme-alert-font-color;
+
 // Warning type
-$clr-alert-warning-bg-color: hsl(47, 87%, 27%);
+$clr-alert-warning-bg-color: $warning-color;
 $clr-alert-warning-font-color: $clr-theme-alert-font-color;
 $clr-alert-warning-border-color: transparent;
 $clr-alert-warning-icon-color: $clr-theme-alert-font-color;
+
 // App Info type
-$clr-app-alert-info-bg-color: hsl(198, 65%, 57%);
+$clr-app-alert-info-bg-color: $app-info-color;
 $clr-app-alert-info-font-color: $clr-theme-app-alert-font-color;
 $clr-app-alert-info-border-color: transparent;
 $clr-app-alert-info-icon-color: $clr-theme-app-alert-font-color;
+
 // App warning type
-$clr-app-alert-warning-bg-color: hsl(49, 98%, 51%);
+$clr-app-alert-warning-bg-color: $app-warning-color;
 $clr-app-alert-warning-icon-color: $clr-theme-app-alert-font-color;
 $clr-app-alert-warning-font-color: $clr-theme-app-alert-font-color;
 $clr-app-alert-warning-border-color: transparent;
+
 // App danger type
-$clr-app-alert-danger-bg-color: hsl(3, 90%, 62%);
+$clr-app-alert-danger-bg-color: $app-danger-color;
 $clr-app-alert-danger-icon-color: $clr-theme-app-alert-font-color;
 $clr-app-alert-danger-font-color: $clr-theme-app-alert-font-color;
 $clr-app-alert-danger-border-color: transparent;
-$clr-alert-action-color: hsl(0, 0%, 100%); // Used for dropdowns on the right side of an alert
-$clr-alert-action-active-color: hsl(0, 0%, 100%); // Alert dropdowns when they are clicked on
+
+$clr-alert-action-color: $white; // Used for dropdowns on the right side of an alert
+$clr-alert-action-active-color: $white; // Alert dropdowns when they are clicked on
 $clr-app-alert-close-icon-color: $clr-close-color--normal; // Colors for the 'X' close btn in global alerts
+
 $clr-alert-close-icon-opacity: 1;
 $clr-alert-close-icon-hover-opacity: 1;
+
 // Close icon colors for APP-LEVEL ALERTS
-$clr-app-level-alert-color: hsl(0, 0%, 0%);
-$clr-app-alert-close-icon-color: hsl(0, 0%, 0%);
+$clr-app-level-alert-color: $black;
+$clr-app-alert-close-icon-color: $black;
 
 /**********
   * END: Alerts
   */
-
 
 /*****************
   * Badge
@@ -208,22 +156,21 @@ $clr-app-alert-close-icon-color: hsl(0, 0%, 0%);
   * There are five color options and four status types a Clarity label may have.
   *
   */
-
-$clr-badge-font-color-light: hsl(0, 0%, 0%);
-$clr-badge-font-color-dark: hsl(0, 0%, 0%);
-$clr-badge-info-bg-color: hsl(198, 65%, 57%);
-$clr-badge-info-color: hsl(0, 0%, 0%);
-$clr-badge-success-bg-color: hsl(90, 67%, 38%);
-$clr-badge-success-color: hsl(0, 0%, 0%);
-$clr-badge-warning-bg-color: hsl(49, 98%, 51%);
-$clr-badge-warning-color: hsl(0, 0%, 0%);
-$clr-badge-danger-bg-color: hsl(3, 90%, 62%);
-$clr-badge-danger-color: hsl(0, 0%, 0%);
-$clr-badge-gray-bg-color: hsl(211, 10%, 47%);
-$clr-badge-purple-bg-color: hsl(281, 44%, 62%);
-$clr-badge-blue-bg-color: hsl(201, 100%, 36%);
-$clr-badge-orange-bg-color: hsl(31, 100%, 60%);
-$clr-badge-light-blue-bg-color: hsl(194, 57%, 71%);
+$clr-badge-font-color-light: $black;
+$clr-badge-font-color-dark: $black;
+$clr-badge-info-bg-color: $app-info-color;
+$clr-badge-info-color: $black;
+$clr-badge-success-bg-color: $app-success-color;
+$clr-badge-success-color: $black;
+$clr-badge-warning-bg-color: $app-warning-color;
+$clr-badge-warning-color: $black;
+$clr-badge-danger-bg-color: $app-danger-color;
+$clr-badge-danger-color: $black;
+$clr-badge-gray-bg-color: $gray;
+$clr-badge-purple-bg-color: $purple;
+$clr-badge-blue-bg-color: $blue;
+$clr-badge-orange-bg-color: $orange;
+$clr-badge-light-blue-bg-color: $blue-light;
 // END: Badge
 
 /*****************
@@ -246,99 +193,109 @@ $clr-badge-light-blue-bg-color: hsl(194, 57%, 71%);
   */
 
 // Use these to control the disabled appearance for all buttons.
-$clr-btn-disabled-font-color: hsl(0, 0%, 0%);
-$clr-btn-outline-disabled-font-color: hsl(0, 0%, 100%);
-$clr-btn-disabled-bg-color: hsl(0, 0%, 100%);
-$clr-btn-disabled-border-color: hsl(0, 0%, 100%);
+$clr-btn-disabled-font-color: $black;
+$clr-btn-outline-disabled-font-color: $white;
+$clr-btn-disabled-bg-color: $white;
+$clr-btn-disabled-border-color: $white;
+
 // Disabled icon color
 $clr-btn-icon-disabled-color: $clr-btn-outline-disabled-font-color;
+
 // Default button
-$clr-btn-default-color: hsl(198, 65%, 57%); // border-color, color, checked-background-color
+$clr-btn-default-color: $app-info-color; // border-color, color, checked-background-color
 $clr-btn-default-bg-color: transparent; // background-color, disabled-background-color
-$clr-btn-default-hover-bg-color: hsla(0, 0%, 100%, 0.1); // hover-background-color
-$clr-btn-default-hover-color: hsl(194, 78%, 63%); // hover-color
-$clr-btn-default-box-shadow-color: hsl(0, 0%, 0%); // active-box-shadow-color
-$clr-btn-default-checked-color: hsl(0, 0%, 100%); // checked-color
+$clr-btn-default-hover-bg-color: $black-light; // hover-background-color
+$clr-btn-default-hover-color: $blue-hover; // hover-color
+$clr-btn-default-box-shadow-color: $black; // active-box-shadow-color
+$clr-btn-default-checked-color: $white; // checked-color
 $clr-btn-default-checked-bg-color: $clr-btn-default-color;
 $clr-btn-default-disabled-color: $clr-btn-outline-disabled-font-color; // disabled-color
 $clr-btn-default-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
+
 // Default button
-$clr-btn-default-outline-color: hsl(198, 65%, 57%); // border-color, color, checked-background-color
+$clr-btn-default-outline-color: $app-info-color; // border-color, color, checked-background-color
 $clr-btn-default-outline-bg-color: transparent; // background-color, disabled-background-color
-$clr-btn-default-outline-hover-bg-color: hsla(0, 0%, 100%, 0.1); // hover-background-color
-$clr-btn-default-outline-hover-color: hsl(194, 78%, 63%); // hover-color
-$clr-btn-default-outline-box-shadow-color: hsl(0, 0%, 0%); // active-box-shadow-color
-$clr-btn-default-outline-checked-color: hsl(0, 0%, 100%); // checked-color
+$clr-btn-default-outline-hover-bg-color: $black-light; // hover-background-color
+$clr-btn-default-outline-hover-color: $blue-hover; // hover-color
+$clr-btn-default-outline-box-shadow-color: $black; // active-box-shadow-color
+$clr-btn-default-outline-checked-color: $white; // checked-color
 $clr-btn-default-outline-checked-bg-color: $clr-btn-default-outline-color; // checked-color
 $clr-btn-default-outline-disabled-color: $clr-btn-outline-disabled-font-color; // disabled-color
 $clr-btn-default-outline-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
 $clr-btn-default-outline-disabled-checked-color: $clr-btn-disabled-bg-color;
+
 // Primary button
-$clr-btn-primary-color: hsl(0, 0%, 0%); // color, checked-background-color
-$clr-btn-primary-bg-color: hsl(198, 65%, 57%); // background-color, disabled-background-color
-$clr-btn-primary-border-color: hsl(198, 65%, 57%); // border-color
-$clr-btn-primary-hover-bg-color: hsl(194, 78%, 63%); // hover-background-color
-$clr-btn-primary-hover-color: hsl(0, 0%, 0%); // hover-color
+$clr-btn-primary-color: $black; // color, checked-background-color
+$clr-btn-primary-bg-color: $app-info-color; // background-color, disabled-background-color
+$clr-btn-primary-border-color: $app-info-color; // border-color
+$clr-btn-primary-hover-bg-color: $blue-hover; // hover-background-color
+$clr-btn-primary-hover-color: $black; // hover-color
 $clr-btn-primary-box-shadow-color: hsl(205, 100%, 34%); // active-box-shadow-color
-$clr-btn-primary-checked-color: hsl(0, 0%, 100%); // checked-color
+$clr-btn-primary-checked-color: $white; // checked-color
 $clr-btn-primary-disabled-color: $clr-btn-disabled-font-color; // disabled-color
 $clr-btn-primary-disabled-bg-color: $clr-btn-disabled-bg-color; // disabled-bg-color
 $clr-btn-primary-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
+
 // Success button
-$clr-btn-success-color: hsl(0, 0%, 0%); // color, checked-color,
-$clr-btn-success-bg-color: hsl(92, 79%, 40%); // background-color, border-color
-$clr-btn-success-hover-bg-color: hsl(83, 77%, 44%); // hover-background-color
+$clr-btn-success-color: $black; // color, checked-color,
+$clr-btn-success-bg-color: $green; // background-color, border-color
+$clr-btn-success-hover-bg-color: $green-hover; // hover-background-color
 $clr-btn-success-hover-color: $clr-btn-success-color; // hover-color
 $clr-btn-success-box-shadow-color: hsl(98, 100%, 21%); // active-box-shadow-color
 $clr-btn-success-checked-bg-color: $clr-btn-success-hover-bg-color; // checked-background-color
 $clr-btn-success-disabled-color: $clr-btn-disabled-font-color; // disabled-color
 $clr-btn-success-disabled-bg-color: $clr-btn-disabled-bg-color; // disabled-background-color
 $clr-btn-success-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
+
 // Success outline button
-$clr-btn-success-outline-color: hsl(92, 79%, 40%); // color
-$clr-btn-success-outline-border-color: hsl(92, 79%, 40%); // border-color, checked-background-color
-$clr-btn-success-outline-hover-bg-color: hsla(0, 0%, 100%, 0.1); // hover-background-color
-$clr-btn-success-outline-hover-color: hsl(83, 77%, 44%); // hover-color
-$clr-btn-success-outline-box-shadow-color: hsl(0, 0%, 0%); // active-box-shadow-color
-$clr-btn-success-outline-checked-color: hsl(0, 0%, 100%); // checked-color
+$clr-btn-success-outline-color: $green; // color
+$clr-btn-success-outline-border-color: $green; // border-color, checked-background-color
+$clr-btn-success-outline-hover-bg-color: $black-light; // hover-background-color
+$clr-btn-success-outline-hover-color: $green-hover; // hover-color
+$clr-btn-success-outline-box-shadow-color: $black; // active-box-shadow-color
+$clr-btn-success-outline-checked-color: $white; // checked-color
 $clr-btn-success-outline-disabled-color: $clr-btn-outline-disabled-font-color; // disabled-color
 $clr-btn-success-outline-disabled-bg-color: transparent; // disabled-background-color
 $clr-btn-success-outline-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
+
 // Danger button
-$clr-btn-danger-color: hsl(0, 0%, 0%); // color, checked-color,
-$clr-btn-danger-bg-color: hsl(3, 90%, 62%); // background-color, border-color
-$clr-btn-danger-hover-bg-color: hsl(3, 100%, 69%); // hover-background-color
+$clr-btn-danger-color: $black; // color, checked-color,
+$clr-btn-danger-bg-color: $app-danger-color; // background-color, border-color
+$clr-btn-danger-hover-bg-color: $red-hover; // hover-background-color
 $clr-btn-danger-hover-color: $clr-btn-danger-color; // hover-color
 $clr-btn-danger-box-shadow-color: hsl(10, 100%, 39%); // active-box-shadow-color
 $clr-btn-danger-checked-bg-color: hsl(10, 100%, 39%); // checked-background-color
 $clr-btn-danger-disabled-color: $clr-btn-disabled-font-color; // disabled-color,
 $clr-btn-danger-disabled-bg-color: $clr-btn-disabled-bg-color; // disabled-background-color
 $clr-btn-danger-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
+
 // Danger outline button
-$clr-btn-danger-outline-border-color: hsl(3, 90%, 62%); // border-color
-$clr-btn-danger-outline-color: hsl(3, 90%, 62%); // color
-$clr-btn-danger-outline-hover-bg-color: hsla(0, 0%, 100%, 0.1); // hover-background-color
-$clr-btn-danger-outline-hover-color: hsl(3, 100%, 69%); // hover-color
-$clr-btn-danger-outline-box-shadow-color: hsl(0, 0%, 0%); // active-box-shadow-color
-$clr-btn-danger-outline-checked-bg-color: hsl(3, 90%, 62%); // checked-background-color
-$clr-btn-danger-outline-checked-color: hsl(0, 0%, 100%); // checked-color
+$clr-btn-danger-outline-border-color: $app-danger-color; // border-color
+$clr-btn-danger-outline-color: $app-danger-color; // color
+$clr-btn-danger-outline-hover-bg-color: $black-light; // hover-background-color
+$clr-btn-danger-outline-hover-color: $red-hover; // hover-color
+$clr-btn-danger-outline-box-shadow-color: $black; // active-box-shadow-color
+$clr-btn-danger-outline-checked-bg-color: $app-danger-color; // checked-background-color
+$clr-btn-danger-outline-checked-color: $white; // checked-color
 $clr-btn-danger-outline-disabled-color: $clr-btn-outline-disabled-font-color; // disabled-color
 $clr-btn-danger-outline-disabled-bg-color: transparent; // disabled-background-color
 $clr-btn-danger-outline-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
+
 // Link button
-$clr-btn-link-color: hsl(198, 65%, 57%); // color
-$clr-btn-link-hover-color: hsl(194, 78%, 63%); // hover-color
-$clr-btn-link-checked-color: hsl(198, 65%, 57%); // checked-color
+$clr-btn-link-color: $app-info-color; // color
+$clr-btn-link-hover-color: $blue-hover; // hover-color
+$clr-btn-link-checked-color: $app-info-color; // checked-color
 $clr-btn-link-disabled-color: $clr-btn-outline-disabled-font-color; // disabled-color
+
 // Inverse button
-$clr-btn-inverse-border-color: hsl(0, 0%, 0%); // border-color
+$clr-btn-inverse-border-color: $white-alt; // border-color
 $clr-btn-inverse-bg-color: transparent; // background-color
-$clr-btn-inverse-color: hsl(0, 0%, 0%); // color
-$clr-btn-inverse-hover-bg-color: hsla(0, 0%, 100%, 0.15); // hover-background-color
-$clr-btn-inverse-hover-color: hsl(0, 0%, 50%); // hover-color
+$clr-btn-inverse-color: $white-alt; // color
+$clr-btn-inverse-hover-bg-color: rgba(0, 0, 0, 0.1); // hover-background-color
+$clr-btn-inverse-hover-color: $white; // hover-color
 $clr-btn-inverse-box-shadow-color: hsl(203, 14%, 70%); // active-box-shadow-color
 $clr-btn-inverse-checked-bg-color: hsla(0, 0%, 100%, 0.15); // checked-background-color
-$clr-btn-inverse-checked-color: hsl(0, 0%, 100%); // checked-color
+$clr-btn-inverse-checked-color: $white; // checked-color
 $clr-btn-inverse-disabled-color: $clr-btn-outline-disabled-font-color; // disabled-color
 $clr-btn-inverse-disabled-border-color: $clr-btn-disabled-border-color; // disabled-border-color
 // END: Buttons
@@ -350,10 +307,9 @@ $clr-btn-inverse-disabled-border-color: $clr-btn-disabled-border-color; // disab
   *
   * Usage: ../layout/_card.clarity.scss
   */
-
-$clr-card-bg-color: white;
-$clr-card-border-color: lightsalmon;
-$clr-card-title-color: hsl(210, 16%, 93%);
+$clr-card-bg-color: $dropdown-bg;
+$clr-card-border-color: $black-alt;
+$clr-card-title-color: $white-alt;
 $clr-card-box-shadow: 0 0.15rem 0 0 $clr-card-border-color;
 $clr-card-divider-color: $clr-card-border-color;
 // END: Card
@@ -364,18 +320,17 @@ $clr-card-divider-color: $clr-card-border-color;
   *
   * Usage: ../data/datagrid/_datagrid.clarity.scss
   */
-
-$clr-datagrid-icon-color: hsl(203, 16%, 72%);
-$clr-datagrid-row-hover: hsl(201, 31%, 23%);
-$clr-datagrid-row-selected: hsl(0, 0%, 100%);
-$clr-datagrid-popover-bg-color: hsl(198, 28%, 18%);
-$clr-datagrid-action-toggle: hsl(203, 16%, 72%);
-$clr-datagrid-pagination-btn-color: hsl(210, 16%, 93%);
-$clr-datagrid-pagination-btn-disabled-color: hsl(210, 16%, 93%);
+$clr-datagrid-icon-color: $gray-light;
+$clr-datagrid-row-hover: $clr-global-hover-bg-color;
+$clr-datagrid-row-selected: $white;
+$clr-datagrid-popover-bg-color: $dropdown-bg;
+$clr-datagrid-action-toggle: $gray-light;
+$clr-datagrid-pagination-btn-color: $white-alt;
+$clr-datagrid-pagination-btn-disabled-color: $white-alt;
 $clr-datagrid-pagination-btn-disabled-opacity: 0.46;
 $clr-datagrid-pagination-input-border-color: hsl(208, 16%, 34%);
-$clr-datagrid-pagination-input-border-focus-color: hsl(198, 65%, 57%);
-$clr-datagrid-popover-border-color: hsl(0, 0%, 0%);
+$clr-datagrid-pagination-input-border-focus-color: $app-info-color;
+$clr-datagrid-popover-border-color: $black;
 $clr-datagrid-action-popover-hover-color: $clr-datagrid-row-hover;
 $clr-datagrid-loading-background: rgba(0, 0, 0, 0.5);
 // END: Datagrid
@@ -387,31 +342,31 @@ $clr-datagrid-loading-background: rgba(0, 0, 0, 0.5);
   *
   * Usage: ../popover/dropdown/_dropdown.clarity.scss
   */
-
-$clr-dropdown-active-text-color: hsl(0, 0%, 100%);
-$clr-dropdown-bg-color: hsl(198, 28%, 18%);
-$clr-dropdown-text-color: hsl(203, 16%, 72%);
-$clr-dropdown-item-color: hsl(203, 16%, 72%);
-$clr-dropdown-border-color: hsl(0, 0%, 0%);
-$clr-dropdown-child-border-color: hsl(0, 0%, 0%);
+$clr-dropdown-active-text-color: $white;
+$clr-dropdown-bg-color: $dropdown-bg;
+$clr-dropdown-text-color: $gray-light;
+$clr-dropdown-item-color: $gray-light;
+$clr-dropdown-border-color: $black;
+$clr-dropdown-child-border-color: $black;
 $clr-dropdown-bg-active-color: $clr-global-selection-color;
 $clr-dropdown-bg-hover-color: $clr-global-hover-bg-color;
-$clr-dropdown-selection-color: hsl(203, 32%, 29%);
+$clr-dropdown-selection-color: $clr-global-selection-color;
 $clr-dropdown-box-shadow: $clr-popover-box-shadow-color;
 $clr-dropdown-divider-color: $clr-dropdown-border-color;
-$clr-dropdown-header-color: hsl(203, 16%, 72%);
+$clr-dropdown-header-color: $gray-light;
 // END: Dropdown overrides
+
 // Datepicker
-$clr-calendar-background-color: hsl(198, 28%, 18%);
-$clr-calendar-border-color: hsl(0, 0%, 0%);
-$clr-datepicker-trigger-color: hsl(198, 65%, 57%);
-$clr-datepicker-trigger-hover-color: hsl(194, 78%, 63%);
-$clr-calendar-btn-color: hsl(198, 65%, 57%);
-$clr-calendar-btn-hover-focus-color: hsl(201, 31%, 23%);
-$clr-calendar-active-cell-background-color: hsl(203, 32%, 29%);
-$clr-calendar-active-focus-cell-background-color: hsl(203, 32%, 29%);
-$clr-calendar-today-date-cell-color: hsl(0, 0%, 100%);
-$clr-calendar-active-cell-color: hsl(0, 0%, 100%);
+$clr-calendar-background-color: $dropdown-bg;
+$clr-calendar-border-color: $black;
+$clr-datepicker-trigger-color: $app-info-color;
+$clr-datepicker-trigger-hover-color: $blue-hover;
+$clr-calendar-btn-color: $app-info-color;
+$clr-calendar-btn-hover-focus-color: $clr-global-hover-bg-color;
+$clr-calendar-active-cell-background-color: $clr-global-selection-color;
+$clr-calendar-active-focus-cell-background-color: $clr-global-selection-color;
+$clr-calendar-today-date-cell-color: $white;
+$clr-calendar-active-cell-color: $white;
 
 /******
   * Forms: TODO: track down component usages and names
@@ -434,17 +389,19 @@ $clr-calendar-active-cell-color: hsl(0, 0%, 100%);
   */
 
 //GENERIC
-$clr-forms-label-color: hsl(203, 16%, 72%);
-$clr-forms-text-color: hsl(210, 16%, 93%); // No label, no wrapper
-$clr-forms-invalid-color: hsl(3, 90%, 62%);
+$clr-forms-label-color: $gray-light;
+$clr-forms-text-color: $white-alt; // No label, no wrapper
+$clr-forms-invalid-color: $app-danger-color;
 $clr-forms-subtext-color: hsl(0, 0%, 45%);
-$clr-forms-subtext-color: hsl(203, 16%, 72%);
-$clr-forms-border-color: hsl(203, 16%, 72%);
-$clr-forms-focused-color: hsl(198, 65%, 57%); // Vertical no wrapper, no label
+$clr-forms-subtext-color: $gray-light;
+$clr-forms-border-color: $gray-light;
+$clr-forms-focused-color: $app-info-color; // Vertical no wrapper, no label
+
 // Textarea
-$clr-forms-textarea-background-color: hsl(201, 30%, 13%);
-$clr-forms-select-multiple-background-color: hsl(198, 28%, 18%);
-$clr-forms-select-multiple-border-color: hsl(0, 0%, 0%);
+$clr-forms-textarea-background-color: $black-alt-2;
+$clr-forms-select-multiple-background-color: $dropdown-bg;
+$clr-forms-select-multiple-border-color: $black;
+
 // Select
 // TODO: Properly map these to updated dark theme design
 // NOTE: The new form selects seemed to be working like the deprecated form selects so I'm leaving
@@ -452,25 +409,31 @@ $clr-forms-select-multiple-border-color: hsl(0, 0%, 0%);
 //$clr-forms-select-hover-background: rgba(221, 221, 221, 0.5); // CAN WE KEY THIS FROM A KNOWN COLOR
 //$clr-forms-select-caret-hover-color: $clr-color-neutral-600;
 //$clr-forms-select-caret-color: hsl(0, 0%, 60%);
-$clr-forms-select-option-color: hsl(201, 30%, 13%); // Option bg color on chrome/windows is white.
-//$clr-forms-select-multiple-background-color: hsl(0, 0%, 100%);
+$clr-forms-select-option-color: $black-alt-2; // Option bg color on chrome/windows is white.
+//$clr-forms-select-multiple-background-color: $white;
 //$clr-forms-select-multiple-border-color: $clr-color-neutral-400;
 //$clr-forms-select-multiple-option-color: $clr-forms-text-color;
+
 // Checkbox
-$clr-forms-checkbox-label-color: hsl(203, 16%, 72%);
-$clr-forms-checkbox-background-color: hsl(198, 65%, 57%); // Use color here
+$clr-forms-checkbox-label-color: $gray-light;
+$clr-forms-checkbox-background-color: $app-info-color; // Use color here
 $clr-forms-checkbox-checked-shadow: inset 0 0 0 0.3rem $clr-forms-checkbox-background-color;
-$clr-forms-checkbox-indeterminate-border-color: hsl(203, 16%, 72%);
-$clr-forms-checkbox-mark-color: hsl(0, 0%, 0%);
+$clr-forms-checkbox-indeterminate-border-color: $gray-light;
+$clr-forms-checkbox-mark-color: $black;
 $clr-forms-checkbox-disabled-background-color: hsl(204, 10%, 60%);
-$clr-forms-checkbox-disabled-mark-color: hsl(0, 0%, 0%);
+$clr-forms-checkbox-disabled-mark-color: $black;
+
 // Radio
-$clr-forms-radio-label-color: hsl(203, 16%, 72%);
+$clr-forms-radio-label-color: $gray-light;
 $clr-forms-radio-selected-shadow: $clr-forms-checkbox-checked-shadow;
 $clr-forms-radio-focused-shadow: 0 0 0.1rem 0.1rem $clr-link-active-color;
-$clr-forms-radio-disabled-background-color: hsl(0, 0%, 0%);
+$clr-forms-radio-disabled-background-color: $black;
 $clr-forms-radio-disabled-mark-color: $clr-forms-checkbox-disabled-mark-color;
 $clr-forms-radio-disabled-shadow: $clr-forms-checkbox-checked-shadow;
+
+// Range
+$clr-forms-range-progress-fill-color: $app-info-color;
+$clr-forms-range-track-color: hsl(200, 23%, 25%);
 
 /**********
   * Header
@@ -480,15 +443,14 @@ $clr-forms-radio-disabled-shadow: $clr-forms-checkbox-checked-shadow;
   * Usage: ../layout/nav/_header.clarity.scss
   * -
   */
-
-$clr-header-bgColor: $primary-color;
+$clr-header-bgColor: #0d47a1;
 $clr-header-default-bg-color: $clr-header-bgColor;
 $clr-header-1-bg-color: $clr-header-bgColor;
-$clr-header-2-bg-color: hsl(195, 65%, 24%);
-$clr-header-3-bg-color: hsl(206, 63%, 27%);
-$clr-header-4-bg-color: hsl(315, 27%, 28%);
-$clr-header-5-bg-color: hsl(233, 26%, 33%);
-$clr-header-6-bg-color: #0d47a1 !important;
+$clr-header-2-bg-color: $green-dark;
+$clr-header-3-bg-color: $blue-dark;
+$clr-header-4-bg-color: $red-dark;
+$clr-header-5-bg-color: $purple-dark;
+$clr-header-6-bg-color: $black-alt;
 // END Header overrides
 
 /**********
@@ -497,13 +459,12 @@ $clr-header-6-bg-color: #0d47a1 !important;
  *
  * Usage: ./_icons.clarity.scss
  */
-
-$clr-icon-color-success: hsl(92, 79%, 40%);
-$clr-icon-color-error: hsl(3, 90%, 62%);
-$clr-icon-color-warning: hsl(49, 98%, 51%);
-$clr-icon-color-info: hsl(198, 65%, 57%);
-$clr-icon-color-inverse: hsl(0, 0%, 100%);
-$clr-icon-color-highlight: hsl(198, 65%, 57%);
+$clr-icon-color-success: $green;
+$clr-icon-color-error: $app-danger-color;
+$clr-icon-color-warning: $app-warning-color;
+$clr-icon-color-info: $app-info-color;
+$clr-icon-color-inverse: $white;
+$clr-icon-color-highlight: $app-info-color;
 // END: Icons
 
 /*****************
@@ -512,27 +473,25 @@ $clr-icon-color-highlight: hsl(198, 65%, 57%);
   * different types of labels.
   *
   * There are five color options and four status types a Clarity label may have.
-
   */
-
-$clr-label-font-color-light: hsl(0, 0%, 100%);
-$clr-label-font-color-dark: hsl(0, 0%, 0%);
+$clr-label-font-color-light: $white;
+$clr-label-font-color-dark: $black;
 $clr-label-bg-hover-color: hsl(0, 0%, 34%);
-$clr-label-gray-bg-color: hsl(211, 10%, 47%);
-$clr-label-purple-bg-color: hsl(281, 44%, 62%);
-$clr-label-blue-bg-color: hsl(201, 100%, 36%);
-$clr-label-orange-bg-color: hsl(31, 100%, 60%);
-$clr-label-light-blue-bg-color: hsl(194, 57%, 71%);
-$clr-label-info-bg-color: hsl(198, 79%, 28%);
+$clr-label-gray-bg-color: $gray;
+$clr-label-purple-bg-color: $purple;
+$clr-label-blue-bg-color: $blue;
+$clr-label-orange-bg-color: $orange;
+$clr-label-light-blue-bg-color: $blue-light;
+$clr-label-info-bg-color: $info-color;
 $clr-label-info-font-color: $clr-label-font-color-light;
 $clr-label-info-border-color: $clr-label-info-bg-color;
-$clr-label-success-bg-color: hsl(122, 45%, 23%);
+$clr-label-success-bg-color: $success-color;
 $clr-label-success-font-color: $clr-label-font-color-light;
 $clr-label-success-border-color: $clr-label-success-bg-color;
-$clr-label-danger-bg-color: hsl(357, 50%, 35%);
+$clr-label-danger-bg-color: $danger-color;
 $clr-label-danger-font-color: $clr-label-font-color-light;
 $clr-label-danger-border-color: $clr-label-danger-bg-color;
-$clr-label-warning-bg-color: hsl(47, 87%, 27%);
+$clr-label-warning-bg-color: $warning-color;
 $clr-label-warning-font-color: $clr-label-font-color-light;
 $clr-label-warning-border-color: $clr-label-warning-bg-color;
 // END: Labels
@@ -546,7 +505,6 @@ $clr-label-warning-border-color: $clr-label-warning-bg-color;
   * - ../layout/_login.clarity.scss
   * - ../image/_icons.clarity.scss (login background image)
   */
-
 $clr-login-background-color: $clr-global-app-background;
 $clr-login-background: '%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20width%3D%22736px%22%20height%3D%22838px%22%20viewBox%3D%220%200%20736%20838%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Ctitle%3Evector%20art%3C%2Ftitle%3E%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%3Cdefs%3E%3C%2Fdefs%3E%3Cg%20id%3D%22symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20id%3D%22Login%22%20transform%3D%22translate(-504.000000%2C%200.000000)%22%3E%3Cg%20id%3D%22replaceable-image%22%20transform%3D%22translate(504.000000%2C%200.000000)%22%3E%3Cg%20id%3D%22vector-art%22%20transform%3D%22translate(-78.000000%2C%20-82.000000)%22%3E%3Crect%20id%3D%22Rectangle-path%22%20fill%3D%22%2322343E%22%20x%3D%220%22%20y%3D%220.38%22%20width%3D%221127.55%22%20height%3D%22921.62%22%3E%3C%2Frect%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%232F657B%22%20points%3D%220%203.06%200%20599.24%20298.14%20301.43%22%3E%3C%2Fpolygon%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%23438597%22%20points%3D%220%20408.65%200%20599.24%2095.29%20504.06%22%3E%3C%2Fpolygon%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%232F657B%22%20points%3D%22918.21%20921.95%20818.63%20822.3%20718.89%20921.95%22%3E%3C%2Fpolygon%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%233B758E%22%20points%3D%22818.63%20822.3%20298.14%20301.43%200%20599.24%200%20655.02%20266.51%20921.95%20718.89%20921.95%22%3E%3C%2Fpolygon%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%23579EB2%22%20points%3D%22512.67%20921.95%2095.29%20504.06%200%20599.24%200%20654.97%20267.06%20921.95%22%3E%3C%2Fpolygon%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%23344B57%22%20points%3D%22266.51%20921.95%200%20655.02%200%20921.95%22%3E%3C%2Fpolygon%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%23A7C9D5%22%20points%3D%221128%200%20799.58%200%201128%20329.83%22%3E%3C%2Fpolygon%3E%3Cpolygon%20id%3D%22Shape%22%20fill%3D%22%23344B57%22%20points%3D%221128%20329.83%20799.58%200%20599.9%200%20298.14%20301.43%20818.63%20822.3%201128%20513.18%22%3E%3C%2Fpolygon%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E';
 // END LOGIN
@@ -557,9 +515,8 @@ $clr-login-background: '%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22
   *
   * Usage: ../modal/_modal.clarity.scss
   */
-
-$clr-modal-close-color: hsl(203, 16%, 72%);
-$clr-modal-bg-color: hsl(198, 28%, 18%);
+$clr-modal-close-color: $gray-light;
+$clr-modal-bg-color: $dropdown-bg;
 $clr-modal-backdrop-color: hsla(0, 0, 0, 0.85);
 // END Modal
 
@@ -578,7 +535,6 @@ $clr-modal-backdrop-color: hsla(0, 0, 0, 0.85);
   * - ../layout/nav/_sidenav-nav.clarity.scss
   * - ../layout/nav/_subnav.clarity.scss
   */
-
 // $clr-sliding-panel-width: $clr_baselineRem_15;
 // $clr-sliding-panel-width-sm: $clr_baselineRem_12;
 $clr-sliding-panel-text-color: hsl(0, 0%, 34%);
@@ -589,12 +545,14 @@ $clr-sliding-panel-text-color: hsl(0, 0%, 34%);
 // $clr-sliding-transition-time: 0.3s;
 $clr-transition-style: ease;
 $clr-nav-background-color: hsl(0, 0%, 93%);
-$clr-nav-background-color: white;
+$clr-nav-background-color: $clr-global-app-background;
 $clr-responsive-nav-hover-bg: $clr-global-selection-color;
-$clr-sliding-panel-text-color: hsl(0, 0%, 100%);
-$clr-sidenav-border-color: hsl(200, 30%, 12%);
+$clr-sliding-panel-text-color: $white;
+
+$clr-sidenav-border-color: $gray-alt;
 $clr-sidenav-link-hover-color: $clr-global-selection-color;
-$clr-subnav-bgColor: hsl(201, 30%, 13%);
+
+$clr-subnav-bgColor: $black-alt-2;
 $clr-nav-shadow: 0 -0.05rem 0 hsl(208, 16%, 34%) inset;
 // END Nav
 
@@ -604,10 +562,9 @@ $clr-nav-shadow: 0 -0.05rem 0 hsl(208, 16%, 34%) inset;
   *
   * Usage: ../progress/progress-bars/_progress-bars./clarity.scss
   */
-
-$clr-progress-defaultBarColor: hsl(198, 65%, 57%);
-$clr-progress-success-color: hsl(92, 79%, 40%);
-$clr-progress-danger-color: hsl(3, 90%, 62%);
+$clr-progress-defaultBarColor: $app-info-color;
+$clr-progress-success-color: $green;
+$clr-progress-danger-color: $app-danger-color;
 $clr-progress-warning-color: $clr-progress-danger-color;
 $clr-progress-bgColor: hsl(200, 23%, 25%);
 // END Progress Bars
@@ -619,15 +576,15 @@ $clr-progress-bgColor: hsl(200, 23%, 25%);
   *
   * Usage: ../popover/signpost/signposts.clarity.scss
   */
-
-$clr-signpost-action-color: hsl(210, 16%, 93%);
-$clr-signpost-action-hover-color: hsl(198, 65%, 57%);
-$clr-signpost-content-bg-color: hsl(198, 28%, 18%);
-$clr-signpost-content-border-color: hsl(0, 0%, 0%);
+$clr-signpost-action-color: $white-alt;
+$clr-signpost-action-hover-color: $app-info-color;
+$clr-signpost-content-bg-color: $dropdown-bg;
+$clr-signpost-content-border-color: $black;
 $clr-signpost-border-size: 0.5rem;
 $clr-signpost-pointer-border: $clr-signpost-border-size solid $clr-signpost-content-border-color;
 $clr-signpost-pointer-invisible-border: $clr-signpost-border-size solid transparent;
 $clr-signpost-pointer-psuedo-border: $clr-signpost-border-size solid $clr-signpost-content-bg-color;
+
 // END Signpost overrides
 
 /*********
@@ -636,55 +593,10 @@ $clr-signpost-pointer-psuedo-border: $clr-signpost-border-size solid $clr-signpo
   *
   * Usage: ../progress/spinner/_spinner.clarity.scss
   */
-
-$clr-spinner-color: hsl(198, 65%, 57%);
+$clr-spinner-color: $app-info-color;
 $clr-spinner-bg-color: hsl(200, 23%, 25%);
 $clr-spinner-opacity: 1;
 // END Spinners
-
-/*********
-  * Stack View
-  * A stack view displays key/value pairs, which users can expand to show more detail.
-  *
-  * Usage: ../data/stack-view/_stack-view.clarity.scss
-  */
-
-$clr-stack-view-border-color: hsl(208, 14%, 39%);
-$clr-stack-view-bg-color: $clr-global-app-background;
-$clr-stack-view-stack-block-border-bottom: $clr-stack-view-border-color; //border-bottom for stack-view rows (not last)
-$clr-stack-view-border-box-color: $clr-stack-view-border-color;
-$clr-stack-block-changed-border-top-color: hsl(205, 100%, 34%); // TODO: Figure out where this shows in the UI.
-$clr-stack-view-stack-block-label-and-content-bg-color: $clr-global-app-background; // stkvw row bg color when not expanded
-$clr-stack-view-stack-children-stack-block-border-bottom-color: $clr-stack-view-border-color; // children of an expanded row
-$clr-stack-view-stack-children-stack-block-label-and-content-bg-color: hsl(198, 28%, 18%); // children of an expanded row
-$clr-stack-view-stack-block-label-text-color: hsl(212, 10%, 61%);
-$clr-stack-view-stack-block-expanded-bg-color: hsl(203, 32%, 29%);
-$clr-stack-view-stack-block-expandable-hover: hsl(203, 32%, 29%);
-$clr-stack-view-stack-block-content-text-color: hsl(203, 16%, 72%);
-$clr-stack-view-stack-block-expanded-text-color: hsl(0, 0%, 100%);
-$clr-stack-view-stack-block-caret-color: hsl(0, 0%, 60%);
-// END: Stack View overrides
-
-/**********
-  * Table
-  * Use the table styles wherever you need to present static data in a tabular format.
-  *
-  * Usage:
-  * - ../data/_tables.clarity.scss
-  * - ../data/datagrid/_datagrid.clarity.scss
-  */
-
-$clr-thead-bgcolor: hsl(201, 30%, 15%);
-$clr-table-bgcolor: hsl(198, 28%, 18%);
-$clr-table-font-color: hsl(203, 16%, 72%);
-$clr-datagrid-default-border-color: hsl(208, 16%, 34%);
-$clr-table-header-border-bottom-color: $clr-datagrid-default-border-color;
-$clr-table-footer-border-top-color: $clr-datagrid-default-border-color;
-$clr-tablerow-bordercolor: $clr-datagrid-default-border-color;
-$clr-table-border-color: $clr-datagrid-default-border-color;
-$clr-table-bordercolor: $clr-datagrid-default-border-color;
-$clr-table-borderstyle: 0.05rem solid $clr-datagrid-default-border-color;
-// END: Table
 
 /**********
   * Tabs
@@ -692,11 +604,10 @@ $clr-table-borderstyle: 0.05rem solid $clr-datagrid-default-border-color;
   *
   * Usage: ../layout/nav/_nav.clarity.scss
   */
-
 $clr-nav-box-shadow-color: hsl(208, 16%, 34%);
-$clr-nav-active-box-shadow-color: hsl(198, 65%, 57%);
-$clr-nav-link-active-color: hsl(0, 0%, 100%);
-$clr-nav-link-color: hsl(203, 16%, 72%);
+$clr-nav-active-box-shadow-color: $app-info-color;
+$clr-nav-link-active-color: $white;
+$clr-nav-link-color: $gray-light;
 // END: Tabs
 
 /**
@@ -705,14 +616,15 @@ $clr-nav-link-color: hsl(203, 16%, 72%);
  */
 
 // colors
-$clr-timeline-line-color: hsl(203, 16%, 72%);
+$clr-timeline-line-color: $gray-light;
 $clr-timeline-step-header-color: hsl(210, 17%, 93%);
-$clr-timeline-step-title-color: hsl(203, 16%, 72%); // #565656
-$clr-timeline-step-description-color: hsl(203, 16%, 72%); // #565656
+$clr-timeline-step-title-color: $gray-light; // #565656
+$clr-timeline-step-description-color: $gray-light; // #565656
+
 $clr-timeline-incomplete-step-color: hsl(210, 17%, 93%);
-$clr-timeline-current-step-color: hsl(198, 65%, 57%);
-$clr-timeline-success-step-color: hsl(92, 79%, 40%);
-$clr-timeline-error-step-color: hsl(3, 90%, 62%);
+$clr-timeline-current-step-color: $app-info-color;
+$clr-timeline-success-step-color: $green;
+$clr-timeline-error-step-color: $app-danger-color;
 // END Timeline
 
 /**********
@@ -721,9 +633,8 @@ $clr-timeline-error-step-color: hsl(3, 90%, 62%);
   *
   * Usage: ../popover/tooltip/_tooltips.clarity.scss
   */
-
-$clr-tooltip-color: hsl(0, 0%, 0%);
-$clr-tooltip-background-color: hsl(0, 0%, 100%);
+$clr-tooltip-color: $black;
+$clr-tooltip-background-color: $white;
 // END: Tooltip
 
 /**********
@@ -733,13 +644,12 @@ $clr-tooltip-background-color: hsl(0, 0%, 100%);
   *
   * Usage: ../data/tree-view/_tree-view.clarity.scss
   */
-
-$clr-tree-node-caret-link-hover-color: hsl(0, 0%, 100%);
+$clr-tree-node-caret-link-hover-color: $white;
 $clr-tree-link-hover-color: hsl(0, 0%, 93%);
 $clr-tree-link-hover-color: $clr-global-hover-bg-color;
 $clr-tree-link-selection-color: $clr-global-selection-color;
-$clr-tree-link-text-color: hsl(203, 16%, 72%);
-$clr-tree-node-caret-color: hsl(203, 16%, 72%);
+$clr-tree-link-text-color: $gray-light;
+$clr-tree-node-caret-color: $gray-light;
 // END Tree View variables
 
 /**********
@@ -750,18 +660,19 @@ $clr-tree-node-caret-color: hsl(203, 16%, 72%);
   * - ../typography/_typography.clarity.scss
   * - ../data/datagrid/_datagrid.clarity.scss
   */
+$clr-global-font-color: $white-alt;
+$clr-global-font-color-secondary: $gray-light;
 
-$clr-global-font-color: black;
-$clr-global-font-color-secondary: hsl(203, 16%, 72%);
 $clr-h1-color: $clr-global-font-color;
 $clr-h2-color: $clr-global-font-color;
 $clr-h3-color: $clr-global-font-color;
 $clr-h4-color: $clr-global-font-color;
 $clr-h5-color: $clr-global-font-color;
 $clr-h6-color: $clr-global-font-color-secondary;
+
 $clr-p1-color: $clr-global-font-color-secondary;
 $clr-p2-color: $clr-global-font-color-secondary;
-$clr-p3-color: $clr-global-font-color;
+$clr-p3-color: $clr-global-font-color-secondary;
 $clr-p4-color: $clr-global-font-color;
 $clr-p5-color: $clr-global-font-color;
 $clr-p6-color: $clr-global-font-color;
@@ -774,15 +685,14 @@ $clr-p8-color: $clr-global-font-color;
   *
   * Usage: ../layout/vertical-nav/_vertical-nav.clarity.scss
   */
-
 // $clr-vertical-nav-item-height: $clr_baselineRem_1_5;
-$clr-vertical-nav-item-color: black;
-$clr-vertical-nav-item-active-color: hsl(0, 0%, 100%);
-$clr-vertical-nav-bg-color: #DCDBEB;
+$clr-vertical-nav-item-color: $black;
+$clr-vertical-nav-item-active-color: $black;
+$clr-vertical-nav-bg-color: $clr-global-app-background;
 $clr-vertical-nav-active-bg-color: $clr-global-selection-color;
 $clr-vertical-nav-hover-bg-color: $clr-global-hover-bg-color;
-$clr-vertical-nav-icon-active-color: hsl(0, 0%, 100%);
-$clr-vertical-nav-toggle-icon-color: hsl(203, 16%, 72%);
+$clr-vertical-nav-icon-active-color: $black;
+$clr-vertical-nav-toggle-icon-color: $black;
 $clr-vertical-nav-trigger-divider-border-color: hsl(199, 19%, 17%);
 // END Vertical Nav
 
@@ -792,15 +702,14 @@ $clr-vertical-nav-trigger-divider-border-color: hsl(199, 19%, 17%);
   *
   * Usage: ../wizard/_wizard.clarity.scss
   */
-
-$clr-wizard-sidenav-bgcolor: hsl(201, 30%, 15%);
-$clr-wizard-sidenav-text--active: hsl(0, 0%, 100%);
-$clr-wizard-stepnav-active-bgcolor: hsl(203, 32%, 29%);
+$clr-wizard-sidenav-bgcolor: $clr-global-app-background;
+$clr-wizard-sidenav-text--active: $white;
+$clr-wizard-stepnav-active-bgcolor: $clr-global-selection-color;
 $clr-wizard-stepnav-border-color: hsl(201, 14%, 27%);
-$clr-wizard-stepnav-border-color--active: hsl(92, 79%, 40%);
-$clr-wizard-step-nav-border-color: hsl(200, 30%, 12%);
-$clr-wizard-sidenav-text: hsl(203, 16%, 72%);
-$clr-wizard-title-text: hsl(210, 16%, 93%);
-$clr-wizard-main-textColor: hsl(203, 16%, 72%);
-$clr-wizard-stepnav-error-color: hsl(3, 90%, 62%);
+$clr-wizard-stepnav-border-color--active: $green;
+$clr-wizard-step-nav-border-color: $gray-alt;
+$clr-wizard-sidenav-text: $gray-light;
+$clr-wizard-title-text: $white-alt;
+$clr-wizard-main-textColor: $gray-light;
+$clr-wizard-stepnav-error-color: $app-danger-color;
 // END: Wizard
