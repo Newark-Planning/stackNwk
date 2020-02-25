@@ -9,7 +9,7 @@
         Boards & Commissions
     </h2>
     <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button *ngFor="let button of button$" (click)="overlay($event, op2)" class="btn btn-primary btn-lg btn-block">
+        <button *ngFor="let button of button$" (click)="overlay($event, op2)" class="btn btn-success btn-lg btn-block">
           <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
           <span class="clr-hidden-sm-down">{{ button.text }}</span>
           <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
@@ -17,7 +17,7 @@
     </div>
 </app-splash>
 <section class='secondary-content'>
-    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Board Members</h2>
+    <h2 class='clr-justify-content-center'>Board Members</h2>
     <nav mat-tab-nav-bar [ngStyle]="{'margin':'.5rem' }">
         <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.path)'>
             {{link.label}}
@@ -29,12 +29,12 @@
                 <div class="card ">
                     <div class="card-header">
                         <h2>{{ board.fields['Name-First']}} {{ board.fields['Name-Last'] }}</h2>
-                        <span *ngIf="board.fields['Position']" class="label label-warning" [ngStyle]="{'font-size': '.75rem'}" innerHtml="{{ board.fields['Position'] }}"></span>
+                        <span *ngIf="board.fields['Position']" class="label label-info" [ngStyle]="{'font-size': '.75rem'}" innerHtml="{{ board.fields['Position'] }}"></span>
                     </div>
                     <div class="card-block">
                         <div class="clr-row clr-justify-content-center">
                             <div class="card-text clr-col-12">
-                                <p class='p3'>{{ board.fields['BoardCommission'] }}</p>
+                                <p>{{ board.fields['BoardCommission'] }}</p>
                             </div>
                         </div>
                     </div>

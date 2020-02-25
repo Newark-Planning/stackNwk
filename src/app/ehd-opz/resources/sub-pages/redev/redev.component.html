@@ -1,4 +1,4 @@
-<p-dataView #dv [value]="listOfData" [paginator]="true" [rows]="10" filterBy="document" [sortField]="sortField" [sortOrder]="sortOrder">
+<p-dataView #dv [value]="listOfData" [paginator]="true" [rows]="8" filterBy="document" [sortField]="sortField" [sortOrder]="sortOrder">
     <p-header>
         <div class="ui-helper-clearfix">
             <div class="ui-g">
@@ -10,7 +10,7 @@
                     <clr-icon shape='search' size='20' style="margin-right: .5rem;"></clr-icon>
                     <input type="search" name="search" class="clr-input" ngDefaultControl pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
                 </div>
-                <div class="ui-g-4" style="margin: auto">
+                <div class="ui-g-4">
                     {{ listOfData.length }} {{ listOfData[0].type }}s
                 </div>
             </div>
@@ -31,9 +31,9 @@
     </ng-template>
 </p-dataView>
 <clr-modal id='DocView' [clrModalSize]="'xl'" *ngIf="selectedDoc" [(clrModalOpen)]="displayDialog" [clrModalStaticBackdrop]="false">
-    <h3 class="modal-title">
+    <h2 class="modal-title">
         {{ selectedDoc.document }}
-    </h3>
+    </h2>
     <div class="modal-body">
         <iframe *ngIf="selectedDoc" [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.embedLink)">
         </iframe>
