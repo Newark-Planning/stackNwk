@@ -10,7 +10,7 @@
     </h2>
 </app-splash>
 <section class='secondary-content'>
-    <h2 [ngStyle]="{'color':'white' }" class='clr-justify-content-center'>Our Staff</h2>
+    <h2 class='clr-justify-content-center'>Our Staff</h2>
     <nav mat-tab-nav-bar [ngStyle]="{'margin':'.5rem' }">
         <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.path)'>
             {{link.label}}
@@ -21,23 +21,23 @@
         <div class="clr-col-lg-8 clr-col-md-10 clr-col-12">
             <div class="card">
                 <div class="card-header">
-                    <h2>{{ staff.fields['Name-First']}} {{ staff.fields['Name-Last'] }}</h2>
+                    <h2 class="card-title">{{ staff.fields['Name-First']}} {{ staff.fields['Name-Last'] }}</h2>
                     <span class="label label-warning" [ngStyle]="{'font-size': '.75rem'}"
                         innerHtml="{{ staff.fields['Position'] }}"></span>
                 </div>
                 <div class="card-block">
                     <div class="clr-row clr-justify-content-center">
-                        <div class="card-text clr-col-11">
+                        <div class="clr-col-11">
                             <img src="{{ staff.fields['Headshot'][0]['url'] }} " class='card-image'/>
-                            <h5 innerHtml="{{ staff.fields['Bio'] }}"></h5>
+                            <p innerHtml="{{ staff.fields['Bio'] }}"></p>
                         </div>
                     </div>
                 </div>
     
-                <div class="card-footer ">
-                    <button class="btn btn-lg btn-secondary">City Hall | Office: Room {{ staff.fields['Room'] }}</button>
-                    <a class="btn btn-lg btn-secondary" href="mailto:{{ staff.fields['Email'] }}?Subject=Website%20Inquiry">Email: {{ staff.fields['Email'] }}</a>
-                    <a class="btn btn-lg btn-secondary" href="tel:{{ staff.fields['Phone'] }}">Tel: {{ staff.fields['Phone'] }}</a>
+                <div class="card-footer">
+                    <button class="btn btn-lg btn-primary">City Hall | Room {{ staff.fields['Room'] }}</button>
+                    <a class="btn btn-lg btn-primary" href="tel:{{ staff.fields['Phone'] }}">Tel: {{ staff.fields['Phone'] }}</a>
+                    <a class="btn btn-lg btn-primary" href="mailto:{{ staff.fields['Email'] }}?Subject=Website%20Inquiry">Email: {{ staff.fields['Email'] }}</a>
                 </div>
             </div>
         </div>

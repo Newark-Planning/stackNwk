@@ -62,11 +62,9 @@ span {
     display: inline-block;
 }
 
-html,
-body,
-:host {
+html, body, :host {
     font-size: unset;
-    font-size: calc(var(--vh) * 0.3 + 14);
+    font-size: calc(var(--vh) * 0.3 + 14) !important;
     overflow-x: hidden;
     font-family: 'Segoe UI', 'Open Sans', sans-serif;
 }

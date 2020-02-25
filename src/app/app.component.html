@@ -19,18 +19,7 @@
                     </a>
                     <div class='dropdown-divider'></div>
                     <h4 class="dropdown-header" style='font-weight: bold; font-size: 1rem; white-space: pre-line;line-height: 2rem;'>Divisions</h4>
-                    <p-carousel [value]="divisions" [numVisible]="1" [numScroll]="1" [circular]="true">
-                        <ng-template let-divisions pTemplate="item">
-                            <a routerLink="{{ divisions.path }}" clrDropdownItem>
-                                <img src="../assets/img/NwkEhdLogos/SVG_sm/NwkEhd_divs_web_mini_{{ divisions.name }}.svg" />
-                                <br>
-                                <span style='font-weight: bold; font-size: 1.4rem; white-space: pre-line;line-height: 2rem;'>{{divisions.name}}</span>
-                                <br>
-                                <clr-icon shape="child-arrow"></clr-icon>
-                            </a>
-                        </ng-template>
-                    </p-carousel>
-                    <!-- <a href="#" clrDropdownItem>
+                    <a href="#" clrDropdownItem>
                         <clr-icon shape="child-arrow"></clr-icon>
                         Housing
                     </a>
@@ -49,7 +38,11 @@
                     <a [routerLinkActive]="['active']" routerLink="/rc" clrDropdownItem>
                         <clr-icon shape="child-arrow"></clr-icon>
                         Rent Control
-                    </a> -->
+                    </a>
+                     <a [routerLinkActive]="['active']" routerLink="/rc" clrDropdownItem>
+                        <clr-icon shape="child-arrow"></clr-icon>
+                        Tenant Legal Services
+                    </a>
                 </clr-dropdown-menu>
             </clr-dropdown>
             <clr-dropdown>

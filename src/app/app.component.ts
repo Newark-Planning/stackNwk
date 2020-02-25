@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
     { name: 'Opportunity Zones', path: '#' },
     { name: 'Planning & Zoning', path: '/opz' },
     { name: 'Property Management', path: '/opm' },
-    { name: 'Rent Control', path: '/rc' }
+    { name: 'Rent Control', path: '/rc' },
+    { name: 'Tenant Legal Services', path: '#' }
   ];
   constructor(
     private readonly router: Router,

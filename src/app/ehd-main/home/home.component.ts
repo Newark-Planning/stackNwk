@@ -19,9 +19,9 @@ export class EhdHomeComponent implements OnInit {
     { icon: 'pop-out', index: 1, text: 'Housing', textSmall: 'Housing' },
     { icon: 'pop-out', index: 2, text: 'Opportunity Zones', textSmall: 'Opportunity Zoness' },
     { icon: 'pop-out', index: 3, text: 'Planning & Zoning', textSmall: 'Planning & Zoning', parentLink: '/opz' },
-    { icon: 'pop-out', index: 4, text: 'Opportunity Zones', textSmall: 'Opportunity Zones' },
-    { icon: 'pop-out', index: 5, text: 'Property Management', textSmall: 'Property Mgmt' },
-    { icon: 'pop-out', index: 6, text: 'Rent Control', textSmall: 'Rent Control'}
+    { icon: 'pop-out', index: 4, text: 'Property Management', textSmall: 'Property Mgmt' },
+    { icon: 'pop-out', index: 5, text: 'Rent Control', textSmall: 'Rent Control'},
+    { icon: 'pop-out', index: 6, text: 'Tenant Legal Services', textSmall: 'Tenant Legal Services' }
   ];
   constructor(
     public airData: AirService

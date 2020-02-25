@@ -2,12 +2,13 @@
 
 $clr-use-custom-properties: false;
 
-$clr-global-app-background: white;
+$clr-global-app-background: #eaedf0;
 
 $clr-global-selection-color: lightgray;
 
 $clr-global-hover-bg-color: hsl(198, 65%, 57%);
 
+$primary-color: #0d47a1;
 $info-color: hsl(198, 79%, 28%);
 $success-color: hsl(122, 45%, 23%);
 $danger-color: hsl(357, 50%, 35%);
@@ -225,10 +226,10 @@ $clr-btn-default-outline-disabled-border-color: $clr-btn-disabled-border-color; 
 $clr-btn-default-outline-disabled-checked-color: $clr-btn-disabled-bg-color;
 
 // Primary button
-$clr-btn-primary-color: $black; // color, checked-background-color
-$clr-btn-primary-bg-color: $app-info-color; // background-color, disabled-background-color
-$clr-btn-primary-border-color: $app-info-color; // border-color
-$clr-btn-primary-hover-bg-color: $blue-hover; // hover-background-color
+$clr-btn-primary-color: $white; // color, checked-background-color
+$clr-btn-primary-bg-color: $primary-color; // background-color, disabled-background-color
+$clr-btn-primary-border-color: $primary-color; // border-color
+$clr-btn-primary-hover-bg-color: $blue-light; // hover-background-color
 $clr-btn-primary-hover-color: $black; // hover-color
 $clr-btn-primary-box-shadow-color: hsl(205, 100%, 34%); // active-box-shadow-color
 $clr-btn-primary-checked-color: $white; // checked-color
@@ -307,9 +308,9 @@ $clr-btn-inverse-disabled-border-color: $clr-btn-disabled-border-color; // disab
   *
   * Usage: ../layout/_card.clarity.scss
   */
-$clr-card-bg-color: $dropdown-bg;
-$clr-card-border-color: $black-alt;
-$clr-card-title-color: $white-alt;
+$clr-card-bg-color: $white;
+$clr-card-border-color: $primary-color;
+$clr-card-title-color: $primary-color;
 $clr-card-box-shadow: 0 0.15rem 0 0 $clr-card-border-color;
 $clr-card-divider-color: $clr-card-border-color;
 // END: Card
@@ -342,9 +343,9 @@ $clr-datagrid-loading-background: rgba(0, 0, 0, 0.5);
   *
   * Usage: ../popover/dropdown/_dropdown.clarity.scss
   */
-$clr-dropdown-active-text-color: $white;
+$clr-dropdown-active-text-color: $black;
 $clr-dropdown-bg-color: $dropdown-bg;
-$clr-dropdown-text-color: $gray-light;
+$clr-dropdown-text-color: $black;
 $clr-dropdown-item-color: $gray-light;
 $clr-dropdown-border-color: $black;
 $clr-dropdown-child-border-color: $black;
@@ -660,8 +661,8 @@ $clr-tree-node-caret-color: $gray-light;
   * - ../typography/_typography.clarity.scss
   * - ../data/datagrid/_datagrid.clarity.scss
   */
-$clr-global-font-color: $white-alt;
-$clr-global-font-color-secondary: $gray-light;
+$clr-global-font-color: $black;
+$clr-global-font-color-secondary: $black;
 
 $clr-h1-color: $clr-global-font-color;
 $clr-h2-color: $clr-global-font-color;
