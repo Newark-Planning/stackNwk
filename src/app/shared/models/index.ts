@@ -12,6 +12,18 @@ export interface MyRoute extends Route {
   icon?: string;
   title?: string;
 }
+export interface DataItem {
+  color?: string;
+  description?: string;
+  docId?: string;
+  document: string;
+  embedLink?: string;
+  filetype: string;
+  id: number;
+  link: string;
+  pubDate: string | Date;
+  type?: string;
+}
 export interface SubComponent {
   icon?: string;
   index?: number;

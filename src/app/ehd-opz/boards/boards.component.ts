@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Record, SubComponent } from '../../shared/models';
-import { AirService, CalendarService } from '../../shared/services';
+import { AirService, JsonDataService } from '../../shared/services';
 
 import listView from '@fullcalendar/list';
 import { OverlayPanel } from 'primeng/overlaypanel/public_api';
@@ -30,7 +30,7 @@ export class OpzBoardsComponent implements OnInit {
 
   constructor(
     public airData: AirService,
-    public getevents: CalendarService,
+    public getevents: JsonDataService,
     readonly route: ActivatedRoute,
     readonly router: Router) {
       this.subComponents = [

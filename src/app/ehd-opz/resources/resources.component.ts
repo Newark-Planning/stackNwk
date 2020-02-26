@@ -12,7 +12,8 @@ import { AirService } from '../../shared/services/air.service';
 export class OpzResourcesComponent implements OnInit {
   subComponents: any = [
     { label: 'Applications', path: 'res-apps' },
-    { label: 'Redevelopment Plans', path: 'res-redev' }
+    { label: 'Redevelopment Plans', path: 'res-redev' },
+    { label: 'Board Minutes', path: 'res-minutes' }
   ];
   splashTitle$: Record;
   backgroundStyle = {

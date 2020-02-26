@@ -6,12 +6,19 @@ import { RouterModule } from '@angular/router';
 import * as fromComponents from './components';
 import { AirService } from './services/air.service';
 
-import { CalendarService, CartoService, GetRegsService, MapidService, MapService } from './services';
+import {
+  CartoService,
+  GetRegsService,
+  JsonDataService,
+  MapidService,
+  MapService
+} from './services';
 
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { DataViewModule } from 'primeng/dataview';
 import { DropdownModule } from 'primeng/dropdown';
@@ -22,9 +29,11 @@ import { SidebarModule } from 'primeng/sidebar';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { StepsModule } from 'primeng/steps';
 import { ToastModule } from 'primeng/toast';
+import { TreeModule } from 'primeng/tree';
 
 const primeModules = [
   ButtonModule,
+  CardModule,
   CarouselModule,
   DataViewModule,
   DropdownModule,
@@ -34,7 +43,8 @@ const primeModules = [
   SidebarModule,
   SplitButtonModule,
   StepsModule,
-  ToastModule
+  ToastModule,
+  TreeModule
 ];
 const matModules = [
   MatSliderModule,
@@ -60,7 +70,7 @@ const matModules = [
     matModules,
     primeModules
   ],
-  providers: [AirService, CalendarService, CartoService, GetRegsService, MapService, MapidService],
+  providers: [AirService, CartoService, GetRegsService, JsonDataService, MapService, MapidService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule { }

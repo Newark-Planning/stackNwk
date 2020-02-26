@@ -1,0 +1,20 @@
+<p-tree 
+    class="ui-g-4" 
+    [value]="filesTree"
+    [filter]="true"
+    selectionMode="single" 
+    [(selection)]="selectedFile"
+    (onNodeSelect)="nodeSelect(selectedFile)">
+</p-tree>
+<p-card *ngIf="selectedFile" class="ui-g-8">
+    <p-header>
+        {{ selectedFile.document }}
+    </p-header>
+    <iframe 
+        *ngIf="selectedFile"
+        [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedFile.embedLink)">
+    </iframe>
+    <p-footer>
+        Footer content here
+    </p-footer>
+</p-card>

@@ -88,7 +88,8 @@ export const PLANNING_ROUTES: Routes = [
     children: [
       { path: '', redirectTo: 'res-apps', pathMatch: 'full' },
       {component: components.ApplicationsDataComponent, data: {title: 'Applications'}, path: 'res-apps'},
-      {component: components.RedevDataComponent, data: {title: 'Revelopment Plans'}, path: 'res-redev'}
+      {component: components.RedevDataComponent, data: {title: 'Revelopment Plans'}, path: 'res-redev'},
+      {component: components.MinutesDataComponent, data: {title: 'Board Minutes'}, path: 'res-minutes'}
     ],
     component: components.OpzResourcesComponent,
     data: {
