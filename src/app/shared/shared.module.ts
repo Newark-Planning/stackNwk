@@ -21,6 +21,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { SidebarModule } from 'primeng/sidebar';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { StepsModule } from 'primeng/steps';
+import { ToastModule } from 'primeng/toast';
 
 const primeModules = [
   ButtonModule,
@@ -32,7 +33,8 @@ const primeModules = [
   OverlayPanelModule,
   SidebarModule,
   SplitButtonModule,
-  StepsModule
+  StepsModule,
+  ToastModule
 ];
 const matModules = [
   MatSliderModule,

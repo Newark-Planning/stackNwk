@@ -1,7 +1,4 @@
 @import '../../app.component.scss';
-@import '../../../../node_modules/@fullcalendar/core/main.min';
-@import '../../../../node_modules/@fullcalendar/list/main.min';
-
 .splash-buttons {
     flex-basis: auto;
 
@@ -62,27 +59,4 @@
 
 #tabs-content {
     min-height: 50vh
-}
-
-#calendar {
-    color: white !important;
-    -webkit-text-fill-color: white !important;
-
-    td.fc-widget-header {
-        background: unset;
-        background: #1f7ed0 !important;
-    }
-
-    .fc-unthemed .fc-divider,
-    .fc-unthemed .fc-list-heading td,
-    .fc-unthemed .fc-list-view,
-    .fc-unthemed .fc-popover,
-    .fc-unthemed .fc-row,
-    .fc-unthemed tbody,
-    .fc-unthemed td,
-    .fc-unthemed th,
-    .fc-unthemed thead {
-        /* border-color: #ddd; */
-        border-color: #323232 !important;
-    }
 }

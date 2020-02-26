@@ -34,12 +34,13 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-lg clr-col-6">City Hall | Room {{ staff.fields['Room'] }}</button>
-                    <button class="btn btn-lg clr-col-5" href="tel:{{ staff.fields['Phone'] }}">Tel: {{ staff.fields['Phone'] }}</button>
-                    <button class="btn btn-lg clr-col-12" href="mailto:{{ staff.fields['Email'] }}?Subject=Website%20Inquiry">Email: {{ staff.fields['Email'] }}</button>
+                    <button class="btn btn-lg clr-col-6" (click)="copyVal(staff.fields['Room'], 'Room Number')">City Hall | Room {{ staff.fields['Room'] }}</button>
+                    <button class="btn btn-lg clr-col-5" (click)="copyVal(staff.fields['Phone'], 'Phone Number')">Tel: {{ staff.fields['Phone'] }}</button>
+                    <button class="btn btn-lg clr-col-12" (click)="copyVal(staff.fields['Email'], 'Email')">Email: {{ staff.fields['Email'] }}</button>
                 </div>
             </div>
         </div>
     </div>
     </div>
 </section>
+<p-toast></p-toast>
