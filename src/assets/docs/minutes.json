@@ -1,373 +1,413 @@
-{
-    "data": [{
-            "document": "2019 ZBA Meeting 01 Minutes",
-            "filetype": "pdf",
+[{
+    "collapsedIcon": "fa fa-folder",
+    "expandedIcon": "fa fa-folder-open",
+    "label": "2019 Meeting Minutes",
+    "children": [{
+        "label": "2019 ZBA Meeting 01 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-01",
             "docId": "12fnXKT2vUB6lM0W23i_GHcl-46-g7WjO",
-            "pubDate": "2019, 1, 10",
+            "pubDate": "2019, 01, 10",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/12fnXKT2vUB6lM0W23i_GHcl-46-g7WjO/preview",
             "link": "https://drive.google.com/open?id=12fnXKT2vUB6lM0W23i_GHcl-46-g7WjO"
-        },
-        {
-            "document": "2019 ZBA Meeting 02 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 02 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-02",
             "docId": "1ClsSXeiwijp_tbAF58OLe0J5zV8aPIoV",
-            "pubDate": "2019, 1, 24",
+            "pubDate": "2019, 01, 24",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1ClsSXeiwijp_tbAF58OLe0J5zV8aPIoV/preview",
             "link": "https://drive.google.com/open?id=1ClsSXeiwijp_tbAF58OLe0J5zV8aPIoV"
-        },
-        {
-            "document": "2019 ZBA Meeting 03 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 03 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-03",
             "docId": "1uu8W3Ckt2vRmhGz8F5FmtgaNKxStfiWn",
-            "pubDate": "2019, 2, 7",
+            "pubDate": "2019, 02, 07",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1uu8W3Ckt2vRmhGz8F5FmtgaNKxStfiWn/preview",
             "link": "https://drive.google.com/open?id=1uu8W3Ckt2vRmhGz8F5FmtgaNKxStfiWn"
-        },
-        {
-            "document": "2019 ZBA Meeting 04 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 04 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-04",
             "docId": "1f3vh_2JQp3fkgVunLUN_1wxtJFsRfRf2",
-            "pubDate": "2019, 2, 14",
+            "pubDate": "2019, 02, 14",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1f3vh_2JQp3fkgVunLUN_1wxtJFsRfRf2/preview",
             "link": "https://drive.google.com/open?id=1f3vh_2JQp3fkgVunLUN_1wxtJFsRfRf2"
-        },
-        {
-            "document": "2019 ZBA Meeting 05 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 05 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-05",
             "docId": "1jSKml14-ueRTWZagmp3GauRPDaLcxrBp",
-            "pubDate": "2019, 2, 21",
+            "pubDate": "2019, 02, 21",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1jSKml14-ueRTWZagmp3GauRPDaLcxrBp/preview",
             "link": "https://drive.google.com/open?id=1jSKml14-ueRTWZagmp3GauRPDaLcxrBp"
-        },
-        {
-            "document": "2019 ZBA Meeting 06 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 06 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-06",
             "docId": "1s1-7CPm0J2wICcknPKQ7J8U120wiKbKz",
-            "pubDate": "2019, 2, 28",
+            "pubDate": "2019, 02, 28",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1s1-7CPm0J2wICcknPKQ7J8U120wiKbKz/preview",
             "link": "https://drive.google.com/open?id=1s1-7CPm0J2wICcknPKQ7J8U120wiKbKz"
-        },
-        {
-            "document": "2019 ZBA Meeting 07 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 07 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-07",
             "docId": "1ffiU_A7uS8zk-dERwyc1tY6OCkJEZlh2",
-            "pubDate": "2019, 3, 14",
+            "pubDate": "2019, 03, 14",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1ffiU_A7uS8zk-dERwyc1tY6OCkJEZlh2/preview",
             "link": "https://drive.google.com/open?id=1ffiU_A7uS8zk-dERwyc1tY6OCkJEZlh2"
-        },
-        {
-            "document": "2019 ZBA Meeting 08 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 08 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-08",
             "docId": "1Zg-UMOiAfa9ARf3au1aHv8nhbYutnTNs",
-            "pubDate": "2019, 3, 28",
+            "pubDate": "2019, 03, 28",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1Zg-UMOiAfa9ARf3au1aHv8nhbYutnTNs/preview",
             "link": "https://drive.google.com/open?id=1Zg-UMOiAfa9ARf3au1aHv8nhbYutnTNs"
-        },
-        {
-            "document": "2019 ZBA Meeting 09 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 09 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-09",
             "docId": "1xoswBxg9S-EK03D4CK_U8VEnQNt2bdYw",
-            "pubDate": "2019, 4, 11",
+            "pubDate": "2019, 04, 11",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1xoswBxg9S-EK03D4CK_U8VEnQNt2bdYw/preview",
             "link": "https://drive.google.com/open?id=1xoswBxg9S-EK03D4CK_U8VEnQNt2bdYw"
-        },
-        {
-            "document": "2019 ZBA Meeting 10 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 10 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-10",
             "docId": "1YA7bZmQ5SdhcdNunt2n3Q6cLpAy-2hyT",
-            "pubDate": "2019, 4, 18",
+            "pubDate": "2019, 04, 18",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1YA7bZmQ5SdhcdNunt2n3Q6cLpAy-2hyT/preview",
             "link": "https://drive.google.com/open?id=1YA7bZmQ5SdhcdNunt2n3Q6cLpAy-2hyT"
-        },
-        {
-            "document": "2019 ZBA Meeting 11 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 11 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-11",
             "docId": "1zJDStI3YYVCCKBvJGH6TKXnMXFnHrUg1",
-            "pubDate": "2019, 4, 25",
+            "pubDate": "2019, 04, 25",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1zJDStI3YYVCCKBvJGH6TKXnMXFnHrUg1/preview",
             "link": "https://drive.google.com/open?id=1zJDStI3YYVCCKBvJGH6TKXnMXFnHrUg1"
-        },
-        {
-            "document": "2019 ZBA Meeting 12 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 12 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-12",
             "docId": "13jomXmVkMvn5yhc-fm_Nsk8EtKlmPg1m",
-            "pubDate": "2019, 5, 9",
+            "pubDate": "2019, 05, 09",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/13jomXmVkMvn5yhc-fm_Nsk8EtKlmPg1m/preview",
             "link": "https://drive.google.com/open?id=13jomXmVkMvn5yhc-fm_Nsk8EtKlmPg1m"
-        },
-        {
-            "document": "2019 ZBA Meeting 13 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 13 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-13",
             "docId": "1jSndUlIGKgcmoR3tByLydewlMnOYActJ",
-            "pubDate": "2019, 5, 10",
+            "pubDate": "2019, 05, 10",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1jSndUlIGKgcmoR3tByLydewlMnOYActJ/preview",
             "link": "https://drive.google.com/open?id=1jSndUlIGKgcmoR3tByLydewlMnOYActJ"
-        },
-        {
-            "document": "2019 ZBA Meeting 14 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 14 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-14",
             "docId": "1JEhjDpg0_qCrPEE1MEjqVNp0HHp3pV2C",
-            "pubDate": "2019, 5, 16",
+            "pubDate": "2019, 05, 16",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1JEhjDpg0_qCrPEE1MEjqVNp0HHp3pV2C/preview",
             "link": "https://drive.google.com/open?id=1JEhjDpg0_qCrPEE1MEjqVNp0HHp3pV2C"
-        },
-        {
-            "document": "2019 ZBA Meeting 15 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 15 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-15",
             "docId": "1OBaqf7YWKkC_t1q-Mu9n0gq5AWfyL00l",
-            "pubDate": "2019, 5, 23",
+            "pubDate": "2019, 05, 23",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1OBaqf7YWKkC_t1q-Mu9n0gq5AWfyL00l/preview",
             "link": "https://drive.google.com/open?id=1OBaqf7YWKkC_t1q-Mu9n0gq5AWfyL00l"
-        },
-        {
-            "document": "2019 ZBA Meeting 16 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 16 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-16",
             "docId": "10UJSYrZQWem3FpzZvbVQmexLJNMOPG9k",
-            "pubDate": "2019, 6, 6",
+            "pubDate": "2019, 06, 06",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/10UJSYrZQWem3FpzZvbVQmexLJNMOPG9k/preview",
             "link": "https://drive.google.com/open?id=10UJSYrZQWem3FpzZvbVQmexLJNMOPG9k"
-        },
-        {
-            "document": "2019 ZBA Meeting 17 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 17 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-17",
             "docId": "1L0-OMKxU19RfyRwwOy3IQe6646_do8Mq",
-            "pubDate": "2019, 6, 13",
+            "pubDate": "2019, 06, 13",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1L0-OMKxU19RfyRwwOy3IQe6646_do8Mq/preview",
             "link": "https://drive.google.com/open?id=1L0-OMKxU19RfyRwwOy3IQe6646_do8Mq"
-        },
-        {
-            "document": "2019 ZBA Meeting 18 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 18 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-18",
             "docId": "1TsOmEBZFGJRKYRZ0Zm3TrpEQDoVAoEUJ",
-            "pubDate": "2019, 6, 21",
+            "pubDate": "2019, 06, 21",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1TsOmEBZFGJRKYRZ0Zm3TrpEQDoVAoEUJ/preview",
             "link": "https://drive.google.com/open?id=1TsOmEBZFGJRKYRZ0Zm3TrpEQDoVAoEUJ"
-        },
-        {
-            "document": "2019 ZBA Meeting 19 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 19 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-19",
             "docId": "1kfXy6JKA8Wj__ob5uqyIjaHGL1X8687a",
-            "pubDate": "2019, 6, 27",
+            "pubDate": "2019, 06, 27",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1kfXy6JKA8Wj__ob5uqyIjaHGL1X8687a/preview",
             "link": "https://drive.google.com/open?id=1kfXy6JKA8Wj__ob5uqyIjaHGL1X8687a"
-        },
-        {
-            "document": "2019 ZBA Meeting 20 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 20 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-20",
             "docId": "1ii04l5ERDUFUfxXm6h-AcKrsCXdhL3L7",
-            "pubDate": "2019, 7, 11",
+            "pubDate": "2019, 07, 11",
             "type": "minutes",
-            "embedLink": "https://drive.google.com/file/d/1ii04l5ERDUFUfxXm6h-AcKrsCXdhL3L7/preview",
+            "embedLink": "https://drive.google.com/file/d/1ii04l5ERDUFUfxXm6h-AcKrsCXdhL3L7, preview",
             "link": "https://drive.google.com/open?id=1ii04l5ERDUFUfxXm6h-AcKrsCXdhL3L7"
-        },
-        {
-            "document": "2019 ZBA Meeting 21 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 21 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-21",
             "docId": "15AwgUQsQJYMw9_HXd-DSpNI7K6uf3GHc",
-            "pubDate": "2019, 7, 25",
+            "pubDate": "2019, 07, 25",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/15AwgUQsQJYMw9_HXd-DSpNI7K6uf3GHc/preview",
             "link": "https://drive.google.com/open?id=15AwgUQsQJYMw9_HXd-DSpNI7K6uf3GHc"
-        },
-        {
-            "document": "2019 ZBA Meeting 22 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 22 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-22",
             "docId": "1JmYRwMXIW5jcXQHLnfTzSfWCbKpiXUTd",
-            "pubDate": "2019, 8, 8",
+            "pubDate": "2019, 08, 08",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1JmYRwMXIW5jcXQHLnfTzSfWCbKpiXUTd/preview",
             "link": "https://drive.google.com/open?id=1JmYRwMXIW5jcXQHLnfTzSfWCbKpiXUTd"
-        },
-        {
-            "document": "2019 ZBA Meeting 23 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 23 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-23",
             "docId": "10sy_DKcjqJw19wXAtGH3yffkSFqD5jxG",
-            "pubDate": "2019, 8, 15",
+            "pubDate": "2019, 08, 15",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/10sy_DKcjqJw19wXAtGH3yffkSFqD5jxG/preview",
             "link": "https://drive.google.com/open?id=10sy_DKcjqJw19wXAtGH3yffkSFqD5jxG"
-        },
-        {
-            "document": "2019 ZBA Meeting 24 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 24 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-24",
             "docId": "1rHhZanfYszlouSQyXQTcDeTbfZw4xB7E",
-            "pubDate": "2019, 8, 22",
+            "pubDate": "2019, 08, 22",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1rHhZanfYszlouSQyXQTcDeTbfZw4xB7E/preview",
             "link": "https://drive.google.com/open?id=1rHhZanfYszlouSQyXQTcDeTbfZw4xB7E"
-        },
-        {
-            "document": "2019 ZBA Meeting 25 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 25 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-25",
             "docId": "1bOGAT2HXVt52nU-tQRlJzsxFY1itCek9",
-            "pubDate": "2019, 9, 12",
+            "pubDate": "2019, 09, 12",
             "type": "minutes",
-            "embedLink": "https://drive.google.com/file/d/1bOGAT2HXVt52nU-tQRlJzsxFY1itCek9/preview",
+            "embedLink": "https://drive.google.com/file/d/1bOGAT2HXVt52nU-tQRlJzsxFY1itCek9, preview",
             "link": "https://drive.google.com/open?id=1bOGAT2HXVt52nU-tQRlJzsxFY1itCek9"
-        },
-        {
-            "document": "2019 ZBA Meeting 26 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 26 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-26",
             "docId": "1OG-PFq-uQuCGKBxl5KaM8PwRJJUaPdWf",
-            "pubDate": "2019, 9, 19",
+            "pubDate": "2019, 09, 19",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1OG-PFq-uQuCGKBxl5KaM8PwRJJUaPdWf/preview",
             "link": "https://drive.google.com/open?id=1OG-PFq-uQuCGKBxl5KaM8PwRJJUaPdWf"
-        },
-        {
-            "document": "2019 ZBA Meeting 27 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 27 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-27",
             "docId": "1jf0nahgFerDqvTLnphxFJDQgnCQ1Aar0",
-            "pubDate": "2019, 9, 26",
+            "pubDate": "2019, 09, 26",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1jf0nahgFerDqvTLnphxFJDQgnCQ1Aar0/preview",
             "link": "https://drive.google.com/open?id=1jf0nahgFerDqvTLnphxFJDQgnCQ1Aar0"
-        },
-        {
-            "document": "2019 ZBA Meeting 28 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 28 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-28",
             "docId": "1iDfy0qreIG5jfKZm58V6sn6YQVF3qZTe",
             "pubDate": "2019, 10, 10",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1iDfy0qreIG5jfKZm58V6sn6YQVF3qZTe/preview",
             "link": "https://drive.google.com/open?id=1iDfy0qreIG5jfKZm58V6sn6YQVF3qZTe"
-        },
-        {
-            "document": "2019 ZBA Meeting 29 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 29 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-29",
             "docId": "1L1PTdz2YRgcC1Ga3Cn2UxkZrJ-Ug9Go7",
             "pubDate": "2019, 10, 23",
             "type": "minutes",
-            "embedLink": "https://drive.google.com/file/d/1L1PTdz2YRgcC1Ga3Cn2UxkZrJ-Ug9Go7/preview",
+            "embedLink": "https://drive.google.com/file/d/1L1PTdz2YRgcC1Ga3Cn2UxkZrJ-Ug9Go7, preview",
             "link": "https://drive.google.com/open?id=1L1PTdz2YRgcC1Ga3Cn2UxkZrJ-Ug9Go7"
-        },
-        {
-            "document": "2019 ZBA Meeting 30 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 30 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-30",
             "docId": "13Fc-j7mDxRmV8drxDiSJYrMn7KTU-3lj",
             "pubDate": "2019, 10, 24",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/13Fc-j7mDxRmV8drxDiSJYrMn7KTU-3lj/preview",
             "link": "https://drive.google.com/open?id=13Fc-j7mDxRmV8drxDiSJYrMn7KTU-3lj"
-        },
-        {
-            "document": "2019 ZBA Meeting 31 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 31 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-31",
             "docId": "1sChYpZdm6i226HyCJfEM6kaD3tCRVQFE",
-            "pubDate": "2019, 11, 7",
+            "pubDate": "2019, 11, 07",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1sChYpZdm6i226HyCJfEM6kaD3tCRVQFE/preview",
             "link": "https://drive.google.com/open?id=1sChYpZdm6i226HyCJfEM6kaD3tCRVQFE"
-        },
-        {
-            "document": "2019 ZBA Meeting 32 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 32 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-32",
             "docId": "1KOfo6UMHSgukakVxzJAb2U29ptqgDSAS",
             "pubDate": "2019, 11, 14",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1KOfo6UMHSgukakVxzJAb2U29ptqgDSAS/preview",
             "link": "https://drive.google.com/open?id=1KOfo6UMHSgukakVxzJAb2U29ptqgDSAS"
-        },
-        {
-            "document": "2019 ZBA Meeting 33 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 33 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-33",
             "docId": "1lNMkHVXjN1I9OQv-XgwQE6LZUIM5umQs",
             "pubDate": "2019, 11, 21",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1lNMkHVXjN1I9OQv-XgwQE6LZUIM5umQs/preview",
             "link": "https://drive.google.com/open?id=1lNMkHVXjN1I9OQv-XgwQE6LZUIM5umQs"
-        },
-        {
-            "document": "2019 ZBA Meeting 34 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 34 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-34",
             "docId": "1mwU61p6p77pCL7S36cNz8kK9GAUeMrbe",
             "pubDate": "2019, 12, 12",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1mwU61p6p77pCL7S36cNz8kK9GAUeMrbe/preview",
             "link": "https://drive.google.com/open?id=1mwU61p6p77pCL7S36cNz8kK9GAUeMrbe"
-        },
-        {
-            "document": "2019 ZBA Meeting 35 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2019 ZBA Meeting 35 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2019-35",
             "docId": "1VU5qQMdmaAewjiazf72-xns2PDN7r-zT",
             "pubDate": "2019, 12, 19",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1VU5qQMdmaAewjiazf72-xns2PDN7r-zT/preview",
             "link": "https://drive.google.com/open?id=1VU5qQMdmaAewjiazf72-xns2PDN7r-zT"
-        },
-        {
-            "document": "2020 ZBA Meeting 01 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2020 ZBA Meeting 01 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2020-02",
             "docId": "1Pbmn4G2fiWkkVUnOmxI1j8xLjbRw-qzU",
-            "pubDate": "2020, 1, 9",
+            "pubDate": "2019, 01, 09",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1Pbmn4G2fiWkkVUnOmxI1j8xLjbRw-qzU/preview",
             "link": "https://drive.google.com/open?id=1Pbmn4G2fiWkkVUnOmxI1j8xLjbRw-qzU"
-        },
-        {
-            "document": "2020 ZBA Meeting 02 Minutes",
-            "filetype": "pdf",
+        }
+    }, {
+        "label": "2020 ZBA Meeting 02 Minutes",
+        "icon": "pi pi-file-pdf",
+        "data": {
             "id": "2020-01",
             "docId": "1m1UjXaP68UVk5qiTzChxsWjjecCnJbvX",
-            "pubDate": "2020, 1, 23",
+            "pubDate": "2019, 01, 23",
             "type": "minutes",
             "embedLink": "https://drive.google.com/file/d/1m1UjXaP68UVk5qiTzChxsWjjecCnJbvX/preview",
             "link": "https://drive.google.com/open?id=1m1UjXaP68UVk5qiTzChxsWjjecCnJbvX"
         }
-    ]
-}
+    }]
+}]

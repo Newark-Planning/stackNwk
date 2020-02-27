@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { TreeNode } from 'primeng/api/treenode';
 
 export * from './airtable-model';
 export * from './airtable-fields.model';
@@ -12,17 +13,17 @@ export interface MyRoute extends Route {
   icon?: string;
   title?: string;
 }
-export interface DataItem {
-  color?: string;
-  description?: string;
-  docId?: string;
-  document: string;
-  embedLink?: string;
-  filetype: string;
-  id: number;
-  link: string;
-  pubDate: string | Date;
-  type?: string;
+export interface DataItem extends TreeNode {
+  data?: {
+    color?: string;
+    description?: string;
+    docId?: string;
+    embedLink?: string;
+    id?: number;
+    link?: string;
+    pubDate?: string | Date;
+    type?: string;
+  };
 }
 export interface SubComponent {
   icon?: string;

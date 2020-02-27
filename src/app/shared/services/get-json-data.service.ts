@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { TreeNode } from 'primeng/api/treenode';
 import { DataItem } from '../models';
 
 @Injectable()
@@ -17,7 +16,6 @@ export class JsonDataService {
     getFiles(docs): any {
         return this.http.get(`/assets/docs/${docs}.json`)
             .toPromise()
-            .then(res => res as Array<TreeNode | DataItem>)
-            .then(data => data);
+            .then(res => res as Array<DataItem>);
         }
 }

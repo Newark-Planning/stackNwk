@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { TreeNode } from 'primeng/api';
 import { DataItem } from '../../../../shared/models';
 import { JsonDataService } from '../../../../shared/services';
 
@@ -12,8 +11,16 @@ import { JsonDataService } from '../../../../shared/services';
 
 export class MinutesDataComponent implements OnInit {
   loading = false;
-  filesTree: Array<TreeNode>;
-  selectedFile: TreeNode | undefined;
+  data: Array<DataItem>;
+  files2019: Array<any> = [];
+  filesTree: Array<DataItem> = [{
+    children: this.files2019,
+    collapsedIcon: 'fa fa-folder',
+    expandedIcon: 'fa fa-folder-open',
+    label: 'Zoning Board',
+    leaf: false
+  }];
+  selectedFile: DataItem | null;
 
   constructor(
     public jsonData: JsonDataService,
@@ -22,43 +29,17 @@ export class MinutesDataComponent implements OnInit {
 
   ngOnInit(): any {
     this.loading = true;
-    // tslint:disable: object-literal-sort-keys
     this.jsonData.getFiles('minutes')
-      .then(
-        (files: Array<DataItem>) => this.filesTree = [
-          {
-            data: [
-              {
-                label: 'Zoning Board',
-                data: 'Zoning Board Folder',
-                expandedIcon: 'fa fa-folder-open',
-                collapsedIcon: 'fa fa-folder',
-                children: [{
-                        label: '2019',
-                        data: 'Work Folder',
-                        expandedIcon: 'fa fa-folder-open',
-                        collapsedIcon: 'fa fa-folder',
-                        children: () => {
-                          files.filter(file => file.pubDate.toString()
-                            .startsWith('2019'))
-                            .forEach(file =>
-                            ({
-                              label: file.document,
-                              data: file.docId,
-                              icon: 'far fa-file-pdf'
-                            })
-                          );
-                        }
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      );
+      .then((files: Array<DataItem>) => this.filesTree[0].children = files);
   }
-  nodeSelect(file): any {
-    this.selectedFile = undefined;
-    this.selectedFile = file;
+
+  nodeSelect(file: DataItem): any {
+    // tslint:disable: no-null-keyword
+    (file.data) ? this.selectedFile = file : this.selectedFile = null;
+    (this.selectedFile)
+    // tslint:disable: no-non-null-assertion
+    ? this.selectedFile.data!.pubDate! = new Date(file.data!.pubDate!)
+    // tslint:disable-next-line: no-console
+    : console.log('no file here');
   }
 }

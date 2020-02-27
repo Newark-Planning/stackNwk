@@ -85,10 +85,10 @@ body {
 
 body .ui-inputtext {
     font-size: 14px;
-    color: #dedede;
-    background: #585858;
+    color: $black;
+    background: $clr-global-app-background;
     padding: 0.429em;
-    border: 1px solid #585858;
+    border: 1px solid $app-info-color;
     -moz-transition: border-color 0.2s, box-shadow 0.2s;
     -o-transition: border-color 0.2s, box-shadow 0.2s;
     -webkit-transition: border-color 0.2s, box-shadow 0.2s;
@@ -2165,11 +2165,11 @@ body .ui-toolbar .ui-toolbar-separator {
 }
 
 body .ui-card {
-    background-color: #323232;
-    color: #dedede;
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    background-color: $white;
+    color: $black;
+    -webkit-box-shadow: 0 1px 3px 0 $app-info-color, 0 1px 1px 0 $app-info-color, 0 2px 1px -1px $app-info-color;
+    -moz-box-shadow: 0 1px 3px 0 $app-info-color, 0 1px 1px 0 $app-info-color, 0 2px 1px -1px $app-info-color;
+    box-shadow: 0 1px 3px 0 $app-info-color, 0 1px 1px 0 $app-info-color, 0 2px 1px -1px $app-info-color;
 }
 
 body .ui-paginator {
@@ -2910,9 +2910,10 @@ body .ui-orderlist .ui-orderlist-list .ui-orderlist-droppoint-highlight {
 }
 
 body .ui-tree {
-    border: 1px solid $black-alt;
-    background-color: #323232;
-    color: #dedede;
+    border: 1px solid $app-info-color;
+    border-radius: .15rem;
+    background-color: $white;
+    color: $black;
     padding: 0.571em 1em;
 }
 
@@ -3036,9 +3037,9 @@ body .ui-tree.ui-tree-horizontal .ui-treenode .ui-treenode-content.ui-treenode-s
 body .ui-tree.ui-tree-horizontal .ui-treenode .ui-treenode-content:focus {
     outline: 0 none;
     outline-offset: 0;
-    -webkit-box-shadow: 0 0 0 0.2em #ffe8b3;
-    -moz-box-shadow: 0 0 0 0.2em #ffe8b3;
-    box-shadow: 0 0 0 0.2em #ffe8b3;
+    -webkit-box-shadow: 0 0 0 0.2em $app-info-color;
+    -moz-box-shadow: 0 0 0 0.2em $app-info-color;
+    box-shadow: 0 0 0 0.2em $app-info-color;
 }
 
 body .ui-tree .ui-tree-filter-container .ui-tree-filter {
@@ -3051,7 +3052,7 @@ body .ui-tree .ui-tree-filter-container .ui-tree-filter-icon {
     left: auto;
     margin-top: -0.5em;
     right: 0.8em;
-    color: #252525;
+    color: $app-info-color;
 }
 
 body .ui-organizationchart .ui-organizationchart-node-content.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {

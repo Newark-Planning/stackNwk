@@ -8,13 +8,13 @@
 </p-tree>
 <p-card *ngIf="selectedFile" class="ui-g-8">
     <p-header>
-        {{ selectedFile.document }}
+        <h2>{{ selectedFile.label }}</h2>
     </p-header>
     <iframe 
         *ngIf="selectedFile"
-        [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedFile.embedLink)">
+        [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedFile.data.embedLink)">
     </iframe>
     <p-footer>
-        Footer content here
+        <h2>{{ selectedFile.data.pubDate | date}}</h2>
     </p-footer>
 </p-card>
