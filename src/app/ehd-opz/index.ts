@@ -10,7 +10,7 @@ import { OpzZoningComponent } from './zoning/zoning.component';
 
 // Resources page component imports
 import { ApplicationsDataComponent } from './resources/sub-pages/applications/applications.component';
-import { MinutesDataComponent } from './resources/sub-pages/minutes/minutes.component';
+import { BoardsDocsDataComponent } from './resources/sub-pages/boards-docs/boards-docs.component';
 import { RedevDataComponent } from './resources/sub-pages/redev/redev.component';
 
 import { SidePanelComponent } from './ourcity/sidepanel.component';
@@ -38,7 +38,7 @@ export const planningMapComponents = [
 
 export const planningResComponents = [
   ApplicationsDataComponent,
-  MinutesDataComponent,
+  BoardsDocsDataComponent,
   RedevDataComponent
 ];
 
@@ -66,7 +66,7 @@ export * from './ourcity/sidepanel.component';
 
 // Resources page components exports
 export * from './resources/sub-pages/applications/applications.component';
-export * from './resources/sub-pages/minutes/minutes.component';
+export * from './resources/sub-pages/boards-docs/boards-docs.component';
 export * from './resources/sub-pages/redev/redev.component';
 
 export * from './zoning/diagrams/diagrams.component';

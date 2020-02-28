@@ -1,6 +1,8 @@
 @import '../../app.component.scss';
+
 .splash-buttons {
     flex-basis: content;
+
     .btn {
         display: flex;
         box-shadow: .1rem .1rem .25rem black;
@@ -21,6 +23,7 @@
     font-size: calc(var(--vw) * 0.01 + 25px);
     border-radius: .5rem;
     margin: unset !important;
+
     h2 {
         margin: unset;
         text-align: center;
@@ -71,14 +74,6 @@
     padding: .3rem;
 }
 
-p-card {
-    iframe {
-        width: 100%;
-        height: 100%;
-        border-radius: .15rem;
-    }
-}
-
 .filter-container {
     text-align: center;
 }
@@ -101,6 +96,10 @@ p-card {
 
 .ui-panel-content {
     padding: 1em;
+}
+
+p-tree > .ui-tree {
+    width: auto !important;
 }
 
 @media (max-width: 1024px) {

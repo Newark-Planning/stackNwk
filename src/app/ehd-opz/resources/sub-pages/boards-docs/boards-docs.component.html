@@ -1,0 +1,24 @@
+<p-tree 
+    class="ui-g-4" 
+    [value]="filesTree"
+    [filter]="true"
+    filterPlaceholder="Search, Try 'ZBA-2019-01'"
+    selectionMode="single"
+    [(selection)]="selectedFile"
+    (onNodeExpand)="loadNode($event)"
+    (onNodeSelect)="nodeSelect(selectedFile)"
+    [ngStyle]="{'height': '76vh'}">
+</p-tree>
+<p-card *ngIf="selectedFile" class="ui-g-8" [ngStyle]="{'height': '76vh'}">
+    <p-header>
+        <h2>{{ selectedFile.label }}</h2>
+    </p-header>
+    <iframe 
+        *ngIf="selectedFile"
+        [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedFile.data.embedLink)"
+        [ngStyle]="{'height': '74vh'}">
+    </iframe>
+    <p-footer>
+        <h2>{{ selectedFile.data.pubDate | date}}</h2>
+    </p-footer>
+</p-card>
