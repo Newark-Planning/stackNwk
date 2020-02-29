@@ -1,20 +1,20 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 import { MyRoute } from '../shared/models';
-import { RC_ROUTES } from './ehd-rc-routing.module';
+import { ORC_ROUTES } from './ehd-orc-routing.module';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
-  selector: 'app-rc-container',
+  selector: 'app-orc-container',
   styleUrls: ['../app.component.scss'],
-  templateUrl: './ehd-rc.component.html'
+  templateUrl: './ehd-orc.component.html'
 })
 
-export class EhdRcComponent {
+export class EhdOrcComponent {
   collapsed = true;
   @HostBinding('class.content-container') class = true;
-  @Input() parentFragment = '/rc';
+  @Input() parentFragment = '/orc';
   @Input() sideMenuItems: Array<MyRoute> =
-    RC_ROUTES
+    ORC_ROUTES
       .filter(route => route.data)
       .map(route => {
         const routedata = route.data ? route.data : '';

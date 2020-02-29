@@ -7,6 +7,7 @@ export * from './airtable-bulks.model';
 export * from './map.input';
 export * from './map';
 export * from './bulk-use.models';
+export * from './pages.model';
 
 export interface MyRoute extends Route {
   children?: undefined | Array<MyRoute>;

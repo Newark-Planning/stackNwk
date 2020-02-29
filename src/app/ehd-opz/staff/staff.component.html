@@ -34,9 +34,17 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-lg clr-col-6" (click)="copyVal(staff.fields['Room'], 'Room Number')">City Hall | Room {{ staff.fields['Room'] }}</button>
-                    <button class="btn btn-lg clr-col-5" (click)="copyVal(staff.fields['Phone'], 'Phone Number')">Tel: {{ staff.fields['Phone'] }}</button>
-                    <button class="btn btn-lg clr-col-12" (click)="copyVal(staff.fields['Email'], 'Email')">Email: {{ staff.fields['Email'] }}</button>
+                    <button class="btn btn-lg clr-col-6" (click)="copyVal(staff.fields['Room'], 'Room Number')">
+                        <i class="pi pi-copy"  style="font-size: 1.1rem; vertical-align: sub"></i>
+                        City Hall | Room {{ staff.fields['Room'] }}</button>
+                    <button class="btn btn-lg clr-col-5" (click)="copyVal(staff.fields['Phone'], 'Phone Number')">
+                        <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
+                        {{ staff.fields['Phone'] }}
+                    </button>
+                    <button class="btn btn-lg clr-col-12" (click)="copyVal(staff.fields['Email'], 'Email')">
+                        <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
+                        {{ staff.fields['Email'] }}
+                    </button>
                 </div>
             </div>
         </div>

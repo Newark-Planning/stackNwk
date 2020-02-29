@@ -7,15 +7,15 @@ import { SharedModule } from '../shared/shared.module';
 
 import * as components from './index';
 
-import { RC_ROUTES } from './ehd-rc-routing.module';
+import { ORC_ROUTES } from './ehd-orc-routing.module';
 
 @NgModule({
   declarations: [
-    components.rcComponents
+    components.orcComponents
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(RC_ROUTES),
+    RouterModule.forChild(ORC_ROUTES),
     SharedModule,
     ClarityModule
   ],

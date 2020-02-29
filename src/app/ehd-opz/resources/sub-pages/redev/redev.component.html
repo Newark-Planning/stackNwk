@@ -1,46 +1,58 @@
-<p-dataView #dv [value]="listOfData" [paginator]="true" [rows]="8" filterBy="document" [sortField]="sortField" [sortOrder]="sortOrder">
-    <p-header>
-        <div class="ui-helper-clearfix">
-            <div class="ui-g">
-                <div class="ui-g-4">
-                    <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)"
-                        [style]="{'min-width':'140px'}"></p-dropdown>
-                </div>
-                <div class="ui-g-4">
-                    <clr-icon shape='search' size='20' style="margin-right: .5rem;"></clr-icon>
-                    <input type="search" name="search" class="clr-input" ngDefaultControl pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
-                </div>
-                <div class="ui-g-4">
-                    {{ listOfData.length }} {{ listOfData[0].type }}s
-                </div>
-            </div>
-        </div>
-    </p-header>
-    <ng-template let-data pTemplate="listItem">
-        <div class="ui-g data-details">
-            <div class="ui-g-6 data-doc">{{data.document}}</div>
-            <div class="ui-g-6">
-                <div class="ui-g-6"><strong>Published</strong>:  {{data.pubDate | date}}</div>
-                <div class="ui-g-6"><strong>File Types</strong>:  {{data.filetype}}</div>
-            </div>
-            <div class="ui-g-12">
-                <p-button class="ui-g-6" icon="pi pi-plus" styleClass="ui-button-info" (onClick)="openDoc($event, data)"></p-button>
-                <p-button class="ui-g-6" icon="pi pi-external-link" styleClass="ui-button-secondary" (onClick)="openSource(data.link)"></p-button>
-            </div>
-        </div>
+<p-table #dt 
+    [value]="listOfData"
+    (onRowSelect)="sidebarVisibility = true"
+    selectionMode="single"
+    [(selection)]="selectedDoc"
+    [columns]="cols" 
+    dataKey="id">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field" [ngSwitch]="col.field" [class]="col.width">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
     </ng-template>
-</p-dataView>
-<clr-modal id='DocView' [clrModalSize]="'xl'" *ngIf="selectedDoc" [(clrModalOpen)]="displayDialog" [clrModalStaticBackdrop]="false">
-    <h2 class="modal-title">
-        {{ selectedDoc.document }}
-    </h2>
-    <div class="modal-body">
-        <iframe *ngIf="selectedDoc" [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.embedLink)">
+    <ng-template pTemplate="body" let-data let-expanded="expanded" let-columns="columns">
+        <tr [pSelectableRow]="data">
+            <td *ngFor="let col of columns" [class]="col.width">
+                <ng-container *ngIf="col.date">
+                    {{ data[col.field] | date }}
+                </ng-container>
+                <ng-container *ngIf="!col.date">
+                    {{ data[col.field] }}
+                </ng-container>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-data let-columns>
+        <tr>
+            <td [attr.colspan]="columns.length + 1">
+                <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
+                    <div class="ui-g-12 ui-md-9">
+                        <div class="ui-g">
+                            <div>{{ data.data.id }}</div>
+                            <div>{{ data.label }}</div>
+                            <div>{{ data.data.pubDate }}</div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-sidebar *ngIf="selectedDoc" [(fullScreen)]="fullScreen" [(visible)]="sidebarVisibility" styleClass="ui-sidebar-lg" position="right">
+    <h2 style="font-weight:normal">{{ selectedDoc.label }}</h2>
+    <p-fieldset legend="View Plan" (onBeforeToggle)="iframeVis = true" [toggleable]="true" [collapsed]="true">
+        <iframe class="ui-g-12" [ngStyle]="{'border':'none','height':'70vh'}" *ngIf="iframeVis === true"
+            [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.embedLink)">
         </iframe>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="displayDialog = false">
-            back
-        </button>
-    </div>
-</clr-modal>
+    </p-fieldset>
+    <p-fieldset legend="Info" [toggleable]="true">
+        <h3 style="font-weight:normal">Published {{ selectedDoc.pubDate | date}}</h3>
+        <h3 style="font-weight:normal">{{ selectedDoc.description }}</h3>
+    </p-fieldset>
+    <button type="button" class="btn btn-primary" (click)="sidebarVisibility = false">
+        back
+    </button>
+</p-sidebar>

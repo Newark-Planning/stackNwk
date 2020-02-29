@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClrForm } from '@clr/angular';
 
 @Component({
@@ -10,32 +10,24 @@ import { ClrForm } from '@clr/angular';
 })
 
 export class SplashComponent implements OnInit {
-  @Input() parentFragment: string;
+  @Input() parentFragment = '/ehd';
   @Input() backgroundSetting: TemplateRef<any>;
-  @Input() logoSrc: string;
+  @Input() logoSrc = 'assets/img/NwkEhdLogos/SVG/NwkEhd_Divs_web_ehd.svg';
   @Input() searchDisplay = 'none';
   @ViewChild(ClrForm, { static: true }) clrForm: ClrForm;
   exampleForm = new FormGroup({
     sample: new FormControl('', Validators.required)
   });
 
-  constructor(readonly route: ActivatedRoute) {  }
+  constructor(
+    readonly route: ActivatedRoute,
+    readonly router: Router
+    ) {  }
   ngOnInit(): void {
-    switch (this.parentFragment) {
-        case '/rc': {
-          this.logoSrc = '../../../../assets/img/NwkEhdLogos/PNG/NwkEhd_divs_web_Rent Control.png';
-          break;
-        }
-        case '/opz': {
-          this.logoSrc = '../../../../assets/img/NwkEhdLogos/PNG/NwkEhd_divs_web_Planning & Zoning.png';
-          break;
-        }
-        default: {
-          this.logoSrc = '../../../../assets/img/NwkEhdLogos/PNG/NwkEhd_EHD_Web.png';
-          break;
-        }
-    }
+    this.parentFragment = this.router.url.substr(0, 4);
+    this.logoSrc = `assets/img/NwkEhdLogos/SVG/NwkEhd_Divs_web_${this.router.url.substr(1, 3)}.svg`;
   }
+
   submit(): void {
     if (this.exampleForm.invalid) {
       this.clrForm.markAsTouched();

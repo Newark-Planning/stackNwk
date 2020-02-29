@@ -1,5 +1,5 @@
 <p-tree 
-    class="ui-g-4" 
+    class="ui-g-4 ui-fluid" 
     [value]="filesTree"
     [filter]="true"
     filterPlaceholder="Search, Try 'ZBA-2019-01'"
@@ -7,16 +7,17 @@
     [(selection)]="selectedFile"
     (onNodeExpand)="loadNode($event)"
     (onNodeSelect)="nodeSelect(selectedFile)"
-    [ngStyle]="{'height': '76vh'}">
+    [style]="{'height': '76vh'}">
 </p-tree>
 <p-card *ngIf="selectedFile" class="ui-g-8" [ngStyle]="{'height': '76vh'}">
     <p-header>
-        <h2>{{ selectedFile.label }}</h2>
+        <h2 class="ui-g-12" [ngStyle]="{'margin-top': '0'}">{{ selectedFile.label }}</h2>
     </p-header>
     <iframe 
         *ngIf="selectedFile"
+        class="ui-g-12"
         [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedFile.data.embedLink)"
-        [ngStyle]="{'height': '74vh'}">
+        [ngStyle]="{'height': '66vh'}">
     </iframe>
     <p-footer>
         <h2>{{ selectedFile.data.pubDate | date}}</h2>

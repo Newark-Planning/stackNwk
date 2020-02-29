@@ -7442,6 +7442,11 @@ pretty-bytes@^5.1.0:
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.3.0.tgz#f2849e27db79fb4d6cfe24764fc4134f165989f2"
   integrity sha512-hjGrh+P926p4R4WbaB6OckyRtO0F0/lQBiT+0gnxjV+5kjPBrfVBFCsCLbMqVQeydvIoouYTCmmEURiH3R1Bdg==
 
+primeflex@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/primeflex/-/primeflex-1.0.0.tgz#ab8eaac11f1459b7615d1c4584da401beb0dedc5"
+  integrity sha512-/K9iHXm5wu6gZycQDP/gsfX7BpJKSNVhxTOZAJBLH88idPtC2lMgUXm28qfXFqsbxaTI49oBuMYBFlg/DBmUMg==
+
 primeicons@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-2.0.0.tgz#ec3e5a8d4d04a09309225a5a57deb911e08dc0d3"

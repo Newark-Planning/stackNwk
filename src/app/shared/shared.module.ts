@@ -22,12 +22,15 @@ import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { DataViewModule } from 'primeng/dataview';
 import { DropdownModule } from 'primeng/dropdown';
+import { FieldsetModule } from 'primeng/fieldset';
 import { FullCalendarModule } from 'primeng/fullcalendar';
 import { MenuModule } from 'primeng/menu';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SidebarModule } from 'primeng/sidebar';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { StepsModule } from 'primeng/steps';
+import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { TreeModule } from 'primeng/tree';
 
@@ -38,11 +41,14 @@ const primeModules = [
   DataViewModule,
   DropdownModule,
   MenuModule,
+  FieldsetModule,
   FullCalendarModule,
   OverlayPanelModule,
+  ProgressSpinnerModule,
   SidebarModule,
   SplitButtonModule,
   StepsModule,
+  TableModule,
   ToastModule,
   TreeModule
 ];

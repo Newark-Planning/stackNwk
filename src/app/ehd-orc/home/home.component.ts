@@ -3,12 +3,12 @@ import { Record } from '../../shared/models';
 import { AirService } from '../../shared/services/air.service';
 
 @Component({
-  selector: 'app-rc-home',
+  selector: 'app-orc-home',
   styleUrls: ['./home.component.scss'],
   templateUrl: './home.component.html'
 })
 
-export class RcHomeComponent implements OnInit {
+export class OrcHomeComponent implements OnInit {
   splashTitle$: Array<Record>;
   article$: Array<Record>;
   name: Array<any>;

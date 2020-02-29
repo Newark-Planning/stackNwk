@@ -2,6 +2,8 @@
     "collapsedIcon": "fa fa-folder",
     "expandedIcon": "fa fa-folder-open",
     "label": "2019 Meeting Minutes",
+    "leaf": false,
+    "selectable": false,
     "children": [{
         "label": "2019 ZBA Meeting 01 Minutes",
         "icon": "pi pi-file-pdf",
@@ -392,6 +394,8 @@
     "collapsedIcon": "fa fa-folder",
     "expandedIcon": "fa fa-folder-open",
     "label": "2019 Meeting Minutes",
+    "leaf": false,
+    "selectable": false,
     "children": [{
         "label": "2020 ZBA Meeting 01 Minutes",
         "icon": "pi pi-file-pdf",

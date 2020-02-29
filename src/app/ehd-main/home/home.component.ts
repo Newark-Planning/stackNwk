@@ -16,12 +16,12 @@ export class EhdHomeComponent implements OnInit {
     'background-image': "url('assets/img/NwkDawn.jpg')"
   };
   button$ = [
-    { icon: 'pop-out', index: 1, text: 'Housing', textSmall: 'Housing' },
-    { icon: 'pop-out', index: 2, text: 'Opportunity Zones', textSmall: 'Opportunity Zoness' },
+    { icon: 'pop-out', index: 1, text: 'Housing', textSmall: 'Housing', parentLink: '/ohf' },
+    { icon: 'pop-out', index: 2, text: 'Opportunity Zones', textSmall: 'Opportunity Zones', parentLink: '/oz' },
     { icon: 'pop-out', index: 3, text: 'Planning & Zoning', textSmall: 'Planning & Zoning', parentLink: '/opz' },
-    { icon: 'pop-out', index: 4, text: 'Property Management', textSmall: 'Property Mgmt' },
-    { icon: 'pop-out', index: 5, text: 'Rent Control', textSmall: 'Rent Control'},
-    { icon: 'pop-out', index: 6, text: 'Tenant Legal Services', textSmall: 'Tenant Legal Services' }
+    { icon: 'pop-out', index: 4, text: 'Property Management', textSmall: 'Property Mgmt', parentLink: '/opm' },
+    { icon: 'pop-out', index: 5, text: 'Rent Control', textSmall: 'Rent Control', parentLink: '/orc'},
+    { icon: 'pop-out', index: 6, text: 'Tenant Legal Services', textSmall: 'Tenant Legal Services', parentLink: '/otls' }
   ];
   constructor(
     public airData: AirService
