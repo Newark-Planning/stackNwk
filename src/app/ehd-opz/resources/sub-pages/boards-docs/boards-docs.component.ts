@@ -13,20 +13,47 @@ export class BoardsDocsDataComponent implements OnInit {
   loading = false;
   data: Array<DataItem>;
   files2019: Array<any> = [];
+  fullScreen = false;
+  iframeVis = false;
+  loaded = false;
+  sidebarVisibility;
+  displayDialog: boolean;
+  listOfData: Array<any>;
+  cols: Array<any>;
   filesTree: Array<DataItem> = [
     {
     children: [
       {
+        children: [
+          {
+            data: {link: 'zba/agendas', year: 2019},
+            icon: 'pi pi-file-pdf',
+            label: '2019 Meeting Agendas'
+          },
+          {
+            data: {link: 'zba/agendas', year: 2020},
+            icon: 'pi pi-file-pdf',
+            label: '2020 Meeting Agendas'
+        }],
         collapsedIcon: 'fa fa-folder',
-        data: 'zba/agendas',
         expandedIcon: 'fa fa-folder-open',
         label: 'Agendas',
         leaf: false,
         selectable: false
       },
       {
+        children: [
+          {
+            data: {link: 'zba/minutes', year: 2019},
+            icon: 'pi pi-file-pdf',
+            label: '2019 Meeting Minutes',
+          },
+          {
+            data: {link: 'zba/minutes', year: 2020},
+            icon: 'pi pi-file-pdf',
+            label: '2020 Meeting Minutes'
+        }],
         collapsedIcon: 'fa fa-folder',
-        data: 'zba/minutes',
         expandedIcon: 'fa fa-folder-open',
         label: 'Minutes',
         leaf: false,
@@ -42,16 +69,37 @@ export class BoardsDocsDataComponent implements OnInit {
     {
     children: [
       {
+        children: [
+        {
+          data: {link: 'cpb/agendas', year: 2019},
+          icon: 'pi pi-file-pdf',
+          label: '2019 Meeting Agendas'
+        },
+        {
+          data: {link: 'cpb/agendas', year: 2020},
+          icon: 'pi pi-file-pdf',
+          label: '2020 Meeting Agendas'
+        }],
         collapsedIcon: 'fa fa-folder',
-        data: 'cpb/agendas',
         expandedIcon: 'fa fa-folder-open',
         label: 'Agendas',
         leaf: false,
         selectable: false
       },
       {
+        children: [
+          {
+            data: {link: 'cpb/minutes', year: 2019},
+            icon: 'pi pi-file-pdf',
+            label: '2019 Meeting Minutes'
+          },
+          {
+            data: {link: 'cpb/minutes', year: 2020},
+            icon: 'pi pi-file-pdf',
+            label: '2020 Meeting Minutes'
+        }],
         collapsedIcon: 'fa fa-folder',
-        data: 'cpb/minutes',
+        data: '',
         expandedIcon: 'fa fa-folder-open',
         label: 'Minutes',
         leaf: false,
@@ -64,7 +112,8 @@ export class BoardsDocsDataComponent implements OnInit {
     selectable: false
     }
   ];
-  selectedFile: DataItem | null;
+  selectedGroup: DataItem | null;
+  selectedDoc: DataItem | null;
 
   constructor(
     public jsonData: JsonDataService,
@@ -74,15 +123,17 @@ export class BoardsDocsDataComponent implements OnInit {
   ngOnInit(): any {
         // tslint:disable: no-null-keyword no-non-null-assertion
     this.loading = true;
+    this.cols = [
+      { field: 'id', header: 'Id', width: 'ui-g-2' },
+      { field: 'label', header: 'Document', width: 'ui-g-8' },
+      { field: 'pubDate', header: 'Published', width: 'ui-g-2', date: true }
+    ];
   }
 
-  nodeSelect(file: DataItem | null): any {
-    if (file !== this.selectedFile) {this.selectedFile = file; }
-    (this.selectedFile)
-    // tslint:disable: no-null-keyword no-non-null-assertion
-    ? this.selectedFile.data!.pubDate! = new Date(file!.data!.pubDate!)
-    // tslint:disable-next-line: no-console
-    : console.log('no file here');
+  nodeSelect(group: DataItem | null): any {
+    if (group !== this.selectedGroup) {this.selectedGroup = group; }
+    this.jsonData.getFiles(group!.data!.link)
+    .then((files: Array<DataItem>) => this.listOfData = files);
   }
   loadNode(event: any): any {
     if (event.node.data && event.node.children === undefined) {

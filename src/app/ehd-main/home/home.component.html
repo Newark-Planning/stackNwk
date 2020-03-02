@@ -20,3 +20,31 @@
         </button>
     </div>
 </app-splash>
+<section class="secondary-content">
+    <div class="p-grid p-align-stretch vertical-container">
+        <div class="p-grid p-col-4">
+        <p-card header="EHD" class="p-col-12 director-grid">
+            <p-header>
+                Director Allison Ladd
+            </p-header>
+            Body Content
+            <p-footer>
+                Footer content here
+            </p-footer>
+        </p-card>  
+        </div>
+        <div class="p-col-8 office-grid">
+            <div class="p-grid p-align-stretch">
+                <p-card class="p-col-6" *ngFor="let node of ehdOrg" header="{{node.text}}">
+                    <p-header>
+                        <img height="5vh" width="auto" src="Card" src="https://dl.airtable.com/.attachments/f2cc8ae7b8757b741c6485e4ece1871b/47c2c848/Image08October20191121PM.jpg">
+                    </p-header>
+                    {{ node.officer }}
+                    <p-footer>
+                        Footer content here
+                    </p-footer>
+                </p-card>
+            </div>
+        </div>
+    </div>
+</section>

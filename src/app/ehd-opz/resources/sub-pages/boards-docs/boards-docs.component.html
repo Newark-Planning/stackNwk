@@ -4,22 +4,66 @@
     [filter]="true"
     filterPlaceholder="Search, Try 'ZBA-2019-01'"
     selectionMode="single"
-    [(selection)]="selectedFile"
-    (onNodeExpand)="loadNode($event)"
-    (onNodeSelect)="nodeSelect(selectedFile)"
+    [(selection)]="selectedGroup"
+    (onNodeSelect)="nodeSelect(selectedGroup)"
     [style]="{'height': '76vh'}">
 </p-tree>
-<p-card *ngIf="selectedFile" class="ui-g-8" [ngStyle]="{'height': '76vh'}">
-    <p-header>
-        <h2 class="ui-g-12" [ngStyle]="{'margin-top': '0'}">{{ selectedFile.label }}</h2>
-    </p-header>
-    <iframe 
-        *ngIf="selectedFile"
-        class="ui-g-12"
-        [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedFile.data.embedLink)"
-        [ngStyle]="{'height': '66vh'}">
-    </iframe>
-    <p-footer>
-        <h2>{{ selectedFile.data.pubDate | date}}</h2>
-    </p-footer>
-</p-card>
+<p-table #dt
+    class="ui-g-8"
+    [value]="listOfData"
+    (onRowSelect)="sidebarVisibility = true"
+    selectionMode="single"
+    [(selection)]="selectedDoc"
+    [columns]="cols"
+    dataKey="data.id">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field" [ngSwitch]="col.field" [class]="col.width">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data let-columns="columns">
+        <tr [pSelectableRow]="data">
+            <td *ngFor="let col of columns" [class]="col.width">
+                <ng-container *ngIf="col.date">
+                    {{ data.data[col.field] | date }}
+                </ng-container>
+                <ng-container *ngIf="!col.date">
+                    {{ data.data[col.field] }}
+                </ng-container>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-data let-columns>
+        <tr>
+            <td [attr.colspan]="columns.length + 1">
+                <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
+                    <div class="ui-g-12 ui-md-9">
+                        <div class="ui-g">
+                            <div>{{ data.data.id }}</div>
+                            <div>{{ data.label }}</div>
+                            <div>{{ data.data.pubDate }}</div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-sidebar *ngIf="selectedDoc" [(fullScreen)]="fullScreen" [(visible)]="sidebarVisibility" styleClass="ui-sidebar-lg" position="right">
+    <h2 style="font-weight:normal">{{ selectedDoc.label }}</h2>
+    <p-fieldset legend="View Doc" (onBeforeToggle)="iframeVis = true" [toggleable]="true" [collapsed]="true">
+        <iframe class="ui-g-12" [ngStyle]="{'border':'none','height':'70vh'}" *ngIf="iframeVis === true"
+            [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.data.embedLink)">
+        </iframe>
+    </p-fieldset>
+    <p-fieldset legend="Info" [toggleable]="true">
+        <h3 style="font-weight:normal">Published {{ selectedDoc.data.pubDate | date}}</h3>
+        <h3 style="font-weight:normal">{{ selectedDoc.data.description }}</h3>
+    </p-fieldset>
+    <button type="button" class="btn btn-primary" (click)="sidebarVisibility = false">
+        back
+    </button>
+</p-sidebar>

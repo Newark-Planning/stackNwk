@@ -2465,11 +2465,9 @@ body .ui-table .ui-column-resizer-helper {
     body .ui-table.ui-table-responsive .ui-paginator-top {
         border-bottom: 1px solid $black-alt;
     }
-
     body .ui-table.ui-table-responsive .ui-paginator-bottom {
         border-top: 1px solid $black-alt;
     }
-
     body .ui-table.ui-table-responsive .ui-table-tbody>tr>td {
         border: 0 none;
     }
@@ -3077,24 +3075,25 @@ body .ui-organizationchart .ui-organizationchart-node-content.ui-state-highlight
 }
 
 body .ui-organizationchart .ui-organizationchart-line-down {
-    background-color: $black-alt;
+    background-color: $app-info-color;
+    width: 3px;
 }
 
 body .ui-organizationchart .ui-organizationchart-line-left {
-    border-right: 1px solid $black-alt;
-    border-color: $black-alt;
+    border-right: 2px solid $app-info-color;
+    border-color: $app-info-color;
 }
 
 body .ui-organizationchart .ui-organizationchart-line-top {
-    border-top: 1px solid $black-alt;
-    border-color: $black-alt;
+    border-top: 2px solid $app-info-color;
+    border-color: $app-info-color;
 }
 
 body .ui-organizationchart .ui-organizationchart-node-content {
-    border: 1px solid $black-alt;
-    background-color: #323232;
-    color: #dedede;
-    padding: 0.571em 1em;
+    border-top: 2px solid $app-info-color;
+    background-color: $white;
+    color: $black;
+    padding: 0;
 }
 
 body .ui-organizationchart .ui-organizationchart-node-content .ui-node-toggler {
@@ -4579,5 +4578,6 @@ body .ui-fluid .ui-inplace.ui-inplace-closable .ui-inplace-content> :first-child
     width: calc(100% - 2.357em);
 }
 
+@import "../../node_modules/primeflex/primeflex";
 
 /* Add your customizations of theme here */

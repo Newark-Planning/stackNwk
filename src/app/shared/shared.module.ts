@@ -25,6 +25,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FieldsetModule } from 'primeng/fieldset';
 import { FullCalendarModule } from 'primeng/fullcalendar';
 import { MenuModule } from 'primeng/menu';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SidebarModule } from 'primeng/sidebar';
@@ -43,6 +44,7 @@ const primeModules = [
   MenuModule,
   FieldsetModule,
   FullCalendarModule,
+  OrganizationChartModule,
   OverlayPanelModule,
   ProgressSpinnerModule,
   SidebarModule,
