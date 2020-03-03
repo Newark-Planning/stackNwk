@@ -20,12 +20,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
-import { DataViewModule } from 'primeng/dataview';
+import { ContextMenuModule } from 'primeng/contextmenu';
 import { DropdownModule } from 'primeng/dropdown';
 import { FieldsetModule } from 'primeng/fieldset';
 import { FullCalendarModule } from 'primeng/fullcalendar';
 import { MenuModule } from 'primeng/menu';
-import { OrganizationChartModule } from 'primeng/organizationchart';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SidebarModule } from 'primeng/sidebar';
@@ -39,12 +38,11 @@ const primeModules = [
   ButtonModule,
   CardModule,
   CarouselModule,
-  DataViewModule,
+  ContextMenuModule,
   DropdownModule,
   MenuModule,
   FieldsetModule,
   FullCalendarModule,
-  OrganizationChartModule,
   OverlayPanelModule,
   ProgressSpinnerModule,
   SidebarModule,

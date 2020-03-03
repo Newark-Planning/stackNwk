@@ -15,16 +15,14 @@ export interface MyRoute extends Route {
   title?: string;
 }
 export interface DataItem extends TreeNode {
-  data?: {
-    color?: string;
-    description?: string;
-    docId?: string;
-    embedLink?: string;
-    id?: number;
-    link?: string;
-    pubDate?: string | Date;
-    type?: string;
-  };
+  color?: string;
+  description?: string;
+  docId?: string;
+  embedLink?: string;
+  id?: number;
+  link?: string;
+  pubDate?: string | Date;
+  type?: string;
 }
 export interface SubComponent {
   icon?: string;

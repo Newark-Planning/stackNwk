@@ -1,6 +1,8 @@
 @import '../../app.component.scss';
+
 .splash-buttons {
     flex-basis: content;
+
     .btn {
         display: flex;
         box-shadow: .1rem .1rem .25rem black;
@@ -21,6 +23,7 @@
     font-size: calc(var(--vw) * 0.01 + 25px);
     border-radius: .5rem;
     margin: unset !important;
+
     h2 {
         margin: unset;
         text-align: center;
@@ -59,12 +62,4 @@
 .ehdOrg {
     font-size: 1.5rem;
     margin: auto;
-}
-
-.director-grid {
-    height: auto;
-}
-
-.office-grid {
-    height: 40vh;
 }

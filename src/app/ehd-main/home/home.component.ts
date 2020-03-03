@@ -14,7 +14,9 @@ export class EhdHomeComponent implements OnInit {
   article$: Array<Record>;
   name: Array<any>;
   backgroundStyle = {
-    'background-image': "url('assets/img/NwkDawn.jpg')"
+    'background-image': "url('assets/img/NwkDawn.jpg')",
+    height: '33vh',
+    padding: '1.25rem'
   };
   button$ = [
     { icon: 'pop-out', index: 1, text: 'Housing', textSmall: 'Housing', parentLink: '/ohf' },

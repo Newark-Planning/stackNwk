@@ -1,21 +1,28 @@
-<p-tree 
-    class="ui-g-4 ui-fluid" 
+<div class="p-grid">
+<p-tree
+    class="p-col-4"
+    styleClass="p-col-12" 
     [value]="filesTree"
-    [filter]="true"
-    filterPlaceholder="Search, Try 'ZBA-2019-01'"
     selectionMode="single"
     [(selection)]="selectedGroup"
     (onNodeSelect)="nodeSelect(selectedGroup)"
     [style]="{'height': '76vh'}">
 </p-tree>
-<p-table #dt
-    class="ui-g-8"
+<p-table
+    class="p-col-8"
+    styleClass="p-col-12" 
     [value]="listOfData"
     (onRowSelect)="sidebarVisibility = true"
-    selectionMode="single"
+    [(contextMenuSelection)]="selectedDoc"
+    [contextMenu]="cm"
     [(selection)]="selectedDoc"
+    selectionMode="single"
     [columns]="cols"
-    dataKey="data.id">
+    dataKey="id"
+    scrollable="true"
+    scrollHeight="70vh"
+    [rows]="18"    
+    [responsive]="true">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns" [pSortableColumn]="col.field" [ngSwitch]="col.field" [class]="col.width">
@@ -25,45 +32,35 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-data let-columns="columns">
-        <tr [pSelectableRow]="data">
+        <tr [pSelectableRow]="data" [pContextMenuRow]="data">
             <td *ngFor="let col of columns" [class]="col.width">
                 <ng-container *ngIf="col.date">
-                    {{ data.data[col.field] | date }}
+                    {{ data[col.field] | date }}
                 </ng-container>
                 <ng-container *ngIf="!col.date">
-                    {{ data.data[col.field] }}
+                    {{ data[col.field] }}
                 </ng-container>
             </td>
         </tr>
     </ng-template>
-    <ng-template pTemplate="rowexpansion" let-data let-columns>
-        <tr>
-            <td [attr.colspan]="columns.length + 1">
-                <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
-                    <div class="ui-g-12 ui-md-9">
-                        <div class="ui-g">
-                            <div>{{ data.data.id }}</div>
-                            <div>{{ data.label }}</div>
-                            <div>{{ data.data.pubDate }}</div>
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
+    <ng-template pTemplate="summary">
+        {{listOfData.length}} Files
     </ng-template>
 </p-table>
-<p-sidebar *ngIf="selectedDoc" [(fullScreen)]="fullScreen" [(visible)]="sidebarVisibility" styleClass="ui-sidebar-lg" position="right">
+</div>
+<p-sidebar *ngIf="selectedDoc" [(fullScreen)]="fullScreen" [(visible)]="sidebarVisibility" styleClass="p-col-12 p-md-10 p-lg-8 p-xl-6" position="right">
     <h2 style="font-weight:normal">{{ selectedDoc.label }}</h2>
     <p-fieldset legend="View Doc" (onBeforeToggle)="iframeVis = true" [toggleable]="true" [collapsed]="true">
         <iframe class="ui-g-12" [ngStyle]="{'border':'none','height':'70vh'}" *ngIf="iframeVis === true"
-            [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.data.embedLink)">
+            [src]="sanitizer.bypassSecurityTrustResourceUrl(selectedDoc.embedLink)">
         </iframe>
     </p-fieldset>
     <p-fieldset legend="Info" [toggleable]="true">
-        <h3 style="font-weight:normal">Published {{ selectedDoc.data.pubDate | date}}</h3>
-        <h3 style="font-weight:normal">{{ selectedDoc.data.description }}</h3>
+        <h3 style="font-weight:normal">Published {{ selectedDoc.pubDate | date}}</h3>
+        <h3 style="font-weight:normal">{{ selectedDoc.description }}</h3>
     </p-fieldset>
     <button type="button" class="btn btn-primary" (click)="sidebarVisibility = false">
         back
     </button>
 </p-sidebar>
+<p-contextMenu #cm [model]="tableMenu"></p-contextMenu>

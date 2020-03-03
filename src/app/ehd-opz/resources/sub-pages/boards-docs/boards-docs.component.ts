@@ -10,7 +10,7 @@ import { JsonDataService } from '../../../../shared/services';
 })
 
 export class BoardsDocsDataComponent implements OnInit {
-  loading = false;
+  loading = true;
   data: Array<DataItem>;
   files2019: Array<any> = [];
   fullScreen = false;
@@ -18,7 +18,9 @@ export class BoardsDocsDataComponent implements OnInit {
   loaded = false;
   sidebarVisibility;
   displayDialog: boolean;
-  listOfData: Array<any>;
+  listOfData: Array<any> = [{
+    label: 'Look for board meeting minutes, agendas and other documents left'
+  }];
   cols: Array<any>;
   filesTree: Array<DataItem> = [
     {
@@ -46,7 +48,7 @@ export class BoardsDocsDataComponent implements OnInit {
           {
             data: {link: 'zba/minutes', year: 2019},
             icon: 'pi pi-file-pdf',
-            label: '2019 Meeting Minutes',
+            label: '2019 Meeting Minutes'
           },
           {
             data: {link: 'zba/minutes', year: 2020},
@@ -112,6 +114,11 @@ export class BoardsDocsDataComponent implements OnInit {
     selectable: false
     }
   ];
+  tableMenu = [
+      { icon: 'pi pi-info-circle', label: 'info', command: () => this.sidebarVisibility = true},
+      // tslint:disable-next-line: no-non-null-assertion
+      { icon: 'pi pi-download', label: 'download', command: () => this.download(this.selectedDoc!)}
+  ];
   selectedGroup: DataItem | null;
   selectedDoc: DataItem | null;
 
@@ -131,14 +138,19 @@ export class BoardsDocsDataComponent implements OnInit {
   }
 
   nodeSelect(group: DataItem | null): any {
-    if (group !== this.selectedGroup) {this.selectedGroup = group; }
-    this.jsonData.getFiles(group!.data!.link)
-    .then((files: Array<DataItem>) => this.listOfData = files);
+    if (this.loading) { this.loading = false; }
+    if (group !== this.selectedGroup) { this.selectedGroup = group; }
+    this.jsonData.getFiles(group!.data.link)
+    .then((files: Array<DataItem>) => this.listOfData = files.filter(file => file.pubDate!.toString()
+    .startsWith(group!.data.year)));
   }
   loadNode(event: any): any {
     if (event.node.data && event.node.children === undefined) {
       this.jsonData.getFiles(event.node.data)
         .then((files: Array<DataItem>) => event.node.children = files);
     }
+  }
+  download(doc: DataItem): any {
+    window.open(`https://drive.google.com/uc?export=download&id=${doc.docId}`, '_blank');
   }
 }
