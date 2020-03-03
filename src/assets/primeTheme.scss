@@ -2165,11 +2165,12 @@ body .ui-toolbar .ui-toolbar-separator {
 }
 
 body .ui-card {
+    border: 1px solid $app-info-color;
     background-color: $white;
     color: $black;
-    -webkit-box-shadow: 0 1px 3px 0 $app-info-color, 0 1px 1px 0 $app-info-color, 0 2px 1px -1px $app-info-color;
-    -moz-box-shadow: 0 1px 3px 0 $app-info-color, 0 1px 1px 0 $app-info-color, 0 2px 1px -1px $app-info-color;
-    box-shadow: 0 1px 3px 0 $app-info-color, 0 1px 1px 0 $app-info-color, 0 2px 1px -1px $app-info-color;
+    -webkit-box-shadow: 0 0.15rem 0 0 $app-info-color;
+    -moz-box-shadow: 0 0.15rem 0 0 $app-info-color;
+    box-shadow: 0 0.15rem 0 0 $app-info-color;
 }
 
 body .ui-paginator {

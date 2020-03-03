@@ -21,30 +21,25 @@
     </div> -->
 </app-splash>
 <section class="secondary-content">
-    <div class="p-grid">
-        <div class="p-grid p-md-4 p-col-12">
-            <p-card header="EHD" class="p-col-12 director-grid" [style]="{'height':'100%'}">
-                <p-header>
-                    Director Allison Ladd
-                </p-header>
-                Body Content
-                <p-footer>
-                    <button class="btn btn-success btn-lg btn-block " routerLink="/ehd/about">
-                        <clr-icon [attr.shape]='"users"' size='24'></clr-icon>
-                        <span>About EHD</span>
-                    </button>
-                </p-footer>
-            </p-card>
-        </div>
+    <div class="p-grid" [style]="{'height':'50vh'}">
+        <p-card header="EHD" class="p-md-4 p-col-12" [style]="{'height':'100%'}">
+            <p-header>
+                <img src="../../../assets/img/Allison_Fitzgibbon.png" [style]="{'padding':'1rem'}">
+            </p-header>
+            Director Allison Ladd
+            <p-footer>
+                <button class="btn btn-success btn-lg btn-block " routerLink="/ehd/about">
+                    <clr-icon [attr.shape]='"users"' size='24'></clr-icon>
+                    <span>About EHD</span>
+                </button>
+            </p-footer>
+        </p-card>
         <div class="p-md-8 p-col-12 office-grid">
             <div class="p-grid">
-                <p-card class="p-col-6" *ngFor="let node of ehdOrg" header="{{node.text}}">
-                    {{ node.officer }}
+                <p-card header="Our Offices" class="p-col-6" [style]="divisionTitle"></p-card>
+                <p-card *ngFor="let node of ehdOrg" class="p-col-6" [style]="divisionButton" header="{{ node.text }}" subheader="Led by {{ node.officer }}" [routerLink]="node.parentLink">
                     <p-footer>
-                        <button class="btn btn-primary btn-lg btn-block " [routerLink]="node.parentLink">
                             <clr-icon [attr.shape]='"pop-out"' size='24'></clr-icon>
-                            <span>Office Home Page</span>
-                        </button>
                     </p-footer>
                 </p-card>
             </div>

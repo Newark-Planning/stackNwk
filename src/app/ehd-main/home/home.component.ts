@@ -14,9 +14,23 @@ export class EhdHomeComponent implements OnInit {
   article$: Array<Record>;
   name: Array<any>;
   backgroundStyle = {
-    'background-image': "url('assets/img/NwkDawn.jpg')",
+    background: 'url(assets/img/NwkCitySky.png) center center / cover, rgb(10, 189, 183)',
+    'background-blend-mode': 'soft-light',
     height: '33vh',
-    padding: '1.25rem'
+    padding: '2rem'
+  };
+  divisionButton = {
+    border: 'none',
+    'box-shadow': 'none',
+    margin: 'auto',
+    padding: '0.5em'
+  };
+  divisionTitle = {
+    'background-color': '#fdcb06',
+    color: 'white',
+    'font-size': '1.5rem',
+    height: '12vh',
+    'text-align': 'center'
   };
   button$ = [
     { icon: 'pop-out', index: 1, text: 'Housing', textSmall: 'Housing', parentLink: '/ohf' },
@@ -28,12 +42,13 @@ export class EhdHomeComponent implements OnInit {
   ];
   selectedNode: TreeNode;
   ehdOrg: Array<any> = [
-    { text: 'Housing', officer: 'Chris Watson', parentLink: '/ohf' },
-    { text: 'Opportunity Zones', officer: 'Chris Watson', parentLink: '/oz' },
+    { text: 'Affordable Housing', officer: 'Vacant', parentLink: '/ah' },
+    { text: 'Housing', officer: 'Jenine Hazzard-Williams', parentLink: '/ohf' },
+    { text: 'Opportunity Zones', officer: 'Chi', parentLink: '/oz' },
     { text: 'Planning & Zoning', officer: 'Chris Watson', parentLink: '/opz' },
-    { text: 'Property Management', officer: 'Chris Watson', parentLink: '/opm' },
-    { text: 'Rent Control', officer: 'Chris Watson', parentLink: '/orc'},
-    { text: 'Tenant Legal Services', officer: 'Chris Watson', parentLink: '/otls' }
+    { text: 'Property Management', officer: 'Keith Hamilton', parentLink: '/opm' },
+    { text: 'Rent Control', officer: 'Jay Lee', parentLink: '/orc'},
+    { text: 'Tenant Legal Services', officer: 'Khabirah', parentLink: '/otls' }
   ];
   constructor(
     public airData: AirService
@@ -46,5 +61,5 @@ export class EhdHomeComponent implements OnInit {
         data => {
           this.splashTitle$ = data[records];
         });
-  }
+    }
 }
