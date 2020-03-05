@@ -1401,8 +1401,8 @@ body p-togglebutton.ng-dirty.ng-invalid .ui-button {
 body .ui-button {
     margin: 0;
     color: #212121;
-    background-color: #FFB300;
-    border: 1px solid #FFB300;
+    background-color: $app-warning-color;
+    border: 1px solid darken($app-warning-color, 10%);
     font-size: 14px;
     -moz-transition: background-color 0.2s, box-shadow 0.2s;
     -o-transition: background-color 0.2s, box-shadow 0.2s;
@@ -1411,23 +1411,23 @@ body .ui-button {
 }
 
 body .ui-button:enabled:hover {
-    background-color: #FFA000;
+    background-color: darken($app-warning-color, 10%);
     color: #212121;
-    border-color: #FFA000;
+    border-color: $app-warning-color;
 }
 
 body .ui-button:enabled:focus {
     outline: 0 none;
     outline-offset: 0px;
-    -webkit-box-shadow: 0 0 0 0.2em #ffe8b3;
-    -moz-box-shadow: 0 0 0 0.2em #ffe8b3;
-    box-shadow: 0 0 0 0.2em #ffe8b3;
+    -webkit-box-shadow: 0 0 0 0.2em lighten($app-warning-color, 50%);
+    -moz-box-shadow: 0 0 0 0.2em lighten($app-warning-color, 50%);
+    box-shadow: 0 0 0 0.2em lighten($app-warning-color, 50%);
 }
 
 body .ui-button:enabled:active {
-    background-color: #FF8F00;
+    background-color: darken($app-warning-color, 10%);
     color: #212121;
-    border-color: #FF8F00;
+    border-color: darken($app-warning-color, 10%);
 }
 
 body .ui-button.ui-button-text-only .ui-button-text {

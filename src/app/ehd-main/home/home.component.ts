@@ -20,17 +20,17 @@ export class EhdHomeComponent implements OnInit {
     padding: '2rem'
   };
   divisionButton = {
-    border: 'none',
-    'box-shadow': 'none',
-    margin: 'auto',
-    padding: '0.5em'
+    width: '100%'
   };
-  divisionTitle = {
-    'background-color': '#fdcb06',
+  divisions = {
+    'background-color': 'rgb(13, 71, 161)',
     color: 'white',
     'font-size': '1.5rem',
-    height: '12vh',
     'text-align': 'center'
+  };
+  divisionsDiv = {
+    margin: 'auto',
+    'min-height': '45vh'
   };
   button$ = [
     { icon: 'pop-out', index: 1, text: 'Housing', textSmall: 'Housing', parentLink: '/ohf' },

@@ -8,23 +8,12 @@
         <clr-icon shape='home' class='full-icon'></clr-icon>
         Welcome to EHD
     </h2>
-    <!-- <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button class="btn btn-secondary btn-success btn-lg btn-block" [routerLink]="['/ehd', 'about']">
-            <clr-icon shape='users' size='24'></clr-icon>
-            About EHD
-        </button>
-        <button *ngFor="let button of button$ " class="btn btn-primary btn-lg btn-block " [routerLink]="button.parentLink">
-          <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
-          <span class=" clr-hidden-sm-down ">{{ button.text }}</span>
-          <span class="clr-hidden-sm-up ">{{ button.textSmall }}</span>
-        </button>
-    </div> -->
 </app-splash>
 <section class="secondary-content">
     <div class="p-grid" [style]="{'height':'50vh'}">
-        <p-card header="EHD" class="p-md-4 p-col-12" [style]="{'height':'100%'}">
+        <p-card header="EHD" class="p-md-4 p-col-12" [style]="{'height':'100%', 'padding':'1rem'}">
             <p-header>
-                <img src="../../../assets/img/Allison_Fitzgibbon.png" [style]="{'padding':'1rem'}">
+                <img class="p-lg-6 p-col-12" src="../../../assets/img/Allison_Fitzgibbon.png" [style]="{'padding':'0','max-height': '33vh','border-radius': '.25rem'}">
             </p-header>
             Director Allison Ladd
             <p-footer>
@@ -34,15 +23,12 @@
                 </button>
             </p-footer>
         </p-card>
-        <div class="p-md-8 p-col-12 office-grid">
-            <div class="p-grid">
-                <p-card header="Our Offices" class="p-col-6" [style]="divisionTitle"></p-card>
-                <p-card *ngFor="let node of ehdOrg" class="p-col-6" [style]="divisionButton" header="{{ node.text }}" subheader="Led by {{ node.officer }}" [routerLink]="node.parentLink">
-                    <p-footer>
-                            <clr-icon [attr.shape]='"pop-out"' size='24'></clr-icon>
-                    </p-footer>
-                </p-card>
+        <p-card header="Our Offices" class="p-md-8 p-col-12" [style]="divisions">
+            <div class="p-grid p-justify-even" [style]="divisionsDiv">
+                <p-button *ngFor="let node of ehdOrg" label="Led by {{ node.officer }}" type="button" icon="pi pi-external-link" iconPos="right" class="p-md-6 p-col-12" [style]="divisionButton" [routerLink]="node.parentLink">
+                    <h2 [style]="{'font-size': '1rem', 'line-height': '2rem', 'margin': 'auto', 'font-weight':'600'}">{{ node.text }}</h2>
+                </p-button>
             </div>
-        </div>
+        </p-card>
     </div>
 </section>

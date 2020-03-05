@@ -1,4 +1,5 @@
 <p-steps [model]="appStatus" [readonly]="false"></p-steps>
-<p-overlayPanel #statusPanel [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'" [dismissable]="true" [showCloseIcon]="true">
-    <div *ngIf="currentStepData" innerHtml="{{ currentStepData | json }}"></div>
+<p-overlayPanel *ngIf="currentStepData" #statusPanel [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'" [dismissable]="true" [showCloseIcon]="true">
+    <div  innerHtml="{{ currentStepData | json }}">
+    </div>
 </p-overlayPanel>
