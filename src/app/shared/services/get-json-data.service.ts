@@ -17,5 +17,10 @@ export class JsonDataService {
         return this.http.get(`/assets/docs/${docs}.json`)
             .toPromise()
             .then(res => res as Array<DataItem>);
-        }
+    }
+    getSiteMap(): any {
+        return this.http.get('/assets/sitemap.json')
+            .toPromise()
+            .then(res => res as Array<any>);
+    }
 }

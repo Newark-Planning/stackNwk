@@ -14,9 +14,9 @@ import {
   MapService
 } from './services';
 
-import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
@@ -35,6 +35,7 @@ import { ToastModule } from 'primeng/toast';
 import { TreeModule } from 'primeng/tree';
 
 const primeModules = [
+  AutoCompleteModule,
   ButtonModule,
   CardModule,
   CarouselModule,
@@ -53,7 +54,6 @@ const primeModules = [
   TreeModule
 ];
 const matModules = [
-  MatSliderModule,
   MatTabsModule
 ];
 
