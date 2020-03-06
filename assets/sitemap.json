@@ -1,0 +1,22 @@
+[
+    { "office": "ehd", "path": "home", "title": "EHD Home" },
+    { "office": "ehd", "path": "about", "title": "About EHD" },
+    { "office": "opz", "path": "home", "title": "Planning & Zoning Home" },
+    { "office": "opz", "path": "about", "title": "About OPZ" },
+    { "office": "opz", "parent": "boards", "path": "cpb", "title": "Boards & Commissions: Planning Board" },
+    { "office": "opz", "parent": "boards", "path": "ec", "title": "Boards & Commissions: Environmental" },
+    { "office": "opz", "parent": "boards", "path": "lhpc", "title": "Boards & Commissions: LHPC" },
+    { "office": "opz", "parent": "boards", "path": "zba", "title": "Boards & Commissions: Zoning Board" },
+    { "office": "opz", "path": "team", "title": "Our Team" },
+    { "office": "opz", "path": "ourcity", "title": "Our City" },
+    { "office": "opz", "path": "planning", "title": "Planning" },
+    { "office": "opz", "parent": "zoning", "path": "zone-info", "title": "Zoning Info" },
+    { "office": "opz", "parent": "zoning", "path": "zone-res", "title": "Residential Zoning" },
+    { "office": "opz", "parent": "zoning", "path": "diagrams", "title": "Zoning Diagrams" },
+    { "office": "opz", "parent": "zoning", "path": "zone-regs", "title": "Zoning Regulations" },
+    { "office": "opz", "parent": "resources", "path": "res-apps", "title": "Applications" },
+    { "office": "opz", "parent": "resources", "path": "res-redev", "title": "Revelopment Plans" },
+    { "office": "opz", "parent": "resources", "path": "res-minutes", "title": "Board Minutes & Agendas" },
+    { "office": "opz", "path": "contact", "title": "Contact Us" },
+    { "office": "orc", "path": "home", "title": "Rent Control Home" }
+]
