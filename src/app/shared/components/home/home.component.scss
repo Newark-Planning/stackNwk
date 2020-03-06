@@ -1,4 +1,8 @@
 @import '../../../app.component.scss';
+.splash-page {
+    h2, h3 { font-weight: 600 !important;}
+}
+
 .splash-buttons {
     flex-basis: content;
     .btn {
@@ -53,5 +57,6 @@
 .secondary-content {
     height: auto;
     width: 100%;
+    margin-top: 1rem;
     margin-bottom: 2rem
 }

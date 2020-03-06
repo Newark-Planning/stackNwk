@@ -10,14 +10,18 @@ export interface SplashButton {
 
 export interface HomePage {
     backgroundStyling: {
-        'background-blend-mode': string;
-        'background-color': string;
-        'background-image': string;
-        'background-repeat': string;
-        'background-size': string;
+        background?: string;
+        height?: string;
+        padding?: string;
+        'background-attachment'?: string;
+        'background-blend-mode'?: string;
+        'background-color'?: string;
+        'background-image'?: string;
+        'background-repeat'?: string;
+        'background-size'?: string;
     };
     button$?: Array<SplashButton>;
-    division: string;
+    division: string | false;
     searchDisplay: boolean | string;
     specialButton?: SplashButton;
     splashTitle$?: Array<Record> | string;

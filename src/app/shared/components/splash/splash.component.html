@@ -5,7 +5,7 @@
                 <img [src]='logoSrc' class="clr-col-4 clr-col-sm-2 clr-col-lg-1" [routerLink]="[parentFragment, 'home']">
                 <ng-content select='[splash-page]'></ng-content>
             </div>
-            <div class="card-block clr-justify-content-center clr-col clr-col-sm-10 clr-col-12">
+            <div class="card-block clr-justify-content-center clr-col clr-col-12">
                 <div class="card-title clr-row clr-row-11">
                     <ng-content select='[splash-title]'></ng-content>
                     <ng-content select='[splash-subtitle]'></ng-content>
@@ -22,7 +22,7 @@
                     placeholder="What are you looking for?"
                     [dropdown]="true">
                     <ng-template let-page pTemplate="item">
-                        <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5; min-width: 50vw">
+                        <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
                             <span style="width:32px;display:inline-block;margin:5px 0 2px 5px">{{ page.office }}</span>
                             <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{ page.title }}</div>
                         </div>

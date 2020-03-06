@@ -1,18 +1,21 @@
 <app-splash [(ngModel)]="homePage" [backgroundSetting]='homePage.backgroundStyling' [searchDisplay]="homePage.searchDisplay">
-    <div splash-page class='clr-col'>
-        <h3 class='dept clr-hidden-xs-down'>Division of</h3>
+    <div splash-page class='splash-page clr-col'>
+        <h3 class='dept clr-hidden-xs-down' *ngIf="homePage.division">Division of</h3>
+        <h3 class='dept clr-hidden-xs-down' *ngIf="homePage.division === false">Department of</h3>
         <br>
-        <h2 class='dept-ehd clr-hidden-xs-down'>{{ homePage.division }}</h2>
+        <h2 class='dept-ehd clr-hidden-xs-down' *ngIf="homePage.division">{{ homePage.division }}</h2>
+        <h2 class='dept-ehd clr-hidden-xs-down' *ngIf="homePage.division === false">Economic & Housing Development</h2>
     </div>
-    <h2 splash-title class='splash-title' *ngFor='let splash of homePage.splashTitle$'>
+    <h2 splash-title class='splash-title'>
         <clr-icon shape='home' class='full-icon clr-hidden-sm-down'></clr-icon>
-        {{ splash.fields['Content'] }}
+        {{ homePage.splashTitle$ }}
     </h2>
     <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
-        <button *ngIf="homePage.specialButton" class="btn btn-secondary btn-success btn-lg btn-block" [routerLink]="homePage.specialButton.link">
+        <button *ngIf="homePage.specialButton" class="btn btn-secondary btn-success btn-lg btn-block"
+            [routerLink]="homePage.specialButton.link">
             <clr-icon [attr.shape]='homePage.specialButton.icon' size='24'></clr-icon>
-                <span class="clr-hidden-sm-down">{{ homePage.specialButton.text }}</span>
-                <span class="clr-hidden-sm-up">{{ homePage.specialButton.textSmall }}</span>
+            <span class="clr-hidden-sm-down">{{ homePage.specialButton.text }}</span>
+            <span class="clr-hidden-sm-up">{{ homePage.specialButton.textSmall }}</span>
         </button>
         <a *ngFor="let button of homePage.button$" class="btn btn-lg btn-block" href="{{ button.link }}">
             <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
@@ -21,3 +24,6 @@
         </a>
     </div>
 </app-splash>
+<section class="secondary-content">
+    <ng-content select='[secondary-content]'></ng-content>
+</section>
