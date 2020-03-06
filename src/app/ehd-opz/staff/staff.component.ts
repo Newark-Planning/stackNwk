@@ -2,7 +2,7 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { Record, SubComponent } from '../../shared/models';
+import { Page, Record } from '../../shared/models';
 import { AirService } from '../../shared/services/air.service';
 
 @Component({
@@ -14,33 +14,32 @@ import { AirService } from '../../shared/services/air.service';
 })
 
 export class OpzStaffComponent implements OnInit {
-  splashTitle$: Record;
   staff$: Array<Record>;
   activeFragment;
   activeViewName;
-  backgroundStyle = {
-    'background-image': "url('assets/img/NwkCitySky.png')"
+  pageDetails: Page = {
+    backgroundStyling: {
+      background: 'url(assets/img/NwkCitySky.png) center center / cover, rgb(10, 189, 183)',
+      'background-attachment': 'fixed',
+      'background-blend-mode': 'soft-light',
+      height: '33vh',
+      padding: '2rem'
+    },
+    division: 'Planning & Zoning',
+    searchDisplay: 'none',
+    subComponents: [
+      { icon: 'calendar', index: 1, text: 'Our Leadership', textSmall: 'Leadership', link: 'leadership' },
+      { icon: 'file', index: 2, text: 'Planning Staff', textSmall: 'Planning', link: 'planners' },
+      { icon: 'map', index: 3, text: 'Zoning & Support Staff', textSmall: 'Zoning & Support', link: 'support' }
+    ]
   };
-  subComponents: Array<SubComponent | any>;
-  button$ = [
-    { icon: 'calendar', index: 1, text: 'Board Meetings', textSmall: 'Board Meetings' },
-    { icon: 'file', index: 2, text: 'Plans & Documents', textSmall: 'Plans & Docs' },
-    { icon: 'map', index: 3, text: 'Zoning Map', textSmall: 'Zoning Map' },
-    { icon: 'pop-out', index: 4, text: 'Application Portal', textSmall: 'Applications' }
-  ];
 
   constructor(
     public airData: AirService,
     public clipboard: Clipboard,
     public messageService: MessageService,
     private readonly router: Router
-    ) {
-      this.subComponents = [
-        { label: 'Our Leadership', path: 'leadership' },
-        { label: 'Planning Staff', path: 'planners' },
-        { label: 'Zoning & Support Staff', path: 'support' }
-      ];
-    }
+    ) { }
 
   ngOnInit(): void {
     this.activeFragment = this.router.url.slice(this.router.url.lastIndexOf('/') + 1);
@@ -50,7 +49,7 @@ export class OpzStaffComponent implements OnInit {
     this.airData.getRecords('PageComps', "filterByFormula=%7BName%7D%3D'Staff+Splash+Title'")
       .subscribe(
         data => {
-          this.splashTitle$ = data[records];
+          this.pageDetails.splashTitle$ = data[records];
         });
   }
   copySuccess(object): any {

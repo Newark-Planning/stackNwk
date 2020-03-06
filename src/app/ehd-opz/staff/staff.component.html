@@ -1,54 +1,55 @@
-<app-splash [backgroundSetting]='backgroundStyle' parentFragment='/opz'>
-    <div splash-page class='clr-col'>
-        <h3 class='dept clr-hidden-xs-down'>division of</h3>
-        <br>
-        <h2 class='dept-ehd clr-hidden-xs-down'>Planning & Zoning</h2>
+<app-page [page]="pageDetails">
+    <nav nav-tab mat-tab-nav-bar [ngStyle]="{'margin':'.5rem', 'background': 'white', 'padding': '1rem', 'border-radius': '0.25rem'}">
+        <a mat-tab-link *ngFor="let link of pageDetails.subComponents" [routerLink]="link.link" routerLinkActive
+            #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.link)'>
+            {{link.text}}
+        </a>
+    </nav>
+    <div id="tabs-content" secondary-content class="p-grid" [style]="{'height':'50vh'}">
+        <p-card header="Our Staff" class="p-md-6 p-col-12"
+            [style]="{'height':'100%', 'padding':'1rem','text-align':'center'}">
+            <!-- <p-header [style]="{'display':'flex','justify-content': 'center'}">
+                <img class="p-lg-6 p-col-12" src="../../../assets/img/Allison_Fitzgibbon.png"
+                    [style]="{'padding':'0','width': 'auto','max-height': '33vh','border-radius': '.25rem','border':'10px solid white'}">
+            </p-header> -->
+        </p-card>
+        <p-card *ngFor='let staff of staff$' class="p-md-6 p-col-12" [style]="{'min-height':'58vh'}">
+            <p-header>
+                <h2 [style]="{'text-align':'left', 'margin':'.85rem .85rem 0 1.85rem'}" class="card-title">{{ staff.fields['Name-First']}} {{ staff.fields['Name-Last'] }}</h2>
+            </p-header>
+            <p-subheader>
+                <span class="label label-info" [ngStyle]="{'font-size': '.75rem','margin':'0 0 .5rem 1.5rem'}" innerHtml="{{ staff.fields['Position'] }}"></span>
+            </p-subheader>
+            <div class="p-grid p-justify-center">
+                <div class="p-col-11">
+                    <img src="{{ staff.fields['Headshot'][0]['url'] }} " class='card-image' />
+                    <p innerHtml="{{ staff.fields['Bio'] }}"></p>
+                </div>
+            </div>
+            <p-footer class="p-grid p-justify-center">
+                <button class="btn btn-lg p-col-6" (click)="copyVal(staff.fields['Room'], 'Room Number')">
+                    <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
+                    City Hall | Room {{ staff.fields['Room'] }}</button>
+                <button class="btn btn-lg p-col-5" (click)="copyVal(staff.fields['Phone'], 'Phone Number')">
+                    <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
+                    {{ staff.fields['Phone'] }}
+                </button>
+                <button class="btn btn-lg p-col-12" (click)="copyVal(staff.fields['Email'], 'Email')">
+                    <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
+                    {{ staff.fields['Email'] }}
+                </button>
+            </p-footer>
+        </p-card>
     </div>
-    <h2 splash-title class='splash-title' *ngFor='let splash of splashTitle$'>
-        <clr-icon shape='users' class='full-icon'></clr-icon>
-        {{ splash.fields['Content'] }}
-    </h2>
-</app-splash>
-<section class='secondary-content'>
+</app-page>
+<!-- <section class='secondary-content'>
     <h2 class='clr-justify-content-center'>Our Staff</h2>
     <nav mat-tab-nav-bar [ngStyle]="{'margin':'.5rem' }">
         <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.path)'>
             {{link.label}}
         </a>
     </nav>
-    <div id="tabs-content">
-    <div class="clr-row clr-justify-content-center" *ngFor='let staff of staff$'>
-        <div class="clr-col-lg-8 clr-col-md-10 clr-col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">{{ staff.fields['Name-First']}} {{ staff.fields['Name-Last'] }}</h2>
-                    <span class="label label-info" [ngStyle]="{'font-size': '.75rem'}"
-                        innerHtml="{{ staff.fields['Position'] }}"></span>
-                </div>
-                <div class="card-block">
-                    <div class="clr-row clr-justify-content-center">
-                        <div class="clr-col-11">
-                            <img src="{{ staff.fields['Headshot'][0]['url'] }} " class='card-image'/>
-                            <p innerHtml="{{ staff.fields['Bio'] }}"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-lg clr-col-6" (click)="copyVal(staff.fields['Room'], 'Room Number')">
-                        <i class="pi pi-copy"  style="font-size: 1.1rem; vertical-align: sub"></i>
-                        City Hall | Room {{ staff.fields['Room'] }}</button>
-                    <button class="btn btn-lg clr-col-5" (click)="copyVal(staff.fields['Phone'], 'Phone Number')">
-                        <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
-                        {{ staff.fields['Phone'] }}
-                    </button>
-                    <button class="btn btn-lg clr-col-12" (click)="copyVal(staff.fields['Email'], 'Email')">
-                        <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
-                        {{ staff.fields['Email'] }}
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
+    <div id="tabs-content"> -->
+    <!-- </div>
+</section> -->
 <p-toast></p-toast>

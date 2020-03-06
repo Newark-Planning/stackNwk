@@ -1,0 +1,30 @@
+<app-splash [(ngModel)]="page" [backgroundSetting]='page.backgroundStyling' [searchDisplay]="page.searchDisplay">
+    <div splash-page class='splash-page clr-col'>
+        <h3 class='dept clr-hidden-xs-down' *ngIf="page.division">Division of</h3>
+        <h3 class='dept clr-hidden-xs-down' *ngIf="page.division === false">Department of</h3>
+        <br>
+        <h2 class='dept-ehd clr-hidden-xs-down' *ngIf="page.division">{{ page.division }}</h2>
+        <h2 class='dept-ehd clr-hidden-xs-down' *ngIf="page.division === false">Economic & Housing Development</h2>
+    </div>
+    <h2 splash-title *ngIf="page.splashTitle$" class='splash-title'>
+        <clr-icon shape='home' class='full-icon clr-hidden-sm-down'></clr-icon>
+        {{ page.splashTitle$ }}
+    </h2>
+    <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
+        <button *ngIf="page.specialButton" class="btn btn-secondary btn-success btn-lg btn-block"
+            [routerLink]="page.specialButton.link">
+            <clr-icon [attr.shape]='page.specialButton.icon' size='24'></clr-icon>
+            <span class="clr-hidden-sm-down">{{ page.specialButton.text }}</span>
+            <span class="clr-hidden-sm-up">{{ page.specialButton.textSmall }}</span>
+        </button>
+        <a *ngFor="let button of page.button$" class="btn btn-lg btn-block" href="{{ button.link }}">
+            <clr-icon [attr.shape]='button.icon' size='24'></clr-icon>
+            <span class="clr-hidden-sm-down">{{ button.text }}</span>
+            <span class="clr-hidden-sm-up">{{ button.textSmall }}</span>
+        </a>
+    </div>
+    <ng-content splash-buttons select='[nav-tab]'></ng-content>
+</app-splash>
+<section class="secondary-content">
+    <ng-content select='[secondary-content]'></ng-content>
+</section>
