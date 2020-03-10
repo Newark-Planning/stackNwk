@@ -56,12 +56,8 @@ export class OpzStaffComponent implements OnInit {
     this.messageService.add({ severity: 'success', summary: 'Copied!', detail: object, life: 1000 });
   }
   getTab(view): any {
-    const records = 'records';
-    this.airData.getRecords('Staff', `view=${view}`)
-      .subscribe(
-        data => {
-          this.staff$ = data[records];
-        });
+    this.airData.getAzureData('staff', '')
+      .subscribe(data => this.staff$ = data);
   }
   copyVal(val, object): any {
     this.clipboard.copy(val);
