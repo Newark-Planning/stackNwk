@@ -8,12 +8,8 @@
     <div id="tabs-content" secondary-content class="p-grid" [style]="{'height':'50vh'}">
         <p-card header="Our Staff" class="p-md-6 p-col-12"
             [style]="{'height':'100%', 'padding':'1rem','text-align':'center'}">
-            <!-- <p-header [style]="{'display':'flex','justify-content': 'center'}">
-                <img class="p-lg-6 p-col-12" src="../../../assets/img/Allison_Fitzgibbon.png"
-                    [style]="{'padding':'0','width': 'auto','max-height': '33vh','border-radius': '.25rem','border':'10px solid white'}">
-            </p-header> -->
         </p-card>
-        <p-card *ngFor='let staff of staff$' class="p-md-6 p-col-12" [style]="{'min-height':'58vh'}">
+        <p-card *ngFor='let staff of staff$' class="p-md-6 p-col-12">
             <p-header>
                 <h2 [style]="{'text-align':'left', 'margin':'.85rem .85rem 0 1.85rem'}" class="card-title">{{ staff.fields['Name-First']}} {{ staff.fields['Name-Last'] }}</h2>
             </p-header>
@@ -42,14 +38,4 @@
         </p-card>
     </div>
 </app-page>
-<!-- <section class='secondary-content'>
-    <h2 class='clr-justify-content-center'>Our Staff</h2>
-    <nav mat-tab-nav-bar [ngStyle]="{'margin':'.5rem' }">
-        <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.path)'>
-            {{link.label}}
-        </a>
-    </nav>
-    <div id="tabs-content"> -->
-    <!-- </div>
-</section> -->
 <p-toast></p-toast>
