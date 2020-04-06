@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { EhdMainComponent } from './ehd-main/ehd-main.component';
-import { EhdOpzComponent } from './ehd-opz/ehd-opz.component';
-import { EhdOrcComponent } from './ehd-orc/ehd-orc.component';
+import { EhdHomeComponent } from './ehd-main/home/home.component';
+import { OpzHomeComponent } from './ehd-opz/home/home.component';
+import { OrcHomeComponent } from './ehd-orc/home/home.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -11,19 +11,19 @@ export const APP_ROUTES: Routes = [
     redirectTo: 'ehd'
   },
   {
-    component: EhdMainComponent,
+    component: EhdHomeComponent,
     loadChildren: async () => import('./ehd-main/ehd-main.module')
       .then(m => m.EhdMainModule),
     path: 'ehd'
   },
   {
-    component: EhdOpzComponent,
+    component: OpzHomeComponent,
     loadChildren: async () => import('./ehd-opz/ehd-opz.module')
       .then(m => m.EhdOpzModule),
     path: 'opz'
   },
   {
-    component: EhdOrcComponent,
+    component: OrcHomeComponent,
     loadChildren: async () => import('./ehd-orc/ehd-orc.module')
       .then(m => m.EhdRcModule),
     path: 'orc'

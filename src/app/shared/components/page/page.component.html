@@ -8,7 +8,7 @@
     </div>
     <h2 splash-title *ngIf="page.splashTitle$" class='splash-title'>
         <clr-icon shape='home' class='full-icon clr-hidden-sm-down'></clr-icon>
-        {{ page.splashTitle$ }}
+        {{ page.splashTitle$ }}{{ page.splashTitle$['Content'] }}
     </h2>
     <div splash-buttons class="clr-col clr-col-xl-5 clr-col-lg-6 clr-col-md-8 clr-col-12 splash-buttons">
         <button *ngIf="page.specialButton" class="btn btn-secondary btn-success btn-lg btn-block"

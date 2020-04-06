@@ -2,7 +2,9 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { Page, Record } from '../../shared/models';
+import { MongoDB } from '../../shared/controllers';
+import { Page } from '../../shared/models';
+import { StaffModel } from '../../shared/models/mongo';
 import { AirService } from '../../shared/services/air.service';
 
 @Component({
@@ -14,8 +16,8 @@ import { AirService } from '../../shared/services/air.service';
 })
 
 export class OpzStaffComponent implements OnInit {
-  staff$: Array<Record>;
-  activeFragment;
+  staff$: Array<StaffModel>;
+  activeFragment: string;
   activeViewName;
   pageDetails: Page = {
     backgroundStyling: {
@@ -29,7 +31,7 @@ export class OpzStaffComponent implements OnInit {
     searchDisplay: 'none',
     subComponents: [
       { icon: 'calendar', index: 1, text: 'Our Leadership', textSmall: 'Leadership', link: 'leadership' },
-      { icon: 'file', index: 2, text: 'Planning Staff', textSmall: 'Planning', link: 'planners' },
+      { icon: 'file', index: 2, text: 'Planning Staff', textSmall: 'Planning', link: 'planning' },
       { icon: 'map', index: 3, text: 'Zoning & Support Staff', textSmall: 'Zoning & Support', link: 'support' }
     ]
   };
@@ -38,30 +40,20 @@ export class OpzStaffComponent implements OnInit {
     public airData: AirService,
     public clipboard: Clipboard,
     public messageService: MessageService,
+    public mongo: MongoDB,
     private readonly router: Router
     ) { }
 
   ngOnInit(): void {
     this.activeFragment = this.router.url.slice(this.router.url.lastIndexOf('/') + 1);
     this.getTab(this.activeFragment);
-    const records = 'records';
-    // tslint:disable-next-line: no-floating-promises
-    this.airData.getRecords('PageComps', "filterByFormula=%7BName%7D%3D'Staff+Splash+Title'")
-      .subscribe(
-        data => {
-          this.pageDetails.splashTitle$ = data[records];
-        });
   }
   copySuccess(object): any {
     this.messageService.add({ severity: 'success', summary: 'Copied!', detail: object, life: 1000 });
   }
-  getTab(view): any {
-    const records = 'records';
-    this.airData.getRecords('Staff', `view=${view}`)
-      .subscribe(
-        data => {
-          this.staff$ = data[records];
-        });
+  getTab(view: string): any {
+    this.mongo._models.Staff
+      .find({Class: view}, staff => this.staff$ = staff);
   }
   copyVal(val, object): any {
     this.clipboard.copy(val);

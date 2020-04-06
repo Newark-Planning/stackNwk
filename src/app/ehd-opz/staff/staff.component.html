@@ -8,48 +8,32 @@
     <div id="tabs-content" secondary-content class="p-grid" [style]="{'height':'50vh'}">
         <p-card header="Our Staff" class="p-md-6 p-col-12"
             [style]="{'height':'100%', 'padding':'1rem','text-align':'center'}">
-            <!-- <p-header [style]="{'display':'flex','justify-content': 'center'}">
-                <img class="p-lg-6 p-col-12" src="../../../assets/img/Allison_Fitzgibbon.png"
-                    [style]="{'padding':'0','width': 'auto','max-height': '33vh','border-radius': '.25rem','border':'10px solid white'}">
-            </p-header> -->
         </p-card>
-        <p-card *ngFor='let staff of staff$' class="p-md-6 p-col-12" [style]="{'min-height':'58vh'}">
+        <p-card *ngFor='let staff of staff$' class="p-md-6 p-col-12" [style]="{'min-height':'58vh', 'display': 'flex', 'flex-direction': 'column','justify-content': 'space-evenly'}">
             <p-header>
-                <h2 [style]="{'text-align':'left', 'margin':'.85rem .85rem 0 1.85rem'}" class="card-title">{{ staff.fields['Name-First']}} {{ staff.fields['Name-Last'] }}</h2>
+                <h2 [style]="{'text-align':'left', 'margin':'.85rem .85rem 0 1.85rem'}" class="card-title">{{ staff.hydrate().NameFirst }} {{ staff.hydrate().NameLast }}</h2>
+                <span class="label label-info" [ngStyle]="{'font-size': '.75rem','margin':'.5rem 2rem'}" innerHtml="{{ staff.hydrate().Hierarchy }}"></span>
             </p-header>
-            <p-subheader>
-                <span class="label label-info" [ngStyle]="{'font-size': '.75rem','margin':'0 0 .5rem 1.5rem'}" innerHtml="{{ staff.fields['Position'] }}"></span>
-            </p-subheader>
             <div class="p-grid p-justify-center">
                 <div class="p-col-11">
-                    <img src="{{ staff.fields['Headshot'][0]['url'] }} " class='card-image' />
-                    <p innerHtml="{{ staff.fields['Bio'] }}"></p>
+                    <img src="{{ staff.hydrate().Headshot }} " class='card-image' />
+                    <p innerHtml="{{ staff.hydrate().Bio }}"></p>
                 </div>
             </div>
             <p-footer class="p-grid p-justify-center">
-                <button class="btn btn-lg p-col-6" (click)="copyVal(staff.fields['Room'], 'Room Number')">
+                <button class="btn btn-lg p-col-6" (click)="copyVal(staff.hydrate().Room, 'Room Number')">
                     <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
-                    City Hall | Room {{ staff.fields['Room'] }}</button>
-                <button class="btn btn-lg p-col-5" (click)="copyVal(staff.fields['Phone'], 'Phone Number')">
+                    City Hall | Room {{ staff.hydrate().Room }}</button>
+                <button class="btn btn-lg p-col-5" (click)="copyVal(staff.hydrate().Phone, 'Phone Number')">
                     <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
-                    {{ staff.fields['Phone'] }}
+                    {{ staff.hydrate().Phone }}
                 </button>
-                <button class="btn btn-lg p-col-12" (click)="copyVal(staff.fields['Email'], 'Email')">
+                <button class="btn btn-lg p-col-12" (click)="copyVal(staff.hydrate().Email, 'Email')">
                     <i class="pi pi-copy" style="font-size: 1.1rem; vertical-align: sub"></i>
-                    {{ staff.fields['Email'] }}
+                    {{ staff.hydrate().Email }}
                 </button>
             </p-footer>
         </p-card>
     </div>
 </app-page>
-<!-- <section class='secondary-content'>
-    <h2 class='clr-justify-content-center'>Our Staff</h2>
-    <nav mat-tab-nav-bar [ngStyle]="{'margin':'.5rem' }">
-        <a mat-tab-link *ngFor="let link of subComponents" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive" (click)='getTab(link.path)'>
-            {{link.label}}
-        </a>
-    </nav>
-    <div id="tabs-content"> -->
-    <!-- </div>
-</section> -->
 <p-toast></p-toast>

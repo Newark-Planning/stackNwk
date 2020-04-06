@@ -1,0 +1,37 @@
+:host {
+    color: white;
+    box-shadow: none;
+    position: inline;
+    z-index: 100;
+
+    button {
+        span {
+            display: flex;
+            flex-direction: row;
+            margin-left: .5rem;
+        }
+
+        mat-icon {
+            font-size: 1.5rem;
+        }
+
+        color: inherit;
+        background: none;
+        font-family: 'Segoe UI',
+        'Open Sans',
+        sans-serif;
+        display: flex;
+        margin: 1vh 0;
+        height: 2.75rem;
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.25rem;
+        border: 2px solid !important;
+        border-radius: .25rem;
+        box-shadow: none;
+        min-width: 1rem;
+        padding: 0 .5em;
+        cursor: pointer;
+    }
+}

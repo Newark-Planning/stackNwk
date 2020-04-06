@@ -14,7 +14,16 @@ import {
   MapService
 } from './services';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
@@ -33,6 +42,7 @@ import { StepsModule } from 'primeng/steps';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { TreeModule } from 'primeng/tree';
+import { controllers } from './controllers';
 
 const primeModules = [
   AutoCompleteModule,
@@ -53,8 +63,18 @@ const primeModules = [
   ToastModule,
   TreeModule
 ];
+
 const matModules = [
-  MatTabsModule
+  MatButtonModule,
+  MatCardModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
 ];
 
 @NgModule({
@@ -76,7 +96,7 @@ const matModules = [
     matModules,
     primeModules
   ],
-  providers: [AirService, CartoService, GetRegsService, JsonDataService, MapService, MapidService],
+  providers: [AirService, CartoService, controllers, GetRegsService, JsonDataService, MapService, MapidService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule { }

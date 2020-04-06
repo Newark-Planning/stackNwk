@@ -1,3 +1,5 @@
+@use './variables'as *;
+
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -5,7 +7,7 @@
 }
 
 body .ui-widget {
-    font-family: $clr-font;
+    font-family: $nwk-font-family;
     font-size: 14px;
     text-decoration: none;
 }
@@ -2466,9 +2468,11 @@ body .ui-table .ui-column-resizer-helper {
     body .ui-table.ui-table-responsive .ui-paginator-top {
         border-bottom: 1px solid $black-alt;
     }
+
     body .ui-table.ui-table-responsive .ui-paginator-bottom {
         border-top: 1px solid $black-alt;
     }
+
     body .ui-table.ui-table-responsive .ui-table-tbody>tr>td {
         border: 0 none;
     }
@@ -4578,7 +4582,3 @@ body .ui-fluid .ui-inplace.ui-inplace-closable .ui-inplace-content> :first-child
     display: inline-block;
     width: calc(100% - 2.357em);
 }
-
-@import "../../node_modules/primeflex/primeflex";
-
-/* Add your customizations of theme here */

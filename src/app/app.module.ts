@@ -1,10 +1,11 @@
+import { LayoutModule } from '@angular/cdk/layout';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Event, Router, RouterModule, Scroll } from '@angular/router';
-import { ClarityModule } from '@clr/angular';
+import { MetaReducer, StoreModule } from '@ngrx/store';
 import { filter } from 'rxjs/operators';
 
 import { APP_ROUTES } from './app-routing';
@@ -12,25 +13,28 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { EhdMainComponent } from './ehd-main/ehd-main.component';
-import { EhdOpzComponent } from './ehd-opz/ehd-opz.component';
-import { EhdOrcComponent } from './ehd-orc/ehd-orc.component';
+import { EhdHomeComponent } from './ehd-main/home/home.component';
+import { OpzHomeComponent } from './ehd-opz/home/home.component';
+import { OrcHomeComponent } from './ehd-orc/home/home.component';
+import { clearState, storeReducers, StoreState } from './store/store.reducers';
+
+export const metaReducers: Array<MetaReducer<StoreState>> = [clearState];
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
-    EhdMainComponent,
-    EhdOpzComponent,
-    EhdOrcComponent
+    EhdHomeComponent,
+    OpzHomeComponent,
+    OrcHomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'nwk-ehd-web' }),
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
+    LayoutModule,
     CoreModule,
-    ClarityModule,
     SharedModule,
     RouterModule.forRoot(
       APP_ROUTES,
@@ -39,7 +43,16 @@ import { EhdOrcComponent } from './ehd-orc/ehd-orc.component';
         initialNavigation: 'enabled',
         scrollPositionRestoration: 'enabled'
       }
-    )
+    ),
+    StoreModule.forRoot(storeReducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictActionImmutability: false,
+        strictActionSerializability: false,
+        strictStateImmutability: false,
+        strictStateSerializability: false
+      }
+    })
     ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

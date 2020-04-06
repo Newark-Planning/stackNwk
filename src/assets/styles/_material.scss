@@ -1,0 +1,104 @@
+@use './variables' as *;
+@use '../../../node_modules/@angular/material/theming' as *;
+
+@include mat-core();
+
+$nwk-theme: mat-light-theme($nwk-primary-colors, $nwk-accent-colors, $nwk-warn-colors);
+
+@include angular-material-theme($nwk-theme);
+.mat-tab-link {
+    opacity: 1 !important;
+    color: black;
+    -webkit-text-fill-color: black;
+    font-family: 'Segoe UI', 'Open Sans' !important;
+    font-weight: 500 !important;
+}
+.mat-tab-nav-bar {
+    display: flex;
+}
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #0abeb8;
+}
+.mat-tab-label-active {
+    font-size: 1.5rem;
+    color: #0abeb8;
+    -webkit-text-fill-color: #0abeb8;
+}
+.general-button {
+    span {
+        display: flex;
+        flex-direction: row;
+        margin-left: .5rem;
+    }
+
+    mat-icon {
+        font-size: 1.5rem;
+    }
+
+    background: white;
+    font-family: 'Segoe UI',
+    'Open Sans',
+    sans-serif;
+    display: flex;
+    margin: 1vh 0;
+    height: 2.75rem;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.25rem;
+    border: none;
+    border-top: 2px solid !important;
+    border-radius: .25rem;
+    box-shadow: 0px 3px 10px lightgray;
+    min-width: 1rem;
+    padding: 0 .5em;
+    cursor: pointer;
+}
+
+.mat-snack-bar-container {
+    width: 20rem;
+    color: black;
+    background: none;
+    box-shadow: none;
+    font-family: inherit;
+
+    button {
+        color: white;
+        background-color: black;
+        border: 1px solid black;
+        border-radius: .15rem;
+        width: 80%;
+        margin: .25rem auto;
+        height: 2rem;
+        cursor: pointer;
+
+    }
+
+    .toast-message {
+        background: white;
+        height: 10vh;
+        font-size: unset;
+
+        .toast-close-icon {
+            color: black;
+        }
+    }
+}
+
+.general-button:hover,
+.mat-snack-bar-container button:hover,
+.menuBtns:hover,
+.menuRadio:hover {
+    background-color: $primary-color !important;
+    box-shadow: none;
+    color: white;
+}
+
+.general-button:active,
+.mat-snack-bar-container button:active,
+.menuBtns:active,
+.menuRadio:active {
+    background-color: yellow !important;
+    box-shadow: none;
+    color: lightslategray;
+}

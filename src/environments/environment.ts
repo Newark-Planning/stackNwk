@@ -70,7 +70,8 @@ export const environment = {
     // if so, take a look into /assets/runtime-environments
     loadRuntimeEnvironment: false,
 
-    i18nPrefix: ''
+    i18nPrefix: '',
+    uri: 'mongodb://nwk-web:YO9fKPkAKEHNYHZopuyOl7onZsKwJU4SSJrbwSHHfdal9rqgExM4DGHWosqP3ehrjK5BQrfvhRvdt4qS2TDMTg==@nwk-web.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@nwk-web@'
 
   },
   production: false

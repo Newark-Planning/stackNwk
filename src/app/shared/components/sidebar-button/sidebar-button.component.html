@@ -1,0 +1,9 @@
+<button *ngIf="iconName === 'menu'" color="primary"
+    (click)="toggleSidebar()"
+    @shownState>
+  <mat-icon [@sidebarButtonState]="(sidebarOpened$ | async) ? 'opened' : 'closed'">{{(sidebarOpened$ | async) ? 'menu_open' : 'menu'}}</mat-icon>
+</button>
+<button *ngIf="iconName === 'search'" color="primary" (click)="toggleRightSidebar()" @shownState>
+  <mat-icon [@sidebarButtonState]="(sidebarRightOpened$ | async) ? 'closed' : 'opened'">
+    {{(sidebarRightOpened$ | async) ? 'highlight_off' : 'search'}}</mat-icon>
+</button>

@@ -301,11 +301,6 @@
             "require-const-for-all-caps",
             "ban-keywords"
         ],
-        "comment-type": [
-            true,
-            "singleline",
-            "doc"
-        ],
         "comment-format": [
             true,
             "check-space"

@@ -1,59 +1,14 @@
-// Your Application Theme File
+// Material Theme SCSS
 @import "./theme.scss";
-@import "assets/primeTheme";
-@import "assets/full-cal";
-@import "assets/list-view";
-// Clarity Component SCSS
-@import "../node_modules/@clr/ui/src/utils/components.clarity";
+// PrimeNG Theme SCSS
+@import "assets/styles/primeTheme";
+// Full Calendar Theme SCSS
+@import "assets/styles/fullCal";
+@import "assets/styles/listView";
+
 html,
 body,
 :host {
     overflow-x: hidden;
     font-family: 'Segoe UI', 'Open Sans', sans-serif;
 }
-
-@import '../node_modules/@angular/material/theming';
-// Plus imports for other components in your app.
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$candy-app-primary: mat-palette($mat-light-blue);
-$candy-app-accent: mat-palette($mat-light-green, A200, A100, A400);
-// The warn palette is optional (defaults to red).
-$candy-app-warn: mat-palette($mat-red);
-// Create the theme object (a Sass map containing all of the palettes).
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($candy-app-theme);
-.mat-tab-link {
-    opacity: 1 !important;
-    color: black;
-    -webkit-text-fill-color: black;
-    font-family: 'Segoe UI', 'Open Sans' !important;
-    font-weight: 500 !important;
-}
-
-;
-.mat-tab-nav-bar {
-    display: flex;
-}
-
-;
-.mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: #0abeb8;
-}
-
-;
-.mat-tab-label-active {
-    font-size: 1.5rem;
-    color: #0abeb8;
-    -webkit-text-fill-color: #0abeb8;
-}
-
-;

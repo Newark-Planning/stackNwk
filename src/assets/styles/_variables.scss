@@ -1,0 +1,72 @@
+@use '../../../node_modules/@angular/material/theming'as *;
+
+$link-hover-decoration: none;
+$label-margin-bottom: 0;
+
+$grid-breakpoints: (xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px);
+
+$success-colors: mat-palette($mat-green, 400);
+$warning-colors: mat-palette($mat-amber, 400);
+$nwk-primary-colors: mat-palette($mat-deep-purple);
+$nwk-accent-colors: mat-palette($mat-blue-gray, 100, 500, A100);
+$nwk-warn-colors: mat-palette($mat-deep-orange);
+$primary-color: mat-color($nwk-primary-colors);
+$accent-color: mat-color($nwk-accent-colors);
+$warn-color: mat-color($nwk-warn-colors);
+
+$nwk-font-family: 'Segoe UI',
+'Open Sans',
+sans-serif;
+$nwk-sidebar-width: 25vw;
+$grey: rgba(0, 0, 0, 0.2);
+$transition-time: 0.2s;
+$transition: padding-left $transition-time,
+border-left $transition-time,
+color $transition-time;
+
+$clr-use-custom-properties: false;
+$clr-global-app-background: #eaedf0;
+$clr-global-selection-color: lightgray;
+$clr-global-hover-bg-color: hsl(198, 65%, 57%);
+$primary-color: #0d47a1;
+$info-color: hsl(198, 79%, 28%);
+$success-color: hsl(122, 45%, 23%);
+$danger-color: hsl(357, 50%, 35%);
+$warning-color: hsl(47, 87%, 27%);
+$app-info-color: hsl(178, 90%, 39%);
+$app-info-color-alt: #a2e4e1;
+$app-success-color: hsl(90, 67%, 38%);
+$app-danger-color: hsl(3, 90%, 62%);
+$app-warning-color: hsl(48, 98%, 51%);
+$white: hsl(0, 0%, 100%);
+$white-alt: hsl(210, 16%, 93%);
+$black: hsl(0, 0%, 0%);
+$black-alt: hsl(203, 30%, 8%);
+$black-alt-2: hsl(201, 30%, 13%);
+$black-light: hsla(0, 0%, 100%, 0.1);
+$gray: hsl(211, 10%, 47%);
+$gray-alt: hsl(200, 30%, 12%);
+$gray-light: hsl(203, 16%, 72%);
+$purple: hsl(281, 44%, 62%);
+$purple-dark: hsl(233, 26%, 33%);
+$blue: hsl(201, 100%, 36%);
+$blue-hover: hsl(194, 78%, 63%);
+$blue-light: hsl(194, 57%, 71%);
+$blue-dark: hsl(206, 63%, 27%);
+$red-hover: hsl(3, 100%, 69%);
+$red-dark: hsl(315, 27%, 28%);
+$orange: hsl(31, 100%, 60%);
+$green: hsl(92, 79%, 40%);
+$green-hover: hsl(83, 77%, 44%);
+$green-dark: hsl(195, 65%, 24%);
+$dropdown-bg: $white-alt;
+
+@mixin mat-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+}

@@ -1,29 +1,4 @@
-@import '../styles.scss';
-header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231],
-header[_ngcontent-nwk-clr-c231] .header-nav[_ngcontent-nwk-clr-c231],
-header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231],
-.header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231],
-.header[_ngcontent-nwk-clr-c231] .header-nav[_ngcontent-nwk-clr-c231],
-.header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231] {
-    height: 3rem;
-}
-
-.main-container[_ngcontent-nwk-clr-c231] header[_ngcontent-nwk-clr-c231],
-.main-container[_ngcontent-nwk-clr-c231] .header[_ngcontent-nwk-clr-c231] {
-    flex: 0 0 3rem;
-}
-
-header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231],
-header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231],
-.header[_ngcontent-nwk-clr-c231] .settings[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231],
-.header[_ngcontent-nwk-clr-c231] .header-actions[_ngcontent-nwk-clr-c231]>.dropdown[_ngcontent-nwk-clr-c231]>.dropdown-toggle[_ngcontent-nwk-clr-c231] {
-    height: 3rem;
-}
-
-.clr-row[_ngcontent-nwk-clr-c231] {
-    margin-right: auto;
-    margin-left: .5rem;
-}
+@use '../assets/styles/variables' as *;
 
 hr {
     height: 70%;

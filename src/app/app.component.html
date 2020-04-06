@@ -1,59 +1,97 @@
-<clr-main-container>
-    <clr-header class='header header-1'>
-        <div class="branding">
-            <a href='https://newarknj.gov/' class='h1 clr-row clr-align-content-center'>NWK</a>
-            <hr class='nav-divider clr-hidden-md-down'>
-            <a href='https://newarknj.gov/' class='h1 clr-row clr-hidden-md-down clr-align-content-center'>City of Newark</a>
-        </div>
-        <div class="header-actions">
-            <h3 class='clr-row clr-hidden-md-down clr-align-content-center'>divisions</h3>
-            <clr-dropdown>
-                <button class="nav-icon" clrDropdownTrigger>
-                    <clr-icon shape="organization" class="has-badge is-solid"></clr-icon>
-                    <clr-icon shape="caret down"></clr-icon>
+<mat-sidenav-container>
+    <mat-sidenav #sidebar *ngIf="hasSidebar$ | async" [opened]="sidebarOpened$ | async" [mode]="sidebarMode$ | async"
+        [disableClose]="(sidebarMode$ | async) === 'side' ? true : false" (openedChange)="onOpenedChange($event)">
+        <mat-grid-list cols="4" rowHeight="3rem" gutterSize="1rem">
+            <mat-grid-tile colspan="4" rowspan="3" class="sidebar-tile">
+                <img src="assets/img/NwkEhd_EHD.svg" class="sidebar-logo" />
+            </mat-grid-tile>
+            <mat-grid-tile *ngFor="let link of (sidebarLinks$ | async)"  [ngSwitch]='link.children' colspan="4" rowspan="1" class="sidebar-links">
+                <button *ngSwitchCase='undefined' [routerLinkActive]="['active']" [routerLink]="link.link">
+                    <mat-icon style="margin-right: 1rem">{{ link.icon }}</mat-icon>
+                    <span>{{ link.name }}</span>
                 </button>
-                <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
-                    <a style='font-weight: bold; font-size: 1rem; white-space: pre-line;line-height: 2rem;' [routerLinkActive]="['active']" routerLink="/ehd" clrDropdownItem>
-                        <clr-icon shape="bank"></clr-icon>
-                        EHD Main
-                    </a>
-                    <div class='dropdown-divider'></div>
-                    <h4 class="dropdown-header" style='font-weight: bold; font-size: 1rem; white-space: pre-line;line-height: 2rem;'>Divisions</h4>
-                    <a href="#" clrDropdownItem>
-                        <clr-icon shape="child-arrow"></clr-icon>
-                        Housing
-                    </a>
-                    <a href="#" clrDropdownItem>
-                        <clr-icon shape="child-arrow"></clr-icon>
-                        Opportunity Zones
-                    </a>
-                    <a [routerLinkActive]="['active']" routerLink="/opz" clrDropdownItem>
-                        <clr-icon shape="child-arrow"></clr-icon>
-                        Planning & Zoning
-                    </a>
-                    <a href="#" clrDropdownItem>
-                        <clr-icon shape="child-arrow"></clr-icon>
-                        Property Management
-                    </a>
-                    <a [routerLinkActive]="['active']" routerLink="/rc" clrDropdownItem>
-                        <clr-icon shape="child-arrow"></clr-icon>
-                        Rent Control
-                    </a>
-                     <a [routerLinkActive]="['active']" routerLink="/rc" clrDropdownItem>
-                        <clr-icon shape="child-arrow"></clr-icon>
-                        Tenant Legal Services
-                    </a>
-                </clr-dropdown-menu>
-            </clr-dropdown>
-            <clr-dropdown>
-                <button class="nav-icon" clrDropdownTrigger>
-                    <clr-icon shape="search" class="has-badge is-solid"></clr-icon>
+                <mat-expansion-panel *ngSwitchDefault routerLinkActive="active">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{ link.icon }}</mat-panel-title>
+                        <mat-panel-description>{{ link.name }}</mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <button *ngFor="let child of link.children" [routerLinkActive]="['active']" [routerLink]="[link.link , child.link]">
+                        <mat-icon style="margin-right: 1rem">subdirectory_arrow_right</mat-icon>
+                        <span [ngStyle]="{'font-weight': 'lighter'}" class="clr-row clr-justify-content-center">{{ child.name }}</span>
+                    </button>
+                </mat-expansion-panel>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="1" class="sidebar-tile">
+                <button mat-flat-button color="accent">
+                    <mat-icon>help</mat-icon>
                 </button>
-                <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
-                    <app-search class='dropdown-header'></app-search>
-                </clr-dropdown-menu>
-            </clr-dropdown>
-        </div>
-    </clr-header>
-    <router-outlet></router-outlet>
-</clr-main-container>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="1" class="sidebar-tile">
+                <button mat-flat-button color="accent" (click)="toggleSidebar('left')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-sidenav>
+    <mat-sidenav #sidebarRight position="end" *ngIf="hasSidebarRight$ | async" [opened]="sidebarRightOpened$ | async"
+        [mode]="sidebarRightMode$ | async" [disableClose]="(sidebarRightMode$ | async) === 'side' ? true : false"
+        (openedChange)="onRightOpenedChange($event)">
+        <mat-grid-list cols="4" rowHeight="3rem" gutterSize="1rem">
+            <mat-grid-tile colspan="4" rowspan="2">
+                <app-search class='dropdown-header'></app-search>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="1" class="sidebar-tile">
+                <button mat-flat-button color="accent" (click)="toggleSidebar('right')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <mat-toolbar-row class="header">
+                <span class="toolbar-spacer left-icon">
+                    <app-sidebar-button [iconName]="'menu'"></app-sidebar-button>
+                </span>
+                <a class="newark-title" href="https://newarknj.gov/">City of Newark</a>
+                <span class="toolbar-spacer right-icon">
+                    <button mat-icon-button [matMenuTriggerFor]="divisionLinks" aria-label="Button to access divisions dropdown menu">
+                        <mat-icon>account_tree</mat-icon>
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #divisionLinks="matMenu">
+                        <h4 mat-menu-item class="dropdown-header"
+                            style='font-weight: bold; font-size: 1rem; white-space: pre-line;line-height: 2rem;'>
+                            Divisions
+                        </h4>
+                        <button mat-menu-item style='font-weight: bold; font-size: 1rem; white-space: pre-line;line-height: 2rem;'
+                            [routerLinkActive]="['active']" routerLink="/ehd">
+                            <mat-icon>account_balance</mat-icon>
+                            <span>EHD Main</span>
+                        </button>
+                        <mat-divider></mat-divider>
+                        <button *ngFor="let div of divisions" mat-menu-item [routerLinkActive]="['active']" [routerLink]="div.path">
+                            <mat-icon>subdirectory_arrow_right</mat-icon>
+                            <span>{{ div.name }}</span>
+                        </button>
+                    </mat-menu>
+                    <app-sidebar-button [iconName]="'search'"></app-sidebar-button>
+                </span>
+            </mat-toolbar-row>
+            <mat-toolbar-row class="sub-header">
+                <span class="toolbar-spacer"></span>
+                <span class="dept-title">
+                    <span [style.display]="deptDisplay === true ? 'none' : 'inline'">
+                        Department of
+                    </span>
+                    Economic & Housing Development
+                </span>
+                <span class="toolbar-spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <section class="main-content">
+            <router-outlet>
+            </router-outlet>
+        </section>
+    </mat-sidenav-content>
+</mat-sidenav-container>

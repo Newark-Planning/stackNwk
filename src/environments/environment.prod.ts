@@ -65,7 +65,8 @@ export const environment = {
     // if so, take a look into /assets/runtime-environments
     loadRuntimeEnvironment: false,
 
-    i18nPrefix: 'en'
+    i18nPrefix: 'en',
+    uri: 'cdb-ms-prod-westus1-cm1.documents.azure.com:10255'
 
   },
   production: true
