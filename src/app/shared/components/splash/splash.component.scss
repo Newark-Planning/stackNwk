@@ -1,5 +1,5 @@
 @import '../../../app.component.scss';
-.card {
+.ui-panel {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,7 @@
     margin: auto;
     width: 100%;
     height: 90vh;
-    .card-header {
+    .ui-panel-titlebar {
         margin-top: 2rem;
         border: 0;
         max-height: 20vh;
@@ -18,7 +18,7 @@
         -webkit-text-fill-color: white;
         font-weight: 900;
         font-size: 1rem !important;
-        img {
+        .ui-panel-title>img {
             max-height: 14vh;
             margin-right: 1rem;
             &:hover {
@@ -27,7 +27,7 @@
             }
         }
     }
-    .card-block {
+    .ui-panel-content {
         display: flex;
         align-items: center;
         flex-direction: column;

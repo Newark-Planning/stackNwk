@@ -9,7 +9,11 @@
         <p-card header="Our Staff" class="p-md-6 p-col-12"
             [style]="{'height':'100%', 'padding':'1rem','text-align':'center'}">
         </p-card>
+<<<<<<< HEAD
         <p-card *ngFor='let staff of staff$' class="p-md-6 p-col-12" [style]="{'min-height':'58vh', 'display': 'flex', 'flex-direction': 'column','justify-content': 'space-evenly'}">
+=======
+        <p-card *ngFor='let staff of staff$' class="p-md-6 p-col-12">
+>>>>>>> f5818418cb6b093e1b8e4154bdb4c275501dbd58
             <p-header>
                 <h2 [style]="{'text-align':'left', 'margin':'.85rem .85rem 0 1.85rem'}" class="card-title">{{ staff.hydrate().NameFirst }} {{ staff.hydrate().NameLast }}</h2>
                 <span class="label label-info" [ngStyle]="{'font-size': '.75rem','margin':'.5rem 2rem'}" innerHtml="{{ staff.hydrate().Hierarchy }}"></span>

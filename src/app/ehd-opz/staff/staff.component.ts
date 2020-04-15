@@ -51,9 +51,15 @@ export class OpzStaffComponent implements OnInit {
   copySuccess(object): any {
     this.messageService.add({ severity: 'success', summary: 'Copied!', detail: object, life: 1000 });
   }
+<<<<<<< HEAD
   getTab(view: string): any {
     this.mongo._models.Staff
       .find({Class: view}, staff => this.staff$ = staff);
+=======
+  getTab(view): any {
+    this.airData.getAzureData('staff', '')
+      .subscribe(data => this.staff$ = data);
+>>>>>>> f5818418cb6b093e1b8e4154bdb4c275501dbd58
   }
   copyVal(val, object): any {
     this.clipboard.copy(val);

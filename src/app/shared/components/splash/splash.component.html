@@ -1,36 +1,35 @@
-<div class="clr-row">
-    <div class="clr-col-12">
-        <div class="card" [(ngStyle)]="backgroundSetting">
-            <div class='card-header clr-row clr-align-content-start'>
-                <img [src]='logoSrc' class="clr-col-4 clr-col-sm-2 clr-col-lg-1" [routerLink]="[parentFragment, 'home']">
+<p-panel styleClass="page-header p-col-12" [(ngStyle)]="backgroundSetting">
+    <p-header>
+         <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">
+                <img [src]='logoSrc' class="p-col-1 p-col-md-4 p-col-sm-6" [routerLink]="[parentFragment, 'home']">
                 <ng-content select='[splash-page]'></ng-content>
-            </div>
-            <div class="card-block clr-justify-content-center clr-col clr-col-12">
-                <div class="card-title clr-row clr-row-11">
-                    <ng-content select='[splash-title]'></ng-content>
-                    <ng-content select='[splash-subtitle]'></ng-content>
-                </div>
-                <p-autoComplete 
-                    field="title"
-                    [style.display]="searchDisplay"
-                    [(ngModel)]="page"
-                    [suggestions]="results"
-                    (completeMethod)="search($event)"
-                    (onSelect)="goTo(page)"
-                    [size]="30"
-                    [minLength]="1"
-                    placeholder="What are you looking for?"
-                    [dropdown]="true">
-                    <ng-template let-page pTemplate="item">
-                        <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
-                            <span style="width:32px;display:inline-block;margin:5px 0 2px 5px">{{ page.office }}</span>
-                            <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{ page.title }}</div>
-                        </div>
-                    </ng-template>
-                </p-autoComplete>
-                <ng-content select='[splash-buttons]'></ng-content>
-                <ng-content select='[splash-text]'></ng-content>
-            </div>
+            </span>
+            <p-autoComplete
+                field="title"
+                [style.display]="searchDisplay"
+                [(ngModel)]="page"
+                [suggestions]="results"
+                (completeMethod)="search($event)"
+                (onSelect)="goTo(page)"
+                [size]="30"
+                [minLength]="1"
+                placeholder="What are you looking for?"
+                [style]="{'float':'right'}"
+                [dropdown]="true">
+                <ng-template let-page pTemplate="item">
+                    <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+                        <span style="width:32px;display:inline-block;margin:5px 0 2px 5px">{{ page.office }}</span>
+                        <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{ page.title }}</div>
+                    </div>
+                </ng-template>
+            </p-autoComplete>
         </div>
-    </div>
-</div>
+    </p-header>
+    <ng-content select='[splash-title]'></ng-content>
+    <ng-content select='[splash-subtitle]'></ng-content>
+    <p-footer>
+        <ng-content select='[splash-buttons]'></ng-content>
+        <ng-content select='[splash-text]'></ng-content>
+    </p-footer>
+</p-panel>
